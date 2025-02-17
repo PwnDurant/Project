@@ -1,0 +1,42 @@
+2025-02-17T21:58:49.281+08:00  INFO 53515 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Starting LibraryManagementSystemApplication using Java 17.0.11 with PID 53515 (/Users/zhaoqianqian/IDEAUl/Project/Library_Management_System/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Library_Management_System)
+2025-02-17T21:58:49.283+08:00  INFO 53515 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2025-02-17T21:58:49.645+08:00  INFO 53515 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-17T21:58:49.651+08:00  INFO 53515 --- [Library_Management_System] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-17T21:58:49.651+08:00  INFO 53515 --- [Library_Management_System] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-17T21:58:49.668+08:00  INFO 53515 --- [Library_Management_System] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-17T21:58:49.668+08:00  INFO 53515 --- [Library_Management_System] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 368 ms
+2025-02-17T21:58:49.881+08:00  INFO 53515 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-17T21:58:49.886+08:00  INFO 53515 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Started LibraryManagementSystemApplication in 0.819 seconds (process running for 1.096)
+2025-02-17T22:02:06.516+08:00  INFO 53515 --- [Library_Management_System] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-17T22:02:06.517+08:00  INFO 53515 --- [Library_Management_System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-17T22:02:06.519+08:00  INFO 53515 --- [Library_Management_System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-02-17T22:02:06.545+08:00  INFO 53515 --- [Library_Management_System] [http-nio-8080-exec-1] o.m.l.controller.BookController          : 添加图书：bookInfo:BookInfo(id=null, bookName=test, author=test, count=10, price=10, publish=test, status=1, statusCN=null, createTime=null, updateTime=null)
+2025-02-17T22:02:06.557+08:00  INFO 53515 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-17T22:02:06.632+08:00  INFO 53515 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5029ac0b
+2025-02-17T22:02:06.633+08:00  INFO 53515 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-17T22:03:25.406+08:00  INFO 53515 --- [Library_Management_System] [http-nio-8080-exec-3] o.m.l.controller.BookController          : 获取图书列表，pageRequest：PageRequest(currentPage=1, pageSize=3, offset=0)
+2025-02-17T22:03:25.442+08:00 ERROR 53515 --- [Library_Management_System] [http-nio-8080-exec-3] o.m.l.controller.BookController          : 获取图书列表失败
+2025-02-17T22:04:30.623+08:00  INFO 53515 --- [Library_Management_System] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-17T22:04:30.628+08:00  INFO 53515 --- [Library_Management_System] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-17T22:04:30.630+08:00  INFO 53515 --- [Library_Management_System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-17T22:04:30.634+08:00  INFO 53515 --- [Library_Management_System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-17T22:04:31.942+08:00  INFO 53552 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Starting LibraryManagementSystemApplication using Java 17.0.11 with PID 53552 (/Users/zhaoqianqian/IDEAUl/Project/Library_Management_System/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Library_Management_System)
+2025-02-17T22:04:31.944+08:00  INFO 53552 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2025-02-17T22:04:32.246+08:00  INFO 53552 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-17T22:04:32.251+08:00  INFO 53552 --- [Library_Management_System] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-17T22:04:32.251+08:00  INFO 53552 --- [Library_Management_System] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-17T22:04:32.265+08:00  INFO 53552 --- [Library_Management_System] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-17T22:04:32.265+08:00  INFO 53552 --- [Library_Management_System] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 306 ms
+2025-02-17T22:04:32.434+08:00  INFO 53552 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-17T22:04:32.438+08:00  INFO 53552 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Started LibraryManagementSystemApplication in 0.669 seconds (process running for 0.831)
+2025-02-17T22:04:35.966+08:00  INFO 53552 --- [Library_Management_System] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-17T22:04:35.967+08:00  INFO 53552 --- [Library_Management_System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-17T22:04:35.968+08:00  INFO 53552 --- [Library_Management_System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-17T22:04:35.987+08:00  INFO 53552 --- [Library_Management_System] [http-nio-8080-exec-1] o.m.l.controller.BookController          : 获取图书列表，pageRequest：PageRequest(currentPage=1, pageSize=3, offset=0)
+2025-02-17T22:04:35.995+08:00  INFO 53552 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-17T22:04:36.058+08:00  INFO 53552 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2c16d9cb
+2025-02-17T22:04:36.059+08:00  INFO 53552 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-17T22:05:02.570+08:00  INFO 53552 --- [Library_Management_System] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-17T22:05:02.575+08:00  INFO 53552 --- [Library_Management_System] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-17T22:05:02.577+08:00  INFO 53552 --- [Library_Management_System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-17T22:05:02.581+08:00  INFO 53552 --- [Library_Management_System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
