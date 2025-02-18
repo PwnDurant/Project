@@ -1,42 +1,308 @@
-2025-02-17T21:58:49.281+08:00  INFO 53515 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Starting LibraryManagementSystemApplication using Java 17.0.11 with PID 53515 (/Users/zhaoqianqian/IDEAUl/Project/Library_Management_System/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Library_Management_System)
-2025-02-17T21:58:49.283+08:00  INFO 53515 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : No active profile set, falling back to 1 default profile: "default"
-2025-02-17T21:58:49.645+08:00  INFO 53515 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-02-17T21:58:49.651+08:00  INFO 53515 --- [Library_Management_System] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-02-17T21:58:49.651+08:00  INFO 53515 --- [Library_Management_System] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
-2025-02-17T21:58:49.668+08:00  INFO 53515 --- [Library_Management_System] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-02-17T21:58:49.668+08:00  INFO 53515 --- [Library_Management_System] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 368 ms
-2025-02-17T21:58:49.881+08:00  INFO 53515 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-02-17T21:58:49.886+08:00  INFO 53515 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Started LibraryManagementSystemApplication in 0.819 seconds (process running for 1.096)
-2025-02-17T22:02:06.516+08:00  INFO 53515 --- [Library_Management_System] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-02-17T22:02:06.517+08:00  INFO 53515 --- [Library_Management_System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-02-17T22:02:06.519+08:00  INFO 53515 --- [Library_Management_System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2025-02-17T22:02:06.545+08:00  INFO 53515 --- [Library_Management_System] [http-nio-8080-exec-1] o.m.l.controller.BookController          : 添加图书：bookInfo:BookInfo(id=null, bookName=test, author=test, count=10, price=10, publish=test, status=1, statusCN=null, createTime=null, updateTime=null)
-2025-02-17T22:02:06.557+08:00  INFO 53515 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-02-17T22:02:06.632+08:00  INFO 53515 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5029ac0b
-2025-02-17T22:02:06.633+08:00  INFO 53515 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-02-17T22:03:25.406+08:00  INFO 53515 --- [Library_Management_System] [http-nio-8080-exec-3] o.m.l.controller.BookController          : 获取图书列表，pageRequest：PageRequest(currentPage=1, pageSize=3, offset=0)
-2025-02-17T22:03:25.442+08:00 ERROR 53515 --- [Library_Management_System] [http-nio-8080-exec-3] o.m.l.controller.BookController          : 获取图书列表失败
-2025-02-17T22:04:30.623+08:00  INFO 53515 --- [Library_Management_System] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-02-17T22:04:30.628+08:00  INFO 53515 --- [Library_Management_System] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-02-17T22:04:30.630+08:00  INFO 53515 --- [Library_Management_System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-02-17T22:04:30.634+08:00  INFO 53515 --- [Library_Management_System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-02-17T22:04:31.942+08:00  INFO 53552 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Starting LibraryManagementSystemApplication using Java 17.0.11 with PID 53552 (/Users/zhaoqianqian/IDEAUl/Project/Library_Management_System/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Library_Management_System)
-2025-02-17T22:04:31.944+08:00  INFO 53552 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : No active profile set, falling back to 1 default profile: "default"
-2025-02-17T22:04:32.246+08:00  INFO 53552 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-02-17T22:04:32.251+08:00  INFO 53552 --- [Library_Management_System] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-02-17T22:04:32.251+08:00  INFO 53552 --- [Library_Management_System] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
-2025-02-17T22:04:32.265+08:00  INFO 53552 --- [Library_Management_System] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-02-17T22:04:32.265+08:00  INFO 53552 --- [Library_Management_System] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 306 ms
-2025-02-17T22:04:32.434+08:00  INFO 53552 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-02-17T22:04:32.438+08:00  INFO 53552 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Started LibraryManagementSystemApplication in 0.669 seconds (process running for 0.831)
-2025-02-17T22:04:35.966+08:00  INFO 53552 --- [Library_Management_System] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-02-17T22:04:35.967+08:00  INFO 53552 --- [Library_Management_System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-02-17T22:04:35.968+08:00  INFO 53552 --- [Library_Management_System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-02-17T22:04:35.987+08:00  INFO 53552 --- [Library_Management_System] [http-nio-8080-exec-1] o.m.l.controller.BookController          : 获取图书列表，pageRequest：PageRequest(currentPage=1, pageSize=3, offset=0)
-2025-02-17T22:04:35.995+08:00  INFO 53552 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-02-17T22:04:36.058+08:00  INFO 53552 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2c16d9cb
-2025-02-17T22:04:36.059+08:00  INFO 53552 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-02-17T22:05:02.570+08:00  INFO 53552 --- [Library_Management_System] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-02-17T22:05:02.575+08:00  INFO 53552 --- [Library_Management_System] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-02-17T22:05:02.577+08:00  INFO 53552 --- [Library_Management_System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-02-17T22:05:02.581+08:00  INFO 53552 --- [Library_Management_System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-18T20:39:25.263+08:00  INFO 72286 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Starting LibraryManagementSystemApplication using Java 17.0.11 with PID 72286 (/Users/zhaoqianqian/IDEAUl/Project/Library_Management_System/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Library_Management_System)
+2025-02-18T20:39:25.265+08:00  INFO 72286 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2025-02-18T20:39:25.599+08:00  INFO 72286 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-18T20:39:25.604+08:00  INFO 72286 --- [Library_Management_System] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-18T20:39:25.604+08:00  INFO 72286 --- [Library_Management_System] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-18T20:39:25.619+08:00  INFO 72286 --- [Library_Management_System] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-18T20:39:25.619+08:00  INFO 72286 --- [Library_Management_System] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 339 ms
+2025-02-18T20:39:25.795+08:00  INFO 72286 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-18T20:39:25.799+08:00  INFO 72286 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Started LibraryManagementSystemApplication in 0.703 seconds (process running for 0.905)
+2025-02-18T20:39:34.545+08:00  INFO 72286 --- [Library_Management_System] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-18T20:39:34.552+08:00  INFO 72286 --- [Library_Management_System] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-18T20:39:48.610+08:00  INFO 72320 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Starting LibraryManagementSystemApplication using Java 17.0.11 with PID 72320 (/Users/zhaoqianqian/IDEAUl/Project/Library_Management_System/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Library_Management_System)
+2025-02-18T20:39:48.611+08:00  INFO 72320 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2025-02-18T20:39:48.894+08:00  INFO 72320 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-18T20:39:48.898+08:00  INFO 72320 --- [Library_Management_System] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-18T20:39:48.898+08:00  INFO 72320 --- [Library_Management_System] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-18T20:39:48.911+08:00  INFO 72320 --- [Library_Management_System] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-18T20:39:48.912+08:00  INFO 72320 --- [Library_Management_System] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 287 ms
+2025-02-18T20:39:49.068+08:00  INFO 72320 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-18T20:39:49.072+08:00  INFO 72320 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Started LibraryManagementSystemApplication in 0.616 seconds (process running for 0.769)
+2025-02-18T20:41:21.279+08:00  INFO 72320 --- [Library_Management_System] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-18T20:41:21.280+08:00  INFO 72320 --- [Library_Management_System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-18T20:41:21.281+08:00  INFO 72320 --- [Library_Management_System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-18T20:41:21.310+08:00  INFO 72320 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-18T20:41:21.378+08:00  INFO 72320 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1e80eb1
+2025-02-18T20:41:21.379+08:00  INFO 72320 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-18T20:41:21.461+08:00 ERROR 72320 --- [Library_Management_System] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where if=null' at line 1
+### The error may exist in org/mon/library_management_system/mapper/BookMapper.java (best guess)
+### The error may involve org.mon.library_management_system.mapper.BookMapper.queryBookById-Inline
+### The error occurred while setting parameters
+### SQL: select * from book_info where status!=0 and where if=?
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where if=null' at line 1
+; bad SQL grammar []] with root cause
+
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where if=null' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:382) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-5.1.0.jar:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58) ~[mybatis-3.5.17.jar:3.5.17]
+	at jdk.proxy3/jdk.proxy3.$Proxy73.execute(Unknown Source) ~[na:na]
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:90) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:75) ~[mybatis-3.5.17.jar:3.5.17]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:333) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at jdk.proxy2/jdk.proxy2.$Proxy60.selectOne(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:154) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86) ~[mybatis-3.5.17.jar:3.5.17]
+	at jdk.proxy2/jdk.proxy2.$Proxy64.queryBookById(Unknown Source) ~[na:na]
+	at org.mon.library_management_system.service.BookService.queryBookById(BookService.java:39) ~[classes/:na]
+	at org.mon.library_management_system.controller.BookController.queryBookById(BookController.java:71) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2025-02-18T20:41:58.317+08:00  INFO 72320 --- [Library_Management_System] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-18T20:41:58.322+08:00  INFO 72320 --- [Library_Management_System] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-18T20:41:58.324+08:00  INFO 72320 --- [Library_Management_System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-18T20:41:58.328+08:00  INFO 72320 --- [Library_Management_System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-18T20:41:59.645+08:00  INFO 72482 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Starting LibraryManagementSystemApplication using Java 17.0.11 with PID 72482 (/Users/zhaoqianqian/IDEAUl/Project/Library_Management_System/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Library_Management_System)
+2025-02-18T20:41:59.646+08:00  INFO 72482 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2025-02-18T20:41:59.962+08:00  INFO 72482 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-18T20:41:59.966+08:00  INFO 72482 --- [Library_Management_System] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-18T20:41:59.966+08:00  INFO 72482 --- [Library_Management_System] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-18T20:41:59.981+08:00  INFO 72482 --- [Library_Management_System] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-18T20:41:59.981+08:00  INFO 72482 --- [Library_Management_System] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 318 ms
+2025-02-18T20:42:00.155+08:00  INFO 72482 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-18T20:42:00.159+08:00  INFO 72482 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Started LibraryManagementSystemApplication in 0.688 seconds (process running for 0.857)
+2025-02-18T20:42:03.629+08:00  INFO 72482 --- [Library_Management_System] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-18T20:42:03.629+08:00  INFO 72482 --- [Library_Management_System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-18T20:42:03.630+08:00  INFO 72482 --- [Library_Management_System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-18T20:42:03.654+08:00  INFO 72482 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-18T20:42:03.716+08:00  INFO 72482 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@a85e38e
+2025-02-18T20:42:03.716+08:00  INFO 72482 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-18T20:43:39.118+08:00  INFO 72482 --- [Library_Management_System] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-18T20:43:39.124+08:00  INFO 72482 --- [Library_Management_System] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-18T20:43:39.126+08:00  INFO 72482 --- [Library_Management_System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-18T20:43:39.128+08:00  INFO 72482 --- [Library_Management_System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-18T20:43:40.452+08:00  INFO 72600 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Starting LibraryManagementSystemApplication using Java 17.0.11 with PID 72600 (/Users/zhaoqianqian/IDEAUl/Project/Library_Management_System/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Library_Management_System)
+2025-02-18T20:43:40.453+08:00  INFO 72600 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2025-02-18T20:43:40.771+08:00  INFO 72600 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-18T20:43:40.776+08:00  INFO 72600 --- [Library_Management_System] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-18T20:43:40.776+08:00  INFO 72600 --- [Library_Management_System] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-18T20:43:40.790+08:00  INFO 72600 --- [Library_Management_System] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-18T20:43:40.790+08:00  INFO 72600 --- [Library_Management_System] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 316 ms
+2025-02-18T20:43:40.950+08:00  INFO 72600 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-18T20:43:40.954+08:00  INFO 72600 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Started LibraryManagementSystemApplication in 0.652 seconds (process running for 0.826)
+2025-02-18T20:43:44.450+08:00  INFO 72600 --- [Library_Management_System] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-18T20:43:44.451+08:00  INFO 72600 --- [Library_Management_System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-18T20:43:44.452+08:00  INFO 72600 --- [Library_Management_System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-18T20:43:44.475+08:00  INFO 72600 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-18T20:43:44.537+08:00  INFO 72600 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5faf699c
+2025-02-18T20:43:44.538+08:00  INFO 72600 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-18T20:46:36.167+08:00  INFO 72600 --- [Library_Management_System] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-18T20:46:36.173+08:00  INFO 72600 --- [Library_Management_System] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-18T20:46:36.175+08:00  INFO 72600 --- [Library_Management_System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-18T20:46:36.178+08:00  INFO 72600 --- [Library_Management_System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-18T20:46:37.613+08:00  INFO 72803 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Starting LibraryManagementSystemApplication using Java 17.0.11 with PID 72803 (/Users/zhaoqianqian/IDEAUl/Project/Library_Management_System/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Library_Management_System)
+2025-02-18T20:46:37.614+08:00  INFO 72803 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2025-02-18T20:46:37.934+08:00  INFO 72803 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-18T20:46:37.938+08:00  INFO 72803 --- [Library_Management_System] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-18T20:46:37.938+08:00  INFO 72803 --- [Library_Management_System] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-18T20:46:37.952+08:00  INFO 72803 --- [Library_Management_System] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-18T20:46:37.953+08:00  INFO 72803 --- [Library_Management_System] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 323 ms
+2025-02-18T20:46:38.124+08:00  INFO 72803 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-18T20:46:38.128+08:00  INFO 72803 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Started LibraryManagementSystemApplication in 0.692 seconds (process running for 0.864)
+2025-02-18T20:46:43.028+08:00  INFO 72803 --- [Library_Management_System] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-18T20:46:43.028+08:00  INFO 72803 --- [Library_Management_System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-18T20:46:43.029+08:00  INFO 72803 --- [Library_Management_System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-18T20:46:43.046+08:00  INFO 72803 --- [Library_Management_System] [http-nio-8080-exec-1] o.m.l.controller.BookController          : 接收到参数controller:null
+2025-02-18T20:46:43.047+08:00  INFO 72803 --- [Library_Management_System] [http-nio-8080-exec-1] o.m.l.service.BookService                : 接收到参数service:null
+2025-02-18T20:46:43.054+08:00  INFO 72803 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-18T20:46:43.114+08:00  INFO 72803 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4bd66be8
+2025-02-18T20:46:43.115+08:00  INFO 72803 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-18T20:47:46.695+08:00  INFO 72803 --- [Library_Management_System] [http-nio-8080-exec-3] o.m.l.controller.BookController          : 接收到参数controller:1
+2025-02-18T20:47:46.696+08:00  INFO 72803 --- [Library_Management_System] [http-nio-8080-exec-3] o.m.l.service.BookService                : 接收到参数service:1
+2025-02-18T20:47:53.674+08:00  INFO 72803 --- [Library_Management_System] [http-nio-8080-exec-4] o.m.l.controller.BookController          : 接收到参数controller:2
+2025-02-18T20:47:53.675+08:00  INFO 72803 --- [Library_Management_System] [http-nio-8080-exec-4] o.m.l.service.BookService                : 接收到参数service:2
+2025-02-18T20:48:21.228+08:00  INFO 72803 --- [Library_Management_System] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-18T20:48:21.233+08:00  INFO 72803 --- [Library_Management_System] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-18T20:48:21.235+08:00  INFO 72803 --- [Library_Management_System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-18T20:48:21.239+08:00  INFO 72803 --- [Library_Management_System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-18T20:48:22.682+08:00  INFO 72923 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Starting LibraryManagementSystemApplication using Java 17.0.11 with PID 72923 (/Users/zhaoqianqian/IDEAUl/Project/Library_Management_System/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Library_Management_System)
+2025-02-18T20:48:22.682+08:00  INFO 72923 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2025-02-18T20:48:22.990+08:00  INFO 72923 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-18T20:48:22.995+08:00  INFO 72923 --- [Library_Management_System] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-18T20:48:22.995+08:00  INFO 72923 --- [Library_Management_System] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-18T20:48:23.011+08:00  INFO 72923 --- [Library_Management_System] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-18T20:48:23.011+08:00  INFO 72923 --- [Library_Management_System] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 315 ms
+2025-02-18T20:48:23.190+08:00  INFO 72923 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-18T20:48:23.194+08:00  INFO 72923 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Started LibraryManagementSystemApplication in 0.691 seconds (process running for 0.866)
+2025-02-18T20:48:34.223+08:00  INFO 72923 --- [Library_Management_System] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-18T20:48:34.224+08:00  INFO 72923 --- [Library_Management_System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-18T20:48:34.225+08:00  INFO 72923 --- [Library_Management_System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-18T20:48:34.242+08:00  INFO 72923 --- [Library_Management_System] [http-nio-8080-exec-1] o.m.l.controller.BookController          : 接收到参数controller:null
+2025-02-18T20:48:34.243+08:00  INFO 72923 --- [Library_Management_System] [http-nio-8080-exec-1] o.m.l.service.BookService                : 接收到参数service:null
+2025-02-18T20:48:34.249+08:00  INFO 72923 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-18T20:48:34.310+08:00  INFO 72923 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@10b0e408
+2025-02-18T20:48:34.311+08:00  INFO 72923 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-18T20:48:49.954+08:00  INFO 72923 --- [Library_Management_System] [http-nio-8080-exec-2] o.m.l.controller.BookController          : 接收到参数controller:null
+2025-02-18T20:48:49.955+08:00  INFO 72923 --- [Library_Management_System] [http-nio-8080-exec-2] o.m.l.service.BookService                : 接收到参数service:null
+2025-02-18T20:48:51.077+08:00  INFO 72923 --- [Library_Management_System] [http-nio-8080-exec-3] o.m.l.controller.BookController          : 接收到参数controller:null
+2025-02-18T20:48:51.077+08:00  INFO 72923 --- [Library_Management_System] [http-nio-8080-exec-3] o.m.l.service.BookService                : 接收到参数service:null
+2025-02-18T20:49:34.860+08:00  INFO 72923 --- [Library_Management_System] [http-nio-8080-exec-4] o.m.l.controller.BookController          : 接收到参数controller:null
+2025-02-18T20:49:34.861+08:00  INFO 72923 --- [Library_Management_System] [http-nio-8080-exec-4] o.m.l.service.BookService                : 接收到参数service:null
+2025-02-18T20:50:15.583+08:00  INFO 72923 --- [Library_Management_System] [http-nio-8080-exec-5] o.m.l.controller.BookController          : 接收到参数controller:2
+2025-02-18T20:50:15.586+08:00  INFO 72923 --- [Library_Management_System] [http-nio-8080-exec-5] o.m.l.service.BookService                : 接收到参数service:2
+2025-02-18T20:53:02.515+08:00  INFO 72923 --- [Library_Management_System] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-18T20:53:02.520+08:00  INFO 72923 --- [Library_Management_System] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-18T20:53:02.522+08:00  INFO 72923 --- [Library_Management_System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-18T20:53:02.525+08:00  INFO 72923 --- [Library_Management_System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-18T20:53:03.927+08:00  INFO 73229 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Starting LibraryManagementSystemApplication using Java 17.0.11 with PID 73229 (/Users/zhaoqianqian/IDEAUl/Project/Library_Management_System/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Library_Management_System)
+2025-02-18T20:53:03.928+08:00  INFO 73229 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2025-02-18T20:53:04.243+08:00  INFO 73229 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-18T20:53:04.247+08:00  INFO 73229 --- [Library_Management_System] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-18T20:53:04.248+08:00  INFO 73229 --- [Library_Management_System] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-18T20:53:04.262+08:00  INFO 73229 --- [Library_Management_System] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-18T20:53:04.263+08:00  INFO 73229 --- [Library_Management_System] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 319 ms
+2025-02-18T20:53:04.438+08:00  INFO 73229 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-18T20:53:04.442+08:00  INFO 73229 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Started LibraryManagementSystemApplication in 0.693 seconds (process running for 0.869)
+2025-02-18T20:53:14.950+08:00  INFO 73229 --- [Library_Management_System] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-18T20:53:14.950+08:00  INFO 73229 --- [Library_Management_System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-18T20:53:14.951+08:00  INFO 73229 --- [Library_Management_System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-18T20:53:14.971+08:00  WARN 73229 --- [Library_Management_System] [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'bookId' for method parameter type Integer is not present]
+2025-02-18T20:54:26.844+08:00  INFO 73229 --- [Library_Management_System] [http-nio-8080-exec-2] o.m.l.controller.BookController          : 接收到参数controller:2
+2025-02-18T20:54:26.847+08:00  INFO 73229 --- [Library_Management_System] [http-nio-8080-exec-2] o.m.l.service.BookService                : 接收到参数service:2
+2025-02-18T20:54:26.862+08:00  INFO 73229 --- [Library_Management_System] [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-18T20:54:26.938+08:00  INFO 73229 --- [Library_Management_System] [http-nio-8080-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@46b9388c
+2025-02-18T20:54:26.939+08:00  INFO 73229 --- [Library_Management_System] [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-18T20:55:51.339+08:00  INFO 73229 --- [Library_Management_System] [http-nio-8080-exec-4] o.m.l.controller.BookController          : 获取图书列表，pageRequest：PageRequest(currentPage=1, pageSize=3, offset=0)
+2025-02-18T20:56:26.591+08:00  INFO 73229 --- [Library_Management_System] [http-nio-8080-exec-5] o.m.l.controller.BookController          : 添加图书：bookInfo:BookInfo(id=null, bookName=null, author=null, count=null, price=null, publish=null, status=null, statusCN=null, createTime=null, updateTime=null)
+2025-02-18T21:03:49.262+08:00  INFO 73229 --- [Library_Management_System] [http-nio-8080-exec-7] o.m.l.controller.BookController          : 更新图书，bookInfo:BookInfo(id=1, bookName=test, author=zhao, count=1, price=1000, publish=YCTU, status=null, statusCN=null, createTime=null, updateTime=null)
+2025-02-18T21:04:02.419+08:00  INFO 73229 --- [Library_Management_System] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-18T21:04:02.424+08:00  INFO 73229 --- [Library_Management_System] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-18T21:04:02.426+08:00  INFO 73229 --- [Library_Management_System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-18T21:04:02.429+08:00  INFO 73229 --- [Library_Management_System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-18T21:37:53.104+08:00  INFO 76389 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Starting LibraryManagementSystemApplication using Java 17.0.11 with PID 76389 (/Users/zhaoqianqian/IDEAUl/Project/Library_Management_System/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Library_Management_System)
+2025-02-18T21:37:53.105+08:00  INFO 76389 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2025-02-18T21:37:53.438+08:00  INFO 76389 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-18T21:37:53.444+08:00  INFO 76389 --- [Library_Management_System] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-18T21:37:53.444+08:00  INFO 76389 --- [Library_Management_System] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-18T21:37:53.459+08:00  INFO 76389 --- [Library_Management_System] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-18T21:37:53.459+08:00  INFO 76389 --- [Library_Management_System] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 340 ms
+2025-02-18T21:37:53.713+08:00  INFO 76389 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-18T21:37:53.718+08:00  INFO 76389 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Started LibraryManagementSystemApplication in 0.781 seconds (process running for 0.96)
+2025-02-18T21:38:56.248+08:00  INFO 76389 --- [Library_Management_System] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-18T21:38:56.248+08:00  INFO 76389 --- [Library_Management_System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-18T21:38:56.250+08:00  INFO 76389 --- [Library_Management_System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-18T21:38:56.275+08:00  INFO 76389 --- [Library_Management_System] [http-nio-8080-exec-1] o.m.l.controller.BookController          : 更新图书，bookInfo:BookInfo(id=1, bookName=java, author=null, count=null, price=null, publish=null, status=null, statusCN=null, createTime=null, updateTime=null)
+2025-02-18T21:38:56.299+08:00  INFO 76389 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-18T21:38:56.355+08:00  INFO 76389 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2aaebeb9
+2025-02-18T21:38:56.356+08:00  INFO 76389 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-18T21:40:04.862+08:00  INFO 76389 --- [Library_Management_System] [http-nio-8080-exec-3] o.m.l.controller.BookController          : 删除图书,bookId:6
+2025-02-18T21:40:29.323+08:00  INFO 76389 --- [Library_Management_System] [http-nio-8080-exec-4] o.m.l.controller.BookController          : 删除图书,bookId:6
+2025-02-18T21:42:16.055+08:00  INFO 76389 --- [Library_Management_System] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-18T21:42:16.060+08:00  INFO 76389 --- [Library_Management_System] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-18T21:42:16.062+08:00  INFO 76389 --- [Library_Management_System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-18T21:42:16.065+08:00  INFO 76389 --- [Library_Management_System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-18T21:42:17.463+08:00  INFO 76696 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Starting LibraryManagementSystemApplication using Java 17.0.11 with PID 76696 (/Users/zhaoqianqian/IDEAUl/Project/Library_Management_System/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Library_Management_System)
+2025-02-18T21:42:17.464+08:00  INFO 76696 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2025-02-18T21:42:17.793+08:00  INFO 76696 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-18T21:42:17.799+08:00  INFO 76696 --- [Library_Management_System] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-18T21:42:17.799+08:00  INFO 76696 --- [Library_Management_System] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-18T21:42:17.816+08:00  INFO 76696 --- [Library_Management_System] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-18T21:42:17.816+08:00  INFO 76696 --- [Library_Management_System] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 336 ms
+2025-02-18T21:42:18.015+08:00  INFO 76696 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-18T21:42:18.020+08:00  INFO 76696 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Started LibraryManagementSystemApplication in 0.737 seconds (process running for 0.916)
+2025-02-18T21:42:20.664+08:00  INFO 76696 --- [Library_Management_System] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-18T21:42:20.665+08:00  INFO 76696 --- [Library_Management_System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-18T21:42:20.666+08:00  INFO 76696 --- [Library_Management_System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-18T21:42:20.685+08:00  INFO 76696 --- [Library_Management_System] [http-nio-8080-exec-1] o.m.l.controller.BookController          : 删除图书,bookId:6
+2025-02-18T21:42:20.707+08:00  INFO 76696 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-18T21:42:20.761+08:00  INFO 76696 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@35810d10
+2025-02-18T21:42:20.761+08:00  INFO 76696 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-18T21:42:28.545+08:00  INFO 76696 --- [Library_Management_System] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-18T21:42:28.551+08:00  INFO 76696 --- [Library_Management_System] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-18T21:42:28.553+08:00  INFO 76696 --- [Library_Management_System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-18T21:42:28.556+08:00  INFO 76696 --- [Library_Management_System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-18T21:42:29.928+08:00  INFO 76718 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Starting LibraryManagementSystemApplication using Java 17.0.11 with PID 76718 (/Users/zhaoqianqian/IDEAUl/Project/Library_Management_System/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Library_Management_System)
+2025-02-18T21:42:29.929+08:00  INFO 76718 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2025-02-18T21:42:30.237+08:00  INFO 76718 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-18T21:42:30.241+08:00  INFO 76718 --- [Library_Management_System] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-18T21:42:30.241+08:00  INFO 76718 --- [Library_Management_System] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-18T21:42:30.254+08:00  INFO 76718 --- [Library_Management_System] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-18T21:42:30.254+08:00  INFO 76718 --- [Library_Management_System] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 304 ms
+2025-02-18T21:42:30.432+08:00  INFO 76718 --- [Library_Management_System] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-18T21:42:30.436+08:00  INFO 76718 --- [Library_Management_System] [main] o.m.l.LibraryManagementSystemApplication : Started LibraryManagementSystemApplication in 0.671 seconds (process running for 0.842)
+2025-02-18T21:43:31.927+08:00  INFO 76718 --- [Library_Management_System] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-18T21:43:31.928+08:00  INFO 76718 --- [Library_Management_System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-18T21:43:31.929+08:00  INFO 76718 --- [Library_Management_System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-18T21:43:31.947+08:00  INFO 76718 --- [Library_Management_System] [http-nio-8080-exec-1] o.m.l.controller.BookController          : 批量删除图书，ids:[1, 2]
+2025-02-18T21:43:31.966+08:00  INFO 76718 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-18T21:43:32.015+08:00  INFO 76718 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@434deedb
+2025-02-18T21:43:32.016+08:00  INFO 76718 --- [Library_Management_System] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-18T21:43:55.402+08:00  WARN 76718 --- [Library_Management_System] [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'ids' for method parameter type List is not present]
+2025-02-18T21:44:01.268+08:00  INFO 76718 --- [Library_Management_System] [http-nio-8080-exec-3] o.m.l.controller.BookController          : 批量删除图书，ids:[4, 5]
+2025-02-18T21:54:33.811+08:00  INFO 76718 --- [Library_Management_System] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-18T21:54:33.817+08:00  INFO 76718 --- [Library_Management_System] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-18T21:54:33.818+08:00  INFO 76718 --- [Library_Management_System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-18T21:54:33.822+08:00  INFO 76718 --- [Library_Management_System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

@@ -1,6 +1,7 @@
 package org.mon.library_management_system.service;
 
 
+import lombok.extern.slf4j.Slf4j;
 import org.mon.library_management_system.enums.BookStatusEnum;
 import org.mon.library_management_system.mapper.BookMapper;
 import org.mon.library_management_system.model.BookInfo;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Slf4j
 @Service
 public class BookService {
 
@@ -33,5 +35,19 @@ public class BookService {
         }
 //        返回响应对象
         return new PageResponse<BookInfo>(count,bookInfos,pageRequest);
+    }
+
+    public BookInfo queryBookById(Integer bookId) {
+        log.info("接收到参数service:{}",bookId);
+        return bookMapper.queryBookById(bookId);
+    }
+
+    public Integer updateBook(BookInfo bookInfo) {
+        return bookMapper.updateBook(bookInfo);
+    }
+
+
+    public void batchDelete(List<Integer> ids) {
+         bookMapper.batchDelete(ids);
     }
 }
