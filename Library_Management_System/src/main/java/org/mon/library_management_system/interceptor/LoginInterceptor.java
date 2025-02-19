@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 import org.mon.library_management_system.constant.Constants;
 import org.mon.library_management_system.model.Result;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
@@ -17,7 +18,12 @@ import org.springframework.web.servlet.ModelAndView;
 @Slf4j
 @Component
 public class LoginInterceptor implements HandlerInterceptor {
-    private ObjectMapper objectMapper=new ObjectMapper();
+
+//    用于JSON和Java对象的转换
+    @Autowired
+    private ObjectMapper objectMapper;
+
+
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 //        true --放行，false --拦截
@@ -34,6 +40,8 @@ public class LoginInterceptor implements HandlerInterceptor {
             response.setStatus(HttpStatus.UNAUTHORIZED.value());
 
             Result result=Result.unlogin();
+
+//            将JSON字节流写入HTTP响应体
             response.getOutputStream().write(objectMapper.writeValueAsString(result).getBytes());
             response.setContentType("application/json;charset=utf-8");
 //            重定向

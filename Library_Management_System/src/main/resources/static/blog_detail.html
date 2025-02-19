@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客详情页</title>
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/detail.css">
+
+</head>
+
+<body>
+    <div class="nav">
+        <img src="pic/logo2.jpg" alt="">
+        <span class="blog-title">我的博客系统</span>
+        <div class="space"></div>
+        <a class="nav-span" href="blog_list.html">主页</a>
+        <a class="nav-span" href="blog_edit.html">写博客</a>
+        <a class="nav-span" href="#" onclick="logout()">注销</a>
+    </div>
+
+    <div class="container">
+        <div class="left">
+            <div class="card">
+                <img src="pic/doge.jpg" alt="">
+                <h3>比特汤老师</h3>
+                <a href="#">GitHub 地址</a>
+                <div class="row">
+                    <span>文章</span>
+                    <span>分类</span>
+                </div>
+                <div class="row">
+                    <span>2</span>
+                    <span>1</span>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="content">
+                <div class="title">我的第一篇博客</div>
+                <div class="date">2021-06-02</div>
+                <div class="detail">
+                    <p>从今天开始, 好好学习~Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati cumque alias
+                        laborum numquam aliquam? Ipsam aliquam dolorem officiis! Magni pariatur officiis iusto? Et unde
+                        quo fuga, minus deserunt architecto eligendi.</p>
+                    <p>从今天开始, 好好学习~Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati cumque alias
+                        laborum numquam aliquam? Ipsam aliquam dolorem officiis! Magni pariatur officiis iusto? Et unde
+                        quo fuga, minus deserunt architecto eligendi.</p>
+                    <p>从今天开始, 好好学习~Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati cumque alias
+                        laborum numquam aliquam? Ipsam aliquam dolorem officiis! Magni pariatur officiis iusto? Et unde
+                        quo fuga, minus deserunt architecto eligendi.</p>
+                </div>
+                <div class="operating">
+                    <button onclick="window.location.href='blog_update.html'">编辑</button>
+                    <button onclick="deleteBlog()">删除</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 引入 editor.md 的依赖 -->
+    <link rel="stylesheet" href="blog-editormd/css/editormd.css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="blog-editormd/lib/marked.min.js"></script>
+    <script src="blog-editormd/lib/prettify.min.js"></script>
+    <script src="blog-editormd/editormd.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        
+        //显示博客作者信息
+        //var userUrl = "/user/getAuthorInfo" + location.search;
+        //getUserInfo(userUrl);
+
+        function deleteBlog() {
+            alert("删除博客");
+        }
+    </script>
+</body>
+
+</html>
