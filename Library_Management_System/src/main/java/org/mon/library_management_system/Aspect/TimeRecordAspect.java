@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Aspect
-@Component
+//@Component
 public class TimeRecordAspect {
     @Around("org.mon.library_management_system.Aspect.AspectDemo1.pt()")
     public Object timeRecord(ProceedingJoinPoint pjt) throws Throwable {

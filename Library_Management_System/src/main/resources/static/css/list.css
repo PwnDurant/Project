@@ -1,26 +1,80 @@
-.right>.blog>.title{
+.bookContainer{
+    width: 60%;
+    margin: 3em auto;
+}
+.bookContainer h2{
     text-align: center;
-    font-weight: 700;
-    margin: 10px;
+    font-weight: bold;
+    margin: 1em 0;
 }
 
-.right>.blog>.date{
+.btn-outline-info{
+    margin-left: 10px;
+    /* border-color:#dee2e6 ; */
+}
+.navbar-justify-between{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.bookContainer .navbar .form-inline
+{
+    margin-right: 20px;
+}
+.book-select{
+    zoom: 130%;
+}
+.pagination{
+    margin-top: 30px;
+}
+.page-link {
+    color: #17a2b8;
+    /* border-color: #17a2b8; */
+}
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color:  #17a2b8;
+    border-color: #17a2b8;
+}
+table{
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+table caption{
+    font-size: 2em;
+    font-weight: bold;
+    margin: 1em 0;
+}
+
+th,td{
+    border: 1px solid #999;
     text-align: center;
-    color: green;
-    margin: 10px;
+    padding: 20px 0;
 }
-.right>.blog>.desc{
-    text-indent: 2em;
+ 
+table thead tr{
+    background-color: #17a2b8;
+    color: #fff;
 }
-.right>.blog>.detail{
-    display: block;
+
+table tbody tr:nth-child(odd){
+    background-color: #eee;
+}
+table .op{
+    margin: 0 auto;
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+}
+td .width100{
     width: 100px;
-    height: 30px;
-    text-align: center;
-    border: 1px solid black;
-    margin: 10px auto 30px;
-    line-height: 30px;
-    text-decoration: none;
-    color: black;
-    /* margin-bottom: 20px; */
 }
+.width200{
+    width: 200px;
+}
+
+
+

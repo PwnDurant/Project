@@ -16,22 +16,22 @@
         update book_info
         <set>
             <if test="bookName!=null">
-                book_name=#{bookName}
+                book_name=#{bookName},
             </if>
             <if test="author!=null">
-                author=#{author}
+                author=#{author},
             </if>
             <if test="count!=null">
-                count=#{count}
+                count=#{count},
             </if>
             <if test="price!=null">
-                price=#{price}
+                price=#{price},
             </if>
             <if test="publish!=null">
-                publish=#{publish}
+                publish=#{publish},
             </if>
             <if test="status!=null">
-                status=#{status}
+                status=#{status},
             </if>
         </set>
         where id=#{id}

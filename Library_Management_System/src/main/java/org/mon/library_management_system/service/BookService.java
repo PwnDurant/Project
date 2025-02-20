@@ -25,6 +25,7 @@ public class BookService {
 
 
     public PageResponse<BookInfo> getListByPage(PageRequest pageRequest) {
+        System.out.println("service:"+pageRequest);
 //        1,总记录数
         Integer count=bookMapper.count();
 //        2,当前页的记录
@@ -43,6 +44,7 @@ public class BookService {
     }
 
     public Integer updateBook(BookInfo bookInfo) {
+        System.out.println("传入参数"+bookInfo.toString());
         return bookMapper.updateBook(bookInfo);
     }
 

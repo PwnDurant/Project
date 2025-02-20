@@ -60,6 +60,7 @@ public class BookController {
         PageResponse<BookInfo> bookInfoPageResponse=new PageResponse<>();
         try{
 //            尝试通过在请求中获取偏移量从而返回对应的书本信息
+            System.out.println("controller:"+pageRequest);
             bookInfoPageResponse=bookService.getListByPage(pageRequest);
         }catch (Exception e){
             log.error("获取图书列表失败");
@@ -70,6 +71,7 @@ public class BookController {
 
 //    通过id定位到某一本书
     @RequestMapping(value = "/queryBookById",produces = "application/json")
+//    从url中获取参数
     public BookInfo queryBookById(@RequestParam Integer bookId){
         //long start=System.currentTimeMillis();
         log.info("接收到参数controller:{}",bookId);

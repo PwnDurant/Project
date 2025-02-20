@@ -18,4 +18,5 @@ public class BookInfo {
     private String statusCN;
     private Date createTime;
     private Date updateTime;
+
 }

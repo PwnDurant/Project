@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Aspect
-@Component
+//@Component
 @Order(1)     //数字越大的优先级越高
 public class AspectDemo4 {
 

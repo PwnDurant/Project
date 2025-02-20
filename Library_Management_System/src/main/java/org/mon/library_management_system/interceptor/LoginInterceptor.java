@@ -37,7 +37,15 @@ public class LoginInterceptor implements HandlerInterceptor {
         !StringUtils.hasLength((String)session.getAttribute(Constants.SESSION_USER_KEY))){
 //            用户未登入
             log.error("用户未登入，进行拦截");
+
+//            返回401状态码
             response.setStatus(HttpStatus.UNAUTHORIZED.value());
+
+//            这里前端的success的内容就是我们返回的JSON对象
+//            而error的内容是status，statusText，responseText,readyState,getAllResponseHeaders(),getResponseHeader(name)
+//            1,HTTP状态码（401，404，500...);2,HTTP状态文本（如"Unauthorized","Not Found","Internal Server Error");
+//            3,responseText:服务器返回的响应体(可能是JSON或文本);4,请求的状态(0-4,通常4代表完成)
+//            5,获取所有的响应头；6，获取指定响应头
 
             Result result=Result.unlogin();
 
@@ -49,6 +57,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             return false;
         }
         log.info("用户校验通过..");
+//        return true;
         return HandlerInterceptor.super.preHandle(request, response, handler);
     }
 
