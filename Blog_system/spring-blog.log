@@ -1,0 +1,1217 @@
+2025-02-20T20:17:19.844+08:00  INFO 3012 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 3012 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-20T20:17:19.846+08:00  INFO 3012 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-20T20:17:20.245+08:00  INFO 3012 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-20T20:17:20.250+08:00  INFO 3012 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-20T20:17:20.250+08:00  INFO 3012 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-20T20:17:20.266+08:00  INFO 3012 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-20T20:17:20.266+08:00  INFO 3012 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 397 ms
+2025-02-20T20:17:20.502+08:00  INFO 3012 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-20T20:17:20.507+08:00  INFO 3012 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.913 seconds (process running for 1.196)
+2025-02-20T20:20:05.906+08:00  INFO 3012 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-20T20:20:05.907+08:00  INFO 3012 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-20T20:20:05.907+08:00  INFO 3012 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-02-20T20:20:05.922+08:00  INFO 3012 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.controller.BlogController          : 获取图书列表......
+2025-02-20T20:20:05.943+08:00 ERROR 3012 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.common.advice.ExceptionAdvice      : 发生异常,e:{}
+
+org.mybatis.spring.MyBatisSystemException: null
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:97) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	at jdk.proxy2/jdk.proxy2.$Proxy66.selectList(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:164) ~[mybatis-plus-core-3.5.7.jar:3.5.7]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77) ~[mybatis-plus-core-3.5.7.jar:3.5.7]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:152) ~[mybatis-plus-core-3.5.7.jar:3.5.7]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89) ~[mybatis-plus-core-3.5.7.jar:3.5.7]
+	at jdk.proxy2/jdk.proxy2.$Proxy68.selectList(Unknown Source) ~[na:na]
+	at org.mon.blog_system.service.impl.BlogServiceImpl.getList(BlogServiceImpl.java:33) ~[classes/:na]
+	at org.mon.blog_system.controller.BlogController.getList(BlogController.java:32) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'ew' in 'class com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper'
+	at org.apache.ibatis.reflection.Reflector.getGetInvoker(Reflector.java:385) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.reflection.MetaClass.getGetInvoker(MetaClass.java:160) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.getBeanProperty(BeanWrapper.java:156) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.get(BeanWrapper.java:50) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:115) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextMap.get(DynamicContext.java:102) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextAccessor.getProperty(DynamicContext.java:112) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.OgnlRuntime.getProperty(OgnlRuntime.java:2341) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.ASTProperty.getValueBody(ASTProperty.java:95) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:171) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:206) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.ASTNotEq.getValueBody(ASTNotEq.java:34) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:171) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:206) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.ASTAnd.getValueBody(ASTAnd.java:45) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:171) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:206) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:408) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:383) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.OgnlCache.getValue(OgnlCache.java:47) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.ExpressionEvaluator.evaluateBoolean(ExpressionEvaluator.java:32) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.IfSqlNode.apply(IfSqlNode.java:34) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.lambda$apply$0(MixedSqlNode.java:32) ~[mybatis-3.5.16.jar:3.5.16]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:32) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.DynamicSqlSource.getBoundSql(DynamicSqlSource.java:39) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.mapping.MappedStatement.getBoundSql(MappedStatement.java:320) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:88) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142) ~[mybatis-3.5.16.jar:3.5.16]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	... 59 common frames omitted
+
+2025-02-20T20:24:01.072+08:00  INFO 3012 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-20T20:24:01.075+08:00  INFO 3012 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-20T20:24:02.949+08:00  INFO 3134 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 3134 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-20T20:24:02.950+08:00  INFO 3134 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-20T20:24:03.256+08:00  INFO 3134 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-20T20:24:03.261+08:00  INFO 3134 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-20T20:24:03.261+08:00  INFO 3134 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-20T20:24:03.276+08:00  INFO 3134 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-20T20:24:03.276+08:00  INFO 3134 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 313 ms
+2025-02-20T20:24:03.489+08:00  INFO 3134 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-20T20:24:03.493+08:00  INFO 3134 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.7 seconds (process running for 0.878)
+2025-02-20T20:24:09.534+08:00  INFO 3134 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-20T20:24:09.534+08:00  INFO 3134 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-20T20:24:09.535+08:00  INFO 3134 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-20T20:24:09.548+08:00  INFO 3134 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.controller.BlogController          : 获取图书列表......
+2025-02-20T20:24:09.551+08:00  INFO 3134 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.service.impl.BlogServiceImpl       : 查询语句com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper@14d4adba
+2025-02-20T20:24:09.571+08:00 ERROR 3134 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.common.advice.ExceptionAdvice      : 发生异常,e:{}
+
+org.mybatis.spring.MyBatisSystemException: null
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:97) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	at jdk.proxy2/jdk.proxy2.$Proxy66.selectList(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:164) ~[mybatis-plus-core-3.5.7.jar:3.5.7]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77) ~[mybatis-plus-core-3.5.7.jar:3.5.7]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:152) ~[mybatis-plus-core-3.5.7.jar:3.5.7]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89) ~[mybatis-plus-core-3.5.7.jar:3.5.7]
+	at jdk.proxy2/jdk.proxy2.$Proxy68.selectList(Unknown Source) ~[na:na]
+	at org.mon.blog_system.service.impl.BlogServiceImpl.getList(BlogServiceImpl.java:36) ~[classes/:na]
+	at org.mon.blog_system.controller.BlogController.getList(BlogController.java:32) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'ew' in 'class com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper'
+	at org.apache.ibatis.reflection.Reflector.getGetInvoker(Reflector.java:385) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.reflection.MetaClass.getGetInvoker(MetaClass.java:160) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.getBeanProperty(BeanWrapper.java:156) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.get(BeanWrapper.java:50) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:115) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextMap.get(DynamicContext.java:102) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextAccessor.getProperty(DynamicContext.java:112) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.OgnlRuntime.getProperty(OgnlRuntime.java:2341) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.ASTProperty.getValueBody(ASTProperty.java:95) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:171) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:206) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.ASTNotEq.getValueBody(ASTNotEq.java:34) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:171) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:206) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.ASTAnd.getValueBody(ASTAnd.java:45) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:171) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:206) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:408) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:383) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.OgnlCache.getValue(OgnlCache.java:47) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.ExpressionEvaluator.evaluateBoolean(ExpressionEvaluator.java:32) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.IfSqlNode.apply(IfSqlNode.java:34) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.lambda$apply$0(MixedSqlNode.java:32) ~[mybatis-3.5.16.jar:3.5.16]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:32) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.DynamicSqlSource.getBoundSql(DynamicSqlSource.java:39) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.mapping.MappedStatement.getBoundSql(MappedStatement.java:320) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:88) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142) ~[mybatis-3.5.16.jar:3.5.16]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	... 59 common frames omitted
+
+2025-02-20T20:25:11.859+08:00  INFO 3134 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-20T20:25:11.860+08:00  INFO 3134 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-20T20:25:51.521+08:00  INFO 3202 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 3202 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-20T20:25:51.522+08:00  INFO 3202 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-20T20:25:51.831+08:00  INFO 3202 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-20T20:25:51.836+08:00  INFO 3202 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-20T20:25:51.836+08:00  INFO 3202 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-20T20:25:51.850+08:00  INFO 3202 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-20T20:25:51.851+08:00  INFO 3202 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 315 ms
+2025-02-20T20:25:52.074+08:00  INFO 3202 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-20T20:25:52.079+08:00  INFO 3202 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.717 seconds (process running for 0.881)
+2025-02-20T20:26:11.751+08:00  INFO 3202 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-20T20:26:11.752+08:00  INFO 3202 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-20T20:26:11.752+08:00  INFO 3202 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-02-20T20:26:11.767+08:00  INFO 3202 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.controller.BlogController          : 获取图书列表......
+2025-02-20T20:26:11.770+08:00  INFO 3202 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.service.impl.BlogServiceImpl       : 查询语句com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper@bff5455
+2025-02-20T20:26:11.790+08:00 ERROR 3202 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.common.advice.ExceptionAdvice      : 发生异常,e:{}
+
+org.mybatis.spring.MyBatisSystemException: null
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:97) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	at jdk.proxy2/jdk.proxy2.$Proxy66.selectList(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:164) ~[mybatis-plus-core-3.5.7.jar:3.5.7]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77) ~[mybatis-plus-core-3.5.7.jar:3.5.7]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:152) ~[mybatis-plus-core-3.5.7.jar:3.5.7]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89) ~[mybatis-plus-core-3.5.7.jar:3.5.7]
+	at jdk.proxy2/jdk.proxy2.$Proxy68.selectList(Unknown Source) ~[na:na]
+	at org.mon.blog_system.service.impl.BlogServiceImpl.getList(BlogServiceImpl.java:36) ~[classes/:na]
+	at org.mon.blog_system.controller.BlogController.getList(BlogController.java:32) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'ew' in 'class com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper'
+	at org.apache.ibatis.reflection.Reflector.getGetInvoker(Reflector.java:385) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.reflection.MetaClass.getGetInvoker(MetaClass.java:160) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.getBeanProperty(BeanWrapper.java:156) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.get(BeanWrapper.java:50) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:115) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextMap.get(DynamicContext.java:102) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextAccessor.getProperty(DynamicContext.java:112) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.OgnlRuntime.getProperty(OgnlRuntime.java:2341) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.ASTProperty.getValueBody(ASTProperty.java:95) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:171) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:206) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.ASTNotEq.getValueBody(ASTNotEq.java:34) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:171) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:206) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.ASTAnd.getValueBody(ASTAnd.java:45) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:171) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:206) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:408) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:383) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.OgnlCache.getValue(OgnlCache.java:47) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.ExpressionEvaluator.evaluateBoolean(ExpressionEvaluator.java:32) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.IfSqlNode.apply(IfSqlNode.java:34) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.lambda$apply$0(MixedSqlNode.java:32) ~[mybatis-3.5.16.jar:3.5.16]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:32) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.DynamicSqlSource.getBoundSql(DynamicSqlSource.java:39) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.mapping.MappedStatement.getBoundSql(MappedStatement.java:320) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:88) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142) ~[mybatis-3.5.16.jar:3.5.16]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	... 59 common frames omitted
+
+2025-02-20T20:26:47.798+08:00  INFO 3202 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-20T20:26:47.800+08:00  INFO 3202 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-20T20:26:49.163+08:00  INFO 3220 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 3220 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-20T20:26:49.164+08:00  INFO 3220 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-20T20:26:49.479+08:00  INFO 3220 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-20T20:26:49.483+08:00  INFO 3220 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-20T20:26:49.483+08:00  INFO 3220 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-20T20:26:49.498+08:00  INFO 3220 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-20T20:26:49.498+08:00  INFO 3220 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 320 ms
+2025-02-20T20:26:49.712+08:00  INFO 3220 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-20T20:26:49.717+08:00  INFO 3220 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.71 seconds (process running for 0.887)
+2025-02-20T20:26:52.760+08:00  INFO 3220 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-20T20:26:52.760+08:00  INFO 3220 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-20T20:26:52.760+08:00  INFO 3220 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-02-20T20:26:52.771+08:00  INFO 3220 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.controller.BlogController          : 获取图书列表......
+2025-02-20T20:26:52.773+08:00  INFO 3220 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.service.impl.BlogServiceImpl       : 查询语句com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper@50d9667
+2025-02-20T20:26:52.789+08:00 ERROR 3220 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.common.advice.ExceptionAdvice      : 发生异常,e:{}
+
+org.mybatis.spring.MyBatisSystemException: null
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:97) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	at jdk.proxy2/jdk.proxy2.$Proxy66.selectList(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:164) ~[mybatis-plus-core-3.5.7.jar:3.5.7]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77) ~[mybatis-plus-core-3.5.7.jar:3.5.7]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:152) ~[mybatis-plus-core-3.5.7.jar:3.5.7]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89) ~[mybatis-plus-core-3.5.7.jar:3.5.7]
+	at jdk.proxy2/jdk.proxy2.$Proxy68.selectList(Unknown Source) ~[na:na]
+	at org.mon.blog_system.service.impl.BlogServiceImpl.getList(BlogServiceImpl.java:36) ~[classes/:na]
+	at org.mon.blog_system.controller.BlogController.getList(BlogController.java:32) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'ew' in 'class com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper'
+	at org.apache.ibatis.reflection.Reflector.getGetInvoker(Reflector.java:385) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.reflection.MetaClass.getGetInvoker(MetaClass.java:160) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.getBeanProperty(BeanWrapper.java:156) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.get(BeanWrapper.java:50) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:115) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextMap.get(DynamicContext.java:102) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextAccessor.getProperty(DynamicContext.java:112) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.OgnlRuntime.getProperty(OgnlRuntime.java:2341) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.ASTProperty.getValueBody(ASTProperty.java:95) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:171) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:206) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.ASTNotEq.getValueBody(ASTNotEq.java:34) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:171) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:206) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.ASTAnd.getValueBody(ASTAnd.java:45) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:171) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:206) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:408) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:383) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.OgnlCache.getValue(OgnlCache.java:47) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.ExpressionEvaluator.evaluateBoolean(ExpressionEvaluator.java:32) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.IfSqlNode.apply(IfSqlNode.java:34) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.lambda$apply$0(MixedSqlNode.java:32) ~[mybatis-3.5.16.jar:3.5.16]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:32) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.DynamicSqlSource.getBoundSql(DynamicSqlSource.java:39) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.mapping.MappedStatement.getBoundSql(MappedStatement.java:320) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:88) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142) ~[mybatis-3.5.16.jar:3.5.16]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	... 59 common frames omitted
+
+2025-02-20T20:29:14.846+08:00  INFO 3220 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-20T20:29:14.848+08:00  INFO 3220 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-20T20:29:16.237+08:00  INFO 3246 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 3246 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-20T20:29:16.238+08:00  INFO 3246 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-20T20:29:16.536+08:00  INFO 3246 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-20T20:29:16.540+08:00  INFO 3246 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-20T20:29:16.540+08:00  INFO 3246 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-20T20:29:16.553+08:00  INFO 3246 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-20T20:29:16.553+08:00  INFO 3246 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 302 ms
+2025-02-20T20:29:16.759+08:00  INFO 3246 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-20T20:29:16.764+08:00  INFO 3246 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.686 seconds (process running for 0.848)
+2025-02-20T20:29:19.081+08:00  INFO 3246 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-20T20:29:19.082+08:00  INFO 3246 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-20T20:29:19.083+08:00  INFO 3246 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-20T20:29:19.093+08:00  INFO 3246 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.controller.BlogController          : 获取图书列表......
+2025-02-20T20:29:19.112+08:00 ERROR 3246 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.common.advice.ExceptionAdvice      : 发生异常,e:{}
+
+org.mybatis.spring.MyBatisSystemException: null
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:97) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	at jdk.proxy2/jdk.proxy2.$Proxy66.selectList(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:164) ~[mybatis-plus-core-3.5.7.jar:3.5.7]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77) ~[mybatis-plus-core-3.5.7.jar:3.5.7]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:152) ~[mybatis-plus-core-3.5.7.jar:3.5.7]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89) ~[mybatis-plus-core-3.5.7.jar:3.5.7]
+	at jdk.proxy2/jdk.proxy2.$Proxy68.selectList(Unknown Source) ~[na:na]
+	at org.mon.blog_system.service.impl.BlogServiceImpl.getList(BlogServiceImpl.java:36) ~[classes/:na]
+	at org.mon.blog_system.controller.BlogController.getList(BlogController.java:32) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'ew' in 'class com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper'
+	at org.apache.ibatis.reflection.Reflector.getGetInvoker(Reflector.java:385) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.reflection.MetaClass.getGetInvoker(MetaClass.java:160) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.getBeanProperty(BeanWrapper.java:156) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.get(BeanWrapper.java:50) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:115) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextMap.get(DynamicContext.java:102) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextAccessor.getProperty(DynamicContext.java:112) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.OgnlRuntime.getProperty(OgnlRuntime.java:2341) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.ASTProperty.getValueBody(ASTProperty.java:95) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:171) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:206) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.ASTNotEq.getValueBody(ASTNotEq.java:34) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:171) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:206) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.ASTAnd.getValueBody(ASTAnd.java:45) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:171) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:206) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:408) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:383) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.OgnlCache.getValue(OgnlCache.java:47) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.ExpressionEvaluator.evaluateBoolean(ExpressionEvaluator.java:32) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.IfSqlNode.apply(IfSqlNode.java:34) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.lambda$apply$0(MixedSqlNode.java:32) ~[mybatis-3.5.16.jar:3.5.16]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:32) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.scripting.xmltags.DynamicSqlSource.getBoundSql(DynamicSqlSource.java:39) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.mapping.MappedStatement.getBoundSql(MappedStatement.java:320) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:88) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142) ~[mybatis-3.5.16.jar:3.5.16]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	... 59 common frames omitted
+
+2025-02-20T20:37:55.955+08:00  INFO 3246 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-20T20:37:55.957+08:00  INFO 3246 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-20T20:37:57.278+08:00  INFO 3333 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 3333 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-20T20:37:57.279+08:00  INFO 3333 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-20T20:37:57.588+08:00  INFO 3333 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-20T20:37:57.592+08:00  INFO 3333 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-20T20:37:57.592+08:00  INFO 3333 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-20T20:37:57.606+08:00  INFO 3333 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-20T20:37:57.607+08:00  INFO 3333 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 313 ms
+2025-02-20T20:37:57.637+08:00  WARN 3333 --- [Blog_system] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'blogController': Injection of resource dependencies failed
+2025-02-20T20:37:57.638+08:00  INFO 3333 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-02-20T20:37:57.645+08:00  INFO 3333 --- [Blog_system] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-02-20T20:37:57.651+08:00 ERROR 3333 --- [Blog_system] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field blogInfoMapper in org.mon.blog_system.service.impl.BlogServiceImpl required a bean of type 'org.mon.blog_system.mapper.BlogInfoMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.mon.blog_system.mapper.BlogInfoMapper' in your configuration.
+
+2025-02-20T20:42:57.843+08:00  INFO 3401 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 3401 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-20T20:42:57.844+08:00  INFO 3401 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-20T20:42:58.143+08:00  INFO 3401 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-20T20:42:58.147+08:00  INFO 3401 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-20T20:42:58.147+08:00  INFO 3401 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-20T20:42:58.160+08:00  INFO 3401 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-20T20:42:58.160+08:00  INFO 3401 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 303 ms
+2025-02-20T20:42:58.370+08:00  INFO 3401 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-20T20:42:58.374+08:00  INFO 3401 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.681 seconds (process running for 0.841)
+2025-02-20T20:43:01.011+08:00  INFO 3401 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-20T20:43:01.012+08:00  INFO 3401 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-20T20:43:01.012+08:00  INFO 3401 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-02-20T20:43:01.026+08:00  INFO 3401 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.controller.BlogController          : 获取图书列表......
+2025-02-20T20:43:01.056+08:00  INFO 3401 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-20T20:43:01.114+08:00  INFO 3401 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@65084a2a
+2025-02-20T20:43:01.115+08:00  INFO 3401 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-20T20:43:01.137+08:00  INFO 3401 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.service.impl.BlogServiceImpl       : 查询结果:[BlogInfo(id=2, title=第二篇博客, content=222我是博客正文我是博客正文我是博客正文, userId=2, deleteFlag=0, createTime=2025-02-20, updateTime=2025-02-20), BlogInfo(id=1, title=第一篇博客, content=111我是博客正文我是博客正文我是博客正文, userId=1, deleteFlag=0, createTime=2025-02-20, updateTime=2025-02-20)]
+2025-02-20T20:44:45.665+08:00  INFO 3401 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-20T20:44:45.667+08:00  INFO 3401 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-20T20:44:45.669+08:00  INFO 3401 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-20T20:44:45.672+08:00  INFO 3401 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-20T20:44:47.092+08:00  INFO 3428 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 3428 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-20T20:44:47.093+08:00  INFO 3428 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-20T20:44:47.400+08:00  INFO 3428 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-20T20:44:47.404+08:00  INFO 3428 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-20T20:44:47.404+08:00  INFO 3428 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-20T20:44:47.417+08:00  INFO 3428 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-20T20:44:47.417+08:00  INFO 3428 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 310 ms
+2025-02-20T20:44:47.630+08:00  INFO 3428 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-20T20:44:47.634+08:00  INFO 3428 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.701 seconds (process running for 0.876)
+2025-02-20T20:45:02.739+08:00  INFO 3428 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-20T20:45:02.739+08:00  INFO 3428 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-20T20:45:02.740+08:00  INFO 3428 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-02-20T20:45:02.754+08:00  INFO 3428 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.controller.BlogController          : 获取图书列表......
+2025-02-20T20:45:02.783+08:00  INFO 3428 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-20T20:45:02.836+08:00  INFO 3428 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@45ab5288
+2025-02-20T20:45:02.836+08:00  INFO 3428 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-20T20:45:02.858+08:00  INFO 3428 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.service.impl.BlogServiceImpl       : 查询结果:[BlogInfo(id=2, title=第二篇博客, content=222我是博客正文我是博客正文我是博客正文, userId=2, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=2025-02-20T20:16:51), BlogInfo(id=1, title=第一篇博客, content=111我是博客正文我是博客正文我是博客正文, userId=1, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=2025-02-20T20:16:51)]
+2025-02-20T20:56:37.347+08:00  INFO 3428 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-20T20:56:37.350+08:00  INFO 3428 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-20T20:56:37.352+08:00  INFO 3428 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-20T20:56:37.356+08:00  INFO 3428 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-20T20:56:38.793+08:00  INFO 3625 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 3625 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-20T20:56:38.794+08:00  INFO 3625 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-20T20:56:39.109+08:00  INFO 3625 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-20T20:56:39.114+08:00  INFO 3625 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-20T20:56:39.114+08:00  INFO 3625 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-20T20:56:39.127+08:00  INFO 3625 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-20T20:56:39.128+08:00  INFO 3625 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 319 ms
+2025-02-20T20:56:39.340+08:00  INFO 3625 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-20T20:56:39.344+08:00  INFO 3625 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.709 seconds (process running for 0.881)
+2025-02-20T20:56:43.172+08:00  INFO 3625 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-20T20:56:43.172+08:00  INFO 3625 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-20T20:56:43.172+08:00  INFO 3625 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-02-20T20:56:43.185+08:00  INFO 3625 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.controller.BlogController          : 获取图书列表......
+2025-02-20T20:56:43.215+08:00  INFO 3625 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-20T20:56:43.271+08:00  INFO 3625 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1edc9027
+2025-02-20T20:56:43.271+08:00  INFO 3625 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-20T20:56:43.293+08:00  INFO 3625 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.service.impl.BlogServiceImpl       : 查询结果:[FAILED toString()]
+2025-02-20T20:57:20.712+08:00  INFO 3625 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-20T20:57:20.714+08:00  INFO 3625 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-20T20:57:20.716+08:00  INFO 3625 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-20T20:57:20.719+08:00  INFO 3625 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-20T20:57:22.128+08:00  INFO 3644 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 3644 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-20T20:57:22.129+08:00  INFO 3644 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-20T20:57:22.423+08:00  INFO 3644 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-20T20:57:22.427+08:00  INFO 3644 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-20T20:57:22.427+08:00  INFO 3644 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-20T20:57:22.440+08:00  INFO 3644 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-20T20:57:22.440+08:00  INFO 3644 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 298 ms
+2025-02-20T20:57:22.642+08:00  INFO 3644 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-20T20:57:22.646+08:00  INFO 3644 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.676 seconds (process running for 0.846)
+2025-02-20T20:57:25.729+08:00  INFO 3644 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-20T20:57:25.729+08:00  INFO 3644 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-20T20:57:25.729+08:00  INFO 3644 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-02-20T20:57:25.741+08:00  INFO 3644 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.controller.BlogController          : 获取图书列表......
+2025-02-20T20:57:25.768+08:00  INFO 3644 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-20T20:57:25.823+08:00  INFO 3644 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@697f6b24
+2025-02-20T20:57:25.824+08:00  INFO 3644 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-20T20:57:25.846+08:00  INFO 3644 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.service.impl.BlogServiceImpl       : 查询结果:[FAILED toString()]
+2025-02-20T20:58:27.007+08:00  INFO 3644 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-20T20:58:27.009+08:00  INFO 3644 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-20T20:58:27.011+08:00  INFO 3644 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-20T20:58:27.014+08:00  INFO 3644 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-20T20:58:28.417+08:00  INFO 3675 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 3675 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-20T20:58:28.418+08:00  INFO 3675 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-20T20:58:28.730+08:00  INFO 3675 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-20T20:58:28.735+08:00  INFO 3675 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-20T20:58:28.735+08:00  INFO 3675 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-20T20:58:28.751+08:00  INFO 3675 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-20T20:58:28.751+08:00  INFO 3675 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 320 ms
+2025-02-20T20:58:28.973+08:00  INFO 3675 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-20T20:58:28.977+08:00  INFO 3675 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.721 seconds (process running for 0.889)
+2025-02-20T20:58:32.180+08:00  INFO 3675 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-20T20:58:32.180+08:00  INFO 3675 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-20T20:58:32.181+08:00  INFO 3675 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-02-20T20:58:32.193+08:00  INFO 3675 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.controller.BlogController          : 获取图书列表......
+2025-02-20T20:58:32.220+08:00  INFO 3675 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-20T20:58:32.268+08:00  INFO 3675 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5fab8d43
+2025-02-20T20:58:32.269+08:00  INFO 3675 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-20T20:58:32.290+08:00  INFO 3675 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.service.impl.BlogServiceImpl       : 查询结果:[BlogInfo(id=2, title=第二篇博客, content=222我是博客正文我是博客正文我是博客正文, userId=2, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=2025-02-20T20:16:51), BlogInfo(id=1, title=第一篇博客, content=111我是博客正文我是博客正文我是博客正文, userId=1, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=2025-02-20T20:16:51)]
+2025-02-20T20:58:32.307+08:00 ERROR 3675 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.common.advice.ExceptionAdvice      : 发生异常,e:{}
+
+org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Cannot format given Object as a Date
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:495) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:126) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:345) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.handleReturnValue(RequestResponseBodyMethodProcessor.java:208) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:78) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:136) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: com.fasterxml.jackson.databind.JsonMappingException: Cannot format given Object as a Date (through reference chain: org.mon.blog_system.common.pojo.Result["data"]->java.util.ArrayList[0]->org.mon.blog_system.common.pojo.response.BlogInfoResponse["updateTime"])
+	at com.fasterxml.jackson.databind.JsonMappingException.wrapWithPath(JsonMappingException.java:401) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.JsonMappingException.wrapWithPath(JsonMappingException.java:360) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.ser.std.StdSerializer.wrapAndThrow(StdSerializer.java:323) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.ser.std.BeanSerializerBase.serializeFields(BeanSerializerBase.java:778) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.ser.BeanSerializer.serialize(BeanSerializer.java:184) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serializeContents(IndexedListSerializer.java:119) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serialize(IndexedListSerializer.java:79) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serialize(IndexedListSerializer.java:18) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.ser.BeanPropertyWriter.serializeAsField(BeanPropertyWriter.java:732) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.ser.std.BeanSerializerBase.serializeFields(BeanSerializerBase.java:770) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.ser.BeanSerializer.serialize(BeanSerializer.java:184) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider._serialize(DefaultSerializerProvider.java:502) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider.serializeValue(DefaultSerializerProvider.java:341) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.ObjectWriter$Prefetch.serialize(ObjectWriter.java:1583) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:1061) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:486) ~[spring-web-6.2.2.jar:6.2.2]
+	... 48 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Cannot format given Object as a Date
+	at java.base/java.text.DateFormat.format(DateFormat.java:342) ~[na:na]
+	at java.base/java.text.Format.format(Format.java:159) ~[na:na]
+	at org.mon.blog_system.common.pojo.response.BlogInfoResponse.getUpdateTime(BlogInfoResponse.java:22) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at com.fasterxml.jackson.databind.ser.BeanPropertyWriter.serializeAsField(BeanPropertyWriter.java:688) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.ser.std.BeanSerializerBase.serializeFields(BeanSerializerBase.java:770) ~[jackson-databind-2.18.2.jar:2.18.2]
+	... 60 common frames omitted
+
+2025-02-20T20:59:48.155+08:00  INFO 3675 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-20T20:59:48.157+08:00  INFO 3675 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-20T20:59:48.159+08:00  INFO 3675 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-20T20:59:48.162+08:00  INFO 3675 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-20T20:59:49.556+08:00  INFO 3704 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 3704 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-20T20:59:49.557+08:00  INFO 3704 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-20T20:59:49.846+08:00  INFO 3704 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-20T20:59:49.850+08:00  INFO 3704 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-20T20:59:49.850+08:00  INFO 3704 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-20T20:59:49.863+08:00  INFO 3704 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-20T20:59:49.864+08:00  INFO 3704 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 294 ms
+2025-02-20T20:59:50.071+08:00  INFO 3704 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-20T20:59:50.076+08:00  INFO 3704 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.675 seconds (process running for 0.841)
+2025-02-20T20:59:52.963+08:00  INFO 3704 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-20T20:59:52.963+08:00  INFO 3704 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-20T20:59:52.965+08:00  INFO 3704 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-20T20:59:52.977+08:00  INFO 3704 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.controller.BlogController          : 获取图书列表......
+2025-02-20T20:59:53.005+08:00  INFO 3704 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-20T20:59:53.055+08:00  INFO 3704 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@51fee7cc
+2025-02-20T20:59:53.056+08:00  INFO 3704 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-20T20:59:53.078+08:00  INFO 3704 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.service.impl.BlogServiceImpl       : 查询结果:[BlogInfo(id=2, title=第二篇博客, content=222我是博客正文我是博客正文我是博客正文, userId=2, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025), BlogInfo(id=1, title=第一篇博客, content=111我是博客正文我是博客正文我是博客正文, userId=1, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025)]
+2025-02-20T21:01:02.395+08:00  INFO 3704 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-20T21:01:02.397+08:00  INFO 3704 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-20T21:01:02.399+08:00  INFO 3704 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-20T21:01:02.402+08:00  INFO 3704 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-20T21:01:03.771+08:00  INFO 3721 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 3721 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-20T21:01:03.772+08:00  INFO 3721 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-20T21:01:04.058+08:00  INFO 3721 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-20T21:01:04.062+08:00  INFO 3721 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-20T21:01:04.062+08:00  INFO 3721 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-20T21:01:04.075+08:00  INFO 3721 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-20T21:01:04.075+08:00  INFO 3721 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 290 ms
+2025-02-20T21:01:04.278+08:00  INFO 3721 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-20T21:01:04.282+08:00  INFO 3721 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.67 seconds (process running for 0.837)
+2025-02-20T21:01:07.508+08:00  INFO 3721 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-20T21:01:07.508+08:00  INFO 3721 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-20T21:01:07.508+08:00  INFO 3721 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-02-20T21:01:07.519+08:00  INFO 3721 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.controller.BlogController          : 获取图书列表......
+2025-02-20T21:01:07.543+08:00  INFO 3721 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-20T21:01:07.593+08:00  INFO 3721 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7490cc3a
+2025-02-20T21:01:07.594+08:00  INFO 3721 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-20T21:01:07.615+08:00  INFO 3721 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.service.impl.BlogServiceImpl       : 查询结果:[BlogInfo(id=2, title=第二篇博客, content=222我是博客正文我是博客正文我是博客正文, userId=2, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025), BlogInfo(id=1, title=第一篇博客, content=111我是博客正文我是博客正文我是博客正文, userId=1, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025)]
+2025-02-20T21:02:32.559+08:00  INFO 3721 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-20T21:02:32.560+08:00  INFO 3721 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-20T21:02:32.562+08:00  INFO 3721 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-20T21:02:32.564+08:00  INFO 3721 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-20T21:02:34.024+08:00  INFO 3753 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 3753 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-20T21:02:34.026+08:00  INFO 3753 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-20T21:02:34.333+08:00  INFO 3753 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-20T21:02:34.338+08:00  INFO 3753 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-20T21:02:34.338+08:00  INFO 3753 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-20T21:02:34.352+08:00  INFO 3753 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-20T21:02:34.352+08:00  INFO 3753 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 312 ms
+2025-02-20T21:02:34.584+08:00  INFO 3753 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-20T21:02:34.588+08:00  INFO 3753 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.733 seconds (process running for 0.908)
+2025-02-20T21:02:40.017+08:00  INFO 3753 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-20T21:02:40.017+08:00  INFO 3753 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-20T21:02:40.018+08:00  INFO 3753 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-20T21:02:40.028+08:00  INFO 3753 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.controller.BlogController          : 获取图书列表......
+2025-02-20T21:02:40.053+08:00  INFO 3753 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-20T21:02:40.106+08:00  INFO 3753 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3147322e
+2025-02-20T21:02:40.107+08:00  INFO 3753 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-20T21:02:40.129+08:00  INFO 3753 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.service.impl.BlogServiceImpl       : 查询结果:[BlogInfo(id=2, title=第二篇博客, content=222我是博客正文我是博客正文我是博客正文, userId=2, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025), BlogInfo(id=1, title=第一篇博客, content=111我是博客正文我是博客正文我是博客正文, userId=1, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025)]
+2025-02-20T21:03:39.704+08:00  INFO 3753 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-20T21:03:39.706+08:00  INFO 3753 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-20T21:03:39.708+08:00  INFO 3753 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-20T21:03:39.711+08:00  INFO 3753 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-20T21:14:19.355+08:00  INFO 4124 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 4124 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-20T21:14:19.356+08:00  INFO 4124 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-20T21:14:19.684+08:00  INFO 4124 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-20T21:14:19.689+08:00  INFO 4124 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-20T21:14:19.689+08:00  INFO 4124 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-20T21:14:19.704+08:00  INFO 4124 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-20T21:14:19.705+08:00  INFO 4124 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 335 ms
+2025-02-20T21:14:19.929+08:00  INFO 4124 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-20T21:14:19.933+08:00  INFO 4124 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.742 seconds (process running for 0.913)
+2025-02-20T21:14:42.280+08:00  INFO 4124 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-20T21:14:42.280+08:00  INFO 4124 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-20T21:14:42.281+08:00  INFO 4124 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-20T21:14:42.294+08:00 ERROR 4124 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.common.advice.ExceptionAdvice      : 文件不存在,e:book_list.html
+2025-02-20T21:14:46.863+08:00  INFO 4124 --- [Blog_system] [http-nio-8080-exec-10] o.m.b.controller.BlogController          : 获取图书列表......
+2025-02-20T21:14:46.907+08:00  INFO 4124 --- [Blog_system] [http-nio-8080-exec-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-20T21:14:46.965+08:00  INFO 4124 --- [Blog_system] [http-nio-8080-exec-10] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4a802c82
+2025-02-20T21:14:46.966+08:00  INFO 4124 --- [Blog_system] [http-nio-8080-exec-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-20T21:14:46.988+08:00  INFO 4124 --- [Blog_system] [http-nio-8080-exec-10] o.m.b.service.impl.BlogServiceImpl       : 查询结果:[BlogInfo(id=2, title=第二篇博客, content=222我是博客正文我是博客正文我是博客正文, userId=2, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025), BlogInfo(id=1, title=第一篇博客, content=111我是博客正文我是博客正文我是博客正文, userId=1, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025)]
+2025-02-20T21:24:45.371+08:00  INFO 4124 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-20T21:24:45.373+08:00  INFO 4124 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-20T21:24:45.375+08:00  INFO 4124 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-20T21:24:45.378+08:00  INFO 4124 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-20T21:45:46.312+08:00  INFO 4533 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 4533 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-20T21:45:46.313+08:00  INFO 4533 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-20T21:45:46.640+08:00  INFO 4533 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-20T21:45:46.645+08:00  INFO 4533 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-20T21:45:46.646+08:00  INFO 4533 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-20T21:45:46.660+08:00  INFO 4533 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-20T21:45:46.660+08:00  INFO 4533 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 331 ms
+2025-02-20T21:45:46.887+08:00  INFO 4533 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-20T21:45:46.891+08:00  INFO 4533 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.75 seconds (process running for 0.926)
+2025-02-20T21:46:52.281+08:00  INFO 4533 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-20T21:46:52.281+08:00  INFO 4533 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-20T21:46:52.282+08:00  INFO 4533 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-20T21:46:52.302+08:00  INFO 4533 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.controller.BlogController          : 获取博客详情,blogId:1
+2025-02-20T21:46:52.333+08:00  INFO 4533 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-20T21:46:52.385+08:00  INFO 4533 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6e376841
+2025-02-20T21:46:52.385+08:00  INFO 4533 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-20T21:47:23.441+08:00  INFO 4533 --- [Blog_system] [http-nio-8080-exec-2] o.m.b.controller.BlogController          : 获取博客详情,blogId:444
+2025-02-20T21:47:23.452+08:00 ERROR 4533 --- [Blog_system] [http-nio-8080-exec-2] o.m.b.common.advice.ExceptionAdvice      : 发生异常,e:{}
+
+java.lang.IllegalArgumentException: Source must not be null
+	at org.springframework.util.Assert.notNull(Assert.java:181) ~[spring-core-6.2.2.jar:6.2.2]
+	at org.springframework.beans.BeanUtils.copyProperties(BeanUtils.java:808) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.BeanUtils.copyProperties(BeanUtils.java:745) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.mon.blog_system.common.utils.BeanConver.trans(BeanConver.java:10) ~[classes/:na]
+	at org.mon.blog_system.service.impl.BlogServiceImpl.getBlogDetail(BlogServiceImpl.java:67) ~[classes/:na]
+	at org.mon.blog_system.controller.BlogController.getBlogDetail(BlogController.java:39) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2025-02-20T21:48:18.892+08:00  INFO 4533 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-20T21:48:18.894+08:00  INFO 4533 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-20T21:48:18.896+08:00  INFO 4533 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-20T21:48:18.899+08:00  INFO 4533 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-20T21:48:20.215+08:00  INFO 4558 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 4558 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-20T21:48:20.216+08:00  INFO 4558 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-20T21:48:20.531+08:00  INFO 4558 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-20T21:48:20.536+08:00  INFO 4558 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-20T21:48:20.536+08:00  INFO 4558 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-20T21:48:20.550+08:00  INFO 4558 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-20T21:48:20.550+08:00  INFO 4558 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 320 ms
+2025-02-20T21:48:20.766+08:00  INFO 4558 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-20T21:48:20.771+08:00  INFO 4558 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.733 seconds (process running for 0.906)
+2025-02-20T21:48:25.363+08:00  INFO 4558 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-20T21:48:25.363+08:00  INFO 4558 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-20T21:48:25.364+08:00  INFO 4558 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-20T21:48:25.380+08:00  INFO 4558 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.controller.BlogController          : 获取博客详情,blogId:444
+2025-02-20T21:48:25.411+08:00  INFO 4558 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-20T21:48:25.462+08:00  INFO 4558 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@57ba03aa
+2025-02-20T21:48:25.463+08:00  INFO 4558 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-20T21:49:15.232+08:00 ERROR 4558 --- [Blog_system] [http-nio-8080-exec-2] o.m.b.common.advice.ExceptionAdvice      : 发生异常,e:{}
+
+org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Method parameter 'blogId': Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; For input string: "aa"
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.convertIfNecessary(AbstractNamedValueMethodArgumentResolver.java:301) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:136) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:226) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:180) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: java.lang.NumberFormatException: For input string: "aa"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67) ~[na:na]
+	at java.base/java.lang.Integer.parseInt(Integer.java:668) ~[na:na]
+	at java.base/java.lang.Integer.valueOf(Integer.java:999) ~[na:na]
+	at org.springframework.util.NumberUtils.parseNumber(NumberUtils.java:201) ~[spring-core-6.2.2.jar:6.2.2]
+	at org.springframework.beans.propertyeditors.CustomNumberEditor.setAsText(CustomNumberEditor.java:115) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:439) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:412) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:161) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:80) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:53) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.validation.DataBinder.convertIfNecessary(DataBinder.java:866) ~[spring-context-6.2.2.jar:6.2.2]
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.convertIfNecessary(AbstractNamedValueMethodArgumentResolver.java:293) ~[spring-web-6.2.2.jar:6.2.2]
+	... 48 common frames omitted
+
+2025-02-20T21:51:54.775+08:00  INFO 4558 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-20T21:51:54.777+08:00  INFO 4558 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-20T21:51:54.779+08:00  INFO 4558 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-20T21:51:54.782+08:00  INFO 4558 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-20T21:51:57.172+08:00  INFO 4634 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 4634 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-20T21:51:57.173+08:00  INFO 4634 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-20T21:51:57.481+08:00  INFO 4634 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-20T21:51:57.486+08:00  INFO 4634 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-20T21:51:57.486+08:00  INFO 4634 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-20T21:51:57.501+08:00  INFO 4634 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-20T21:51:57.501+08:00  INFO 4634 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 316 ms
+2025-02-20T21:51:57.724+08:00  INFO 4634 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-20T21:51:57.728+08:00  INFO 4634 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.713 seconds (process running for 0.884)
+2025-02-20T21:52:01.814+08:00  INFO 4634 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-20T21:52:01.815+08:00  INFO 4634 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-20T21:52:01.816+08:00  INFO 4634 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-20T21:52:01.856+08:00 ERROR 4634 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.common.advice.ExceptionAdvice      : 发生异常,e:{}
+
+org.springframework.web.method.annotation.HandlerMethodValidationException: 400 BAD_REQUEST "Validation failure"
+	at org.springframework.web.method.annotation.HandlerMethodValidator.applyArgumentValidation(HandlerMethodValidator.java:106) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:186) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2025-02-20T21:53:43.155+08:00  INFO 4634 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-20T21:53:43.157+08:00  INFO 4634 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-20T21:53:44.617+08:00  INFO 4693 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 4693 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-20T21:53:44.618+08:00  INFO 4693 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-20T21:53:44.942+08:00  INFO 4693 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-20T21:53:44.946+08:00  INFO 4693 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-20T21:53:44.946+08:00  INFO 4693 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-20T21:53:44.961+08:00  INFO 4693 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-20T21:53:44.961+08:00  INFO 4693 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 329 ms
+2025-02-20T21:53:45.194+08:00  INFO 4693 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-20T21:53:45.198+08:00  INFO 4693 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.8 seconds (process running for 1.024)
+2025-02-20T21:53:54.931+08:00  INFO 4693 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-20T21:53:54.934+08:00  INFO 4693 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-20T21:54:00.974+08:00  INFO 4707 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 4707 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-20T21:54:00.975+08:00  INFO 4707 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-20T21:54:01.280+08:00  INFO 4707 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-20T21:54:01.285+08:00  INFO 4707 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-20T21:54:01.285+08:00  INFO 4707 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-20T21:54:01.305+08:00  INFO 4707 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-20T21:54:01.305+08:00  INFO 4707 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 316 ms
+2025-02-20T21:54:01.535+08:00  INFO 4707 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-20T21:54:01.539+08:00  INFO 4707 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.722 seconds (process running for 0.879)
+2025-02-20T21:54:06.501+08:00  INFO 4707 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-20T21:54:06.502+08:00  INFO 4707 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-20T21:54:06.503+08:00  INFO 4707 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-20T21:54:06.543+08:00 ERROR 4707 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.common.advice.ExceptionAdvice      : 参数校验失败,e:400 BAD_REQUEST "Validation failure"
+2025-02-20T21:54:26.427+08:00  INFO 4707 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-20T21:54:26.429+08:00  INFO 4707 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-20T21:54:27.755+08:00  INFO 4715 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 4715 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-20T21:54:27.756+08:00  INFO 4715 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-20T21:54:28.065+08:00  INFO 4715 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-20T21:54:28.069+08:00  INFO 4715 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-20T21:54:28.069+08:00  INFO 4715 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-20T21:54:28.085+08:00  INFO 4715 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-20T21:54:28.086+08:00  INFO 4715 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 311 ms
+2025-02-20T21:54:28.304+08:00  INFO 4715 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-20T21:54:28.308+08:00  INFO 4715 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.724 seconds (process running for 0.892)
+2025-02-20T21:54:31.274+08:00  INFO 4715 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-20T21:54:31.275+08:00  INFO 4715 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-20T21:54:31.276+08:00  INFO 4715 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-20T21:54:31.315+08:00 ERROR 4715 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.common.advice.ExceptionAdvice      : 参数校验失败,e:400 BAD_REQUEST "Validation failure"
+2025-02-20T21:54:47.522+08:00  INFO 4715 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-20T21:54:47.524+08:00  INFO 4715 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-20T21:59:13.963+08:00  INFO 4832 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 4832 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-20T21:59:13.964+08:00  INFO 4832 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-20T21:59:14.296+08:00  INFO 4832 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-20T21:59:14.301+08:00  INFO 4832 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-20T21:59:14.301+08:00  INFO 4832 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-20T21:59:14.320+08:00  INFO 4832 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-20T21:59:14.320+08:00  INFO 4832 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 342 ms
+2025-02-20T21:59:14.559+08:00  INFO 4832 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-20T21:59:14.563+08:00  INFO 4832 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.76 seconds (process running for 0.922)
+2025-02-20T21:59:24.764+08:00  INFO 4832 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-20T21:59:24.765+08:00  INFO 4832 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-20T21:59:24.766+08:00  INFO 4832 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-20T21:59:24.834+08:00  INFO 4832 --- [Blog_system] [http-nio-8080-exec-5] o.m.b.controller.BlogController          : 获取博客详情,blogId:2
+2025-02-20T21:59:24.865+08:00  INFO 4832 --- [Blog_system] [http-nio-8080-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-20T21:59:24.919+08:00  INFO 4832 --- [Blog_system] [http-nio-8080-exec-5] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@42da210c
+2025-02-20T21:59:24.920+08:00  INFO 4832 --- [Blog_system] [http-nio-8080-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-20T21:59:30.768+08:00  INFO 4832 --- [Blog_system] [http-nio-8080-exec-6] o.m.b.controller.BlogController          : 获取博客列表......
+2025-02-20T21:59:30.774+08:00  INFO 4832 --- [Blog_system] [http-nio-8080-exec-6] o.m.b.service.impl.BlogServiceImpl       : 查询结果:[BlogInfo(id=2, title=第二篇博客, content=222我是博客正文我是博客正文我是博客正文, userId=2, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025), BlogInfo(id=1, title=第一篇博客, content=111我是博客正文我是博客正文我是博客正文, userId=1, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025)]
+2025-02-20T21:59:31.894+08:00  INFO 4832 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.controller.BlogController          : 获取博客详情,blogId:2
+2025-02-20T21:59:34.024+08:00  INFO 4832 --- [Blog_system] [http-nio-8080-exec-8] o.m.b.controller.BlogController          : 获取博客列表......
+2025-02-20T21:59:34.029+08:00  INFO 4832 --- [Blog_system] [http-nio-8080-exec-8] o.m.b.service.impl.BlogServiceImpl       : 查询结果:[BlogInfo(id=2, title=第二篇博客, content=222我是博客正文我是博客正文我是博客正文, userId=2, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025), BlogInfo(id=1, title=第一篇博客, content=111我是博客正文我是博客正文我是博客正文, userId=1, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025)]
+2025-02-20T21:59:35.230+08:00  INFO 4832 --- [Blog_system] [http-nio-8080-exec-10] o.m.b.controller.BlogController          : 获取博客详情,blogId:2
+2025-02-20T21:59:36.483+08:00  INFO 4832 --- [Blog_system] [http-nio-8080-exec-2] o.m.b.controller.BlogController          : 获取博客列表......
+2025-02-20T21:59:36.488+08:00  INFO 4832 --- [Blog_system] [http-nio-8080-exec-2] o.m.b.service.impl.BlogServiceImpl       : 查询结果:[BlogInfo(id=2, title=第二篇博客, content=222我是博客正文我是博客正文我是博客正文, userId=2, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025), BlogInfo(id=1, title=第一篇博客, content=111我是博客正文我是博客正文我是博客正文, userId=1, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025)]
+2025-02-20T22:00:50.964+08:00  INFO 4832 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-20T22:00:50.966+08:00  INFO 4832 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-20T22:00:50.968+08:00  INFO 4832 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-20T22:00:50.975+08:00  INFO 4832 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-20T22:00:51.940+08:00  INFO 4864 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 4864 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-20T22:00:51.940+08:00  INFO 4864 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-20T22:00:52.292+08:00  INFO 4864 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-20T22:00:52.298+08:00  INFO 4864 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-20T22:00:52.298+08:00  INFO 4864 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-20T22:00:52.315+08:00  INFO 4864 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-20T22:00:52.316+08:00  INFO 4864 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 363 ms
+2025-02-20T22:00:52.555+08:00  INFO 4864 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-20T22:00:52.559+08:00  INFO 4864 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.769 seconds (process running for 0.939)
+2025-02-20T22:01:01.807+08:00  INFO 4864 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-20T22:01:01.808+08:00  INFO 4864 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-20T22:01:01.809+08:00  INFO 4864 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-20T22:01:01.856+08:00  INFO 4864 --- [Blog_system] [http-nio-8080-exec-8] o.m.b.controller.BlogController          : 获取博客列表......
+2025-02-20T22:01:01.889+08:00  INFO 4864 --- [Blog_system] [http-nio-8080-exec-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-20T22:01:01.942+08:00  INFO 4864 --- [Blog_system] [http-nio-8080-exec-8] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4872f3a0
+2025-02-20T22:01:01.943+08:00  INFO 4864 --- [Blog_system] [http-nio-8080-exec-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-20T22:01:01.964+08:00  INFO 4864 --- [Blog_system] [http-nio-8080-exec-8] o.m.b.service.impl.BlogServiceImpl       : 查询结果:[BlogInfo(id=2, title=第二篇博客, content=222我是博客正文我是博客正文我是博客正文, userId=2, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025), BlogInfo(id=1, title=第一篇博客, content=111我是博客正文我是博客正文我是博客正文, userId=1, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025)]
+2025-02-20T22:01:53.285+08:00  INFO 4864 --- [Blog_system] [http-nio-8080-exec-10] o.m.b.controller.BlogController          : 获取博客列表......
+2025-02-20T22:01:53.292+08:00  INFO 4864 --- [Blog_system] [http-nio-8080-exec-10] o.m.b.service.impl.BlogServiceImpl       : 查询结果:[BlogInfo(id=2, title=第二篇博客, content=222我是博客正文我是博客正文我是博客正文, userId=2, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025), BlogInfo(id=1, title=第一篇博客, content=111我是博客正文我是博客正文我是博客正文, userId=1, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025)]
+2025-02-20T22:01:54.616+08:00  INFO 4864 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.controller.BlogController          : 获取博客列表......
+2025-02-20T22:01:54.623+08:00  INFO 4864 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.service.impl.BlogServiceImpl       : 查询结果:[BlogInfo(id=2, title=第二篇博客, content=222我是博客正文我是博客正文我是博客正文, userId=2, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025), BlogInfo(id=1, title=第一篇博客, content=111我是博客正文我是博客正文我是博客正文, userId=1, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025)]
