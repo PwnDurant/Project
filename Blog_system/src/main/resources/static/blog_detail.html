@@ -43,7 +43,7 @@
                 <div class="title"></div>
                 <div class="date"></div>
                 <div class="detail">
-                    
+
                 </div>
                 <div class="operating">
                     <button onclick="window.location.href='blog_update.html'">编辑</button>
@@ -62,7 +62,7 @@
     <script src="blog-editormd/editormd.js"></script>
     <script src="js/common.js"></script>
     <script>
-        
+
         //显示博客作者信息
         //var userUrl = "/user/getAuthorInfo" + location.search;
         //getUserInfo(userUrl);
@@ -71,13 +71,21 @@
             alert("删除博客");
         }
 
+        // 把前端存入的token放入到请求header中：user_header_token 用ajaxsend
+        // 在ajax请求发送前，设置一下token
+        $(document).ajaxSend(function(e,xhr,opt){
+            // $("div").append("<p>Requesting: "+opt.url+"</p>");
+            let token=localStorage.getItem("user_token");
+            xhr.setRequestHeader("user_header_token",token);
+        });
+
         $.ajax({
-            type:"get",
-            url:"/blog/getBlogDetail"+location.search,
-            success:function(result){
+            type: "get",
+            url: "/blog/getBlogDetail" + location.search,
+            success: function (result) {
                 // 判断
-                if(result!=null&&result.code==200||result.data!=null){
-                    let blog=result.data;
+                if (result != null && result.code == 200 || result.data != null) {
+                    let blog = result.data;
                     $(".right .content .title").text(blog.title);
                     $(".right .content .date").text(blog.createTime);
                     $(".right .content .detail").text(blog.content);

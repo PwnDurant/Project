@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.mon.blog_system.common.exception.BlogException;
 import org.mon.blog_system.common.pojo.Result;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -26,7 +27,7 @@ public class ExceptionAdvice {
     @ExceptionHandler(BlogException.class)
     public Result blogExceptionHandler(Exception e){
         log.error("发生错误,e:{}",e);
-        return Result.fail("发生错误"+e.getMessage());
+        return Result.fail("发生错误:"+e.getMessage());
     }
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
@@ -37,8 +38,8 @@ public class ExceptionAdvice {
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    @ExceptionHandler(HandlerMethodValidationException.class)
-    public Result blogExceptionHandler(HandlerMethodValidationException e){
+    @ExceptionHandler({HandlerMethodValidationException.class, MethodArgumentNotValidException.class})
+    public Result argblogExceptionHandler(Exception e){
         log.error("参数校验失败,e:{}",e.getMessage());
         return Result.fail("参数不合法");
     }

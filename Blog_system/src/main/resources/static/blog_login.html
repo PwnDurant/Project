@@ -41,7 +41,28 @@
     <script src="js/jquery.min.js"></script>
     <script>
         function login() {
-            location.assign("blog_list.html");
+            // location.assign("blog_list.html");
+            $.ajax({
+                type:"post",
+                url:"/user/login",
+                contentType:"application/json",
+                // 通过这个方法，把对象转换为JSON,因为后接收的数据类型为JSON
+                data:JSON.stringify({
+                    "userName":$("#username").val(),
+                    "password":$("#password").val()
+                }),
+                success:function(result){
+                    if(result.code==200&&result.data!=null&&result.data!=null){
+                        let userInfo=result.data;
+                        // 存储token
+                        localStorage.setItem("user_token",userInfo.token);
+                        localStorage.setItem("login_user_id",userInfo.userId);
+                        location.href="blog_list.html";
+                    }else{
+                        alert(result.errMsg);
+                    }
+                }
+            });
         }
     </script>
 </body>
