@@ -12,5 +12,36 @@ $(document).ajaxError(function(event,xhr,options,exc){
     if(xhr.status==401){
         alert("用户未登入，请先登入");
         location.href="blog_login.html";
+    }else if(xhr.status==404){
+        //TODO
+    }else{
+        //TODO
     }
 });
+
+
+function getUserInfo(url){
+    $.ajax({
+        type:"get",
+        url:url,
+        success:function(result){
+            if(result!=null&&result.code==200&&result.data!=null){
+                let userInfo=result.data;
+                $(".card h3 ").text(userInfo.userName);
+                // 对链接的href属性进行赋值
+                $(".card a ").attr("href",userInfo.githubUrl);
+            }else{
+                // 自行补充
+            }
+        }
+    });
+}
+
+function logout(){
+    let logout=confirm("是否确认退出");
+    if(logout){
+        localStorage.removeItem("user_token");
+        location.href="blog_login.html";
+    }
+    
+}

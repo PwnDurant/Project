@@ -23,8 +23,10 @@
     <div class="container">
         <div class="left">
             <div class="card">
+
+
                 <img src="pic/doge.jpg" alt="">
-                <h3>比特汤老师</h3>
+                <h3></h3>
                 <a href="#">GitHub 地址</a>
                 <div class="row">
                     <span>文章</span>
@@ -34,6 +36,8 @@
                     <span>2</span>
                     <span>1</span>
                 </div>
+
+
             </div>
         </div>
         <div class="right">
@@ -43,7 +47,9 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/common.js"></script>
     <script>
-        $.ajax({
+        getBlogList();
+        function getBlogList(){
+            $.ajax({
             type:"get",
             url:"/blog/getList",
             success:function(result){
@@ -63,6 +69,17 @@
                 }
             }
         });
+        }
+
+
+
+        // 获取用户信息
+        let url="/user/getUserInfo?userId="+localStorage.getItem("login_user_id");
+        getUserInfo(url);
+        
+        
+
+
     </script>
 </body>
 </html>

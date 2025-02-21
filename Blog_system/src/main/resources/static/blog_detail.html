@@ -26,7 +26,7 @@
         <div class="left">
             <div class="card">
                 <img src="pic/doge.jpg" alt="">
-                <h3>比特汤老师</h3>
+                <h3></h3>
                 <a href="#">GitHub 地址</a>
                 <div class="row">
                     <span>文章</span>
@@ -63,23 +63,14 @@
     <script src="js/common.js"></script>
     <script>
 
-        //显示博客作者信息
-        //var userUrl = "/user/getAuthorInfo" + location.search;
-        //getUserInfo(userUrl);
-
         function deleteBlog() {
             alert("删除博客");
         }
 
-        // 把前端存入的token放入到请求header中：user_header_token 用ajaxsend
-        // 在ajax请求发送前，设置一下token
-        $(document).ajaxSend(function(e,xhr,opt){
-            // $("div").append("<p>Requesting: "+opt.url+"</p>");
-            let token=localStorage.getItem("user_token");
-            xhr.setRequestHeader("user_header_token",token);
-        });
+        getBlogDetail();
 
-        $.ajax({
+        function getBlogDetail(){
+            $.ajax({
             type: "get",
             url: "/blog/getBlogDetail" + location.search,
             success: function (result) {
@@ -92,6 +83,14 @@
                 }
             }
         });
+        }
+
+        // 显示博客作者信息
+        let url="/user/getAuthorInfo"+location.search;
+        getUserInfo(url);
+        
+
+        
     </script>
 </body>
 
