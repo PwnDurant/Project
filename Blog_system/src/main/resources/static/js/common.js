@@ -8,14 +8,20 @@ $(document).ajaxSend(function (e, xhr, opt) {
 });
 
 
+// 统一设置发送请求返回error的结果
 $(document).ajaxError(function(event,xhr,options,exc){
+    console.log("test");
+    
     if(xhr.status==401){
+        console.log("weidengru");
+        
         alert("用户未登入，请先登入");
         location.href="blog_login.html";
-    }else if(xhr.status==404){
-        //TODO
+    }
+    else if(xhr.status==404){
+        
     }else{
-        //TODO
+        
     }
 });
 

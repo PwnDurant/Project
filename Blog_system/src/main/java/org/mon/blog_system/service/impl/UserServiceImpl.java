@@ -12,6 +12,7 @@ import org.mon.blog_system.common.pojo.response.UserInfoResponse;
 import org.mon.blog_system.common.pojo.response.UserLoginResponse;
 import org.mon.blog_system.common.utils.BeanConver;
 import org.mon.blog_system.common.utils.JwtUtil;
+import org.mon.blog_system.common.utils.SecurityUtil;
 import org.mon.blog_system.mapper.BlogInfoMapper;
 import org.mon.blog_system.mapper.UserInfoMapper;
 import org.mon.blog_system.service.UserService;
@@ -40,7 +41,7 @@ public class UserServiceImpl implements UserService {
         if(userInfo==null) throw new BlogException("用户不存在");
 
 //        用户存在,校验密码是否正确
-        if(!userLoginParam.getPassword().equals(userInfo.getPassword())) throw new BlogException("密码错误");
+        if(!SecurityUtil.verify(userLoginParam.getPassword(),userInfo.getPassword())) throw new BlogException("密码错误");
 
 //        密码正确
         UserLoginResponse userLoginResponse=new UserLoginResponse();

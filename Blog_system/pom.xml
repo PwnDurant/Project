@@ -82,7 +82,30 @@
 
 
         </dependency>
+
     </dependencies>
+    <profiles>
+        <profile>
+            <id>dev</id>
+<!--            自己定义的属性-->
+            <properties>
+                <profile.name>dev</profile.name>
+                <mysql.password>root</mysql.password>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <!--            自己定义的属性-->
+            <properties>
+                <profile.name>prod</profile.name>
+                <mysql.password>ZQQ@yyds.666</mysql.password>
+            </properties>
+            <!--默认生效-->
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
 
     <build>
         <plugins>

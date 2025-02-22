@@ -492,3 +492,412 @@ saldjfl, userId=1, deleteFlag=0, createTime=2025-02-22T13:37:40, updateTime=Sat 
 2025-02-22T15:44:35.748+08:00  INFO 50406 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
 2025-02-22T15:44:35.772+08:00  INFO 50406 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-02-22T15:44:35.778+08:00  INFO 50406 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-22T16:30:03.363+08:00  INFO 55627 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 55627 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-22T16:30:03.367+08:00  INFO 55627 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-22T16:30:03.716+08:00  INFO 55627 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-22T16:30:03.721+08:00  INFO 55627 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-22T16:30:03.721+08:00  INFO 55627 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-22T16:30:03.736+08:00  INFO 55627 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-22T16:30:03.736+08:00  INFO 55627 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 355 ms
+2025-02-22T16:30:03.975+08:00  INFO 55627 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-22T16:30:03.980+08:00  INFO 55627 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.799 seconds (process running for 0.978)
+2025-02-22T16:30:22.118+08:00  INFO 55627 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-22T16:30:22.119+08:00  INFO 55627 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-22T16:30:22.120+08:00  INFO 55627 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-22T16:30:22.165+08:00  INFO 55627 --- [Blog_system] [http-nio-8080-exec-3] o.m.b.c.interceptor.LoginIntercepter     : 获取token:null
+2025-02-22T16:30:22.165+08:00  INFO 55627 --- [Blog_system] [http-nio-8080-exec-4] o.m.b.c.interceptor.LoginIntercepter     : 获取token:null
+2025-02-22T16:30:22.183+08:00 ERROR 55627 --- [Blog_system] [http-nio-8080-exec-3] o.mon.blog_system.common.utils.JwtUtil   : token解析失败,token:null
+2025-02-22T16:30:22.183+08:00 ERROR 55627 --- [Blog_system] [http-nio-8080-exec-4] o.mon.blog_system.common.utils.JwtUtil   : token解析失败,token:null
+2025-02-22T16:31:02.363+08:00  INFO 55627 --- [Blog_system] [http-nio-8080-exec-6] o.m.b.controller.UserController          : 用户登入,userName:zhangsan
+2025-02-22T16:31:02.391+08:00  INFO 55627 --- [Blog_system] [http-nio-8080-exec-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-22T16:31:02.443+08:00  INFO 55627 --- [Blog_system] [http-nio-8080-exec-6] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@51a12ad4
+2025-02-22T16:31:02.444+08:00  INFO 55627 --- [Blog_system] [http-nio-8080-exec-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-22T16:31:02.537+08:00  INFO 55627 --- [Blog_system] [http-nio-8080-exec-4] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiaWF0IjoxNzQwMjEzMDYyLCJleHAiOjE3NDAyOTk0NjJ9.H4jqJ90CYtBH3FvLDryqspnLXt8YHvviLbYHjBq6I64
+2025-02-22T16:31:02.537+08:00  INFO 55627 --- [Blog_system] [http-nio-8080-exec-2] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiaWF0IjoxNzQwMjEzMDYyLCJleHAiOjE3NDAyOTk0NjJ9.H4jqJ90CYtBH3FvLDryqspnLXt8YHvviLbYHjBq6I64
+2025-02-22T16:31:02.547+08:00  INFO 55627 --- [Blog_system] [http-nio-8080-exec-2] o.m.b.controller.BlogController          : 获取博客列表......
+2025-02-22T16:31:02.550+08:00  INFO 55627 --- [Blog_system] [http-nio-8080-exec-4] o.m.b.controller.UserController          : 获取用户信息,userId:1
+2025-02-22T16:31:02.550+08:00  INFO 55627 --- [Blog_system] [http-nio-8080-exec-2] o.m.b.service.impl.BlogServiceImpl       : 查询结果:[BlogInfo(id=5, title=test1, content=##在这里写下一篇博客
+###lsakdfjl
+*asldfjk*
+**saldjf**, userId=1, deleteFlag=0, createTime=2025-02-22T13:38:37, updateTime=Sat Feb 22 13:38:37 CST 2025), BlogInfo(id=2, title=第二篇博客, content=222我是博客正文我是博客正文我是博客正文, userId=2, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025), BlogInfo(id=1, title=第一篇博客, content=111我是博客正文我是博客正文我是博客正文, userId=1, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025)]
+2025-02-22T16:31:27.818+08:00  INFO 55627 --- [Blog_system] [http-nio-8080-exec-5] o.m.b.c.interceptor.LoginIntercepter     : 获取token:null
+2025-02-22T16:31:27.818+08:00  INFO 55627 --- [Blog_system] [http-nio-8080-exec-3] o.m.b.c.interceptor.LoginIntercepter     : 获取token:null
+2025-02-22T16:31:27.819+08:00 ERROR 55627 --- [Blog_system] [http-nio-8080-exec-5] o.mon.blog_system.common.utils.JwtUtil   : token解析失败,token:null
+2025-02-22T16:31:27.819+08:00 ERROR 55627 --- [Blog_system] [http-nio-8080-exec-3] o.mon.blog_system.common.utils.JwtUtil   : token解析失败,token:null
+2025-02-22T16:31:47.097+08:00  INFO 55627 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-22T16:31:47.099+08:00  INFO 55627 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-22T16:31:47.101+08:00  INFO 55627 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-22T16:31:47.108+08:00  INFO 55627 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-22T16:31:49.681+08:00  INFO 55762 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 55762 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-22T16:31:49.682+08:00  INFO 55762 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-22T16:31:50.050+08:00  INFO 55762 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-22T16:31:50.057+08:00  INFO 55762 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-22T16:31:50.057+08:00  INFO 55762 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-22T16:31:50.078+08:00  INFO 55762 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-22T16:31:50.078+08:00  INFO 55762 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 381 ms
+2025-02-22T16:31:50.350+08:00  INFO 55762 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-22T16:31:50.355+08:00  INFO 55762 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.844 seconds (process running for 1.282)
+2025-02-22T16:32:26.826+08:00  INFO 55762 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-22T16:32:26.826+08:00  INFO 55762 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-22T16:32:26.827+08:00  INFO 55762 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-22T16:32:26.881+08:00  INFO 55762 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.controller.UserController          : 用户登入,userName:zhangsan
+2025-02-22T16:33:15.760+08:00  INFO 55762 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-22T16:33:16.211+08:00  INFO 55762 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@42e2af50
+2025-02-22T16:33:16.216+08:00  INFO 55762 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-22T16:34:12.144+08:00  INFO 55762 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-22T16:34:12.255+08:00  INFO 55762 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-22T16:34:12.258+08:00  INFO 55762 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-22T16:34:12.264+08:00  INFO 55762 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-22T16:36:22.382+08:00  INFO 56093 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 56093 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-22T16:36:22.383+08:00  INFO 56093 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-22T16:36:22.713+08:00  INFO 56093 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-22T16:36:22.718+08:00  INFO 56093 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-22T16:36:22.718+08:00  INFO 56093 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-22T16:36:22.736+08:00  INFO 56093 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-22T16:36:22.736+08:00  INFO 56093 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 337 ms
+2025-02-22T16:36:22.957+08:00  INFO 56093 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-22T16:36:22.962+08:00  INFO 56093 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.736 seconds (process running for 0.906)
+2025-02-22T16:36:26.251+08:00  INFO 56093 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-22T16:36:26.252+08:00  INFO 56093 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-22T16:36:26.253+08:00  INFO 56093 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-22T16:36:26.297+08:00  INFO 56093 --- [Blog_system] [http-nio-8080-exec-4] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiaWF0IjoxNzQwMjEzMjUyLCJleHAiOjE3NDAyOTk2NTJ9.B-8q7nNc6y7AlBXYdjIYo61_uWFtcKuZgRm9pW2cG2g
+2025-02-22T16:36:26.297+08:00  INFO 56093 --- [Blog_system] [http-nio-8080-exec-3] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiaWF0IjoxNzQwMjEzMjUyLCJleHAiOjE3NDAyOTk2NTJ9.B-8q7nNc6y7AlBXYdjIYo61_uWFtcKuZgRm9pW2cG2g
+2025-02-22T16:36:26.336+08:00  INFO 56093 --- [Blog_system] [http-nio-8080-exec-3] o.m.b.controller.BlogController          : 获取博客列表......
+2025-02-22T16:36:26.352+08:00  INFO 56093 --- [Blog_system] [http-nio-8080-exec-4] o.m.b.controller.UserController          : 获取用户信息,userId:1
+2025-02-22T16:36:26.364+08:00  INFO 56093 --- [Blog_system] [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-22T16:36:26.418+08:00  INFO 56093 --- [Blog_system] [http-nio-8080-exec-3] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5a8eb653
+2025-02-22T16:36:26.419+08:00  INFO 56093 --- [Blog_system] [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-22T16:36:26.441+08:00  INFO 56093 --- [Blog_system] [http-nio-8080-exec-3] o.m.b.service.impl.BlogServiceImpl       : 查询结果:[BlogInfo(id=5, title=test1, content=##在这里写下一篇博客
+###lsakdfjl
+*asldfjk*
+**saldjf**, userId=1, deleteFlag=0, createTime=2025-02-22T13:38:37, updateTime=Sat Feb 22 13:38:37 CST 2025), BlogInfo(id=2, title=第二篇博客, content=222我是博客正文我是博客正文我是博客正文, userId=2, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025), BlogInfo(id=1, title=第一篇博客, content=111我是博客正文我是博客正文我是博客正文, userId=1, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025)]
+2025-02-22T16:36:33.927+08:00  INFO 56093 --- [Blog_system] [http-nio-8080-exec-6] o.m.b.c.interceptor.LoginIntercepter     : 获取token:null
+2025-02-22T16:36:33.927+08:00  INFO 56093 --- [Blog_system] [http-nio-8080-exec-7] o.m.b.c.interceptor.LoginIntercepter     : 获取token:null
+2025-02-22T16:36:33.929+08:00 ERROR 56093 --- [Blog_system] [http-nio-8080-exec-7] o.mon.blog_system.common.utils.JwtUtil   : token解析失败,token:null
+2025-02-22T16:36:33.929+08:00 ERROR 56093 --- [Blog_system] [http-nio-8080-exec-6] o.mon.blog_system.common.utils.JwtUtil   : token解析失败,token:null
+2025-02-22T16:36:42.135+08:00  INFO 56093 --- [Blog_system] [http-nio-8080-exec-8] o.m.b.controller.UserController          : 用户登入,userName:zhangsan
+2025-02-22T16:36:42.198+08:00  INFO 56093 --- [Blog_system] [http-nio-8080-exec-10] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiaWF0IjoxNzQwMjEzNDAyLCJleHAiOjE3NDAyOTk4MDJ9.s1SmhGblV-llVeWHNJwPmEbTpXUmyy5o6p4Pd-ePmwM
+2025-02-22T16:36:42.198+08:00  INFO 56093 --- [Blog_system] [http-nio-8080-exec-9] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiaWF0IjoxNzQwMjEzNDAyLCJleHAiOjE3NDAyOTk4MDJ9.s1SmhGblV-llVeWHNJwPmEbTpXUmyy5o6p4Pd-ePmwM
+2025-02-22T16:36:42.200+08:00  INFO 56093 --- [Blog_system] [http-nio-8080-exec-9] o.m.b.controller.BlogController          : 获取博客列表......
+2025-02-22T16:36:42.200+08:00  INFO 56093 --- [Blog_system] [http-nio-8080-exec-10] o.m.b.controller.UserController          : 获取用户信息,userId:1
+2025-02-22T16:36:42.205+08:00  INFO 56093 --- [Blog_system] [http-nio-8080-exec-9] o.m.b.service.impl.BlogServiceImpl       : 查询结果:[BlogInfo(id=5, title=test1, content=##在这里写下一篇博客
+###lsakdfjl
+*asldfjk*
+**saldjf**, userId=1, deleteFlag=0, createTime=2025-02-22T13:38:37, updateTime=Sat Feb 22 13:38:37 CST 2025), BlogInfo(id=2, title=第二篇博客, content=222我是博客正文我是博客正文我是博客正文, userId=2, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025), BlogInfo(id=1, title=第一篇博客, content=111我是博客正文我是博客正文我是博客正文, userId=1, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025)]
+2025-02-22T16:36:50.350+08:00  INFO 56093 --- [Blog_system] [http-nio-8080-exec-2] o.m.b.c.interceptor.LoginIntercepter     : 获取token:null
+2025-02-22T16:36:50.350+08:00  INFO 56093 --- [Blog_system] [http-nio-8080-exec-5] o.m.b.c.interceptor.LoginIntercepter     : 获取token:null
+2025-02-22T16:36:50.353+08:00 ERROR 56093 --- [Blog_system] [http-nio-8080-exec-2] o.mon.blog_system.common.utils.JwtUtil   : token解析失败,token:null
+2025-02-22T16:36:50.353+08:00 ERROR 56093 --- [Blog_system] [http-nio-8080-exec-5] o.mon.blog_system.common.utils.JwtUtil   : token解析失败,token:null
+2025-02-22T16:38:32.133+08:00  INFO 56093 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-22T16:38:32.135+08:00  INFO 56093 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-22T16:38:32.137+08:00  INFO 56093 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-22T16:38:32.140+08:00  INFO 56093 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-22T16:38:33.164+08:00  INFO 56259 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 56259 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-22T16:38:33.165+08:00  INFO 56259 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-22T16:38:33.495+08:00  INFO 56259 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-22T16:38:33.500+08:00  INFO 56259 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-22T16:38:33.500+08:00  INFO 56259 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-22T16:38:33.514+08:00  INFO 56259 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-22T16:38:33.515+08:00  INFO 56259 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 335 ms
+2025-02-22T16:38:33.742+08:00  INFO 56259 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-22T16:38:33.746+08:00  INFO 56259 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.746 seconds (process running for 0.933)
+2025-02-22T16:38:43.539+08:00  INFO 56259 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-22T16:38:43.539+08:00  INFO 56259 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-22T16:38:43.541+08:00  INFO 56259 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-02-22T16:38:43.588+08:00  INFO 56259 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.controller.UserController          : 用户登入,userName:zhangsan
+2025-02-22T16:38:43.612+08:00  INFO 56259 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-22T16:38:43.660+08:00  INFO 56259 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@317a40f7
+2025-02-22T16:38:43.660+08:00  INFO 56259 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-22T16:38:43.739+08:00  INFO 56259 --- [Blog_system] [http-nio-8080-exec-2] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiaWF0IjoxNzQwMjEzNTIzLCJleHAiOjE3NDAyOTk5MjN9.l5kbc9b-Y9p3U4xpwheiEpo6_0UM3dvBSyvit-Oxcqs
+2025-02-22T16:38:43.739+08:00  INFO 56259 --- [Blog_system] [http-nio-8080-exec-3] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiaWF0IjoxNzQwMjEzNTIzLCJleHAiOjE3NDAyOTk5MjN9.l5kbc9b-Y9p3U4xpwheiEpo6_0UM3dvBSyvit-Oxcqs
+2025-02-22T16:38:43.756+08:00  INFO 56259 --- [Blog_system] [http-nio-8080-exec-2] o.m.b.controller.BlogController          : 获取博客列表......
+2025-02-22T16:38:43.760+08:00  INFO 56259 --- [Blog_system] [http-nio-8080-exec-3] o.m.b.controller.UserController          : 获取用户信息,userId:1
+2025-02-22T16:38:43.760+08:00  INFO 56259 --- [Blog_system] [http-nio-8080-exec-2] o.m.b.service.impl.BlogServiceImpl       : 查询结果:[BlogInfo(id=5, title=test1, content=##在这里写下一篇博客
+###lsakdfjl
+*asldfjk*
+**saldjf**, userId=1, deleteFlag=0, createTime=2025-02-22T13:38:37, updateTime=Sat Feb 22 13:38:37 CST 2025), BlogInfo(id=2, title=第二篇博客, content=222我是博客正文我是博客正文我是博客正文, userId=2, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025), BlogInfo(id=1, title=第一篇博客, content=111我是博客正文我是博客正文我是博客正文, userId=1, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025)]
+2025-02-22T16:38:51.350+08:00  INFO 56259 --- [Blog_system] [http-nio-8080-exec-6] o.m.b.c.interceptor.LoginIntercepter     : 获取token:null
+2025-02-22T16:38:51.350+08:00  INFO 56259 --- [Blog_system] [http-nio-8080-exec-5] o.m.b.c.interceptor.LoginIntercepter     : 获取token:null
+2025-02-22T16:38:51.353+08:00 ERROR 56259 --- [Blog_system] [http-nio-8080-exec-5] o.mon.blog_system.common.utils.JwtUtil   : token解析失败,token:null
+2025-02-22T16:38:51.353+08:00 ERROR 56259 --- [Blog_system] [http-nio-8080-exec-6] o.mon.blog_system.common.utils.JwtUtil   : token解析失败,token:null
+2025-02-22T16:39:17.262+08:00  INFO 56259 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-22T16:39:17.263+08:00  INFO 56259 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-22T16:39:17.266+08:00  INFO 56259 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-22T16:39:17.268+08:00  INFO 56259 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-22T16:39:18.242+08:00  INFO 56342 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 56342 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-22T16:39:18.242+08:00  INFO 56342 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-22T16:39:18.574+08:00  INFO 56342 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-22T16:39:18.579+08:00  INFO 56342 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-22T16:39:18.579+08:00  INFO 56342 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-22T16:39:18.596+08:00  INFO 56342 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-22T16:39:18.596+08:00  INFO 56342 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 340 ms
+2025-02-22T16:39:18.819+08:00  INFO 56342 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-22T16:39:18.823+08:00  INFO 56342 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.731 seconds (process running for 0.928)
+2025-02-22T16:39:27.913+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-22T16:39:27.913+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-22T16:39:27.914+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-22T16:39:27.962+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.controller.UserController          : 用户登入,userName:zhangsan
+2025-02-22T16:39:27.987+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-22T16:39:28.034+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@79502406
+2025-02-22T16:39:28.035+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-22T16:39:28.116+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-3] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiaWF0IjoxNzQwMjEzNTY4LCJleHAiOjE3NDAyOTk5Njh9.iTTLEkKuqPjzP-4FlpZfLynqIkBUV71rS76Opw8q-BU
+2025-02-22T16:39:28.116+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-4] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiaWF0IjoxNzQwMjEzNTY4LCJleHAiOjE3NDAyOTk5Njh9.iTTLEkKuqPjzP-4FlpZfLynqIkBUV71rS76Opw8q-BU
+2025-02-22T16:39:28.130+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-4] o.m.b.controller.BlogController          : 获取博客列表......
+2025-02-22T16:39:28.136+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-3] o.m.b.controller.UserController          : 获取用户信息,userId:1
+2025-02-22T16:39:28.136+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-4] o.m.b.service.impl.BlogServiceImpl       : 查询结果:[BlogInfo(id=5, title=test1, content=##在这里写下一篇博客
+###lsakdfjl
+*asldfjk*
+**saldjf**, userId=1, deleteFlag=0, createTime=2025-02-22T13:38:37, updateTime=Sat Feb 22 13:38:37 CST 2025), BlogInfo(id=2, title=第二篇博客, content=222我是博客正文我是博客正文我是博客正文, userId=2, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025), BlogInfo(id=1, title=第一篇博客, content=111我是博客正文我是博客正文我是博客正文, userId=1, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025)]
+2025-02-22T16:39:36.530+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-7] o.m.b.c.interceptor.LoginIntercepter     : 获取token:null
+2025-02-22T16:39:36.530+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-6] o.m.b.c.interceptor.LoginIntercepter     : 获取token:null
+2025-02-22T16:39:36.532+08:00 ERROR 56342 --- [Blog_system] [http-nio-8080-exec-6] o.mon.blog_system.common.utils.JwtUtil   : token解析失败,token:null
+2025-02-22T16:39:36.532+08:00 ERROR 56342 --- [Blog_system] [http-nio-8080-exec-7] o.mon.blog_system.common.utils.JwtUtil   : token解析失败,token:null
+2025-02-22T16:39:43.493+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-8] o.m.b.controller.UserController          : 用户登入,userName:zhangsan
+2025-02-22T16:39:43.546+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-10] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiaWF0IjoxNzQwMjEzNTgzLCJleHAiOjE3NDAyOTk5ODN9.UWzxcpeFncFFxbrpbNTVfVghrSGonrtj94GocWr2Q4k
+2025-02-22T16:39:43.546+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiaWF0IjoxNzQwMjEzNTgzLCJleHAiOjE3NDAyOTk5ODN9.UWzxcpeFncFFxbrpbNTVfVghrSGonrtj94GocWr2Q4k
+2025-02-22T16:39:43.548+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.controller.BlogController          : 获取博客列表......
+2025-02-22T16:39:43.549+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-10] o.m.b.controller.UserController          : 获取用户信息,userId:1
+2025-02-22T16:39:43.553+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.service.impl.BlogServiceImpl       : 查询结果:[BlogInfo(id=5, title=test1, content=##在这里写下一篇博客
+###lsakdfjl
+*asldfjk*
+**saldjf**, userId=1, deleteFlag=0, createTime=2025-02-22T13:38:37, updateTime=Sat Feb 22 13:38:37 CST 2025), BlogInfo(id=2, title=第二篇博客, content=222我是博客正文我是博客正文我是博客正文, userId=2, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025), BlogInfo(id=1, title=第一篇博客, content=111我是博客正文我是博客正文我是博客正文, userId=1, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025)]
+2025-02-22T16:39:51.055+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-2] o.m.b.controller.UserController          : 用户登入,userName:zhangsan
+2025-02-22T16:39:51.106+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-5] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiaWF0IjoxNzQwMjEzNTkxLCJleHAiOjE3NDAyOTk5OTF9.jYKUQ0bZA-IwK-Ne8RTWXbqMd7Jlyu62lJsNC9X_k_s
+2025-02-22T16:39:51.106+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-4] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiaWF0IjoxNzQwMjEzNTkxLCJleHAiOjE3NDAyOTk5OTF9.jYKUQ0bZA-IwK-Ne8RTWXbqMd7Jlyu62lJsNC9X_k_s
+2025-02-22T16:39:51.108+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-5] o.m.b.controller.BlogController          : 获取博客列表......
+2025-02-22T16:39:51.109+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-4] o.m.b.controller.UserController          : 获取用户信息,userId:1
+2025-02-22T16:39:51.113+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-5] o.m.b.service.impl.BlogServiceImpl       : 查询结果:[BlogInfo(id=5, title=test1, content=##在这里写下一篇博客
+###lsakdfjl
+*asldfjk*
+**saldjf**, userId=1, deleteFlag=0, createTime=2025-02-22T13:38:37, updateTime=Sat Feb 22 13:38:37 CST 2025), BlogInfo(id=2, title=第二篇博客, content=222我是博客正文我是博客正文我是博客正文, userId=2, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025), BlogInfo(id=1, title=第一篇博客, content=111我是博客正文我是博客正文我是博客正文, userId=1, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025)]
+2025-02-22T16:40:00.157+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-8] o.m.b.c.interceptor.LoginIntercepter     : 获取token:null
+2025-02-22T16:40:00.157+08:00  INFO 56342 --- [Blog_system] [http-nio-8080-exec-6] o.m.b.c.interceptor.LoginIntercepter     : 获取token:null
+2025-02-22T16:40:00.160+08:00 ERROR 56342 --- [Blog_system] [http-nio-8080-exec-6] o.mon.blog_system.common.utils.JwtUtil   : token解析失败,token:null
+2025-02-22T16:40:00.160+08:00 ERROR 56342 --- [Blog_system] [http-nio-8080-exec-8] o.mon.blog_system.common.utils.JwtUtil   : token解析失败,token:null
+2025-02-22T16:42:43.817+08:00  INFO 56342 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-22T16:42:43.819+08:00  INFO 56342 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-22T16:42:43.821+08:00  INFO 56342 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-22T16:42:43.825+08:00  INFO 56342 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-22T16:42:44.913+08:00  INFO 56611 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 56611 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-22T16:42:44.913+08:00  INFO 56611 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-22T16:42:45.260+08:00  INFO 56611 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-22T16:42:45.264+08:00  INFO 56611 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-22T16:42:45.265+08:00  INFO 56611 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-22T16:42:45.284+08:00  INFO 56611 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-22T16:42:45.284+08:00  INFO 56611 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 353 ms
+2025-02-22T16:42:45.516+08:00  INFO 56611 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-22T16:42:45.520+08:00  INFO 56611 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.771 seconds (process running for 0.942)
+2025-02-22T16:42:52.503+08:00  INFO 56611 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-22T16:42:52.504+08:00  INFO 56611 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-22T16:42:52.505+08:00  INFO 56611 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-22T16:42:52.553+08:00  INFO 56611 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.controller.UserController          : 用户登入,userName:zhangsan
+2025-02-22T16:42:52.576+08:00  INFO 56611 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-22T16:42:52.624+08:00  INFO 56611 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6d40f770
+2025-02-22T16:42:52.624+08:00  INFO 56611 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-22T16:42:52.709+08:00  INFO 56611 --- [Blog_system] [http-nio-8080-exec-4] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiaWF0IjoxNzQwMjEzNzcyLCJleHAiOjE3NDAzMDAxNzJ9.RLS0LAxynpVOz8oJwyUnQRYSAqPa7_rlNSeQLy47QMA
+2025-02-22T16:42:52.709+08:00  INFO 56611 --- [Blog_system] [http-nio-8080-exec-3] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiaWF0IjoxNzQwMjEzNzcyLCJleHAiOjE3NDAzMDAxNzJ9.RLS0LAxynpVOz8oJwyUnQRYSAqPa7_rlNSeQLy47QMA
+2025-02-22T16:42:52.725+08:00  INFO 56611 --- [Blog_system] [http-nio-8080-exec-4] o.m.b.controller.BlogController          : 获取博客列表......
+2025-02-22T16:42:52.732+08:00  INFO 56611 --- [Blog_system] [http-nio-8080-exec-3] o.m.b.controller.UserController          : 获取用户信息,userId:1
+2025-02-22T16:42:52.732+08:00  INFO 56611 --- [Blog_system] [http-nio-8080-exec-4] o.m.b.service.impl.BlogServiceImpl       : 查询结果:[BlogInfo(id=5, title=test1, content=##在这里写下一篇博客
+###lsakdfjl
+*asldfjk*
+**saldjf**, userId=1, deleteFlag=0, createTime=2025-02-22T13:38:37, updateTime=Sat Feb 22 13:38:37 CST 2025), BlogInfo(id=2, title=第二篇博客, content=222我是博客正文我是博客正文我是博客正文, userId=2, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025), BlogInfo(id=1, title=第一篇博客, content=111我是博客正文我是博客正文我是博客正文, userId=1, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025)]
+2025-02-22T16:42:59.360+08:00  INFO 56611 --- [Blog_system] [http-nio-8080-exec-7] o.m.b.c.interceptor.LoginIntercepter     : 获取token:null
+2025-02-22T16:42:59.360+08:00  INFO 56611 --- [Blog_system] [http-nio-8080-exec-6] o.m.b.c.interceptor.LoginIntercepter     : 获取token:null
+2025-02-22T16:42:59.362+08:00 ERROR 56611 --- [Blog_system] [http-nio-8080-exec-7] o.mon.blog_system.common.utils.JwtUtil   : token解析失败,token:null
+2025-02-22T16:42:59.362+08:00 ERROR 56611 --- [Blog_system] [http-nio-8080-exec-6] o.mon.blog_system.common.utils.JwtUtil   : token解析失败,token:null
+2025-02-22T16:43:56.859+08:00  INFO 56611 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-22T16:43:56.861+08:00  INFO 56611 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-22T16:43:56.864+08:00  INFO 56611 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-22T16:43:56.867+08:00  INFO 56611 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-22T16:43:57.896+08:00  INFO 56706 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 56706 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-22T16:43:57.897+08:00  INFO 56706 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-22T16:43:58.231+08:00  INFO 56706 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-22T16:43:58.238+08:00  INFO 56706 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-22T16:43:58.238+08:00  INFO 56706 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-22T16:43:58.254+08:00  INFO 56706 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-22T16:43:58.254+08:00  INFO 56706 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 341 ms
+2025-02-22T16:43:58.486+08:00  INFO 56706 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-22T16:43:58.490+08:00  INFO 56706 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.757 seconds (process running for 0.932)
+2025-02-22T16:44:08.016+08:00  INFO 56706 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-22T16:44:08.016+08:00  INFO 56706 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-22T16:44:08.017+08:00  INFO 56706 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-22T16:44:08.065+08:00  INFO 56706 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.controller.UserController          : 用户登入,userName:zhangsan
+2025-02-22T16:44:08.089+08:00  INFO 56706 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-22T16:44:08.136+08:00  INFO 56706 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3fe0a6c7
+2025-02-22T16:44:08.136+08:00  INFO 56706 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-22T16:44:08.219+08:00  INFO 56706 --- [Blog_system] [http-nio-8080-exec-3] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiaWF0IjoxNzQwMjEzODQ4LCJleHAiOjE3NDAzMDAyNDh9.pgeTzz9dGcWj9SYfxqDgnqIPprC1Djz9nAHn3W7QpIE
+2025-02-22T16:44:08.219+08:00  INFO 56706 --- [Blog_system] [http-nio-8080-exec-4] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiaWF0IjoxNzQwMjEzODQ4LCJleHAiOjE3NDAzMDAyNDh9.pgeTzz9dGcWj9SYfxqDgnqIPprC1Djz9nAHn3W7QpIE
+2025-02-22T16:44:08.232+08:00  INFO 56706 --- [Blog_system] [http-nio-8080-exec-4] o.m.b.controller.BlogController          : 获取博客列表......
+2025-02-22T16:44:08.239+08:00  INFO 56706 --- [Blog_system] [http-nio-8080-exec-3] o.m.b.controller.UserController          : 获取用户信息,userId:1
+2025-02-22T16:44:08.238+08:00  INFO 56706 --- [Blog_system] [http-nio-8080-exec-4] o.m.b.service.impl.BlogServiceImpl       : 查询结果:[BlogInfo(id=5, title=test1, content=##在这里写下一篇博客
+###lsakdfjl
+*asldfjk*
+**saldjf**, userId=1, deleteFlag=0, createTime=2025-02-22T13:38:37, updateTime=Sat Feb 22 13:38:37 CST 2025), BlogInfo(id=2, title=第二篇博客, content=222我是博客正文我是博客正文我是博客正文, userId=2, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025), BlogInfo(id=1, title=第一篇博客, content=111我是博客正文我是博客正文我是博客正文, userId=1, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025)]
+2025-02-22T16:44:18.346+08:00  INFO 56706 --- [Blog_system] [http-nio-8080-exec-6] o.m.b.c.interceptor.LoginIntercepter     : 获取token:null
+2025-02-22T16:44:18.346+08:00  INFO 56706 --- [Blog_system] [http-nio-8080-exec-7] o.m.b.c.interceptor.LoginIntercepter     : 获取token:null
+2025-02-22T16:44:18.348+08:00 ERROR 56706 --- [Blog_system] [http-nio-8080-exec-7] o.mon.blog_system.common.utils.JwtUtil   : token解析失败,token:null
+2025-02-22T16:44:18.348+08:00 ERROR 56706 --- [Blog_system] [http-nio-8080-exec-6] o.mon.blog_system.common.utils.JwtUtil   : token解析失败,token:null
+2025-02-22T16:45:55.167+08:00  INFO 56706 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-22T16:45:55.169+08:00  INFO 56706 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-22T16:45:55.171+08:00  INFO 56706 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-22T16:45:55.174+08:00  INFO 56706 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-22T16:45:56.139+08:00  INFO 56872 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 56872 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-22T16:45:56.140+08:00  INFO 56872 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-22T16:45:56.471+08:00  INFO 56872 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-22T16:45:56.476+08:00  INFO 56872 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-22T16:45:56.476+08:00  INFO 56872 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-22T16:45:56.491+08:00  INFO 56872 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-22T16:45:56.492+08:00  INFO 56872 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 339 ms
+2025-02-22T16:45:56.729+08:00  INFO 56872 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-22T16:45:56.733+08:00  INFO 56872 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.747 seconds (process running for 0.921)
+2025-02-22T16:46:15.716+08:00  INFO 56872 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-22T16:46:15.717+08:00  INFO 56872 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-22T16:46:15.718+08:00  INFO 56872 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-22T16:46:15.767+08:00  INFO 56872 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.controller.UserController          : 用户登入,userName:zhangsan
+2025-02-22T16:46:15.792+08:00  INFO 56872 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-22T16:46:15.839+08:00  INFO 56872 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@31b39453
+2025-02-22T16:46:15.840+08:00  INFO 56872 --- [Blog_system] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-22T16:46:15.924+08:00  INFO 56872 --- [Blog_system] [http-nio-8080-exec-3] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiaWF0IjoxNzQwMjEzOTc1LCJleHAiOjE3NDAzMDAzNzV9.Yu7NwdliWYkhk6hTGuRcT9naL8KwAZvajbg13pjkKOk
+2025-02-22T16:46:15.924+08:00  INFO 56872 --- [Blog_system] [http-nio-8080-exec-4] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiaWF0IjoxNzQwMjEzOTc1LCJleHAiOjE3NDAzMDAzNzV9.Yu7NwdliWYkhk6hTGuRcT9naL8KwAZvajbg13pjkKOk
+2025-02-22T16:46:15.940+08:00  INFO 56872 --- [Blog_system] [http-nio-8080-exec-4] o.m.b.controller.BlogController          : 获取博客列表......
+2025-02-22T16:46:15.943+08:00  INFO 56872 --- [Blog_system] [http-nio-8080-exec-3] o.m.b.controller.UserController          : 获取用户信息,userId:1
+2025-02-22T16:46:15.944+08:00  INFO 56872 --- [Blog_system] [http-nio-8080-exec-4] o.m.b.service.impl.BlogServiceImpl       : 查询结果:[BlogInfo(id=5, title=test1, content=##在这里写下一篇博客
+###lsakdfjl
+*asldfjk*
+**saldjf**, userId=1, deleteFlag=0, createTime=2025-02-22T13:38:37, updateTime=Sat Feb 22 13:38:37 CST 2025), BlogInfo(id=2, title=第二篇博客, content=222我是博客正文我是博客正文我是博客正文, userId=2, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025), BlogInfo(id=1, title=第一篇博客, content=111我是博客正文我是博客正文我是博客正文, userId=1, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025)]
+2025-02-22T16:46:26.112+08:00  INFO 56872 --- [Blog_system] [http-nio-8080-exec-6] o.m.b.c.interceptor.LoginIntercepter     : 获取token:null
+2025-02-22T16:46:26.112+08:00  INFO 56872 --- [Blog_system] [http-nio-8080-exec-7] o.m.b.c.interceptor.LoginIntercepter     : 获取token:null
+2025-02-22T16:46:26.114+08:00 ERROR 56872 --- [Blog_system] [http-nio-8080-exec-6] o.mon.blog_system.common.utils.JwtUtil   : token解析失败,token:null
+2025-02-22T16:46:26.114+08:00 ERROR 56872 --- [Blog_system] [http-nio-8080-exec-7] o.mon.blog_system.common.utils.JwtUtil   : token解析失败,token:null
+2025-02-22T16:47:14.757+08:00  INFO 56872 --- [Blog_system] [http-nio-8080-exec-8] o.m.b.controller.UserController          : 用户登入,userName:lisi
+2025-02-22T16:47:14.770+08:00 ERROR 56872 --- [Blog_system] [http-nio-8080-exec-8] o.m.b.common.advice.ExceptionAdvice      : 发生错误,e:{}
+
+org.mon.blog_system.common.exception.BlogException: 密码错误
+	at org.mon.blog_system.service.impl.UserServiceImpl.login(UserServiceImpl.java:44) ~[classes/:na]
+	at org.mon.blog_system.controller.UserController.login(UserController.java:34) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2025-02-22T16:47:44.963+08:00  INFO 56872 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-22T16:47:44.965+08:00  INFO 56872 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-22T16:47:44.967+08:00  INFO 56872 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-22T16:47:44.970+08:00  INFO 56872 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-22T16:48:10.766+08:00  INFO 57049 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 57049 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-22T16:48:10.767+08:00  INFO 57049 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-22T16:48:11.116+08:00  INFO 57049 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-22T16:48:11.120+08:00  INFO 57049 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-22T16:48:11.120+08:00  INFO 57049 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-22T16:48:11.135+08:00  INFO 57049 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-22T16:48:11.136+08:00  INFO 57049 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 354 ms
+2025-02-22T16:48:11.370+08:00  INFO 57049 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-22T16:48:11.374+08:00  INFO 57049 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.775 seconds (process running for 0.941)
+2025-02-22T16:48:17.573+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-22T16:48:17.574+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-22T16:48:17.575+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-22T16:48:24.116+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-2] o.m.b.controller.UserController          : 用户登入,userName:lisi
+2025-02-22T16:48:24.144+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-22T16:48:24.193+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6ab63962
+2025-02-22T16:48:24.194+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-22T16:48:24.288+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-4] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJpYXQiOjE3NDAyMTQxMDQsImV4cCI6MTc0MDMwMDUwNH0.9eHb2nBpVV8vOzfyHnhzhhJa5_atImdLCNGNahobrmc
+2025-02-22T16:48:24.288+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-5] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJpYXQiOjE3NDAyMTQxMDQsImV4cCI6MTc0MDMwMDUwNH0.9eHb2nBpVV8vOzfyHnhzhhJa5_atImdLCNGNahobrmc
+2025-02-22T16:48:24.299+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-5] o.m.b.controller.BlogController          : 获取博客列表......
+2025-02-22T16:48:24.302+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-4] o.m.b.controller.UserController          : 获取用户信息,userId:2
+2025-02-22T16:48:24.303+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-5] o.m.b.service.impl.BlogServiceImpl       : 查询结果:[BlogInfo(id=5, title=test1, content=##在这里写下一篇博客
+###lsakdfjl
+*asldfjk*
+**saldjf**, userId=1, deleteFlag=0, createTime=2025-02-22T13:38:37, updateTime=Sat Feb 22 13:38:37 CST 2025), BlogInfo(id=2, title=第二篇博客, content=222我是博客正文我是博客正文我是博客正文, userId=2, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025), BlogInfo(id=1, title=第一篇博客, content=111我是博客正文我是博客正文我是博客正文, userId=1, deleteFlag=0, createTime=2025-02-20T20:16:51, updateTime=Thu Feb 20 20:16:51 CST 2025)]
+2025-02-22T16:48:30.573+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-3] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJpYXQiOjE3NDAyMTQxMDQsImV4cCI6MTc0MDMwMDUwNH0.9eHb2nBpVV8vOzfyHnhzhhJa5_atImdLCNGNahobrmc
+2025-02-22T16:48:30.573+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-2] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJpYXQiOjE3NDAyMTQxMDQsImV4cCI6MTc0MDMwMDUwNH0.9eHb2nBpVV8vOzfyHnhzhhJa5_atImdLCNGNahobrmc
+2025-02-22T16:48:30.576+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-3] o.m.b.controller.UserController          : 获取坐着信息,blogId:2
+2025-02-22T16:48:30.578+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-2] o.m.b.controller.BlogController          : 获取博客详情,blogId:2
+2025-02-22T16:48:33.324+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-6] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJpYXQiOjE3NDAyMTQxMDQsImV4cCI6MTc0MDMwMDUwNH0.9eHb2nBpVV8vOzfyHnhzhhJa5_atImdLCNGNahobrmc
+2025-02-22T16:48:33.324+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-5] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJpYXQiOjE3NDAyMTQxMDQsImV4cCI6MTc0MDMwMDUwNH0.9eHb2nBpVV8vOzfyHnhzhhJa5_atImdLCNGNahobrmc
+2025-02-22T16:48:33.327+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-6] o.m.b.controller.UserController          : 获取坐着信息,blogId:5
+2025-02-22T16:48:33.327+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-5] o.m.b.controller.BlogController          : 获取博客详情,blogId:5
+2025-02-22T16:48:35.239+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-7] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJpYXQiOjE3NDAyMTQxMDQsImV4cCI6MTc0MDMwMDUwNH0.9eHb2nBpVV8vOzfyHnhzhhJa5_atImdLCNGNahobrmc
+2025-02-22T16:48:35.239+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-9] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJpYXQiOjE3NDAyMTQxMDQsImV4cCI6MTc0MDMwMDUwNH0.9eHb2nBpVV8vOzfyHnhzhhJa5_atImdLCNGNahobrmc
+2025-02-22T16:48:35.241+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-9] o.m.b.controller.UserController          : 获取坐着信息,blogId:1
+2025-02-22T16:48:35.241+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-7] o.m.b.controller.BlogController          : 获取博客详情,blogId:1
+2025-02-22T16:48:37.535+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-10] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJpYXQiOjE3NDAyMTQxMDQsImV4cCI6MTc0MDMwMDUwNH0.9eHb2nBpVV8vOzfyHnhzhhJa5_atImdLCNGNahobrmc
+2025-02-22T16:48:37.535+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.c.interceptor.LoginIntercepter     : 获取token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJpYXQiOjE3NDAyMTQxMDQsImV4cCI6MTc0MDMwMDUwNH0.9eHb2nBpVV8vOzfyHnhzhhJa5_atImdLCNGNahobrmc
+2025-02-22T16:48:37.538+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-1] o.m.b.controller.UserController          : 获取坐着信息,blogId:2
+2025-02-22T16:48:37.538+08:00  INFO 57049 --- [Blog_system] [http-nio-8080-exec-10] o.m.b.controller.BlogController          : 获取博客详情,blogId:2
+2025-02-22T17:07:53.049+08:00  WARN 57049 --- [Blog_system] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=58s554ms).
+2025-02-22T17:24:32.644+08:00  WARN 57049 --- [Blog_system] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m9s572ms).
+2025-02-22T17:42:16.683+08:00  WARN 57049 --- [Blog_system] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m44s7ms).
+2025-02-22T17:54:45.177+08:00  WARN 57049 --- [Blog_system] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m58s394ms).
+2025-02-22T18:37:28.293+08:00  INFO 57049 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-22T18:37:28.295+08:00  INFO 57049 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-22T18:37:28.298+08:00  INFO 57049 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-22T18:37:28.298+08:00  INFO 57049 --- [Blog_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-22T19:50:58.433+08:00  INFO 64936 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 64936 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-22T19:50:58.434+08:00  INFO 64936 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-02-22T19:50:58.778+08:00  INFO 64936 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-22T19:50:58.783+08:00  INFO 64936 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-22T19:50:58.784+08:00  INFO 64936 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-22T19:50:58.799+08:00  INFO 64936 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-22T19:50:58.799+08:00  INFO 64936 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 353 ms
+2025-02-22T19:50:59.032+08:00  INFO 64936 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-22T19:50:59.037+08:00  INFO 64936 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.763 seconds (process running for 0.966)
+2025-02-22T19:52:40.318+08:00  INFO 64936 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-22T19:52:40.321+08:00  INFO 64936 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-22T19:52:41.337+08:00  INFO 65083 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Starting BlogSystemApplication using Java 17.0.11 with PID 65083 (/Users/zhaoqianqian/IDEAUl/Project/Blog_system/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-22T19:52:41.337+08:00  INFO 65083 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : The following 1 profile is active: "prod"
+2025-02-22T19:52:41.678+08:00  INFO 65083 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-02-22T19:52:41.683+08:00  INFO 65083 --- [Blog_system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-22T19:52:41.683+08:00  INFO 65083 --- [Blog_system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-22T19:52:41.701+08:00  INFO 65083 --- [Blog_system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-22T19:52:41.702+08:00  INFO 65083 --- [Blog_system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 347 ms
+2025-02-22T19:52:41.934+08:00  INFO 65083 --- [Blog_system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-02-22T19:52:41.938+08:00  INFO 65083 --- [Blog_system] [main] o.mon.blog_system.BlogSystemApplication  : Started BlogSystemApplication in 0.763 seconds (process running for 0.958)
+2025-02-22T20:02:15.083+08:00  INFO 65083 --- [Blog_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-22T20:02:15.086+08:00  INFO 65083 --- [Blog_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete

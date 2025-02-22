@@ -47,6 +47,15 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/common.js"></script>
     <script>
+        
+
+
+
+        // 获取用户信息
+        let url="/user/getUserInfo?userId="+localStorage.getItem("login_user_id");
+        getUserInfo(url);
+
+
         getBlogList();
         function getBlogList(){
             $.ajax({
@@ -70,12 +79,6 @@
             }
         });
         }
-
-
-
-        // 获取用户信息
-        let url="/user/getUserInfo?userId="+localStorage.getItem("login_user_id");
-        getUserInfo(url);
         
         
 
