@@ -4,6 +4,9 @@ package org.mon.blog_system.service;
 //这是一种SOA的设计风格
 
 
+import jakarta.validation.constraints.NotNull;
+import org.mon.blog_system.common.pojo.Request.AddBlogParam;
+import org.mon.blog_system.common.pojo.Request.UpBlogParam;
 import org.mon.blog_system.common.pojo.response.BlogInfoResponse;
 
 import java.util.List;
@@ -13,4 +16,10 @@ public interface BlogService {
     List<BlogInfoResponse> getList();
 
     BlogInfoResponse getBlogDetail(Integer blogId);
+
+    Boolean addBlog(AddBlogParam addBlogParam);
+
+    Boolean updateBlog(UpBlogParam upBlogParam);
+
+    Boolean deleteBlog(@NotNull Integer blogId);
 }

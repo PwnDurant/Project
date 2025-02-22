@@ -37,10 +37,14 @@ function getUserInfo(url){
     });
 }
 
+
+// 
+
 function logout(){
     let logout=confirm("是否确认退出");
     if(logout){
         localStorage.removeItem("user_token");
+        localStorage.removeItem("login_user_id");
         location.href="blog_login.html";
     }
     

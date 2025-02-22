@@ -4,13 +4,13 @@ package org.mon.blog_system.controller;
 import jakarta.annotation.Resource;
 import jakarta.validation.constraints.NotNull;
 import lombok.extern.slf4j.Slf4j;
+import org.mon.blog_system.common.pojo.Request.AddBlogParam;
+import org.mon.blog_system.common.pojo.Request.UpBlogParam;
 import org.mon.blog_system.common.pojo.response.BlogInfoResponse;
 import org.mon.blog_system.service.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -40,5 +40,24 @@ public class BlogController {
     public BlogInfoResponse getBlogDetail(@NotNull Integer blogId){
         log.info("获取博客详情,blogId:{}",blogId);
         return blogService.getBlogDetail(blogId);
+    }
+
+    @PostMapping("/add")
+//    前端传的是JSON
+    public Boolean addBlog(@Validated @RequestBody AddBlogParam addBlogParam){
+        log.info("添加博客，标题:{}",addBlogParam.getTitle());
+        return blogService.addBlog(addBlogParam);
+    }
+
+    @PostMapping("/update")
+    public Boolean updateBlog(@RequestBody @Validated UpBlogParam upBlogParam){
+        log.info("更新博客，博客Id为:{}",upBlogParam.getId());
+        return blogService.updateBlog(upBlogParam);
+    }
+
+    @PostMapping("/delete")
+    public Boolean deleteBlog(@NotNull Integer blogId){
+        log.info("删除博客，博客Id为:{}",blogId);
+        return blogService.deleteBlog(blogId);
     }
 }

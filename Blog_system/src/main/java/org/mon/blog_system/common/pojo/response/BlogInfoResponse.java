@@ -10,6 +10,7 @@ import java.util.Date;//显示的不是东八时区
 
 @Data
 public class BlogInfoResponse {
+    private Integer userId;
     private Integer id;
     private String title;
     private String content;

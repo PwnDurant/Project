@@ -4,6 +4,8 @@ package org.mon.blog_system.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
+import org.mon.blog_system.common.pojo.Request.AddBlogParam;
+import org.mon.blog_system.common.pojo.Request.UpBlogParam;
 import org.mon.blog_system.common.pojo.dataobject.BlogInfo;
 import org.mon.blog_system.common.pojo.dataobject.UserInfo;
 import org.mon.blog_system.common.pojo.response.BlogInfoResponse;
@@ -68,9 +70,56 @@ public class BlogServiceImpl implements BlogService {
         return blogInfoResponse;
     }
 
+    @Override
+    public Boolean addBlog(AddBlogParam addBlogParam) {
+//        数据库是对BlogInfo进行操作的，所以要将对象转换为BlogInfo
+//        BlogInfo blogInfo=new BlogInfo();
+//        BeanUtils.copyProperties(addBlogParam,blogInfo);
+        BlogInfo blogInfo = BeanConver.trans(addBlogParam);
+        try{
+            int insert = blogInfoMapper.insert(blogInfo);
+            if(insert==1) return true;
+        }catch (Exception e){
+            log.error("博客插入失败,e:{}",e);
+        }
+        return false;
+    }
 
-//    从数据库查询博客详情
+
+//    更新博客
+    @Override
+    public Boolean updateBlog(UpBlogParam upBlogParam) {
+//        对象转化
+        BlogInfo blogInfo = BeanConver.trans(upBlogParam);
+//        更新博客
+        return  update(blogInfo);
+    }
+
+    @Override
+    public Boolean deleteBlog(Integer blogId) {
+        BlogInfo blogInfo=new BlogInfo();
+        blogInfo.setId(blogId);
+        blogInfo.setDeleteFlag(1);
+
+        return update(blogInfo);
+    }
+
+
+    //    从数据库查询博客详情
     public BlogInfo selectBlogById(Integer blogId){
         return blogInfoMapper.selectOne(new LambdaQueryWrapper<BlogInfo>().eq(BlogInfo::getId, blogId).eq(BlogInfo::getDeleteFlag, 0));
+    }
+
+
+//    更新博客数据
+    public Boolean update(BlogInfo blogInfo){
+        try{
+            Integer result = blogInfoMapper.updateById(blogInfo);
+            if(result==1) return true;
+            else return false;
+        }catch (Exception e){
+            log.error("更新博客失败,e:{}",e);
+        }
+        return false;
     }
 }

@@ -39,19 +39,57 @@
     <script src="js/common.js"></script>
     <script type="text/javascript">
 
-        $(function () {
-            var editor = editormd("editor", {
-                width  : "100%",
-                height : "550px",
-                path: "blog-editormd/lib/"
-            });
-        });
-        
+        // $(function () {
+        //     var editor = editormd("editor", {
+        //         width: "100%",
+        //         height: "550px",
+        //         path: "blog-editormd/lib/"
+        //     });
+        // });
+
         function submit() {
-           
+            $.ajax({
+                type: "post",
+                url: "/blog/update",
+                data: JSON.stringify({
+                    id: $("#blogId").val(),
+                    title: $("#title").val(),
+                    content: $("#content").val()
+                }),
+                contentType: "application/json",
+                success: function (result) {
+                    if (result.code == 200 && result.data == true && result != null) {
+                        alert("博客更新成功");
+                        location.href = "blog_list.html";
+                    } else {
+                        alert("发表失败");
+                    }
+                }
+            });
+
         }
         function getBlogInfo() {
-            
+            $.ajax({
+                type: "get",
+                url: "/blog/getBlogDetail" + location.search,
+                success: function (result) {
+                    if (result.code == 200 && result.data != null && result != null) {
+                        let blogInfo = result.data;
+                        $("#blogId").val(blogInfo.id);
+                        $("#title").val(blogInfo.title);
+                        $("#content").val(blogInfo.content);//这个方法赋值不稳定
+                        editormd("editor", {
+                            width: "100%",
+                            height: "550px",
+                            path: "blog-editormd/lib/",
+                            onload:function(){
+                                this.watch();
+                                this.setMarkdown(blogInfo.content);
+                            }
+                        });
+                    }
+                }
+            })
         }
         getBlogInfo();
     </script>
