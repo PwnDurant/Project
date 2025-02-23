@@ -1074,3 +1074,12 @@ Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (usi
 2025-02-22T20:08:51.044+08:00  INFO 66593 --- [Blog_system] [main] o.m.b.BlogSystemApplicationTests         : Starting BlogSystemApplicationTests using Java 17.0.11 with PID 66593 (started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
 2025-02-22T20:08:51.045+08:00  INFO 66593 --- [Blog_system] [main] o.m.b.BlogSystemApplicationTests         : The following 1 profile is active: "prod"
 2025-02-22T20:08:51.635+08:00  INFO 66593 --- [Blog_system] [main] o.m.b.BlogSystemApplicationTests         : Started BlogSystemApplicationTests in 0.723 seconds (process running for 1.075)
+2025-02-22T20:52:35.709+08:00  INFO 71361 --- [Blog_system] [main] o.m.b.BlogSystemApplicationTests         : Starting BlogSystemApplicationTests using Java 17.0.11 with PID 71361 (started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-22T20:52:35.710+08:00  INFO 71361 --- [Blog_system] [main] o.m.b.BlogSystemApplicationTests         : The following 1 profile is active: "prod"
+2025-02-22T20:52:36.347+08:00  INFO 71361 --- [Blog_system] [main] o.m.b.BlogSystemApplicationTests         : Started BlogSystemApplicationTests in 0.796 seconds (process running for 1.257)
+2025-02-22T20:58:02.357+08:00  INFO 72500 --- [Blog_system] [main] o.m.b.BlogSystemApplicationTests         : Starting BlogSystemApplicationTests using Java 17.0.11 with PID 72500 (started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-22T20:58:02.358+08:00  INFO 72500 --- [Blog_system] [main] o.m.b.BlogSystemApplicationTests         : The following 1 profile is active: "prod"
+2025-02-22T20:58:03.043+08:00  INFO 72500 --- [Blog_system] [main] o.m.b.BlogSystemApplicationTests         : Started BlogSystemApplicationTests in 0.835 seconds (process running for 1.219)
+2025-02-22T21:05:40.459+08:00  INFO 74181 --- [Blog_system] [main] o.m.b.BlogSystemApplicationTests         : Starting BlogSystemApplicationTests using Java 17.0.11 with PID 74181 (started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Blog_system)
+2025-02-22T21:05:40.459+08:00  INFO 74181 --- [Blog_system] [main] o.m.b.BlogSystemApplicationTests         : The following 1 profile is active: "prod"
+2025-02-22T21:05:41.113+08:00  INFO 74181 --- [Blog_system] [main] o.m.b.BlogSystemApplicationTests         : Started BlogSystemApplicationTests in 0.806 seconds (process running for 1.196)

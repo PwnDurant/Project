@@ -38,7 +38,8 @@ public class SecurityUtilTest {
 
     @Test
     void genPassword(){
-        String encrypt = SecurityUtil.encrypt("123456");
+        String encrypt = SecurityUtil.encrypt("zyp123");
         System.out.println(encrypt);
     }
+    //    zqq1314ljm ljm1314 zyp123
 }
