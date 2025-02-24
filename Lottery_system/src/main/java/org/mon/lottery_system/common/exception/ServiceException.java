@@ -2,6 +2,7 @@ package org.mon.lottery_system.common.exception;
 
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.mon.lottery_system.common.errorcode.ErrorCode;
 
 /**
@@ -9,6 +10,8 @@ import org.mon.lottery_system.common.errorcode.ErrorCode;
  */
 
 @Data
+//不写的话，可能会出现问题
+@EqualsAndHashCode(callSuper = true)  //使用父类的一些相关属性，可以直接继承到本类中
 public class ServiceException extends RuntimeException {
   /**
    * 异常码
