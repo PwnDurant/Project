@@ -8,6 +8,22 @@ spring:
     username: root
     password: zqq13127837702
     driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    redis:
+      host: localhost
+      port: 8888
+      timeout: 60s
+#      默认使用lettuce连接池
+      lettuce:
+        pool:
+#          允许最大连接数
+          max-active: 8
+#          最大空闲连接数
+          max-idle: 8
+#          最小空闲连接数
+          min-idle: 0
+#          连接用完时，新的请求等待时间，超过该时间就抛出异常
+          max-wait: 5s
 #mybatis-plus:
 #  configuration:
 #    map-underscore-to-camel-case: true
@@ -23,3 +39,9 @@ mybatis:
 logging:
   file:
     name: spring-blog.log
+
+sms:
+  access-key-id: LTAI5t9mCxCNix6joJuwpU8n
+  access-key-secret: 8jZBQ3qt7Z8MmI90ZKEuUdvMYIVW27
+  sign-name: 简易的学习网站
+

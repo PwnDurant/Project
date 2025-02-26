@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>抽奖页面</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            text-align: center;
+            background: url("./pic/bg.png") no-repeat;
+            overflow: hidden;
+            background-size: 100% 100%;
+            font-weight: bold;
+            color: #D40000;
+        }
+        #container {
+            min-width: 1000px;
+            min-height: 700px;
+        }
+        #title {
+            font-size: 100px;
+            margin-top: 80px;
+        }
+        #disc {
+            font-size: 40px;
+            margin: 10px 0;
+        }
+        #image {
+            margin-top: 20px;
+            max-height: 280px;
+            border: 1px solid #E23540FF;
+            border-radius: 20px;
+        }
+        #list {
+            margin: 0 auto;
+            max-width: 800px;
+        }
+        #list span {
+            display: inline-block;
+            width: 160px;
+            font-size: 36px;
+            margin-top: 8px;
+        }
+        .records-item {
+            text-align: center;
+            cursor: pointer;
+            padding: 20px;
+            transition: background-color 0.3s;
+            font-size: 20px;
+        }
+        .opt-box{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .opt-box .btn{
+            width: 120px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #D40000;
+            margin-inline: 18px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: normal;
+            font-size: 15px;
+        }
+        .opt-box .btn:hover{
+            background-color: #D40000;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+<div id="container">
+    <div id="title"></div>
+    <div id="disc"></div>
+    <img id="image" />
+    <div id="list"></div>
+    <div class="opt-box">
+        <span class="btn pre-btn" onclick="previousStep()">查看上一奖项</span>
+        <span class="btn next-btn" onclick="nextStep()">开始抽奖</span>
+    </div>
+</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+    var params = new URLSearchParams(window.location.search);
+    var activityId = params.get('activityId');
+    var valid = params.get('valid');
+    var userToken = localStorage.getItem("user_token");
+
+
+    // 获取网页上通过id为disc、image和list的DOM元素的引用。
+    var disc = document.getElementById('disc')
+    var image = document.getElementById('image')
+    var list = document.getElementById('list')
+
+    // 奖品列表
+    var steps = null
+    // 抽到第几个了
+    var step = 0
+    // 人员列表
+    var names = null
+    // 正在做什么
+    var state = ''
+
+    // 等待DOM加载完成
+    document.addEventListener('DOMContentLoaded', function() {
+        var titleDiv = document.getElementById('title');
+        var activityName = params.get('activityName');
+        titleDiv.textContent = activityName;
+    });
+
+    function formatDate(dateString) {
+        var date = new Date(dateString);
+        var hour = ('0' + date.getHours()).slice(-2);
+        var minute = ('0' + date.getMinutes()).slice(-2);
+        var second = ('0' + date.getSeconds()).slice(-2);
+        // 构建格式化的日期字符串
+        return hour + ':' + minute + ':' + second;
+    }
+
+    // showPic函数用于显示图片和奖品信息。
+    // 它将data.disc设置为disc元素的innerHTML，将data.image设置为image元素的src属性，然后显示图片并隐藏列表。
+    function showPic(data) {
+        disc.innerHTML = data.prizeTierName + ' ' + data.name + ' ' + data.prizeAmount + '份'
+        image.src = data.imageUrl ? data.imageUrl : '/pic/defaultPrizeImg.png'
+        image.style.display = 'inline'
+        list.style.display = 'none'
+        while (list.hasChildNodes()) {
+            list.removeChild(list.firstChild)
+        }
+    }
+
+    // 查询中奖记录
+    function showRecords() {
+        disc.innerHTML = "中奖名单"
+        image.style.display = 'none'
+        list.style.display = 'block'
+        while (list.hasChildNodes()) {
+            list.removeChild(list.firstChild)
+        }
+        $.ajax({
+            url: '/winning-records/show',
+            type: 'POST',
+            dataType: 'json',
+            contentType: 'application/json',
+            data: JSON.stringify({activityId: activityId}),
+            headers: {
+                'user_token': userToken
+            },
+            success: function(result) {
+                if (result.code != 200) {
+                    alert("查询中奖记录失败！" + result.msg);
+                } else {
+                    var records = result.data
+                    list.className = "records-item"
+                    for (var i = 0; i < records.length; ++i) {
+                        var item = document.createElement('div')
+                        item.textContent = formatDate(records[i].winningTime) + ' '
+                        + records[i].winnerName + ' '
+                        + records[i].prizeName + ' '
+                        + records[i].prizeTier + ' '
+                        list.appendChild(item)
+                    }
+
+                    // 分享链接
+                    // 检查是否已经有分享按钮，如果没有则创建
+                    var optBox = document.querySelector('.opt-box');
+                    var existingBtn = optBox.querySelector('.btn.copy-btn');
+                    if (!existingBtn) {
+                        var newBtn = document.createElement('span');
+                        newBtn.className = 'btn copy-btn';
+                        // 设置点击事件处理函数
+                        newBtn.onclick = function() {
+                            // 创建URL对象
+                            var currentUrl = new URL(window.location);
+                            // 创建URLSearchParams对象
+                            var searchParams = currentUrl.searchParams;
+                            // 更新参数
+                            searchParams.delete('valid');
+                            searchParams.append('valid', false);
+                            // 防止分享再分享，拼接多个参数
+                            searchParams.delete('hideButton');
+                            searchParams.append('hideButton', true);
+                            // 更新URL对象的搜索字符串
+                            currentUrl.search = searchParams.toString();
+                            // 获取当前页面的URL
+                            var url = currentUrl;
+                            // 执行复制操作
+                            copyToClipboard(url);
+                        };
+                        // 设置span元素的文本内容
+                        newBtn.textContent = '分享结果';
+                        // 将新的span元素添加到.opt-box容器中
+                        optBox.appendChild(newBtn);
+                    }
+
+                    // 是否隐藏按钮
+                    var hideButton = params.get('hideButton');
+                    if ((hideButton == null && valid === 'false')
+                        || hideButton === 'true') {
+                        // 隐藏所有元素
+                        var buttons = document.querySelectorAll('.btn.pre-btn, .btn.next-btn');
+                        buttons.forEach(function(button) {
+                            button.style.display = 'none';
+                        });
+                    }
+                }
+            }
+        });
+    }
+
+    // 复制当前地址
+    function copyToClipboard(textToCopy) {
+        // navigator clipboard 需要https等安全上下文
+        if (navigator.clipboard && window.isSecureContext) {
+            // navigator clipboard 向剪贴板写文本
+            return navigator.clipboard.writeText(textToCopy)
+                .then(() => {alert("链接已复制到剪贴板");});
+        } else {
+            // 创建text area
+            let textArea = document.createElement("textarea");
+            textArea.value = textToCopy;
+            // 使text area不在viewport，同时设置不可见
+            textArea.style.position = "absolute";
+            textArea.style.opacity = 0;
+            textArea.style.left = "-999999px";
+            textArea.style.top = "-999999px";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            return new Promise((res, rej) => {
+                // 执行复制命令并移除文本框
+                document.execCommand('copy') ? res() : rej();
+                textArea.remove();
+                alert("链接已复制到剪贴板");
+            });
+        }
+    }
+
+    // showBlink函数用于显示闪烁的文字。
+    // 它首先设置奖品信息，隐藏图片，显示列表，然后创建与data.count相等数量的span元素。
+    function showBlink(data) {
+        disc.innerHTML = data.prizeTierName + ' ' + data.name + ' ' + data.prizeAmount + '份'
+        image.style.display = 'none'
+        list.style.display = 'block'
+        var spans = []
+        for (var i = 0; i < data.prizeAmount; ++i) {
+            var span = document.createElement('span')
+            list.appendChild(span)
+            spans.push(span)
+        }
+
+        // doBlink函数用于实现文字的闪烁效果，通过window.requestAnimationFrame来循环调用。
+        function doBlink() {
+            if (state == 'showBlink') {
+                // Math.random() 生成一个 [0, 1) 范围内的伪随机数，
+                // 所以表达式的结果将在 (-0.5, 0.5] 范围内，这会导致 names 数组的元素随机排序。
+                names.sort(function(a, b) {
+                    return 0.5 - Math.random()
+                })
+                // 只展示当前奖项个数的随机人名
+                for (var i = 0; i < data.prizeAmount; ++i) {
+                    spans[i].innerHTML = names[i].userName
+                }
+                window.requestAnimationFrame(doBlink)
+            }
+        }
+
+      // 告诉浏览器——你希望执行一个动画，并且要求浏览器在下次重绘之前调用指定的回调函数更新动画。
+      window.requestAnimationFrame(doBlink)
+    }
+
+    // 通过后端展示奖品维度中奖者，主要是防止页面刷新
+    function showWinnerListWithPrize(data) {
+        $.ajax({
+            url: '/winning-records/show',
+            type: 'POST',
+            dataType: 'json',
+            contentType: 'application/json',
+            headers: {
+                'user_token': userToken
+            },
+            data: JSON.stringify({activityId: activityId, prizeId: data.prizeId}),
+            success: function(result) {
+                if (result.code != 200) {
+                    alert("查询中奖记录失败！" + result.msg);
+                } else {
+                    var luckRecords = result.data
+                    // 从names中移除幸运儿
+                    var luck = []
+                    // 获得需要删除的用户id
+                    var needRemoves = luckRecords.map(function(luckRecord) {
+                        return luckRecord.winnerId;
+                    });
+                    console.log("needRemoves" + JSON.stringify(needRemoves))
+                    console.log("names1" + JSON.stringify(names))
+                    // 从names中移除包含在luckRecords中的name对应的元素
+                    for (var i = 0; i < names.length; i++) {
+                        if (needRemoves.includes(names[i].userId)) {
+                            var tmp = names.splice(i, 1)  // 移除当前项，并更新索引i，因为后面的项会向前移动
+                            luck = luck.concat(tmp)
+                            console.log("tmp" + JSON.stringify(tmp))
+                            i--  // 减1以确保索引i仍然指向当前的项
+                        }
+                    }
+                    console.log("names2" + JSON.stringify(names))
+                    console.log("luck" + JSON.stringify(luck))
+                    // 只存放当前奖项的人员信息，下次抽奖会被覆盖
+                    data.list = luck.map(x => x)
+                    for (var i = 0; i < data.list.length; ++i) {
+                        var span = document.createElement('span')
+                        span.innerHTML = data.list[i].userName
+                        list.appendChild(span)
+                    }
+                }
+            }
+        });
+    }
+
+    // showList函数用于显示静态的文字列表。它设置奖品信息，隐藏图片，显示列表，并将data.list中的数据添加到列表中。
+    function showList(data) {
+        disc.innerHTML = data.prizeTierName + ' ' + data.name + ' ' + data.prizeAmount + '份'
+        image.style.display = 'none'
+        list.style.display = 'block'
+        while (list.hasChildNodes()) {
+            list.removeChild(list.firstChild)
+        }
+
+        // data.list是前端保存的临时数据，若当前抽奖页刷新，则数据丢失
+        // 因此判断一下是否为空，为空需要查询后端
+        data.list = data.list || []
+        if (data.list.length > 0) {
+            for (var i = 0; i < data.list.length; ++i) {
+                var span = document.createElement('span')
+                span.innerHTML = data.list[i].userName
+                list.appendChild(span)
+            }
+        } else {
+            showWinnerListWithPrize(data)
+        }
+    }
+
+    // 这是改变next-btn按钮文本的函数
+    function changeNextButtonText(text) {
+        var nextButton = document.querySelector('.btn.next-btn');
+        nextButton.textContent = text;
+    }
+
+    function saveLuck() {
+        var data = steps[step]
+
+        var luckUserList = []
+        for (var i = 0; i < data.list.length; ++i) {
+            luckUserList.push({
+                userId: data.list[i].userId,
+                userName: data.list[i].userName
+            })
+        }
+
+        var drawPrizesData = {
+            activityId: activityId,
+            prizeId: data.prizeId,
+            winningTime: new Date(),
+            winnerList: luckUserList
+        };
+
+        // 发送AJAX请求
+        $.ajax({
+            url: '/draw-prize',
+            type: 'POST',
+            dataType: 'json',
+            contentType: 'application/json',
+            headers: {
+                'user_token': userToken
+            },
+            data: JSON.stringify(drawPrizesData),
+            success: function(result) {
+                if (result.code != 200) {
+                    alert("抽奖失败！" + result.msg);
+                }
+            },
+            error:function(err){
+                console.log(err);
+                if(err!=null && err.status==401){
+                    alert("用户未登录, 即将跳转到登录页!");
+                    // 已经被拦截器拦截了, 未登录
+                    location.href ="/blogin.html";
+                }
+            }
+        });
+    }
+
+    // nextStep函数用于根据当前状态显示下一个步骤的内容。
+    // 它根据state的值和data.list的长度来决定是显示图片、闪烁文字还是静态文字列表，并更新step和state。
+    function nextStep() {
+        var data = steps[step]
+        console.log("steps[" + step + "]:" + JSON.stringify(data))
+        if (state == 'showPic') {
+            if (data.valid) {
+                // 还没抽：抽奖
+                state = 'showBlink'
+                showBlink(data)
+                changeNextButtonText('点我确定')
+            } else {
+                // 抽过了：展示
+                state = 'showList'
+                showList(data)
+                changeNextButtonText('已抽完，下一步')
+            }
+        } else if (state == 'showBlink') {
+            // 从names中移除幸运儿，并将幸运儿存放起来
+            var luck = names.splice(0, data.prizeAmount)
+            // 只存放当前奖项的人员信息，下次抽奖会被覆盖
+            data.list = luck.map(x => x)
+            console.log("data.list:" + JSON.stringify(data.list))
+            // 调用后端抽奖接口，保存中奖信息
+            saveLuck()
+            data.valid = false
+            state = 'showList'
+            showList(data)
+            changeNextButtonText('已抽完，下一步')
+        } else if (state == 'showList') {
+            if (step < (steps.length - 1)) {
+                ++step
+                state = ''
+                nextStep()
+                changeNextButtonText('开始抽奖')
+            } else {
+                // 抽奖结束，展示全量中奖列表
+                if (step == (steps.length - 1)) {
+                    ++step
+                }
+                showRecords()
+                changeNextButtonText('已全部抽完')
+            }
+        } else {
+            state = 'showPic'
+            showPic(data)
+            changeNextButtonText('开始抽奖')
+        }
+    }
+
+    // previousStep函数用于返回到上一个步骤。如果当前步骤不是第一个步骤，则减少step的值，然后调用nextStep函数。
+    function previousStep() {
+        if (step > 0) {
+            --step
+        }
+        state = ''
+        nextStep()
+    }
+
+    // 抽奖页面加载逻辑
+    function drawPage() {
+        // 判断活动是否有效:进行中
+        if (valid == "true") {
+            // 判断是用户还是管理员，只有管理员有权限抽奖
+            var identity = localStorage.getItem("user_identity");
+            if (identity == "ADMIN") {
+                // 在页面加载完成后，调用reloadConf函数并传入nextStep作为回调函数，以初始化页面显示。
+                reloadConf(nextStep)
+            } else {
+                alert("抽奖未结束，由于您不是管理员，无权限限参与抽奖。请耐心等待抽奖结束后查看中奖名单");
+            }
+        } else {
+            showRecords()
+        }
+    }
+
+    // reloadConf函数用于重新加载配置文件。
+    // 如果提供了回调函数func，则在文件读取完成后调用它。
+    function reloadConf(func) {
+        // 发送AJAX请求
+        $.ajax({
+            url: '/activity-detail/find',
+            type: 'GET',
+            data: { activityId: activityId },
+            dataType: 'json',
+            headers: {
+                'user_token': userToken
+            },
+            success: function(result) {
+                if (result.code != 200) {
+                    alert("获取活动详情失败！" + result.msg);
+                } else {
+                    names = result.data.users;
+                    steps = result.data.prizes;
+                    if (func) func();
+                }
+            },
+            error:function(err){
+                console.log(err);
+                if(err!=null && err.status==401){
+                    alert("用户未登录, 即将跳转到登录页!");
+                    // 已经被拦截器拦截了, 未登录
+                    location.href ="/blogin.html";
+                }
+            }
+        });
+    }
+
+    // 抽奖页起始逻辑
+    drawPage()
+</script>
+</body>
+</html>

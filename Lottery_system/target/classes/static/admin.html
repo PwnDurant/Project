@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>后台管理</title>
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <style>
+    .admin-page{
+      display: flex;
+      flex-direction: column;
+    }
+    .admin-page .header-box{
+      height: 80px;
+      background-color: #fff;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding-left: 40px;
+      padding-right: 34px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header-box .user-box{
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .header-box .user-box img{
+      height: 22px;
+      width: 22px;
+    }
+    .header-box .black{
+      font-weight: 500;
+      font-size: 14px;
+      color: #222222;
+      padding-right: 20px;
+      position: relative;
+    }
+    .header-box .black::after{
+      position: absolute;
+      content: '';
+      width: 1px;
+      height: 15px;
+      background: #A9ABB3;
+      right: -1px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .header-box .gray{
+      font-weight: 500;
+      font-size: 14px;
+      color: #A9ABB3;
+      margin-left: 20px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+    .header-box .gray span{
+      display: block;
+      height: 22px;
+      line-height: 21px;
+      margin-left: 10px;
+    }
+    .admin-page .cont-box{
+      display: flex;
+      height: calc(100vh - 80px);
+      overflow: hidden;
+    }
+    .admin-page .sidebar {
+      width: 220px;
+      overflow-x: hidden;
+      height: calc(100vh - 80px);
+      background-color: #fff;
+      padding:  24px 10px;
+      position: relative; /* 添加相对定位，为activity-center-title的绝对定位提供参考 */
+    }
+    .admin-page .main-content {
+      flex: 1;
+      background-color: #fff;
+    }
+    .admin-page .nav-link {
+      display: flex;
+      padding: 10px;
+      height: 52px;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      padding-left: 30px;
+      align-items: center;
+      font-weight: 400;
+      font-size: 16px;
+      color: var(--gray-color);
+    }
+    .admin-page .nav-link img{
+      margin-right: 15px;
+    }
+    .nav-link.active,.nav-link:hover {
+      width: 198px;
+      height: 52px;
+      background: var(--blue-color);
+      border-radius: 10px;
+    }
+    .nav-link.active,.nav-link:hover {
+      color: var(--white-color);
+    }
+    .nav-link.active  .white-img,.nav-link:hover .white-img{
+      display: block !important;
+    }
+    .nav-link.active .gray-img,.nav-link:hover .gray-img{
+      display: none;
+    }
+    .nav-link .white-img{
+      display: none !important;
+    }
+    .nav-link  .gray-img{
+      display: block ;
+    }
+    .sub-category .nav-link{
+      width: 194px;
+      background-color: #fff;
+      padding-left: 43px;
+      color: var(--placeholder-color);
+    }
+    .sub-category .nav-link.active,.sub-category .nav-link:hover {
+      width: 198px;
+      background: #DCE8FF;
+      border-radius: 10px;
+      color: var(--blue-color);
+    }
+    .sub-category {
+      margin-left: 20px;
+    }
+    .iframe-styles {
+      padding: 20px;
+      width: 100%;
+      height: calc(100vh - 80px);
+      box-sizing: border-box;
+      background-color: var(--bg-color);
+      border: none;
+    }
+  </style>
+</head>
+<body class="admin-page">
+<!-- 头部 -->
+<div class="header-box">
+  <!-- logo -->
+  <div class="logo-box">
+    <img src="./pic/logo.png" alt srcset>
+  </div>
+  <!-- 用户信息 -->
+  <div class="user-box">
+    <div class="gray" onclick="logout()">
+      <img src="./pic/logout.svg" alt="" srcset="">
+      <span>退出</span>
+    </div>
+  </div>
+</div>
+<div class="cont-box">
+  <!-- 侧边栏 -->
+  <div class="sidebar">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <div class="nav-link active huodong">
+          <img src="./pic/huodong.png" class="white-img"  alt="">
+          <img src="./pic/huodong-0.png" class="gray-img"  alt="">
+          <span>活动管理</span>
+        </div>
+        <ul class="nav flex-column sub-category">
+          <li><a class="nav-link" id="activitiesList" data-desc="huodong" href="activities-list.html">活动列表</a></li>
+          <li><a class="nav-link" id="createActivity" data-desc="huodong" href="create-activity.html">新建抽奖活动</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <div class="nav-link jiangpin">
+          <img src="./pic/jiangpin.png" class="white-img" style="display: none;" alt="">
+          <img src="./pic/jiangpin-0.png" class="gray-img"  alt="">
+          <span>奖品管理</span>
+        </div>
+        <ul class="nav flex-column sub-category">
+          <li><a class="nav-link" data-desc="jiangpin" href="prizes-list.html">奖品列表</a></li>
+          <li><a class="nav-link" data-desc="jiangpin" href="create-prizes.html">创建奖品</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <div class="nav-link renyuan">
+          <img src="./pic/renyuan.png" class="white-img" style="display: none;" alt="">
+          <img src="./pic/renyuan-0.png" class="gray-img"  alt="">
+          <span>人员管理</span>
+        </div>
+        <ul class="nav flex-column sub-category">
+          <li><a class="nav-link" id="userList" data-desc="renyuan" href="user-list.html">人员列表</a></li>
+          <li><a class="nav-link" id="register" data-desc="renyuancreate" href="register.html">注册用户</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <!-- 内容区域 -->
+  <div class="main-content">
+    <!-- 内容将根据点击的导航项动态加载 -->
+    <iframe id="contentFrame" src="activities-list.html" class="iframe-styles"></iframe>
+  </div>
+</div>
+
+<!-- 引入jQuery和Bootstrap的JavaScript -->
+<script
+        src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  // 监听子message事件,实现子页面向父页面传递
+  window.addEventListener('message', function(e){
+    console.log('子页面传递的数据', e.data)
+    if(e.data && e.data.from){
+      var pages = e.data.from+'?param=' +  new Date().getTime()
+      $('#contentFrame').attr('src', pages);
+      let id = e.data.id
+      // 移除所有链接的激活样式
+      $('ul.nav .nav-link').removeClass('active');
+      // 为当前点击的链接添加激活样式
+      $(id).addClass('active');
+      $(id).parent().parent('.sub-category').prev().addClass('active');
+    }
+  }, false);
+
+  // 导航点击事件处理
+  $('ul.nav a').on('click', function(event) {
+    // 阻止链接默认的导航行为，这样页面不会跳转到href属性指定的URL。
+    event.preventDefault();
+    // 移除所有链接的激活样式
+    $('ul.nav .nav-link').removeClass('active');
+    // 为当前点击的链接添加激活样式
+    $(this).addClass('active');
+    // 选中二级菜单时默认选中对应的一级菜单
+    $(this).parent().parent('.sub-category').prev().addClass('active');
+
+    // 生成一个随机参数（时间戳） 解决iframe缓存问题
+    var randomParam = new Date().getTime();
+    // 获取当前点击的链接的data-desc属性值
+    var dataDesc = $(this).data('desc');
+    var page = '';
+    if (dataDesc === "renyuancreate") {
+      page = $(this).attr('href') + "?param=" + randomParam + "&jumpList=true&admin=false";
+    } else {
+      page = $(this).attr('href') + "?param=" + randomParam;
+    }
+    $('#contentFrame').attr('src', page);
+  });
+
+  // 确保默认情况下第一个链接是激活状态
+  $(document).ready(function() {
+    // 选取页面中第一个<ul>元素下，具有class="nav"的<a>元素
+    // ul.nav 是侧边栏导航的类名
+    // active类 定义了导航项被激活或选中的状态
+    $('ul.nav a:first').addClass('active');
+  });
+
+  // 退出登录
+  function logout(){
+    localStorage.removeItem("user_token")
+    location.href='/blogin.html'
+  }
+</script>
+</body>
+</html>

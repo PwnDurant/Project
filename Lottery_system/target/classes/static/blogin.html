@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>管理员登录页面</title>
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <<link rel="stylesheet" href="./css/login.css">
+</head>
+<body class="login-page">
+<!-- 登录框区域 -->
+<div class="login-box row">
+  <div class="img-box col-sm-6  col-md-6 col-lg-7 col-xl-7">
+      <img src="./pic/login-left.png" class="img-fluid" alt srcset>
+  </div>
+  <div class="login-container col-sm-6 col-md-6 col-lg-5 col-xl-5">
+
+      <div class="tab-box">
+          <span class="active tab-span" data-form="loginForm">密码登录</span>
+          <span class="tab-span" data-form="codeForm">验证码登录</span>
+      </div>
+      <form id="loginForm">
+          <div class="form-group">
+              <label for="phoneNumber">手机号</label>
+              <input class="form-control" type="text" id="phoneNumber"
+                  name="phoneNumber"
+                  required placeholder="请输入手机号">
+          </div>
+          <div class="form-group">
+              <label for="password">密码</label>
+              <input class="form-control" type="password"
+                  id="password" name="password"
+                  required placeholder="请输入密码">
+          </div>
+          <button type="submit"
+              class="btn btn-primary btn-block login-btn">登录</button>
+          <div class="error"></div>
+      </form>
+      <!-- 验证码登录框 -->
+      <form id="codeForm" style="display: none;">
+          <div class="form-group">
+              <label for="loginMobile">手机号</label>
+              <input class="form-control" type="text" id="loginMobile"
+                     name="loginMobile"
+                     required placeholder="请输入手机号">
+          </div>
+          <div class="form-group">
+              <label for="verificationCode">验证码</label>
+              <div class="code-box">
+                  <input class="form-control" type="text"
+                         id="verificationCode" name="verificationCode"
+                         required placeholder="请输入验证码">
+                  <div class="btn btn-primary " id="getVerificationCode">获取验证码</div>
+              </div>
+          </div>
+          <button type="submit"
+                  class="btn btn-primary btn-block login-btn">登录</button>
+          <div class="error"></div>
+      </form>
+      <div class="register-link">
+          还没有账号，去<a href="register.html?admin=true">注册</a>
+      </div>
+  </div>
+</div>
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  $("#loginForm").validate({
+    rules: {
+      phoneNumber: "required",
+      password: {
+        required: true,
+        minlength: 6
+      }
+    },
+    messages: {
+      phoneNumber: "请输入您的手机号",
+      password: {
+        required: "请输入密码",
+        minlength: "密码长度至少为6个字符"
+      }
+    },
+    submitHandler: function(form) {
+      var loginName = $('#phoneNumber').val();
+      var password = $('#password').val();
+      // 清除之前的错误消息
+      $('.error').text('');
+      // 发送AJAX请求
+      $.ajax({
+        url: '',
+        type: '',
+        contentType: '',
+        data: JSON.stringify(),
+        success: function(result) {
+        },
+      });
+      return false; // 阻止表单的默认提交行为
+    }
+  });
+
+  // tab切换
+  $('.tab-box span').click(function(e){
+      let formId ='#' + e.target.dataset.form
+      $(this).addClass('active')
+      $(this).siblings().removeClass('active')
+      $('form').hide()
+      console.log(formId)
+      $(formId).show()
+  })
+  // 获取验证码
+  var timer = null
+  $('#getVerificationCode').click(function(e){
+      console.log(e,$(this).text())
+      var txt = $(this).text()
+      var num = 60
+      if(txt.indexOf('获取')!==-1){
+          $('#getVerificationCode').text(num+'s')
+          getCode()
+          // 获取验证码接口
+          timer&&clearInterval(timer)
+          timer = setInterval(function(){
+              if(num>1){
+                  num--
+                  $('#getVerificationCode').text(num+'s')
+              }else{
+                  timer&&clearInterval(timer)
+                  $('#getVerificationCode').text('重新获取')
+              }
+          },1000)
+      }
+  })
+  function getCode(){
+      $.ajax({
+          url: '',
+          type: '',
+          data:{ phoneNumber:$('#loginMobile').val() },
+          success: function(result) {
+              if (result.code != 200) {
+                  timer&&clearInterval(timer)
+                  $('#getVerificationCode').text('重新获取')
+                  toastr.error('验证码获取失败');
+              } else {
+                  toastr.success('验证码发送成功')
+              }
+          },
+      });
+  }
+  // 验证码登录
+  $("#codeForm").validate({
+      rules: {
+          loginMobile: "required",
+          verificationCode:"required",
+      },
+      messages: {
+          loginMobile: "请输入您的手机号",
+          verificationCode:  "请输入验证码",
+      },
+      submitHandler: function(form) {
+          var loginMobile = $('#loginMobile').val();
+          var verificationCode = $('#verificationCode').val();
+          // 清除之前的错误消息
+          $('.error').text('');
+          // 发送AJAX请求
+          $.ajax({
+              url: '',
+              type: '',
+              contentType: '',
+              data: JSON.stringify(),
+              success: function(result) {
+              },
+          });
+          return false; // 阻止表单的默认提交行为
+      }
+  });
+</script>
+</body>
+</html>

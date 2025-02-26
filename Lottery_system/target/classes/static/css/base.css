@@ -1,0 +1,134 @@
+:root {
+  --blue-color: #4C8DFB;
+  --jjext-color-brand: var(--blue-color) !important;
+  --jjext-color-hover: var(--blue-color) !important;
+  --jjext-color-dropdown-text: var(--blue-color) !important;
+  --jjext-color-navbar-icon: var(--blue-color) !important;
+  --jjext-color-layout-title-active: var(--blue-color) !important;
+  --jjext-color-font-brand1-normal: var(--blue-color) !important;
+  --white-color: #fff;
+  --border-radius: 8px;
+  --baby-blue: #C6DDFF;
+  --hover-blue: #007bff;
+  --red-color: #E52822;
+  --black-color: #000000;
+  --placeholder-color: #999;
+  --gray-color: #666;
+  --bg-color: #f3f5fd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a,
+a:hover {
+  color: var(--blue-color);
+  text-decoration: none;
+}
+
+html {
+  font-family: PingFangSC, PingFang SC;
+}
+
+/* 重置bootstrap部分样式 */
+.btn-primary {
+  background-color: var(--blue-color);
+  border-color: var(--blue-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--hover-blue);
+  border-color: var(--hover-blue);
+}
+
+/* 表单样式调整 */
+.form-group {
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.form-group label {
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--black-color);
+  line-height: 22px;
+  margin-bottom: 10px;
+}
+
+.form-group label.error {
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--red-color);
+  line-height: 20px;
+  margin-bottom: 0;
+  position: absolute;
+  left: 0;
+  top: 100%;
+}
+
+.form-group input.error {
+  margin-bottom: 0;
+}
+
+.form-control {
+  font-weight: 400;
+  font-size: 14px;
+  height: 48px;
+  line-height: 48px;
+  color: var(--black-color);
+}
+
+.form-control.is-invalid,
+.was-validated .form-control:invalid,
+.form-control.is-invalid:focus,
+.was-validated .form-control:invalid:focus {
+  border-color: var(--red-color);
+  box-shadow: none;
+}
+
+.form-control:focus {
+  border-color: var(--blue-color);
+  box-shadow: none;
+}
+
+input::placeholder {
+  color: var(--placeholder-color) !important;
+  font-size: 14px !important;
+}
+
+textarea.form-control {
+  line-height: 28px;
+  letter-spacing: 1px;
+}
+
+.form-check {
+  margin-bottom: 60px;
+}
+
+/* 复选框 */
+input[type=checkbox],
+input[type=radio] {
+  width: 15px;
+  height: 15px;
+}
+
+/* 按钮 */
+.btn-outline-primary.focus,
+.btn-outline-primary:focus,
+.btn-outline-primary:not(:disabled):not(.disabled).active:focus,
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus,
+.show>.btn-outline-primary.dropdown-toggle:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+:focus-visible {
+  outline: none;
+}
+/* 表格 */
+table{
+  color: #222;
+  font-weight: 600;
+  font-size: 16px;
+}

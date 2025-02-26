@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>创建抽奖活动</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/toastr.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px 30px;
+            background-color: #fff;
+        }
+        .prize-checkbox {
+            margin-bottom: 10px;
+        }
+        .modal {
+            display: none; /* 初始状态下模态框不可见 */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            overflow: hidden;
+            overflow-y: auto;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 610px;
+        }
+        .modal-content h2{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 18px;
+            color: #000000;
+            height: 50px;
+            border-bottom: 1px solid #DEDEDE;
+            margin-bottom: 30px;
+        }
+        #prizesContainer{
+            height: 406px;
+            margin-bottom: 40px;
+            overflow-y: auto;
+            padding: 0 26px;
+        }
+        .close {
+            color: #000;
+            float: right;
+            font-size: 28px;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .prize-item,
+        .user-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            justify-content: center;
+        }
+
+        .custom-p {
+            font-size: 16px;
+            /* 设置字体粗细 */
+            font-weight: bold;
+            margin-right: 90px; /* 右侧外边距 */
+        }
+        .prize-item input[type="checkbox"],
+        .user-item input[type="checkbox"] {
+            margin-right: 99px;
+        }
+
+        .prize-item label,
+        .user-item label {
+            margin-right: 11px;
+            margin-bottom: 0;
+            width: 200px;
+        }
+
+        .prize-item select {
+            margin-left: auto; /* 将下拉选择框放置在末尾 */
+        }
+        .prize-item .form-control {
+            width: 96px;
+            height: 36px;
+            line-height: 36px;
+            margin-right: 56px;
+        }
+        .h-title{
+            font-weight: 600;
+            font-size: 30px;
+            letter-spacing: 1px;
+            color: #000000;
+            line-height: 50px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .desc-row{
+            margin-bottom: 60px;
+        }
+        .form-btn-box{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .form-btn-box button{
+            width: 148px;
+            height: 48px;
+        }
+        .pre-btn{
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 class="h-title">创建抽奖活动</h2>
+    <form id="activityForm">
+        <div class="form-group">
+            <label for="activityName">活动名称</label>
+            <input type="text" placeholder="请输入活动名称" class="form-control" class="form-control" id="activityName" name="activityName" required>
+        </div>
+        <div class="form-group desc-row">
+            <label for="description">活动描述</label>
+            <textarea id="description" placeholder="请输入活动描述" rows="5" cols="33" class="form-control" name="description" required></textarea>
+        </div>
+        <div class="form-btn-box">
+            <button id="buttonPrizes" type="button" class="btn btn-primary pre-btn" onclick="showPrizesModal()">圈选奖品</button>
+            <button id="buttonUsers" type="button" class="btn btn-primary pre-btn" onclick="showUsersModal()">圈选人员</button>
+            <button type="submit"  class="btn btn-primary" id="createActivity">创建活动</button>
+        </div>
+    </form>
+</div>
+<!-- toast提示 -->
+<div class="toast"></div>
+<!-- 奖品选择模态框 -->
+<div id="prizesModal" class="modal">
+    <div class="modal-content">
+        <h2>奖品列表<span class="close"  onclick="hidePrizesModal()">&times;</span></h2>
+        <div class="prize-item">
+            <p class="custom-p">勾选</p>
+            <p class="custom-p">奖品名</p>
+            <p class="custom-p">数量</p>
+            <p class="custom-p">奖品等级</p>
+        </div>
+        <div id="prizesContainer">
+            <!-- 奖品列表将动态插入这里 -->
+        </div>
+        <div class="form-btn-box">
+            <button type="button" class="btn btn-secondary pre-btn" onclick="hidePrizesModal()">取消</button>
+            <button type="button" class="btn btn-primary" onclick="submitPrizes()">确定</button>
+        </div>
+    </div>
+</div>
+<!-- 人员选择模态框 -->
+<div id="usersModal" class="modal">
+    <div class="modal-content">
+        <h2>人员列表<span class="close"  onclick="hideUsersModal()">&times;</span></h2>
+        <div id="usersContainer">
+            <!-- 奖品列表将动态插入这里 -->
+        </div>
+        <div class="form-btn-box">
+            <button type="button" class="btn btn-secondary pre-btn" onclick="hideUsersModal()">取消</button>
+            <button type="button" class="btn btn-primary" onclick="submitUsers()">确定</button>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript代码 -->
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script  src="https://cdn.bootcdn.net/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+<script src="./js/toastr.min.js"></script>
+<script>
+    var userToken = localStorage.getItem("user_token");
+    // 初始时奖品列表为空
+    var selectedPrizes = [];
+    // 显示奖品选择模态框
+    function showPrizesModal() {
+        $('#prizesModal').css('display', 'block');
+    }
+    // 隐藏奖品选择模态框
+    function hidePrizesModal() {
+        $('#prizesModal').css('display', 'none');
+    }
+    // 获取奖品列表的函数
+    function fetchPrizes() {
+        $.ajax({
+            url: '',
+            type: '',
+            dataType: 'json',
+            data: { currentPage: 1, pageSize: 100},
+            headers: {
+                // jwt
+            },
+            success: function(result) {
+                var prizes = result.data.records;
+                var prizesContainer = $('#prizesContainer');
+                prizesContainer.empty(); // 清空当前奖品列表
+                prizes.forEach(function(prize) {
+                    prizesContainer.append(
+                        $('<div class="prize-item">').append(`
+                            <input type="checkbox" id="prize-${prize.prizeId}" name="prize-${prize.prizeId}" value="${prize.prizeId}">
+                            <label for="prize-${prize.prizeId}">${prize.prizeName}</label>
+                            <input class="form-control" type="number" name="quantity-${prize.prizeId}" min="1" value="1">
+                            <select class="form-control" name="level-${prize.prizeId}">
+                                <option value="FIRST_PRIZE" selected>一等奖</option>
+                                <option value="SECOND_PRIZE">二等奖</option>
+                                <option value="THIRD_PRIZE">三等奖</option>
+                            </select>
+                        `)
+                    );
+                });
+            },
+            error: function(err){
+                console.log(err);
+                if(err!=null && err.status==401){
+                    alert("用户未登录, 即将跳转到登录页!");
+                    // 跳转登录页
+                    window.location.href = "/blogin.html";
+                    window.parent.location.href = "/blogin.html";//让父页面一起跳转
+                }
+            }
+        });
+    }
+    // 提交奖品数据的函数
+    function submitPrizes() {
+        selectedPrizes = [];
+        // 将选中的奖品信息存储在selectedPrizes
+        $('.prize-item input[type="checkbox"]:checked').each(function() {
+            var prizeId = +$(this).val();
+            var prizeAmount = +$('input[name="quantity-' + prizeId + '"]').val();
+            var prizeTiers = $('select[name="level-' + prizeId + '"]').val();
+            selectedPrizes.push({
+                prizeId: prizeId,
+                prizeAmount: prizeAmount,
+                prizeTiers: prizeTiers
+            });
+        });
+        // 关闭模态框
+        hidePrizesModal();
+        //  修改按钮
+        var nextButton = document.getElementById('buttonPrizes');
+        if (selectedPrizes.length > 0) {
+            nextButton.textContent = '圈选奖品(已选)';
+        } else {
+            nextButton.textContent = '圈选奖品';
+        }
+    }
+
+    // 初始时人员列表为空
+    var selectedUsers = [];
+    // 显示人员选择模态框
+    function showUsersModal() {
+        $('#usersModal').css('display', 'block');
+    }
+    // 隐藏人员选择模态框
+    function hideUsersModal() {
+        $('#usersModal').css('display', 'none');
+    }
+    // 获取人员列表的函数
+    function fetchUsers() {
+        $.ajax({
+            url: '',
+            type: '',
+            dataType: 'json',
+            data: { identity: '' },
+            headers: {
+                // jwt
+            },
+            success: function(result) {
+                var users = result.data;
+                var usersContainer = $('#usersContainer');
+                usersContainer.empty(); // 清空当前人员列表
+                users.forEach(function(user) {
+                    console.info(user);
+                    usersContainer.append(
+                        $('<div class="user-item">').append(`
+                            <input type="checkbox" id="user-${user.userId}" name="user-${user.userId}" value="${user.userId}">
+                            <label for="user-${user.userId}">${user.userName}</label>
+                        `)
+                    );
+                });
+            },
+            error:function(err){
+                console.log(err);
+                if(err!=null && err.status==401){
+                    alert("用户未登录, 即将跳转到登录页!");
+                    // 跳转登录页
+                    window.location.href = "/blogin.html";
+                    window.parent.location.href = "/blogin.html";//让父页面一起跳转
+                }
+            }
+        });
+    }
+    // 提交用户数据的函数
+    function submitUsers() {
+        selectedUsers = [];
+        // 将选中的奖品信息存储在selectedUsers
+        $('.user-item input[type="checkbox"]:checked').each(function() {
+            var userId = +$(this).val();
+            var userName = $(this).next('label').text();
+            selectedUsers.push({
+                userId: userId,
+                userName: userName
+            });
+        });
+        // 关闭模态框
+        hideUsersModal();
+        //  修改按钮
+        var nextButton = document.getElementById('buttonUsers');
+        if (selectedUsers.length > 0) {
+            nextButton.textContent = '圈选人员(已选)';
+        } else {
+            nextButton.textContent = '圈选人员';
+        }
+    }
+
+    // 绑定表单提交事件
+    $('#createActivity').click(function(event){
+        event.stopPropagation()
+        $('#activityForm').validate({
+            rules:{
+                activityName:"required",
+                description:{
+                    required:true,
+                }
+            },
+            messages:{
+                activityName:"请输入活动名称",
+                description:"请输入活动描述"
+            },
+            // 验证通过才会触发
+            submitHandler:function(form){
+                console.log('selectedPrizes',selectedPrizes)
+                console.log('selectedUsers',selectedUsers)
+                // 如果未选择奖品则进行toast提示
+                if(selectedPrizes.length==0){
+                    alert('请至少选择一个奖品')
+                    return false
+                }
+                // 如果未选择人员则进行toast提示
+                if(selectedUsers.length==0){
+                    alert('请至少选择一个人员, 人员数量应大于等于奖品总量')
+                    return false
+                }
+                // 获取提交表单信息
+                var data = {
+                    activityName:'',
+                    description:'',
+                    activityPrizeList:[],
+                    activityUserList:[]
+                }
+                data.activityName = $('#activityName').val()
+                data.description = $('#description').val()
+                data.activityPrizeList = selectedPrizes
+                data.activityUserList = selectedUsers
+                submitActivity(data)
+            }
+        })
+    })
+    // 提交活动信息接口
+    function submitActivity(data){
+        $.ajax({
+            url: '',
+            type: '',
+            contentType: 'application/json',
+            data: JSON.stringify(data),
+            headers: {
+                // jwt
+            },
+            success: function(result) {
+                if (result.code != 200) {
+                    alert("创建失败！" + result.msg);
+                } else {
+                    alert("创建成功!");
+                    // 向父页面传值  https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage
+                    window.parent.postMessage({
+                        from:'activities-list.html',
+                        id:'#activitiesList'
+                    },'*');
+
+                }
+            },
+        });
+    }
+    // 获取奖品/人员列表并填充模态框
+    $(document).ready(function() {
+        fetchPrizes();
+        fetchUsers();
+    });
+    // 显示奖品选择模态框
+    $(document).ready(function() {
+        $('#activityForm').on('click', 'button圈选奖品', function() {
+            showPrizesModal();
+        });
+    });
+    // 显示人员选择模态框
+    $(document).ready(function() {
+        $('#activityForm').on('click', 'button圈选人员', function() {
+            showUsersModal();
+        });
+    });
+</script>
+</body>
+</html>

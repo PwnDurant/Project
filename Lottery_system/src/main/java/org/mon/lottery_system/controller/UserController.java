@@ -10,12 +10,15 @@ import org.mon.lottery_system.common.utils.JacksonUtil;
 import org.mon.lottery_system.controller.param.UserRegisterParam;
 import org.mon.lottery_system.controller.result.UserRegisterResult;
 import org.mon.lottery_system.service.UserService;
+import org.mon.lottery_system.service.VerificationCodeService;
 import org.mon.lottery_system.service.dto.UserRegisterDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -25,6 +28,9 @@ public class UserController {
 
     @Resource(name = "userServiceImpl")
     private UserService userService;
+
+    @Autowired
+    private VerificationCodeService verificationCodeService;
 
 //    private static final Logger logger= LoggerFactory.getLogger(UserController.class);
     /**
@@ -40,6 +46,14 @@ public class UserController {
         UserRegisterDTO userRegisterDTO = userService.userRegisterDTO(userRegisterParam);
 
         return CommonResult.success(converToUserRegisterResult(userRegisterDTO));
+
+    }
+
+    @RequestMapping("/verification-code/send")
+    public CommonResult<Boolean> sendVerificationCode(String phoneNumber){
+        log.info("sendVerificationCode phoneNumber:{}"+phoneNumber);
+        verificationCodeService.sendVerificationCode(phoneNumber);
+        return CommonResult.success(Boolean.TRUE);
 
     }
 

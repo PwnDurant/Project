@@ -1,0 +1,132 @@
+.login-page{
+  background-color: var(--blue-color);
+  display: flex;
+  align-items: center;
+  overflow-y: auto;
+  height: 100vh;
+}
+.login-page .login-box{
+  margin: 0 auto;
+  border-radius: 22px;
+  overflow: hidden;
+  background-color: var(--white-color);
+  max-width: 60%;
+  width: 100%;
+  align-items: center;
+}
+.login-page .img-box{
+  background-color:var(--baby-blue) ;
+  padding: 102px 56px;
+  box-sizing: border-box;
+}
+.login-page .login-container{
+  padding: 0 24px;
+  height: 100%;
+}
+.login-page h2{
+  font-family: PingFangSC, PingFang SC;
+  font-weight: 600;
+  color: #000000;
+  text-align: left;
+  font-style: normal;
+  margin-bottom: 40px;
+  font-size: 32px;
+}
+.login-page .login-btn{
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+.login-page .register-link{
+  text-align: center;
+  font-family: PingFangSC, PingFang SC;
+  font-weight: 400;
+  font-size: 16px;
+  color: #999999;
+  line-height: 22px;
+}
+.tab-box{
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.tab-box span{
+  font-weight: 400;
+  font-size: 18px;
+  color: #000000;
+  margin-right:20px ;
+  cursor: pointer;
+}
+.tab-box span.active{
+  position: relative;
+  color: var(--blue-color);
+}
+.tab-box span.active::after{
+  position: absolute;
+  content: '';
+  width: 30px;
+  height: 2px;
+  background-color: var(--blue-color);
+  border-radius: 5px;
+  bottom: -12px;
+  left: 50%;
+  transform: translate(-50%);
+}
+.code-box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.code-box .form-control{
+  width: calc(100% - 140px);
+}
+.code-box .btn-primary{
+  width: 126px;
+  height: 47px;
+  margin-left: 10px;
+  box-sizing: border-box;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (min-width: 1200px) { 
+  .login-page .login-btn{
+    margin-top: 50px;
+  }
+}
+@media screen and (max-width: 1110px) { 
+  .login-page h2{
+    margin-bottom: 30px;
+    font-size: 26px;
+  }
+  .login-page .login-btn{
+    margin-top: 30px;
+  }
+}
+@media screen and (max-width: 990px) { 
+  .form-group{
+    margin-bottom: 15px;
+  }
+  .form-control{
+    height: 32px;
+    line-height: 32px;
+  }
+  .login-page h2{
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 900px) { 
+  .login-page .login-container{
+    padding: 30px 24px;
+    width: 100%;
+    max-width: initial;
+    flex: 0 0 100%;
+  }
+  .login-page .img-box{
+    display: none;
+  }
+  .login-page h2{
+    font-size: 22px;
+  }
+}

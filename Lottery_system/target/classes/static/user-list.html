@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>人员列表</title>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 0 30px;
+        }
+        table {
+        /* height: calc(100vh - 143px); */
+            font-weight: 500;
+            height: 300px;
+        }
+        .table td, .table th{
+            border: none;
+        }
+        .table thead th{
+            background-color: #f7f7f7;
+            border-bottom: none;
+            font-weight: 600;
+            font-size: 16px;
+            color: #999999;
+            height: 80px;
+            line-height: 80px;
+            padding: 0;
+            position: sticky;
+            top: 0px;
+        }
+        .table tbody+tbody{
+            border-top: none;
+        }
+        .user-table {
+            width: 100%; /* 表格宽度为容器宽度的100% */
+            height: 100vh;
+            overflow-y: auto;
+        }
+        .user-table h2{
+            background: #fff;
+            width: 100%;
+            font-weight: 600;
+            font-size: 18px;
+            color: #000000;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 0;
+        }
+        .table-box{
+            height: calc(100vh - 140px);
+            overflow-y: auto;
+        }
+        .user-table th, .user-table td {
+            text-align: center;
+            vertical-align: middle;
+            padding: 10px;
+            height: 50px; /* 统一设置表头和单元格的高度 */
+        }
+        /* 第一列和第三列的样式 */
+        .user-table th:first-child, .user-table td:first-child,
+        .user-table th:nth-child(3), .user-table td:nth-child(3),
+        .user-table th:nth-child(5), .user-table td:nth-child(5) {
+            width: 15%; /* 设置第一列和第三列的宽度为15% */
+        }
+        /* 第四列的样式 */
+        .user-table th:nth-child(4), .user-table td:nth-child(4) {
+            width: 30%; /* 设置第四列的宽度为30% */
+        }
+        /* 其他列的样式（例如第二列和第五列） */
+        .user-table th:nth-child(2), .user-table td:nth-child(2) {
+            width: 25%; /* 保持第二列和第五列的宽度为20% */
+        }
+        .user-table th {
+        /* 如果有特定的样式只适用于表头，可以在这里添加 */
+        }
+        .user-table td {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+<div class=" user-table">
+    <h2>人员列表</h2>
+    <div class="table-box">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>人员id</th>
+                <th>姓名</th>
+                <th>身份</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tbody id="userList">
+            <!-- 奖品列表将动态插入这里 -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    var userToken = localStorage.getItem("user_token");
+
+    // 封装AJAX请求的函数
+    function fetchUserData() {
+
+        // 发送AJAX请求
+        $.ajax({
+            url: '',
+            type: '',
+            headers: {
+                // jwt
+            },
+            success: function(result) {
+                if (result.code != 200) {
+                    alert("查询用户列表失败！" + result.msg);
+                } else {
+                    var users = result.data;
+                    // 清空现有的表格内容
+                    var userList = $('#userList');
+                    userList.empty();
+                    users.forEach(function(user) {
+                        userList.append('<tr> ' +
+                        '<td>' +  + '</td>' +
+                        '</tr>');
+                    });
+                } // else end
+            },
+            error: function(err){
+                console.log(err);
+                if(err!=null && err.status==401){
+                    alert("用户未登录, 即将跳转到登录页!");
+                    // 父页面跳转登录页
+                    window.parent.location.href = "/blogin.html";
+                }
+            }
+        });
+    }
+
+    // 初始化加载用户数据
+    $(document).ready(function() {
+        fetchUserData();
+    });
+
+</script>
+</body>
+</html>
