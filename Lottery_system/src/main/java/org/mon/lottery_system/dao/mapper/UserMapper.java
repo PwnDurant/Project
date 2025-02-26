@@ -1,0 +1,29 @@
+package org.mon.lottery_system.dao.mapper;
+
+
+import jakarta.validation.constraints.NotBlank;
+import org.apache.ibatis.annotations.*;
+import org.mon.lottery_system.dao.dataobject.Encrypt;
+import org.mon.lottery_system.dao.dataobject.UserDO;
+
+@Mapper
+public interface UserMapper {
+
+    /**
+     * 查询邮箱绑定的人数
+     * @param email
+     * @return
+     */
+    @Select("select count(*) from user where email=#{email}")
+    int countByMail(@Param("email") String email);
+
+
+    @Select("select count(*) from user where phone_number=#{phoneNumber}")
+    int countByPhone(@NotBlank(message = "电话不能为空") Encrypt phoneNumber);
+
+
+    @Insert("insert into user (user_name,email,phone_number,password,identity)"+
+    " values (#{userName},#{email},#{phoneNumber},#{password},#{identity})")
+    @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id") //将自动生成的主键Id，设置为对象里面的id，做一个匹配
+    void insert(UserDO userDO);
+}

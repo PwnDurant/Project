@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+    <link rel="stylesheet"
+          href="https://cdn.staticfile.org/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <script
+            src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script
+            src="https://cdn.bootcdn.net/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdn.staticfile.org/twitter-bootstrap/4.5.2/js/bootstrap.min.js">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .register-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+        .register-container h2{
+            font-weight: 600;
+            font-size: 32px;
+            letter-spacing: 1px;
+            color: #000000;
+            line-height: 50px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .show-password {
+            float: right;
+            cursor: pointer;
+            color: #008CBA;
+        }
+
+    </style>
+</head>
+<body>
+<div class="register-container">
+    <h2>填写注册信息</h2>
+    <form id="registerForm">
+        <div class="form-group">
+            <label for="name">姓名</label>
+            <input type="text" class="form-control" id="name"
+                   name="name" placeholder="请输入姓名" required>
+        </div>
+        <div class="form-group">
+            <label for="mail">邮箱</label>
+            <input type="email" class="form-control" id="mail"
+                   name="mail" placeholder="请输入邮箱" required>
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber">手机号</label>
+            <input type="text" class="form-control" id="phoneNumber"
+                   name="phoneNumber" placeholder="请输入手机号" required>
+        </div>
+        <div class="form-group">
+            <label for="password">密码</label>
+            <input type="password" class="form-control" id="password"
+                   name="password" placeholder="请输入密码" required>
+        </div>
+        <button type="submit"
+                class="btn btn-primary btn-block">注册</button>
+    </form>
+</div>
+
+<script>
+    var params = new URLSearchParams(window.location.search);
+    var admin = params.get('admin');
+
+    // 判断是否隐藏密码输入框
+    if(admin === 'false') {
+        // 隐藏密码输入框
+        $('#password').closest('div.form-group').css('display', 'none');
+    }
+
+    // 使用jQuery Validate插件来验证表单
+    $("#registerForm").validate({
+        rules: {
+            name: "required",
+            mail: {
+                required: true,
+                email: true
+            },
+            phoneNumber: "required",
+            password: {
+                required: true,
+                minlength: 6
+            }
+        },
+        messages: {
+            name: "请输入您的姓名",
+            mail: "请输入有效的邮箱地址",
+            phoneNumber: "请输入您的手机号",
+            password: {
+                required: "请输入密码",
+                minlength: "密码长度至少为6个字符"
+            }
+        },
+        submitHandler: function(form) {
+            var formData = {
+                name: $('#name').val(),
+                mail: $('#mail').val(),
+                phoneNumber: $('#phoneNumber').val(),
+                password: $('#password').val(),
+                identity: (admin == null || admin === 'true') ? "ADMIN" : "NORMAL"
+            };
+
+            // 表单验证通过后，发送AJAX请求
+            $.ajax({
+                url: '',
+                type: '',
+                contentType: '',
+                data: JSON.stringify(formData),
+                success: function(result) {
+                }
+            });
+            return false; // 阻止表单的默认提交行为
+        }
+    });
+</script>
+</body>
+</html>
