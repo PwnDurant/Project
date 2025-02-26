@@ -26,4 +26,14 @@ public interface UserMapper {
     " values (#{userName},#{email},#{phoneNumber},#{password},#{identity})")
     @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id") //将自动生成的主键Id，设置为对象里面的id，做一个匹配
     void insert(UserDO userDO);
+
+
+    @Select("select * from user where email=#{email}")
+    UserDO selectByMail(@NotBlank(message = "手机或者邮箱不能为空！") @Param("email") String email);
+
+
+    @Select("select * from user where phone_number=#{phoneNumber}")
+    UserDO selectByPhone(@Param("phoneNumber") Encrypt phoneNumber);
+    
 }
+
