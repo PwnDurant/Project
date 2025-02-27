@@ -26,5 +26,5 @@ public class CreatePrizeByActivityParam implements Serializable {
      * 奖品等级
      */
     @NotBlank(message = "奖品等级不能为空！")
-    private String prizeTires;
+    private String prizeTiers;
 }

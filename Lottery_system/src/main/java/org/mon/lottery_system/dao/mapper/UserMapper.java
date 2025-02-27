@@ -48,6 +48,14 @@ public interface UserMapper {
     List<UserDO> selectByIdentityUserLIst(@Param("identity") String identity);
 
 //    1 2 3 -> 1 2
-    List<Long> selectExistByIds(@Param("list") List<Long> id);
+
+    @Select("<select>" +
+            " select id from user" +
+            " where id in  " +
+            "<foreach item='item' collection='items' open='(' separator=',' close=')'>"+
+            " #{item}"+
+            " </foreach>"+
+            " </select>")
+    List<Long> selectExistByIds(@Param("items") List<Long> ids);
 }
 
