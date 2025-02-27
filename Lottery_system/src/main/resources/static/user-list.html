@@ -114,11 +114,13 @@
 
         // 发送AJAX请求
         $.ajax({
-            url: '',
-            type: '',
+            url: '/base-user/find-list',
+            type: 'get',
             headers: {
                 // jwt
+                "user_token": userToken
             },
+            // 后端业务接口调用成功
             success: function(result) {
                 if (result.code != 200) {
                     alert("查询用户列表失败！" + result.msg);
@@ -129,12 +131,15 @@
                     userList.empty();
                     users.forEach(function(user) {
                         userList.append('<tr> ' +
-                        '<td>' +  + '</td>' +
+                        '<td>' + user.userId + '</td>' +
+                        '<td>' + user.userName + '</td>' +
+                        '<td>' + user.identity + '</td>' +
                         '</tr>');
                     });
                 } // else end
             },
             error: function(err){
+                // 令牌解析失败
                 console.log(err);
                 if(err!=null && err.status==401){
                     alert("用户未登录, 即将跳转到登录页!");

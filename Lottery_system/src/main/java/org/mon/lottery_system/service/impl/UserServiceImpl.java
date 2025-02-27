@@ -17,6 +17,7 @@ import org.mon.lottery_system.dao.dataobject.UserDO;
 import org.mon.lottery_system.dao.mapper.UserMapper;
 import org.mon.lottery_system.service.UserService;
 import org.mon.lottery_system.service.VerificationCodeService;
+import org.mon.lottery_system.service.dto.UserDTO;
 import org.mon.lottery_system.service.dto.UserLoginDTO;
 import org.mon.lottery_system.service.dto.UserRegisterDTO;
 import org.mon.lottery_system.service.enums.UserIdentityEnum;
@@ -25,7 +26,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * UserService的实现类
@@ -80,6 +83,28 @@ public class UserServiceImpl implements UserService {
         }
 
         return userLoginDTO;
+    }
+
+    @Override
+    public List<UserDTO> findUserInfo(UserIdentityEnum userIdentityEnum) {
+
+        String identityString= null==userIdentityEnum?null:userIdentityEnum.name();
+
+//        查表
+        List<UserDO> userDOList=userMapper.selectByIdentityUserLIst(identityString);
+
+//        转换
+        List<UserDTO> userDTOList=userDOList.stream().map(userDO -> {
+            UserDTO userDTO=new UserDTO();
+            userDTO.setUserId(userDO.getId());
+            userDTO.setUserName(userDO.getUserName());
+            userDTO.setEmail(userDO.getEmail());
+            userDTO.setPhoneNumber(userDO.getPhoneNumber().getValue());
+            userDTO.setIdentity(UserIdentityEnum.forName(userDO.getIdentity()));
+            return userDTO;
+        }).collect(Collectors.toList());
+        return userDTOList;
+
     }
 
     /**

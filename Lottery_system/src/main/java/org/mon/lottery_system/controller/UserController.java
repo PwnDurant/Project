@@ -10,21 +10,28 @@ import org.mon.lottery_system.common.utils.JacksonUtil;
 import org.mon.lottery_system.controller.param.ShortMessageLoginParam;
 import org.mon.lottery_system.controller.param.UserPasswordLoginParam;
 import org.mon.lottery_system.controller.param.UserRegisterParam;
+import org.mon.lottery_system.controller.result.BaseUserInfoResult;
 import org.mon.lottery_system.controller.result.UserLoginResult;
 import org.mon.lottery_system.controller.result.UserRegisterResult;
 import org.mon.lottery_system.service.UserService;
 import org.mon.lottery_system.service.VerificationCodeService;
+import org.mon.lottery_system.service.dto.UserDTO;
 import org.mon.lottery_system.service.dto.UserLoginDTO;
 import org.mon.lottery_system.service.dto.UserRegisterDTO;
 import org.mon.lottery_system.service.enums.UserIdentityEnum;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.CollectionUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Slf4j
@@ -88,6 +95,28 @@ public class UserController {
         UserLoginDTO userLoginDTO=userService.login(shortMessageLoginParam);
 
         return CommonResult.success(converToUserLoginResult(userLoginDTO));
+    }
+
+    @RequestMapping("/base-user/find-list")
+    public CommonResult<List<BaseUserInfoResult>> findBaseUserInfo(String identity){
+        log.info("findBaseUserInfo identity:{}",identity);
+        List<UserDTO> userDTOList=userService.findUserInfo(UserIdentityEnum.forName(identity));
+
+        return CommonResult.success(converToList(userDTOList));
+    }
+
+    private List<BaseUserInfoResult> converToList(List<UserDTO> userDTOList) {
+        if(CollectionUtils.isEmpty(userDTOList)){
+            return Arrays.asList();
+        }
+
+        return userDTOList.stream().map(userDTO -> {
+            BaseUserInfoResult result=new BaseUserInfoResult();
+            result.setUserId(userDTO.getUserId());
+            result.setUserName(userDTO.getUserName());
+            result.setIdentity(userDTO.getIdentity().name());
+            return result;
+        }).collect(Collectors.toList());
     }
 
     private UserRegisterResult converToUserRegisterResult(UserRegisterDTO userRegisterDTO) {
