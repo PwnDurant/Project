@@ -24,6 +24,7 @@ public interface ServiceErrorCodeConstants {
 
 
     //    ------ 活动模块错误码 ------
+        ErrorCode CREATE_ACTIVITY_INFO_INFO_IS_EMPTY=new ErrorCode(300,"创建的活动信息为空");
 
 
     //    ------ 奖品模块错误码 ------
@@ -32,6 +33,9 @@ public interface ServiceErrorCodeConstants {
 
     //    ------ 抽奖错误码 ------
 
+
+    //    ------ 图片错误码 ------
+    ErrorCode PIC_UPLOAD_ERROR=new ErrorCode(500,"图片上传失败");
 
 
 }

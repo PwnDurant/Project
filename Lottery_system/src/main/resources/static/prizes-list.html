@@ -150,7 +150,7 @@
     var userToken = localStorage.getItem("user_token");
 
     var currentPage = 1;
-    var pageSize = 10;
+    var pageSize = 2;
     var totalPages;
 
     // 发送AJAX请求的函数
@@ -172,11 +172,12 @@
 
       // 发送AJAX请求
       $.ajax({
-          url: '',
-          type: '',
+          url: '/prize/find-list',
+          type: 'get',
           data: dataToSend, // 将分页参数作为请求数据发送
           headers: {
               // jwt
+              "user_token":userToken
           },
           dataType: 'json', // 期望从服务器接收的数据类型是JSON
           success: function(result) {

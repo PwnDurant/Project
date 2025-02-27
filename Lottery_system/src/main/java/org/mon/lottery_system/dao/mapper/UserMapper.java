@@ -46,5 +46,8 @@ public interface UserMapper {
             " order by id desc"+
             " </script>")
     List<UserDO> selectByIdentityUserLIst(@Param("identity") String identity);
+
+//    1 2 3 -> 1 2
+    List<Long> selectExistByIds(@Param("list") List<Long> id);
 }
 

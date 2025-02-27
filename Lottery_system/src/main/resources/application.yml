@@ -3,6 +3,9 @@
 spring:
   application:
     name: Lottery_system
+  web:
+    resources:
+      static-locations: classpath:/static/,file:/Users/zhaoqianqian/Lottery_Pic_System
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/Lottery_system?characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
     username: root
@@ -44,4 +47,11 @@ sms:
   access-key-id: LTAI5t9mCxCNix6joJuwpU8n
   access-key-secret: 8jZBQ3qt7Z8MmI90ZKEuUdvMYIVW27
   sign-name: 简易的学习网站
+
+
+#文件上传相关配置
+pic:
+  local-path: /Users/zhaoqianqian/Lottery_Pic_System
+
+
 

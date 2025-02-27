@@ -161,19 +161,21 @@
         }));
         // 发送POST请求到后端接口
         $.ajax({
-            url: '',
-            type: '',
+            url: '/prize/create',
+            type: 'post',
             // 不设置Content-Type请求头，因为数据将通过其他方式传递，例如通过FormData。
             contentType : false,
             // 不要处理发送的数据
             processData : false,
             headers: {
                 // jwt
+                "user_token":userToken
             },
             data: formData,
             success: function(result) {
                 if(result.code == 200) {
-                    alert('奖品创建成功！');
+                    alert('奖品创建成功！即将跳转到奖品列表');
+                    location.href="prizes-list.html";
                 } else {
                     alert('创建奖品失败：' + result.msg);
                 }
