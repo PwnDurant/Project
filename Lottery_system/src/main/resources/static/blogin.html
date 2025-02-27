@@ -89,11 +89,17 @@
       $('.error').text('');
       // 发送AJAX请求
       $.ajax({
-        url: '',
-        type: '',
-        contentType: '',
-        data: JSON.stringify(),
-        success: function(result) {
+        url: '/password/login',
+        type: 'post',
+        contentType: 'application/json',
+        data: JSON.stringify({loginName: loginName, password: password, mandatoryIdentity: "ADMIN"}),
+          success: function(result) {
+            if(result.code!=200) alert("登入失败！"+result.msg);
+            else {
+                localStorage.setItem("user_token",result.data.token);
+                localStorage.setItem("user_identity","ADMIN");
+                location.href="admin.html";
+            }
         },
       });
       return false; // 阻止表单的默认提交行为
@@ -133,8 +139,8 @@
   })
   function getCode(){
       $.ajax({
-          url: '',
-          type: '',
+          url: 'verification-code/send',
+          type: 'get',
           data:{ phoneNumber:$('#loginMobile').val() },
           success: function(result) {
               if (result.code != 200) {
@@ -164,11 +170,20 @@
           $('.error').text('');
           // 发送AJAX请求
           $.ajax({
-              url: '',
-              type: '',
-              contentType: '',
-              data: JSON.stringify(),
+              url: '/message/login',
+              type: 'post',
+              contentType: 'application/json',
+              data: JSON.stringify({loginMobile: loginMobile, verificationCode: verificationCode,
+                  mandatoryIdentity: "ADMIN"
+              }),
               success: function(result) {
+                  if(result.code!=200){
+                      alert("登入失败!"+result.msg);
+                  }else{
+                      localStorage.setItem("user_token",result.data.token);
+                      localStorage.setItem("user_identity","ADMIN");
+                      location.href="admin.html";
+                  }
               },
           });
           return false; // 阻止表单的默认提交行为

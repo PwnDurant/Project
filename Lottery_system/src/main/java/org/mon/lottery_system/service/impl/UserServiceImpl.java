@@ -16,6 +16,7 @@ import org.mon.lottery_system.dao.dataobject.Encrypt;
 import org.mon.lottery_system.dao.dataobject.UserDO;
 import org.mon.lottery_system.dao.mapper.UserMapper;
 import org.mon.lottery_system.service.UserService;
+import org.mon.lottery_system.service.VerificationCodeService;
 import org.mon.lottery_system.service.dto.UserLoginDTO;
 import org.mon.lottery_system.service.dto.UserRegisterDTO;
 import org.mon.lottery_system.service.enums.UserIdentityEnum;
@@ -36,6 +37,8 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private VerificationCodeService verificationCodeService;
 
     @Override
     public UserRegisterDTO userRegisterDTO(UserRegisterParam userRegisterParam) {
@@ -86,6 +89,34 @@ public class UserServiceImpl implements UserService {
      */
     private UserLoginDTO loginByShortMessage(ShortMessageLoginParam loginParam) {
 
+        if(!RegexUtil.checkMobile(loginParam.getLoginMobile()))
+            throw new ServiceException(ServiceErrorCodeConstants.PHONE_NUMBER_ERROR);
+
+//        获取用户数据
+        UserDO userDO = userMapper.selectByPhone(new Encrypt(loginParam.getLoginMobile()));
+
+        if(null==userDO) throw new ServiceException(ServiceErrorCodeConstants.USER_INFO_IS_EMPTY);
+        else if (StringUtils.hasText(loginParam.getMandatoryIdentity())
+                && !loginParam.getMandatoryIdentity().equalsIgnoreCase(userDO.getIdentity())) {
+            throw new ServiceException(ServiceErrorCodeConstants.IDENTITY_ERROR);
+        }
+
+//        校验验证码
+        String verificationCode = verificationCodeService.getVerificationCode(loginParam.getLoginMobile());
+
+        if(!loginParam.getVerificationCode().equals(verificationCode))
+            throw new ServiceException(ServiceErrorCodeConstants.VERIFICATION_CODE_ERROR);
+
+        //        塞入返回值
+        Map<String,Object> claim=new HashMap<>();
+        claim.put("id",userDO.getId());
+        claim.put("identity",userDO.getIdentity());
+        String token = JWTUtil.genJwt(claim);
+
+        UserLoginDTO userLoginDTO=new UserLoginDTO();
+        userLoginDTO.setToken(token);
+        userLoginDTO.setIdentity(UserIdentityEnum.forName(userDO.getIdentity()));
+        return userLoginDTO;
     }
 
     /**
@@ -118,7 +149,7 @@ public class UserServiceImpl implements UserService {
                 .equalsIgnoreCase(userDO.getIdentity())) {
 //            强制身份登入，身份校验不通过
             throw  new ServiceException(ServiceErrorCodeConstants.IDENTITY_ERROR);
-        } else if (!DigestUtil.sha256(loginParam.getPassword()).equals(userDO.getPassword())) {
+        } else if (!DigestUtil.sha256Hex(loginParam.getPassword()).equals(userDO.getPassword())) {
 //            校验密码不通过
             throw new ServiceException(ServiceErrorCodeConstants.PASSWORD_ERROR);
         }

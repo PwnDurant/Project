@@ -34,6 +34,6 @@ public interface UserMapper {
 
     @Select("select * from user where phone_number=#{phoneNumber}")
     UserDO selectByPhone(@Param("phoneNumber") Encrypt phoneNumber);
-    
+
 }
 
