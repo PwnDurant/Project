@@ -8,9 +8,12 @@ import org.mon.lottery_system.controller.param.CreateUserByActivityParam;
 import org.mon.lottery_system.dao.dataobject.ActivityDO;
 import org.mon.lottery_system.dao.dataobject.ActivityPrizeDO;
 import org.mon.lottery_system.dao.dataobject.ActivityUserDO;
+import org.mon.lottery_system.dao.dataobject.PrizeDO;
 import org.mon.lottery_system.dao.mapper.*;
 import org.mon.lottery_system.service.ActivityService;
+import org.mon.lottery_system.service.dto.ActivityDetailDTO;
 import org.mon.lottery_system.service.dto.CreateActivityDTO;
+import org.mon.lottery_system.service.dto.PrizeDTO;
 import org.mon.lottery_system.service.enums.ActivityPrizeStatusEnum;
 import org.mon.lottery_system.service.enums.ActivityPrizeTiersEnum;
 import org.mon.lottery_system.service.enums.ActivityStatusEnum;
@@ -19,7 +22,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 
@@ -94,12 +99,64 @@ public class ActivityServiceImpl implements ActivityService {
 
 
 //        整合完整的活动信息，存放redis
+//        activityId:ActivityDetailDTO :活动+奖品+人员信息
+
+//        需要先获取奖品基本属性列表
+//        获取需要查询的奖品Id
+        List<Long> prizeIds=param.getActivityPrizeList().stream().map(CreatePrizeByActivityParam::getPrizeId).distinct()
+                .toList();
+        List<PrizeDO> prizeDOList = prizeMapper.batchSelectByIds(prizeIds);
+
+        ActivityDetailDTO detailDTO=convertToActivityDetailDTO(activityDO,activityUserDOList,prizeDOList,activityPrizeDOList);
+
 
 
 //        构造返回
 
 
 
+    }
+
+    private ActivityDetailDTO convertToActivityDetailDTO(ActivityDO activityDO, List<ActivityUserDO> activityUserDOList, List<PrizeDO> prizeDOList, List<ActivityPrizeDO> activityPrizeDOList) {
+        ActivityDetailDTO activityDetailDTO=new ActivityDetailDTO();
+        activityDetailDTO.setActivityId(activityDO.getId());
+        activityDetailDTO.setActivityName(activityDO.getActivityName());
+        activityDetailDTO.setDesc(activityDO.getDescription());
+        activityDetailDTO.setStatus(ActivityStatusEnum.forName(activityDO.getStatus()));
+
+//        apDO：{prizeId amount status},{prizeId amount status},{prizeId amount status}...
+//        pDO: {prizeId,name...},{prizeId,name...},{prizeId,name...}...
+        List<ActivityDetailDTO.PrizeDTO> prizeDTOList=activityPrizeDOList.stream().map(apDO -> {
+            ActivityDetailDTO.PrizeDTO prizeDTO=new ActivityDetailDTO.PrizeDTO();
+            prizeDTO.setPrizeId(apDO.getPrizeId());
+            Optional<PrizeDO> optionalPrizeDO = prizeDOList.stream()
+                    .filter(prizeDO -> prizeDO.getId().equals(apDO.getPrizeId()))
+                    .findFirst();
+
+
+//            拿到Optional的容器对象，如果有一个prizeDO为空，那么就不会把prizeDO传入进去，不执行当前方法
+            optionalPrizeDO.ifPresent(prizeDO -> {
+                prizeDTO.setName(prizeDTO.getName());
+                prizeDTO.setImageUrl(prizeDTO.getImageUrl());
+                prizeDTO.setPrice(prizeDO.getPrice());
+                prizeDTO.setDescription(prizeDTO.getDescription());
+            });
+
+
+            prizeDTO.setTier(ActivityPrizeTiersEnum.forName(apDO.getPrizeTiers()));
+            prizeDTO.setPrizeAmount(apDO.getPrizeAmount());
+            prizeDTO.setStatus(ActivityPrizeStatusEnum.forName(apDO.getStatus()));
+            return prizeDTO;
+        }).toList();
+
+        activityDetailDTO.setPrizeDTOList(prizeDTOList);
+
+
+
+        activityDetailDTO.setUserDTOList();
+
+
+        return activityDetailDTO;
     }
 
     /**
