@@ -174,8 +174,8 @@
             data: formData,
             success: function(result) {
                 if(result.code == 200) {
-                    alert('奖品创建成功！即将跳转到奖品列表');
-                    location.href="prizes-list.html";
+                    alert('奖品创建成功！请跳转到奖品列表');
+                    // location.href="prizes-list.html";
                 } else {
                     alert('创建奖品失败：' + result.msg);
                 }

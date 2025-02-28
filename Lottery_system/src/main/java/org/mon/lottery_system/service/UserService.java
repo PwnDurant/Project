@@ -31,4 +31,9 @@ public interface UserService {
      * @return
      */
     List<UserDTO> findUserInfo(UserIdentityEnum userIdentityEnum);
+
+    List<UserDTO> findNormalInfo();
+
+
+
 }

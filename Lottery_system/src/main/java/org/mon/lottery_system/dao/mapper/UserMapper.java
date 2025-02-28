@@ -49,13 +49,16 @@ public interface UserMapper {
 
 //    1 2 3 -> 1 2
 
-    @Select("<select>" +
+    @Select("<script>" +
             " select id from user" +
             " where id in  " +
             "<foreach item='item' collection='items' open='(' separator=',' close=')'>"+
             " #{item}"+
             " </foreach>"+
-            " </select>")
+            " </script>")
     List<Long> selectExistByIds(@Param("items") List<Long> ids);
+
+    @Select("select * from user where identity='NORMAL' order by id desc ")
+    List<UserDO> selectNormalByIdentityUserLIst();
 }
 

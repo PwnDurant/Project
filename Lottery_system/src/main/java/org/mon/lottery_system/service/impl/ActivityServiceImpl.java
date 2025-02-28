@@ -1,19 +1,23 @@
 package org.mon.lottery_system.service.impl;
-
+import lombok.extern.slf4j.Slf4j;
 import org.mon.lottery_system.common.errorcode.ServiceErrorCodeConstants;
 import org.mon.lottery_system.common.exception.ServiceException;
+import org.mon.lottery_system.common.utils.JacksonUtil;
+import org.mon.lottery_system.common.utils.RedisUtil;
 import org.mon.lottery_system.controller.param.CreateActivityParam;
 import org.mon.lottery_system.controller.param.CreatePrizeByActivityParam;
 import org.mon.lottery_system.controller.param.CreateUserByActivityParam;
+import org.mon.lottery_system.controller.param.PageParam;
 import org.mon.lottery_system.dao.dataobject.ActivityDO;
 import org.mon.lottery_system.dao.dataobject.ActivityPrizeDO;
 import org.mon.lottery_system.dao.dataobject.ActivityUserDO;
 import org.mon.lottery_system.dao.dataobject.PrizeDO;
 import org.mon.lottery_system.dao.mapper.*;
 import org.mon.lottery_system.service.ActivityService;
+import org.mon.lottery_system.service.dto.ActivityDTO;
 import org.mon.lottery_system.service.dto.ActivityDetailDTO;
 import org.mon.lottery_system.service.dto.CreateActivityDTO;
-import org.mon.lottery_system.service.dto.PrizeDTO;
+import org.mon.lottery_system.service.dto.PageListDTO;
 import org.mon.lottery_system.service.enums.ActivityPrizeStatusEnum;
 import org.mon.lottery_system.service.enums.ActivityPrizeTiersEnum;
 import org.mon.lottery_system.service.enums.ActivityStatusEnum;
@@ -21,31 +25,35 @@ import org.mon.lottery_system.service.enums.ActivityUserStatusEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.CollectionUtils;
+import org.springframework.util.StringUtils;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
 
+@Slf4j
 @Service
 public class ActivityServiceImpl implements ActivityService {
 
     @Autowired
     private UserMapper userMapper;
-
     @Autowired
     private PrizeMapper prizeMapper;
-
     @Autowired
     private ActivityMapper activityMapper;
-
     @Autowired
     private ActivityUserMapper activityUserMapper;
-
     @Autowired
     private ActivityPrizeMapper activityPrizeMapper;
+    @Autowired
+    private RedisUtil redisUtil;
 
+    private final String ACTIVITY_PREFIX = "ACTIVITY_";
+
+    private final Long ACTIVITY_OUT_TIME=60*60*24*3L;
 
     /**
      * 创建活动实现类
@@ -109,11 +117,90 @@ public class ActivityServiceImpl implements ActivityService {
 
         ActivityDetailDTO detailDTO=convertToActivityDetailDTO(activityDO,activityUserDOList,prizeDOList,activityPrizeDOList);
 
-
+        cacheActivity(detailDTO);
 
 //        构造返回
+        CreateActivityDTO createActivityDTO=new CreateActivityDTO();
+        createActivityDTO.setActivityId(activityDO.getId());
+        return createActivityDTO;
+    }
+
+    @Override
+    public PageListDTO<ActivityDTO> findActivityList(PageParam param) {
+
+//        获取总量
+        int total=activityMapper.count();
+
+//        获取当前页列表
+        List<ActivityDO> activityDOList=activityMapper.selectActivityList(param.offset(),param.getPageSize());
+        List<ActivityDTO> activityDTOList=activityDOList.stream()
+                .map(activityDO -> {
+                    ActivityDTO activityDTO=new ActivityDTO();
+                    activityDTO.setActivityId(activityDO.getId());
+                    activityDTO.setActivityName(activityDO.getActivityName());
+                    activityDTO.setDescription(activityDO.getDescription());
+                    activityDTO.setStatus(ActivityStatusEnum.forName(activityDO.getStatus()));
+                    return activityDTO;
+                }).toList();
+
+        return new PageListDTO<>(total,activityDTOList);
+
+    }
+
+    /**
+     * 缓存DTO（活动信息）
+     * @param detailDTO
+     */
+    private void cacheActivity(ActivityDetailDTO detailDTO) {
+
+//        key: ACTIVITY_activityId
+//        value: ActivityDetailDTO(json)
+
+        if(null==detailDTO||null==detailDTO.getActivityId()) {
+            log.warn("要缓存的活动信息为空！");
+            return;
+        }
 
 
+//        如果活动表和关联表放入成功的话，缓存没有放成功的话，不需要回滚事务
+//        抽奖端（Client）：查看活动信息，先在redis中获取，如果没有获取到为空，但是数据库中有数据，查到数据库中数据
+//        可以再通过表数据构建出数据，存放redis中
+        try{
+            redisUtil.set(ACTIVITY_PREFIX+detailDTO.getActivityId()
+                    , JacksonUtil.writeValueAsString(detailDTO)
+                    ,ACTIVITY_OUT_TIME);
+        }catch (Exception e){
+            log.error("缓存活动异常,ActivityDetailDTO={}",JacksonUtil.writeValueAsString(detailDTO),e);
+
+        }
+    }
+
+
+    /**
+     * 根据活动Id从缓存中获取详细信息
+     * @param activityId
+     * @return
+     */
+    private ActivityDetailDTO getActivityFromCache(Long activityId){
+        if(null==activityId){
+            log.warn("从缓存中获取活动数据的key为空！");
+            return null;
+        }
+
+
+        try{
+            String str = redisUtil.get(ACTIVITY_PREFIX + activityId);
+
+            if(!StringUtils.hasText(str)) {
+                log.info("从缓存中获取活动数据为空！key={}",ACTIVITY_PREFIX+activityId);
+                return null;
+            }
+
+            return  JacksonUtil.readValue(str, ActivityDetailDTO.class);
+        }catch (Exception e){
+            log.error("从缓存中获取活动信息异常,key={}",ACTIVITY_PREFIX+activityId,e);
+            return null;
+        }
 
     }
 
@@ -127,21 +214,22 @@ public class ActivityServiceImpl implements ActivityService {
 //        apDO：{prizeId amount status},{prizeId amount status},{prizeId amount status}...
 //        pDO: {prizeId,name...},{prizeId,name...},{prizeId,name...}...
         List<ActivityDetailDTO.PrizeDTO> prizeDTOList=activityPrizeDOList.stream().map(apDO -> {
+
             ActivityDetailDTO.PrizeDTO prizeDTO=new ActivityDetailDTO.PrizeDTO();
+
             prizeDTO.setPrizeId(apDO.getPrizeId());
+
             Optional<PrizeDO> optionalPrizeDO = prizeDOList.stream()
                     .filter(prizeDO -> prizeDO.getId().equals(apDO.getPrizeId()))
                     .findFirst();
 
-
 //            拿到Optional的容器对象，如果有一个prizeDO为空，那么就不会把prizeDO传入进去，不执行当前方法
             optionalPrizeDO.ifPresent(prizeDO -> {
-                prizeDTO.setName(prizeDTO.getName());
-                prizeDTO.setImageUrl(prizeDTO.getImageUrl());
+                prizeDTO.setName(prizeDO.getName());
+                prizeDTO.setImageUrl(prizeDO.getImageUrl());
                 prizeDTO.setPrice(prizeDO.getPrice());
-                prizeDTO.setDescription(prizeDTO.getDescription());
+                prizeDTO.setDescription(prizeDO.getDescription());
             });
-
 
             prizeDTO.setTier(ActivityPrizeTiersEnum.forName(apDO.getPrizeTiers()));
             prizeDTO.setPrizeAmount(apDO.getPrizeAmount());
@@ -152,9 +240,15 @@ public class ActivityServiceImpl implements ActivityService {
         activityDetailDTO.setPrizeDTOList(prizeDTOList);
 
 
+        List<ActivityDetailDTO.UserDTO> userDTOList=activityUserDOList.stream().map(auDO->{
+            ActivityDetailDTO.UserDTO userDTO=new ActivityDetailDTO.UserDTO();
+            userDTO.setUserId(auDO.getUserId());
+            userDTO.setUserName(auDO.getUserName());
+            userDTO.setStatus(ActivityUserStatusEnum.forName(auDO.getStatus()));
+            return userDTO;
+        }).toList();
 
-        activityDetailDTO.setUserDTOList();
-
+        activityDetailDTO.setUserDTOList(userDTOList);
 
         return activityDetailDTO;
     }
@@ -172,6 +266,9 @@ public class ActivityServiceImpl implements ActivityService {
                 .collect(Collectors.toList());
 
         List<Long> existUserIds=userMapper.selectExistByIds(userIds);
+        if(CollectionUtils.isEmpty(existUserIds)){
+            throw new ServiceException(ServiceErrorCodeConstants.ACTIVITY_USER_ERROR);
+        }
         userIds.forEach(id->{
             if(!existUserIds.contains(id)){
                 throw new ServiceException(ServiceErrorCodeConstants.ACTIVITY_USER_ERROR);
@@ -186,6 +283,9 @@ public class ActivityServiceImpl implements ActivityService {
                 .collect(Collectors.toList());
 
         List<Long> existPrizeIds=prizeMapper.selectExistByIds(prizeIds);
+        if(CollectionUtils.isEmpty(existPrizeIds)){
+            throw new ServiceException(ServiceErrorCodeConstants.ACTIVITY_PRIZE_ERROR);
+        }
         prizeIds.forEach(id->{
             if(!existPrizeIds.contains(id)){
                 throw new ServiceException(ServiceErrorCodeConstants.ACTIVITY_PRIZE_ERROR);

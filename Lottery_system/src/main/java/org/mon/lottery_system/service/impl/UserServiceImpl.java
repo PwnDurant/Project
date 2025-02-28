@@ -107,6 +107,24 @@ public class UserServiceImpl implements UserService {
 
     }
 
+    @Override
+    public List<UserDTO> findNormalInfo() {
+        //        查表
+        List<UserDO> userDOList=userMapper.selectNormalByIdentityUserLIst();
+
+//        转换
+        List<UserDTO> userDTOList=userDOList.stream().map(userDO -> {
+            UserDTO userDTO=new UserDTO();
+            userDTO.setUserId(userDO.getId());
+            userDTO.setUserName(userDO.getUserName());
+            userDTO.setEmail(userDO.getEmail());
+            userDTO.setPhoneNumber(userDO.getPhoneNumber().getValue());
+            userDTO.setIdentity(UserIdentityEnum.forName(userDO.getIdentity()));
+            return userDTO;
+        }).collect(Collectors.toList());
+        return userDTOList;
+    }
+
     /**
      * 验证码登入
      * @param loginParam

@@ -105,6 +105,14 @@ public class UserController {
         return CommonResult.success(converToList(userDTOList));
     }
 
+    @RequestMapping("/showNormal-list")
+    public CommonResult<List<BaseUserInfoResult>> findNormalInfo(String identity){
+        log.info("findNormalInfo identity:{}",identity);
+        List<UserDTO> userDTOList=userService.findNormalInfo();
+
+        return CommonResult.success(converToList(userDTOList));
+    }
+
     private List<BaseUserInfoResult> converToList(List<UserDTO> userDTOList) {
         if(CollectionUtils.isEmpty(userDTOList)){
             return Arrays.asList();

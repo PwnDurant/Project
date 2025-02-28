@@ -12,6 +12,7 @@ public interface ControllerErrorCodeConstants {
 
     //    ------ 活动模块错误码 ------
         ErrorCode CREATE_ACTIVITY_ERROR=new ErrorCode(300,"创建活动失败");
+        ErrorCode FIND_ACTIVITY_ACTIVITY_ERROR=new ErrorCode(301,"查询活动列表失败");
 
 
     //    ------ 奖品模块错误码 ------
