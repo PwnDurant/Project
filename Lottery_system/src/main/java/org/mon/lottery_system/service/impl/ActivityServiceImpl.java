@@ -147,6 +147,41 @@ public class ActivityServiceImpl implements ActivityService {
 
     }
 
+    @Override
+    public ActivityDetailDTO getActivityDetail(Long activityId) {
+
+        if(null==activityId){
+            log.warn("查询活动详细信息的activity为空");
+            return null;
+        }
+
+//        查redis
+        ActivityDetailDTO detailDTO = getActivityFromCache(activityId);
+        if(null != detailDTO){
+
+            log.info("查询活动详细信息detailDTO:{}",JacksonUtil.writeValueAsString(detailDTO));
+            return detailDTO;
+        }
+
+
+//        如果没有查到，查表
+//        查活动表
+        ActivityDO aDO=activityMapper.selectById(activityId);
+
+//        活动奖品表
+        List<ActivityPrizeDO> apDOList=activityPrizeMapper.selectByActivityId(activityId);
+//        活动人员表
+        List<ActivityUserDO> auDOList=activityUserMapper.selectByActivityId(activityId);
+//        奖品表: 奖品Id的List
+        List<Long> prizeIds=apDOList.stream().map(ActivityPrizeDO::getPrizeId).toList();
+        List<PrizeDO> pDOList=prizeMapper.batchSelectByIds(prizeIds);
+//        整合活动详细信息存放redis
+        detailDTO=convertToActivityDetailDTO(aDO,auDOList,pDOList,apDOList);
+        cacheActivity(detailDTO);
+//        返回
+        return detailDTO;
+    }
+
     /**
      * 缓存DTO（活动信息）
      * @param detailDTO
@@ -203,6 +238,16 @@ public class ActivityServiceImpl implements ActivityService {
         }
 
     }
+
+
+    /**
+     * 根据基本的DO整合完整的活动信息ActivityDetailDTO
+     * @param activityDO
+     * @param activityUserDOList
+     * @param prizeDOList
+     * @param activityPrizeDOList
+     * @return
+     */
 
     private ActivityDetailDTO convertToActivityDetailDTO(ActivityDO activityDO, List<ActivityUserDO> activityUserDOList, List<PrizeDO> prizeDOList, List<ActivityPrizeDO> activityPrizeDOList) {
         ActivityDetailDTO activityDetailDTO=new ActivityDetailDTO();

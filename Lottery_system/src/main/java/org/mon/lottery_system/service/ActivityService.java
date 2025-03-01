@@ -4,6 +4,7 @@ package org.mon.lottery_system.service;
 import org.mon.lottery_system.controller.param.CreateActivityParam;
 import org.mon.lottery_system.controller.param.PageParam;
 import org.mon.lottery_system.service.dto.ActivityDTO;
+import org.mon.lottery_system.service.dto.ActivityDetailDTO;
 import org.mon.lottery_system.service.dto.CreateActivityDTO;
 import org.mon.lottery_system.service.dto.PageListDTO;
 
@@ -24,4 +25,12 @@ public interface ActivityService {
      * @return
      */
     PageListDTO<ActivityDTO> findActivityList(PageParam param);
+
+
+    /**
+     * 获取活动详细属性
+     * @param activityId
+     * @return
+     */
+    ActivityDetailDTO getActivityDetail(Long activityId);
 }

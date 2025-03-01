@@ -1,10 +1,7 @@
 package org.mon.lottery_system.dao.mapper;
 
 
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Options;
-import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.*;
 import org.mon.lottery_system.dao.dataobject.ActivityUserDO;
 
 import java.util.List;
@@ -20,5 +17,8 @@ public interface ActivityUserMapper {
             " </script>")
     @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
     int batchInsert(@Param("items") List<ActivityUserDO> activityUserDOList);
+
+    @Select("select * from activity_user where user_id=#{userId}")
+    List<ActivityUserDO> selectByActivityId(Long activityId);
 
 }

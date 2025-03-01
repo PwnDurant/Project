@@ -135,18 +135,21 @@
       };
       // 发送AJAX请求
       $.ajax({
-          url: '',
-          type: '',
+          url: '/activity/find-list',
+          type: 'get',
           data: dataToSend, // 将分页参数作为请求数据发送
           dataType: 'json',
           headers: {
             // jwt
+            "user_token":userToken
           },
           success: function(result) {
             if (result.code != 200) {
                 alert("查询活动列表失败！" + result.msg);
             } else {
+              console.log(result);
                 var activities = result.data.records; // 假设返回的数据中活动列表字段为 'records'
+              console.log(activities)
                 var activitiesHtml = '';
                 var listContainer = document.getElementById('activities');
                 // 在添加新内容前，先清空listContainer
