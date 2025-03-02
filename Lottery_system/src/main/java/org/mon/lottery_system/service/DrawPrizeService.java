@@ -10,4 +10,11 @@ public interface DrawPrizeService {
      * @param drawPrizeParam
      */
     void drawPrize(DrawPrizeParam drawPrizeParam);
+
+    /**
+     * 校验抽奖请求是否有效
+     */
+    void checkDrawPrizeParam(DrawPrizeParam param);
+
+
 }

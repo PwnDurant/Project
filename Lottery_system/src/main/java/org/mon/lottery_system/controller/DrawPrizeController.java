@@ -24,7 +24,7 @@ public class DrawPrizeController {
         log.info("drawPrize drawPrizeParam:{}",drawPrizeParam);
 
 //        service层方法
-
+        drawPrizeService.drawPrize(drawPrizeParam);
         return CommonResult.success(true);
     }
 

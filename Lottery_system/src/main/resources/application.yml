@@ -5,7 +5,7 @@ spring:
     name: Lottery_system
   rabbitmq:
     host: 123.56.166.56
-    port: 15672
+    port: 8889
     username: zqq
     password: zqq
     listener:

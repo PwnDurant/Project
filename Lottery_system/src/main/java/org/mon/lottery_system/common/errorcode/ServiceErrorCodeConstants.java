@@ -32,6 +32,10 @@ public interface ServiceErrorCodeConstants {
 
 
     //    ------ 奖品模块错误码 ------
+    ErrorCode ACTIVITY_OR_PRIZE_IS_EMPTY=new ErrorCode(400,"抽奖活动或关联奖品不存在");
+    ErrorCode ACTIVITY_COMPLETED=new ErrorCode(401,"抽奖活动完成");
+    ErrorCode ACTIVITY_PRIZE_COMPLETED=new ErrorCode(402,"奖品已经被抽取,无法抽奖");
+    ErrorCode WINNER_PRIZE_AMOUNT_ERROR=new ErrorCode(403,"中奖人数与奖品数量不一致，无法抽奖");
 
 
 
