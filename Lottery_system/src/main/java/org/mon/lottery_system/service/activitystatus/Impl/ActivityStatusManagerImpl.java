@@ -2,14 +2,19 @@ package org.mon.lottery_system.service.activitystatus.Impl;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.annotations.Param;
+import org.mon.lottery_system.common.errorcode.ServiceErrorCodeConstants;
+import org.mon.lottery_system.common.exception.ServiceException;
+import org.mon.lottery_system.service.ActivityService;
 import org.mon.lottery_system.service.activitystatus.ActivityStatusManager;
 import org.mon.lottery_system.service.activitystatus.operator.AbstractActivityOperator;
 import org.mon.lottery_system.service.dto.ConvertActivityStatusDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 
@@ -20,7 +25,11 @@ public class ActivityStatusManagerImpl implements ActivityStatusManager {
     @Autowired
     private final Map<String, AbstractActivityOperator> operatorMap =new HashMap<>();
 
+    @Autowired
+    private ActivityService activityService;
+
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public void handlerEvent(ConvertActivityStatusDTO activityStatusDTO) {
 
 //        1，活动状态扭转有依赖性，导致代码维护性差
@@ -38,15 +47,11 @@ public class ActivityStatusManagerImpl implements ActivityStatusManager {
         update=processConvertStatus(activityStatusDTO,currMap,1);
 
 //        后处理：活动
-        if (update) {
-            processConvertStatus(activityStatusDTO,currMap,2);
-        }else{
-            update=processConvertStatus(activityStatusDTO,currMap,2);
-        }
+        update=processConvertStatus(activityStatusDTO,currMap,2) || update;
 
 //        更新缓存
         if(update) {
-
+            activityService.cacheActivity(activityStatusDTO.getActivityId());
         }
 
 
@@ -55,16 +60,27 @@ public class ActivityStatusManagerImpl implements ActivityStatusManager {
     private Boolean processConvertStatus(ConvertActivityStatusDTO activityStatusDTO,
                                          Map<String, AbstractActivityOperator> currMap,
                                          int sequence) {
+        Boolean update=false;
 //        扭转状态
-
-//        遍历Map，
-
+        Iterator<Map.Entry<String, AbstractActivityOperator>> iterator=currMap.entrySet().iterator();
+        while(iterator.hasNext()){
+            AbstractActivityOperator operator = iterator.next().getValue();
 //        Operator是否需要转换
-
-//        需要转换就进行转换
-
+            if(operator.sequence()!=sequence || !operator.needConvert(activityStatusDTO)){
+                continue;
+            }
+//            需要转换：转换
+            if(!operator.convert(activityStatusDTO)){
+                log.error("iterator：{},转换失败",operator.getClass().getName());
+                throw new ServiceException(ServiceErrorCodeConstants.ACTIVITY_STATUS_CONVERT_ERROR);
+            }
 //        在Map中删除当前遍历到的Operator
+            iterator.remove();
+            update=true;
+        }
 
 //        返回
+        return update;
+
     }
 }

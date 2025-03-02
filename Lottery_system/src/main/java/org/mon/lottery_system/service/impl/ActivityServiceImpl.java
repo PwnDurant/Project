@@ -182,6 +182,11 @@ public class ActivityServiceImpl implements ActivityService {
         return detailDTO;
     }
 
+    @Override
+    public void cacheActivity(Long activityId) {
+
+    }
+
     /**
      * 缓存DTO（活动信息）
      * @param detailDTO

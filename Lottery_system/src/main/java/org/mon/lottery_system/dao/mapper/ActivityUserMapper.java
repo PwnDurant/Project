@@ -21,4 +21,25 @@ public interface ActivityUserMapper {
     @Select("select * from activity_user where user_id=#{userId}")
     List<ActivityUserDO> selectByActivityId(Long activityId);
 
+
+    @Select("<script>" +
+            " select * form activity_user" +
+            " where activity_id=#{activityId}" +
+            " and user_id in" +
+            " <foreach collection='userIds' item='userId' open='(' separator=',' close=')'>" +
+            " #{userId}"+
+            " </foreach>"+
+            " </script>")
+    List<ActivityUserDO> bathSelectByActivityAUIDs(Long activityId, List<Long> userIds);
+
+
+    @Update("<script>" +
+            " update activity_user set status=#{status}" +
+            " where activity_id=#{activityId}" +
+            " and user_id in" +
+            " <foreach collection='userIds' item='userId' open='(' separator=',' close=')'>" +
+            " #{userId}"+
+            " </foreach>"+
+            " </script>")
+    void batchUpdateStatus(Long activityId, List<Long> userIds, String status);
 }

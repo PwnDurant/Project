@@ -17,4 +17,10 @@ public abstract class AbstractActivityOperator {
      */
     public abstract Boolean needConvert(ConvertActivityStatusDTO convertActivityStatusDTO);
 
+    /**
+     * 真正的转换方法
+     * @param convertActivityStatusDTO
+     */
+    public abstract Boolean convert(ConvertActivityStatusDTO convertActivityStatusDTO);
+
 }

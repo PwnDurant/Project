@@ -29,6 +29,7 @@ public interface ServiceErrorCodeConstants {
         ErrorCode ACTIVITY_PRIZE_ERROR=new ErrorCode(302,"活动关联的奖品异常");
         ErrorCode USER_PRIZE_AMOUNT_ERROR=new ErrorCode(303,"活动关联的奖品及人员数量设置异常");
         ErrorCode ACTIVITY_PRIZE_TIERS_ERROR=new ErrorCode(304,"活动奖品等级设置错误");
+        ErrorCode ACTIVITY_STATUS_CONVERT_ERROR=new ErrorCode(305,"活动状态转换失败");
 
 
     //    ------ 奖品模块错误码 ------

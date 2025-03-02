@@ -8,6 +8,9 @@ import org.mon.lottery_system.controller.param.DrawPrizeParam;
 import org.mon.lottery_system.service.DrawPrizeService;
 import org.mon.lottery_system.service.activitystatus.ActivityStatusManager;
 import org.mon.lottery_system.service.dto.ConvertActivityStatusDTO;
+import org.mon.lottery_system.service.enums.ActivityPrizeStatusEnum;
+import org.mon.lottery_system.service.enums.ActivityStatusEnum;
+import org.mon.lottery_system.service.enums.ActivityUserStatusEnum;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +42,6 @@ public class MqReceiver {
 //        反序列化
         DrawPrizeParam paramD=JacksonUtil.readValue(param, DrawPrizeParam.class);
 //        处理抽奖流程
-
         try {
 //        校验抽奖请求是否有效
             drawPrizeService.checkDrawPrizeParam(paramD);
@@ -65,8 +67,16 @@ public class MqReceiver {
      * 状态扭转
      * @param param
      */
+
+
     private void statusConvert(DrawPrizeParam param){
         ConvertActivityStatusDTO convertActivityStatusDTO=new ConvertActivityStatusDTO();
+        convertActivityStatusDTO.setActivityId(param.getActivityId());
+        convertActivityStatusDTO.setTargetActivityStatus(ActivityStatusEnum.COMPLETED);
+        convertActivityStatusDTO.setPrizeId(param.getPrizeId());
+        convertActivityStatusDTO.setTargetPrizeStatus(ActivityPrizeStatusEnum.COMPLETED);
+        convertActivityStatusDTO.setUserIds(param.getWinnerList().stream().map(DrawPrizeParam.Winner::getUserId).toList());
+        convertActivityStatusDTO.setTargetUserStatus(ActivityUserStatusEnum.COMPLETED);
         activityStatusManager.handlerEvent(convertActivityStatusDTO);
     }
 

@@ -16,7 +16,6 @@ public interface ActivityMapper {
     @Options(useGeneratedKeys = true ,keyProperty = "id",keyColumn = "id")
     int insert(ActivityDO activityDO);
 
-
     @Select("select count(*) from activity")
     int count();
 
@@ -26,6 +25,6 @@ public interface ActivityMapper {
     @Select("select * from activity where id=#{id};")
     ActivityDO selectById(@Param("id") Long activityId);
 
-
-
+    @Update("update activity set status=#{status} where id=#{id}")
+    void updateStatus(Long id, String status);
 }
