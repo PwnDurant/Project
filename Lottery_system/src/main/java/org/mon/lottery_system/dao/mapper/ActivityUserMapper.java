@@ -18,19 +18,19 @@ public interface ActivityUserMapper {
     @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
     int batchInsert(@Param("items") List<ActivityUserDO> activityUserDOList);
 
-    @Select("select * from activity_user where user_id=#{userId}")
+    @Select("select * from activity_user where activity_id=#{activityId}")
     List<ActivityUserDO> selectByActivityId(Long activityId);
 
 
     @Select("<script>" +
-            " select * form activity_user" +
+            " select * from activity_user" +
             " where activity_id=#{activityId}" +
             " and user_id in" +
             " <foreach collection='userIds' item='userId' open='(' separator=',' close=')'>" +
             " #{userId}"+
             " </foreach>"+
             " </script>")
-    List<ActivityUserDO> bathSelectByActivityAUIDs(Long activityId, List<Long> userIds);
+    List<ActivityUserDO> bathSelectByActivityAUIDs(Long activityId,@Param("userIds") List<Long> userIds);
 
 
     @Update("<script>" +

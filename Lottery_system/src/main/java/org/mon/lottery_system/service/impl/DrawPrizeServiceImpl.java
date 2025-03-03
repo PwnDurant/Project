@@ -2,21 +2,25 @@ package org.mon.lottery_system.service.impl;
 
 import cn.hutool.core.lang.UUID;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.catalina.User;
 import org.mon.lottery_system.common.errorcode.ServiceErrorCodeConstants;
 import org.mon.lottery_system.common.exception.ServiceException;
 import org.mon.lottery_system.common.utils.JacksonUtil;
+import org.mon.lottery_system.common.utils.RedisUtil;
 import org.mon.lottery_system.controller.param.DrawPrizeParam;
-import org.mon.lottery_system.dao.dataobject.ActivityDO;
-import org.mon.lottery_system.dao.dataobject.ActivityPrizeDO;
-import org.mon.lottery_system.dao.mapper.ActivityMapper;
-import org.mon.lottery_system.dao.mapper.ActivityPrizeMapper;
+import org.mon.lottery_system.dao.dataobject.*;
+import org.mon.lottery_system.dao.mapper.*;
 import org.mon.lottery_system.service.DrawPrizeService;
 import org.mon.lottery_system.service.enums.ActivityStatusEnum;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
+import org.springframework.util.StringUtils;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static org.mon.lottery_system.common.config.DirectRabbitConfig.EXCHANGE_NAME;
@@ -26,15 +30,26 @@ import static org.mon.lottery_system.common.config.DirectRabbitConfig.ROUTING;
 @Service
 public class DrawPrizeServiceImpl implements DrawPrizeService {
 
+    private final Long WINNING_RECORDS_TIMEOUT=60*60*24*2L;
+    private final String WINNING_RECORDS_PREFIX="WINNING_RECORDS_";
+
 //    行为对象
     @Autowired
     private RabbitTemplate rabbitTemplate;
-
     @Autowired
     private ActivityMapper activityMapper;
-
     @Autowired
     private ActivityPrizeMapper activityPrizeMapper;
+    @Autowired
+    private UserMapper userMapper;
+    @Autowired
+    private PrizeMapper prizeMapper;
+    @Autowired
+    private ActivityUserMapper activityUserMapper;
+    @Autowired
+    private WinningRecordMapper winningRecordMapper;
+    @Autowired
+    private RedisUtil redisUtil;
 
 
     @Override
@@ -75,5 +90,90 @@ public class DrawPrizeServiceImpl implements DrawPrizeService {
             throw new ServiceException(ServiceErrorCodeConstants.WINNER_PRIZE_AMOUNT_ERROR);
         }
 
+    }
+
+    @Override
+    public List<WinningRecordDO> saveWinnerRecords(DrawPrizeParam paramD) {
+//        查询信息:活动，奖品，人员，活动关联奖品表
+
+        ActivityDO activityDO=activityMapper.selectById(paramD.getActivityId());
+        List<UserDO> userDOList=userMapper.batchSelectByIds(paramD.getWinnerList().stream().map(DrawPrizeParam.Winner::getUserId).toList());
+        PrizeDO prizeDO=prizeMapper.selectById(paramD.getPrizeId());
+        ActivityPrizeDO activityPrizeDO=activityPrizeMapper.selectByAPId(paramD.getActivityId(), paramD.getPrizeId());
+
+//        构造记录
+
+        List<WinningRecordDO> winningRecordDOList=userDOList.stream().map(userDO -> {
+            WinningRecordDO winningRecordDO=new WinningRecordDO();
+            winningRecordDO.setActivityId(activityDO.getId());
+            winningRecordDO.setActivityName(activityDO.getActivityName());
+            winningRecordDO.setPrizeId(prizeDO.getId());
+            winningRecordDO.setPrizeName(prizeDO.getName());
+            winningRecordDO.setPrizeTier(activityPrizeDO.getPrizeTiers());
+            winningRecordDO.setWinnerEmail(userDO.getEmail());
+            winningRecordDO.setWinnerId(userDO.getId());
+            winningRecordDO.setWinnerName(userDO.getUserName());
+            winningRecordDO.setWinnerPhoneNumber(userDO.getPhoneNumber());
+            winningRecordDO.setWinnerTime(paramD.getWinningTime());
+            return winningRecordDO;
+        }).toList();
+        winningRecordMapper.batchInsert(winningRecordDOList);
+
+//        缓存记录
+//        缓存奖品纬度的中奖记录(WinningRecord_activityId_prizeId,winnerRecordDOList（奖品纬度的中奖名单）)
+        cacheWinningRecords(paramD.getActivityId()+"_"+paramD.getPrizeId(),winningRecordDOList,WINNING_RECORDS_TIMEOUT);
+
+//        缓存活动纬度的中奖记录(WinningRecord_activityId,winningRecordDOList（活动纬度的中奖名单）)
+//        当活动已完成的时候，再去存放活动纬度的中奖记录
+        if(activityDO.getStatus().equalsIgnoreCase(ActivityStatusEnum.COMPLETED.name())){
+
+//            查询活动纬度的全量中奖记录
+            List<WinningRecordDO> allList=winningRecordMapper.selectByActivityId(paramD.getActivityId());
+
+            cacheWinningRecords(String.valueOf(paramD.getActivityId()),allList,WINNING_RECORDS_TIMEOUT);
+
+        }
+        return winningRecordDOList;
+    }
+
+    /**
+     * 缓存中奖记录
+     * @param key
+     * @param winningRecordDOList
+     * @param winningRecordsTimeout
+     */
+    private void cacheWinningRecords(String key, List<WinningRecordDO> winningRecordDOList, Long winningRecordsTimeout) {
+        try{
+            if(!StringUtils.hasText(key)|| CollectionUtils.isEmpty(winningRecordDOList)){
+                log.warn("要缓存的内容为空:key={},value={}",WINNING_RECORDS_PREFIX+key,JacksonUtil.writeValueAsString(winningRecordDOList));
+                return ;
+            }
+            redisUtil.set(WINNING_RECORDS_PREFIX+key,JacksonUtil.writeValueAsString(winningRecordDOList),winningRecordsTimeout);
+        }catch (Exception e){
+            log.error("缓存中奖记录异常:key={},value={}",WINNING_RECORDS_PREFIX+key,JacksonUtil.writeValueAsString(winningRecordDOList));
+        }
+    }
+
+
+    /**
+     * 从缓存中获取中奖记录
+     * @param key
+     * @return
+     */
+    private List<WinningRecordDO> getWinningRecords(String key){
+        try{
+
+            if(StringUtils.hasText(key)) return Arrays.asList();
+
+            String result=redisUtil.get(WINNING_RECORDS_PREFIX+key);
+
+            if(!StringUtils.hasText(result)) return Arrays.asList();
+
+            return JacksonUtil.readListValue(result,WinningRecordDO.class);
+
+        }catch (Exception e){
+            log.error("从缓存中查询奖记录异常");
+            return Arrays.asList();
+        }
     }
 }

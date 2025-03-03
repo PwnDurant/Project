@@ -165,6 +165,7 @@ public class ActivityServiceImpl implements ActivityService {
 
 
 //        如果没有查到，查表
+
 //        查活动表
         ActivityDO aDO=activityMapper.selectById(activityId);
 
@@ -172,6 +173,7 @@ public class ActivityServiceImpl implements ActivityService {
         List<ActivityPrizeDO> apDOList=activityPrizeMapper.selectByActivityId(activityId);
 //        活动人员表
         List<ActivityUserDO> auDOList=activityUserMapper.selectByActivityId(activityId);
+        log.info("audoList:{},size:{}",auDOList,auDOList.size());
 //        奖品表: 奖品Id的List
         List<Long> prizeIds=apDOList.stream().map(ActivityPrizeDO::getPrizeId).toList();
         List<PrizeDO> pDOList=prizeMapper.batchSelectByIds(prizeIds);
@@ -184,7 +186,28 @@ public class ActivityServiceImpl implements ActivityService {
 
     @Override
     public void cacheActivity(Long activityId) {
+        if(activityId==null){
+            log.warn("要缓存的活动Id为空");
+            throw new ServiceException(ServiceErrorCodeConstants.CACHE_ACTIVITY_ID_IS_EMPTY);
+        }
 
+//        查询表的数据：活动表，关联奖品表，关联人员表，奖品信息表
+        ActivityDO aDO=activityMapper.selectById(activityId);
+        if(null==aDO) {
+            log.error("要缓存的活动Id有误");
+            throw new ServiceException(ServiceErrorCodeConstants.CACHE_ACTIVITY_ID_IS_ERROR);
+        }
+
+//        活动奖品表
+        List<ActivityPrizeDO> apDOList=activityPrizeMapper.selectByActivityId(activityId);
+//        活动人员表
+        List<ActivityUserDO> auDOList=activityUserMapper.selectByActivityId(activityId);
+//        奖品表: 奖品Id的List
+        List<Long> prizeIds=apDOList.stream().map(ActivityPrizeDO::getPrizeId).toList();
+        List<PrizeDO> pDOList=prizeMapper.batchSelectByIds(prizeIds);
+//        整合活动详细信息存放redis
+        cacheActivity(convertToActivityDetailDTO(aDO,auDOList,pDOList,apDOList));
+//        整合完整的活动信息并缓存
     }
 
     /**

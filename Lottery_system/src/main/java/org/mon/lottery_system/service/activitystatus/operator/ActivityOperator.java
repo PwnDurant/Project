@@ -5,6 +5,7 @@ import org.mon.lottery_system.dao.dataobject.ActivityDO;
 import org.mon.lottery_system.dao.mapper.ActivityMapper;
 import org.mon.lottery_system.dao.mapper.ActivityPrizeMapper;
 import org.mon.lottery_system.service.dto.ConvertActivityStatusDTO;
+import org.mon.lottery_system.service.enums.ActivityPrizeStatusEnum;
 import org.mon.lottery_system.service.enums.ActivityStatusEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -39,8 +40,8 @@ public class ActivityOperator extends AbstractActivityOperator{
         if(targetStatus.name().equalsIgnoreCase(activityDO.getStatus())) return false;
 
 //        需要判断奖品是否全部抽完
-//        查询Running状态的奖品个数
-        int count=activityPrizeMapper.countPrize(activityId,ActivityStatusEnum.RUNNING.name());
+//        查询INIT状态的奖品个数
+        int count=activityPrizeMapper.countPrize(activityId, ActivityPrizeStatusEnum.INIT.name());
         if(count>0){
             return false;
         }

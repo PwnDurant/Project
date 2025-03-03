@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.mon.lottery_system.common.exception.ServiceException;
 import org.mon.lottery_system.common.utils.JacksonUtil;
 import org.mon.lottery_system.controller.param.DrawPrizeParam;
+import org.mon.lottery_system.dao.dataobject.WinningRecordDO;
 import org.mon.lottery_system.service.DrawPrizeService;
 import org.mon.lottery_system.service.activitystatus.ActivityStatusManager;
 import org.mon.lottery_system.service.dto.ConvertActivityStatusDTO;
@@ -16,6 +17,7 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Map;
 
 import static org.mon.lottery_system.common.config.DirectRabbitConfig.QUEUE_NAME;
@@ -49,8 +51,9 @@ public class MqReceiver {
             statusConvert(paramD);
 
 //        保存中奖者名单
+            List<WinningRecordDO> winningRecordDOList= drawPrizeService.saveWinnerRecords(paramD);
 
-//        通知中奖者（短信，邮箱）
+//        通知中奖者（短信，邮箱）根据中奖信息去发送
 
         }catch (ServiceException e){
             log.error("处理Mq消息异常{}:{}",e.getCode(),e.getMessage(),e);

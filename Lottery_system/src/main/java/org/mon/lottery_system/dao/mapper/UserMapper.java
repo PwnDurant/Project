@@ -60,5 +60,15 @@ public interface UserMapper {
 
     @Select("select * from user where identity='NORMAL' order by id desc ")
     List<UserDO> selectNormalByIdentityUserLIst();
+
+
+    @Select("<script>" +
+            " select * from user" +
+            " where id in  " +
+            "<foreach item='item' collection='items' open='(' separator=',' close=')'>"+
+            " #{item}"+
+            " </foreach>"+
+            " </script>")
+    List<UserDO> batchSelectByIds(@Param("items")List<Long> ids);
 }
 

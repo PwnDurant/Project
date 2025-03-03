@@ -1,5 +1,6 @@
 package org.mon.lottery_system.dao.mapper;
 
+import jakarta.validation.constraints.NotNull;
 import org.apache.ibatis.annotations.*;
 import org.mon.lottery_system.dao.dataobject.PrizeDO;
 
@@ -40,4 +41,8 @@ public interface PrizeMapper {
             " </foreach>"+
             " </script>")
     List<PrizeDO> batchSelectByIds(@Param("items") List<Long> ids);
+
+
+    @Select("select * from prize where id=#{prizeId}")
+    PrizeDO selectById(@NotNull(message = "奖品Id不能为空")@Param("prizeId") Long prizeId);
 }
