@@ -136,6 +136,32 @@ public class DrawPrizeServiceImpl implements DrawPrizeService {
         return winningRecordDOList;
     }
 
+    @Override
+    public void deleteRecords(Long activityId, Long prizeId) {
+        if(null==activityId){
+            log.warn("要删除中奖记录相关的活动Id为空");
+            return ;
+        }
+//        删除数据表
+        winningRecordMapper.deleteRecords(activityId,prizeId);
+        if(null!=prizeId){
+            deleteWinningRecords(activityId+"_"+prizeId);
+        }
+//        删除缓存,无论是否传递了prizeId，都需要删除活动纬度的中奖记录的缓存
+//        如果传递了prizeId，证明奖品未抽奖
+        deleteWinningRecords(String.valueOf(activityId));
+    }
+
+    private void deleteWinningRecords(String key) {
+        try{
+            if(redisUtil.hasKey(WINNING_RECORDS_PREFIX+key)){
+                redisUtil.del(WINNING_RECORDS_PREFIX+key);
+            }
+        }catch (Exception e){
+            log.error("删除中奖记录缓存异常，key:{}",key);
+        }
+    }
+
     /**
      * 缓存中奖记录
      * @param key

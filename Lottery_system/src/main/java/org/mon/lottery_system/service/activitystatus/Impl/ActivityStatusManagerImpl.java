@@ -57,6 +57,21 @@ public class ActivityStatusManagerImpl implements ActivityStatusManager {
 
     }
 
+    @Override
+    public void rollbackHandlerEvent(ConvertActivityStatusDTO activityStatusDTO) {
+
+//        operatorMap：活动，奖品，人员
+
+//        活动是否需要回滚，绝对需要：奖品都恢复为INIT状态了，所以活动下的奖品绝对没有抽完
+
+        for(AbstractActivityOperator operator: operatorMap.values()){
+            operator.convert(activityStatusDTO);
+        }
+
+//        缓存更新
+        activityService.cacheActivity(activityStatusDTO.getActivityId());
+    }
+
     private Boolean processConvertStatus(ConvertActivityStatusDTO activityStatusDTO,
                                          Map<String, AbstractActivityOperator> currMap,
                                          int sequence) {

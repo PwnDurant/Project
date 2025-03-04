@@ -39,6 +39,21 @@ spring:
           min-idle: 0
 #          连接用完时，新的请求等待时间，超过该时间就抛出异常
           max-wait: 5s
+  mail:
+    host: smtp.qq.com
+    port: 465
+    username: 1781389019@qq.com
+    password: kncrzhmvwxqrehfb  # ⚠️ 这里不能填 QQ 密码，必须使用授权码！
+    protocol: smtps
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            enable: true
 #mybatis-plus:
 #  configuration:
 #    map-underscore-to-camel-case: true
@@ -64,6 +79,16 @@ sms:
 #文件上传相关配置
 pic:
   local-path: /Users/zhaoqianqian/Lottery_Pic_System
+
+#  配置线程池
+async:
+  executor:
+    thread:
+      core_pool_size: 10
+      max_pool_size: 20
+      queue_capacity: 20
+      name:
+        prefix: async-service-
 
 
 

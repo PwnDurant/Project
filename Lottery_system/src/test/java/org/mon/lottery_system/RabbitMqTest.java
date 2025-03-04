@@ -30,14 +30,14 @@ public class RabbitMqTest {
     void setDrawPrizeService(){
 
         DrawPrizeParam param=new DrawPrizeParam();
-        param.setActivityId(1L);
-        param.setPrizeId(1L);
+        param.setActivityId(25L);
+        param.setPrizeId(19L);
         param.setPrizeTiers("FIRST_PRIZE");
         param.setWinningTime(new Date());
         List<DrawPrizeParam.Winner> winnerList=new ArrayList<>();
         DrawPrizeParam.Winner winner=new DrawPrizeParam.Winner();
-        winner.setUserId(1L);
-        winner.setUserName("xxx");
+        winner.setUserId(44L);
+        winner.setUserName("zhaoqianqian");
         winnerList.add(winner);
         param.setWinnerList(winnerList);
         drawPrizeService.drawPrize(param);
@@ -72,5 +72,12 @@ public class RabbitMqTest {
         param.setWinnerList(winnerList);
         drawPrizeService.saveWinnerRecords(param);
     }
+
+
+//    正向流程
+//    处理异常
+//    消息堆积（重发），存放死性队列中
+
+
 
 }

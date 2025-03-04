@@ -22,4 +22,18 @@ public interface WinningRecordMapper {
 
     @Select("select * from winning_record where activity_id=#{activityId}")
     List<WinningRecordDO> selectByActivityId(@NotNull(message = "活动共Id不能为空")@Param("activityId") Long activityId);
+
+
+    @Select("select count(1) from winning_record where activity_id=#{activityId} and prize_id=#{prizeId}")
+    int countByAPId(@NotNull(message = "活动共Id不能为空")@Param("activityId") Long activityId, @NotNull(message = "奖品Id不能为空")@Param("prizeId") Long prizeId);
+
+
+    @Delete("<script>" +
+            " delete from winning_record" +
+            " where activity_id = #{activityId}" +
+            " <if test=\"prizeId != null\">" +
+            "   and prize_id = #{prizeId}" +
+            " </if>" +
+            " </script>")
+    void deleteRecords(@Param("activityId") Long activityId, @Param("prizeId") Long prizeId);
 }
