@@ -1247,3 +1247,89 @@ Caused by: org.mon.lottery_system.common.exception.ServiceException: null
 2025-03-04T22:06:15.619+08:00  INFO 98619 --- [Lottery_system] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
 2025-03-04T22:06:15.620+08:00  INFO 98619 --- [Lottery_system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
 2025-03-04T22:06:15.629+08:00  INFO 98619 --- [Lottery_system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-04T23:24:43.868+08:00  INFO 38982 --- [Lottery_system] [main] org.mon.lottery_system.RabbitMqTest      : Starting RabbitMqTest using Java 17.0.11 with PID 38982 (started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Lottery_system)
+2025-03-04T23:24:43.869+08:00  INFO 38982 --- [Lottery_system] [main] org.mon.lottery_system.RabbitMqTest      : No active profile set, falling back to 1 default profile: "default"
+2025-03-04T23:24:44.139+08:00  INFO 38982 --- [Lottery_system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-03-04T23:24:44.140+08:00  INFO 38982 --- [Lottery_system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-03-04T23:24:44.154+08:00  INFO 38982 --- [Lottery_system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2025-03-04T23:24:44.943+08:00  INFO 38982 --- [Lottery_system] [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [123.56.166.56:8889]
+2025-03-04T23:24:45.110+08:00  INFO 38982 --- [Lottery_system] [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#22e813fc:0/SimpleConnection@55a055cc [delegate=amqp://zqq@123.56.166.56:8889/, localPort=63356]
+2025-03-04T23:24:45.743+08:00  INFO 38982 --- [Lottery_system] [main] org.mon.lottery_system.RabbitMqTest      : Started RabbitMqTest in 1.988 seconds (process running for 2.327)
+2025-03-04T23:24:46.135+08:00  INFO 38982 --- [Lottery_system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-04T23:24:46.197+08:00  INFO 38982 --- [Lottery_system] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@47ab3688
+2025-03-04T23:24:46.198+08:00  INFO 38982 --- [Lottery_system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-04T23:24:46.221+08:00  INFO 38982 --- [Lottery_system] [main] o.m.l.service.impl.DrawPrizeServiceImpl  : 查询中奖记录为空！param:ShowWinningRecordsParam(activityId=25, prizeId=null)
+2025-03-04T23:24:46.270+08:00  INFO 38982 --- [Lottery_system] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-03-04T23:24:46.311+08:00  INFO 38982 --- [Lottery_system] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-03-04T23:24:46.551+08:00  INFO 38982 --- [Lottery_system] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-03-04T23:24:46.737+08:00  INFO 38982 --- [Lottery_system] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-03-04T23:24:46.787+08:00  INFO 38982 --- [Lottery_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-04T23:24:46.790+08:00  INFO 38982 --- [Lottery_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-04T23:25:17.294+08:00  INFO 39361 --- [Lottery_system] [main] org.mon.lottery_system.RabbitMqTest      : Starting RabbitMqTest using Java 17.0.11 with PID 39361 (started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Lottery_system)
+2025-03-04T23:25:17.294+08:00  INFO 39361 --- [Lottery_system] [main] org.mon.lottery_system.RabbitMqTest      : No active profile set, falling back to 1 default profile: "default"
+2025-03-04T23:25:17.536+08:00  INFO 39361 --- [Lottery_system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-03-04T23:25:17.537+08:00  INFO 39361 --- [Lottery_system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-03-04T23:25:17.549+08:00  INFO 39361 --- [Lottery_system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2025-03-04T23:25:18.278+08:00  INFO 39361 --- [Lottery_system] [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [123.56.166.56:8889]
+2025-03-04T23:25:18.481+08:00  INFO 39361 --- [Lottery_system] [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#87aec6a:0/SimpleConnection@57167ccb [delegate=amqp://zqq@123.56.166.56:8889/, localPort=63390]
+2025-03-04T23:25:19.483+08:00  INFO 39361 --- [Lottery_system] [main] org.mon.lottery_system.RabbitMqTest      : Started RabbitMqTest in 2.301 seconds (process running for 2.655)
+2025-03-04T23:25:19.816+08:00  INFO 39361 --- [Lottery_system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-04T23:25:19.872+08:00  INFO 39361 --- [Lottery_system] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@49482761
+2025-03-04T23:25:19.873+08:00  INFO 39361 --- [Lottery_system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-04T23:25:20.552+08:00  INFO 39361 --- [Lottery_system] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-03-04T23:25:20.615+08:00  INFO 39361 --- [Lottery_system] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-03-04T23:25:21.250+08:00  INFO 39361 --- [Lottery_system] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-03-04T23:25:21.480+08:00  INFO 39361 --- [Lottery_system] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-03-04T23:25:21.554+08:00  INFO 39361 --- [Lottery_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-04T23:25:21.557+08:00  INFO 39361 --- [Lottery_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-04T23:28:27.774+08:00  INFO 41471 --- [Lottery_system] [main] org.mon.lottery_system.RabbitMqTest      : Starting RabbitMqTest using Java 17.0.11 with PID 41471 (started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Lottery_system)
+2025-03-04T23:28:27.774+08:00  INFO 41471 --- [Lottery_system] [main] org.mon.lottery_system.RabbitMqTest      : No active profile set, falling back to 1 default profile: "default"
+2025-03-04T23:28:28.029+08:00  INFO 41471 --- [Lottery_system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-03-04T23:28:28.030+08:00  INFO 41471 --- [Lottery_system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-03-04T23:28:28.043+08:00  INFO 41471 --- [Lottery_system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2025-03-04T23:28:28.956+08:00  INFO 41471 --- [Lottery_system] [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [123.56.166.56:8889]
+2025-03-04T23:28:29.252+08:00  INFO 41471 --- [Lottery_system] [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#22e813fc:0/SimpleConnection@55a055cc [delegate=amqp://zqq@123.56.166.56:8889/, localPort=63496]
+2025-03-04T23:28:30.023+08:00  INFO 41471 --- [Lottery_system] [main] org.mon.lottery_system.RabbitMqTest      : Started RabbitMqTest in 2.375 seconds (process running for 2.753)
+2025-03-04T23:28:30.365+08:00  INFO 41471 --- [Lottery_system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-04T23:28:30.423+08:00  INFO 41471 --- [Lottery_system] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@47ab3688
+2025-03-04T23:28:30.423+08:00  INFO 41471 --- [Lottery_system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-04T23:28:31.324+08:00  INFO 41471 --- [Lottery_system] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-03-04T23:28:31.367+08:00  INFO 41471 --- [Lottery_system] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-03-04T23:28:31.806+08:00  INFO 41471 --- [Lottery_system] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-03-04T23:28:32.017+08:00  INFO 41471 --- [Lottery_system] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-03-04T23:28:32.087+08:00  INFO 41471 --- [Lottery_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-04T23:28:32.091+08:00  INFO 41471 --- [Lottery_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-04T23:31:21.851+08:00  INFO 43433 --- [Lottery_system] [main] org.mon.lottery_system.RabbitMqTest      : Starting RabbitMqTest using Java 17.0.11 with PID 43433 (started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Lottery_system)
+2025-03-04T23:31:21.851+08:00  INFO 43433 --- [Lottery_system] [main] org.mon.lottery_system.RabbitMqTest      : No active profile set, falling back to 1 default profile: "default"
+2025-03-04T23:31:22.110+08:00  INFO 43433 --- [Lottery_system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-03-04T23:31:22.111+08:00  INFO 43433 --- [Lottery_system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-03-04T23:31:22.124+08:00  INFO 43433 --- [Lottery_system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2025-03-04T23:31:22.849+08:00  INFO 43433 --- [Lottery_system] [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [123.56.166.56:8889]
+2025-03-04T23:31:23.197+08:00  INFO 43433 --- [Lottery_system] [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#22e813fc:0/SimpleConnection@55a055cc [delegate=amqp://zqq@123.56.166.56:8889/, localPort=63650]
+2025-03-04T23:31:25.044+08:00  INFO 43433 --- [Lottery_system] [main] org.mon.lottery_system.RabbitMqTest      : Started RabbitMqTest in 3.299 seconds (process running for 3.666)
+2025-03-04T23:31:25.390+08:00  INFO 43433 --- [Lottery_system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-04T23:31:25.446+08:00  INFO 43433 --- [Lottery_system] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@47ab3688
+2025-03-04T23:31:25.447+08:00  INFO 43433 --- [Lottery_system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-04T23:31:26.920+08:00  INFO 43433 --- [Lottery_system] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-03-04T23:31:26.991+08:00  INFO 43433 --- [Lottery_system] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-03-04T23:31:27.025+08:00  INFO 43433 --- [Lottery_system] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-03-04T23:31:27.062+08:00  INFO 43433 --- [Lottery_system] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-03-04T23:31:27.113+08:00  INFO 43433 --- [Lottery_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-04T23:31:27.115+08:00  INFO 43433 --- [Lottery_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-04T23:31:58.492+08:00  INFO 43842 --- [Lottery_system] [main] org.mon.lottery_system.RabbitMqTest      : Starting RabbitMqTest using Java 17.0.11 with PID 43842 (started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/Lottery_system)
+2025-03-04T23:31:58.493+08:00  INFO 43842 --- [Lottery_system] [main] org.mon.lottery_system.RabbitMqTest      : No active profile set, falling back to 1 default profile: "default"
+2025-03-04T23:31:58.757+08:00  INFO 43842 --- [Lottery_system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-03-04T23:31:58.758+08:00  INFO 43842 --- [Lottery_system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-03-04T23:31:58.771+08:00  INFO 43842 --- [Lottery_system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2025-03-04T23:31:59.518+08:00  INFO 43842 --- [Lottery_system] [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [123.56.166.56:8889]
+2025-03-04T23:31:59.936+08:00  INFO 43842 --- [Lottery_system] [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#63e70bf9:0/SimpleConnection@6b5e1fc5 [delegate=amqp://zqq@123.56.166.56:8889/, localPort=63690]
+2025-03-04T23:32:01.534+08:00  INFO 43842 --- [Lottery_system] [main] org.mon.lottery_system.RabbitMqTest      : Started RabbitMqTest in 3.164 seconds (process running for 3.544)
+2025-03-04T23:32:01.876+08:00  INFO 43842 --- [Lottery_system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-04T23:32:01.933+08:00  INFO 43842 --- [Lottery_system] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6c68f29c
+2025-03-04T23:32:01.934+08:00  INFO 43842 --- [Lottery_system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-04T23:32:02.972+08:00  INFO 43842 --- [Lottery_system] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-03-04T23:32:02.972+08:00  INFO 43842 --- [Lottery_system] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-03-04T23:32:03.045+08:00  INFO 43842 --- [Lottery_system] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-03-04T23:32:03.516+08:00  INFO 43842 --- [Lottery_system] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-03-04T23:32:03.600+08:00  INFO 43842 --- [Lottery_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-04T23:32:03.603+08:00  INFO 43842 --- [Lottery_system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

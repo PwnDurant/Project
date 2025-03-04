@@ -1,7 +1,9 @@
 package org.mon.lottery_system.service;
 
 import org.mon.lottery_system.controller.param.DrawPrizeParam;
+import org.mon.lottery_system.controller.param.ShowWinningRecordsParam;
 import org.mon.lottery_system.dao.dataobject.WinningRecordDO;
+import org.mon.lottery_system.service.dto.WinningRecordDTO;
 
 import java.util.List;
 
@@ -17,7 +19,7 @@ public interface DrawPrizeService {
     /**
      * 校验抽奖请求是否有效
      */
-    void checkDrawPrizeParam(DrawPrizeParam param);
+    Boolean checkDrawPrizeParam(DrawPrizeParam param);
 
 
     /**
@@ -32,4 +34,8 @@ public interface DrawPrizeService {
      * @param prizeId
      */
     void deleteRecords(Long activityId,Long prizeId);
+
+
+
+    List<WinningRecordDTO> getRecords(ShowWinningRecordsParam param);
 }

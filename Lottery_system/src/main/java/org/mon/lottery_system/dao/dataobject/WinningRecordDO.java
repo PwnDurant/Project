@@ -28,6 +28,6 @@ public class WinningRecordDO extends BaseDO{
 
     private Encrypt winnerPhoneNumber;
 
-    private Date winnerTime;
+    private Date winningTime;
 
 }

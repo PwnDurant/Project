@@ -3,6 +3,7 @@ package org.mon.lottery_system.dao.mapper;
 import jakarta.validation.constraints.NotNull;
 import org.apache.ibatis.annotations.*;
 import org.mon.lottery_system.dao.dataobject.WinningRecordDO;
+import org.mon.lottery_system.service.dto.WinningRecordDTO;
 
 import java.util.List;
 
@@ -36,4 +37,14 @@ public interface WinningRecordMapper {
             " </if>" +
             " </script>")
     void deleteRecords(@Param("activityId") Long activityId, @Param("prizeId") Long prizeId);
+
+
+    @Select("<script>" +
+            " select * from winning_record" +
+            " where activity_id = #{activityId}" +
+            " <if test=\"prizeId != null\">" +
+            "   and prize_id = #{prizeId}" +
+            " </if>" +
+            " </script>")
+    List<WinningRecordDO> selectByActivityIdOrPrizeId(@NotNull(message = "活动Id不能为空") @Param("activityId")Long activityId,  @Param("prizeId")Long prizeId);
 }

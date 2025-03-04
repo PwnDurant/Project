@@ -3,9 +3,11 @@ package org.mon.lottery_system;
 
 import org.junit.jupiter.api.Test;
 import org.mon.lottery_system.controller.param.DrawPrizeParam;
+import org.mon.lottery_system.controller.param.ShowWinningRecordsParam;
 import org.mon.lottery_system.service.DrawPrizeService;
 import org.mon.lottery_system.service.activitystatus.ActivityStatusManager;
 import org.mon.lottery_system.service.dto.ConvertActivityStatusDTO;
+import org.mon.lottery_system.service.dto.WinningRecordDTO;
 import org.mon.lottery_system.service.enums.ActivityPrizeStatusEnum;
 import org.mon.lottery_system.service.enums.ActivityStatusEnum;
 import org.mon.lottery_system.service.enums.ActivityUserStatusEnum;
@@ -77,6 +79,19 @@ public class RabbitMqTest {
 //    正向流程
 //    处理异常
 //    消息堆积（重发），存放死性队列中
+
+
+    @Test
+    void showWinningRecords(){
+        ShowWinningRecordsParam param=new ShowWinningRecordsParam();
+        param.setActivityId(24L);
+        List<WinningRecordDTO> list=drawPrizeService.getRecords(param);
+        for (WinningRecordDTO winningRecordDTO:list){
+            System.out.println(winningRecordDTO.getWinnerName()+"_"+
+                    winningRecordDTO.getPrizeName()+"_"+
+                    winningRecordDTO.getPrizeTier().getMessage());
+        }
+    }
 
 
 

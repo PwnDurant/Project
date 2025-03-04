@@ -8,9 +8,12 @@ import org.mon.lottery_system.common.exception.ServiceException;
 import org.mon.lottery_system.common.utils.JacksonUtil;
 import org.mon.lottery_system.common.utils.RedisUtil;
 import org.mon.lottery_system.controller.param.DrawPrizeParam;
+import org.mon.lottery_system.controller.param.ShowWinningRecordsParam;
 import org.mon.lottery_system.dao.dataobject.*;
 import org.mon.lottery_system.dao.mapper.*;
 import org.mon.lottery_system.service.DrawPrizeService;
+import org.mon.lottery_system.service.dto.WinningRecordDTO;
+import org.mon.lottery_system.service.enums.ActivityPrizeTiersEnum;
 import org.mon.lottery_system.service.enums.ActivityStatusEnum;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,7 +68,7 @@ public class DrawPrizeServiceImpl implements DrawPrizeService {
     }
 
     @Override
-    public void checkDrawPrizeParam(DrawPrizeParam param) {
+    public Boolean checkDrawPrizeParam(DrawPrizeParam param) {
 
         ActivityDO activityDO=activityMapper.selectById(param.getActivityId());
 //        奖品是否存在可以从activity_prize中查,原因是保存activity的时候做了本地事务，保证了一致性
@@ -73,23 +76,29 @@ public class DrawPrizeServiceImpl implements DrawPrizeService {
 
 //        活动是否有效和是否存在
         if(null==activityDO || null==activityPrizeDO) {
-            throw new ServiceException(ServiceErrorCodeConstants.ACTIVITY_OR_PRIZE_IS_EMPTY);
+//            throw new ServiceException(ServiceErrorCodeConstants.ACTIVITY_OR_PRIZE_IS_EMPTY);
+            log.info("校验抽奖请求失败！because:{}",ServiceErrorCodeConstants.ACTIVITY_OR_PRIZE_IS_EMPTY.getMessage());
+            return false;
         }
 
         if(activityDO.getStatus().equalsIgnoreCase(ActivityStatusEnum.COMPLETED.name())){
-            throw new ServiceException(ServiceErrorCodeConstants.ACTIVITY_COMPLETED);
+//            throw new ServiceException(ServiceErrorCodeConstants.ACTIVITY_COMPLETED);
+            log.info("校验抽奖请求失败！because:{}",ServiceErrorCodeConstants.ACTIVITY_COMPLETED.getMessage());
+            return false;
         }
 
 //        判断奖品是否有效
         if(activityPrizeDO.getStatus().equalsIgnoreCase(ActivityStatusEnum.COMPLETED.name())){
-            throw new ServiceException(ServiceErrorCodeConstants.ACTIVITY_PRIZE_COMPLETED);
+//            throw new ServiceException(ServiceErrorCodeConstants.ACTIVITY_PRIZE_COMPLETED);
+            log.info("校验抽奖请求失败！because:{}",ServiceErrorCodeConstants.ACTIVITY_PRIZE_COMPLETED.getMessage());
+            return false;
         }
 
 //        中奖者人数是否和设置奖品数量一致 3 2
         if(activityPrizeDO.getPrizeAmount()!=param.getWinnerList().size()){
             throw new ServiceException(ServiceErrorCodeConstants.WINNER_PRIZE_AMOUNT_ERROR);
         }
-
+        return true;
     }
 
     @Override
@@ -114,7 +123,7 @@ public class DrawPrizeServiceImpl implements DrawPrizeService {
             winningRecordDO.setWinnerId(userDO.getId());
             winningRecordDO.setWinnerName(userDO.getUserName());
             winningRecordDO.setWinnerPhoneNumber(userDO.getPhoneNumber());
-            winningRecordDO.setWinnerTime(paramD.getWinningTime());
+            winningRecordDO.setWinningTime(paramD.getWinningTime());
             return winningRecordDO;
         }).toList();
         winningRecordMapper.batchInsert(winningRecordDOList);
@@ -152,6 +161,50 @@ public class DrawPrizeServiceImpl implements DrawPrizeService {
         deleteWinningRecords(String.valueOf(activityId));
     }
 
+    /**
+     * 获取中奖记录
+     * @param param
+     * @return
+     */
+    @Override
+    public List<WinningRecordDTO> getRecords(ShowWinningRecordsParam param) {
+//        先查询redis:奖品维度和活动纬度
+        String key=null==param.getPrizeId()?String.valueOf(param.getActivityId()):param.getActivityId()+"_"+ param.getPrizeId();
+
+        List<WinningRecordDO> winningRecords = getWinningRecords(key);
+
+        if(!CollectionUtils.isEmpty(winningRecords)){
+            return convertToWinningRecordDTO(winningRecords);
+        }
+
+//        如果redis不存在，查库
+        List<WinningRecordDO> winningRecordDOList=winningRecordMapper.selectByActivityIdOrPrizeId(param.getActivityId(),param.getPrizeId());
+
+//        存放记录到redis中
+        if(CollectionUtils.isEmpty(winningRecordDOList)) {
+            log.info("查询中奖记录为空！param:{}",param);
+            return Arrays.asList();
+        }
+        System.out.println("从数据库中查到的记录为:"+winningRecordDOList);
+        cacheWinningRecords(key,winningRecordDOList,WINNING_RECORDS_TIMEOUT);
+        return convertToWinningRecordDTO(winningRecordDOList);
+    }
+
+    private List<WinningRecordDTO> convertToWinningRecordDTO(List<WinningRecordDO> winningRecords) {
+        if(CollectionUtils.isEmpty(winningRecords)) return Arrays.asList();
+
+        return winningRecords.stream()
+                .map(winningRecordDO -> {
+                    WinningRecordDTO winningRecordDTO=new WinningRecordDTO();
+                    winningRecordDTO.setWinnerId(winningRecordDO.getWinnerId());
+                    winningRecordDTO.setWinnerName(winningRecordDO.getWinnerName());
+                    winningRecordDTO.setPrizeName(winningRecordDO.getPrizeName());
+                    winningRecordDTO.setPrizeTier(ActivityPrizeTiersEnum.forName(winningRecordDO.getPrizeTier()));
+                    winningRecordDTO.setWinningTime(winningRecordDO.getWinningTime());
+                    return winningRecordDTO;
+                }).toList();
+    }
+
     private void deleteWinningRecords(String key) {
         try{
             if(redisUtil.hasKey(WINNING_RECORDS_PREFIX+key)){
@@ -174,6 +227,7 @@ public class DrawPrizeServiceImpl implements DrawPrizeService {
                 log.warn("要缓存的内容为空:key={},value={}",WINNING_RECORDS_PREFIX+key,JacksonUtil.writeValueAsString(winningRecordDOList));
                 return ;
             }
+            System.out.println("要缓存的内容为:"+winningRecordDOList);
             redisUtil.set(WINNING_RECORDS_PREFIX+key,JacksonUtil.writeValueAsString(winningRecordDOList),winningRecordsTimeout);
         }catch (Exception e){
             log.error("缓存中奖记录异常:key={},value={}",WINNING_RECORDS_PREFIX+key,JacksonUtil.writeValueAsString(winningRecordDOList));

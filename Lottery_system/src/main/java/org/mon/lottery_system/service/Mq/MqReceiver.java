@@ -79,7 +79,13 @@ public class MqReceiver {
 //                return ;
 //            }
 
+            if(!drawPrizeService.checkDrawPrizeParam(paramD)) return ;
+
 //        校验抽奖请求是否有效
+//            1，有可能前端发起两个一样的抽奖请求，对于paramD来说，也是两个一样的请求
+//            2，paramD：
+//            处理paramD1：最后一个奖项-》活动完成，奖品完成
+//            处理paramD2：会回滚之前的状态
             drawPrizeService.checkDrawPrizeParam(paramD);
 //        活动，奖品，人员状态处理（状态扭转处理）(重要！！！）
             statusConvert(paramD);
@@ -205,7 +211,7 @@ public class MqReceiver {
                     + winningRecordDO.getActivityName() + "活动中获得"
                     + ActivityPrizeTiersEnum.forName(winningRecordDO.getPrizeTier()).getMessage()
                     + "：" + winningRecordDO.getPrizeName() + "。获奖时间为"
-                    + DateUtil.formatTime(winningRecordDO.getWinnerTime()) + "，请尽快领 取您的奖励！";
+                    + DateUtil.formatTime(winningRecordDO.getWinningTime()) + "，请尽快领 取您的奖励！";
             mailUtil.sendSampleMail(winningRecordDO.getWinnerEmail(),
                     "中奖通知", context);
         }
@@ -228,7 +234,7 @@ public class MqReceiver {
             map.put("activityName", winningRecordDO.getActivityName());
             map.put("prizeTiers", ActivityPrizeTiersEnum.forName(winningRecordDO.getPrizeTier()).getMessage());
             map.put("prizeName", winningRecordDO.getPrizeName());
-            map.put("winningTime", DateUtil.formatTime(winningRecordDO.getWinnerTime()));
+            map.put("winningTime", DateUtil.formatTime(winningRecordDO.getWinningTime()));
             smsUtil.sendMessage("SMS_479100562",
                     winningRecordDO.getWinnerPhoneNumber().getValue(),
                     JacksonUtil.writeValueAsString(map));
