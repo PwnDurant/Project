@@ -22,6 +22,8 @@ public class TestApi extends TextWebSocketHandler {
     @Override
     public void handleMessage(WebSocketSession session, WebSocketMessage<?> message) throws Exception {
         log.info("收到消息:message:{}",message.getPayload());
+//        让服务器收到消息之后，把消息返回回去,这里的session不是之前那个session
+        session.sendMessage(message);
     }
 
     @Override

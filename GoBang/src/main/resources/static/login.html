@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登入</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+
+<body>
+    <div class="nav">
+        五子棋对战
+    </div>
+    <div class="login-container">
+        <!-- 登入界面的对话框 -->
+        <div class="login-dialog">
+
+            <!-- 提示信息 -->
+            <h3>登入</h3>
+            <div class="row">
+                <span>用户名</span>
+                <input type="text" id="username">
+            </div>
+
+            <div class="row">
+                <span>密码</span>
+                <input type="password" id="password">
+            </div>
+
+            <div class="row">
+                <button id="submit">登入</button>
+            </div>
+
+        </div>
+    </div>
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+     <script src="./js/jquery.min.js"></script>
+     <script>
+
+        let usernameInput=document.querySelector('#username');
+        let passwordInput=document.querySelector('#password');
+        let submitButton=document.querySelector('#submit');
+        submitButton.onclick=function(){
+            $.ajax({
+                type:'post',
+                url:'/login',
+                data:{
+                    username:usernameInput.value,
+                    password:passwordInput.value
+                },
+                success:function(body){
+                    // 请求成功的函数
+                    // 判断当前是否登入成功
+                    // 如果登入成功，服务会返回当前的User对象
+                    // 如果登入失败，服务器会返回空的User对象
+                    if(body&&body.userId>0){
+                        // 登入成功
+                        alert("登入成功!");
+                        // 重定向跳转到"游戏大厅页面"
+                        location.href="/game.hall.html"
+                    }else{
+                        alert("登入失败！")
+                    }
+                },
+                error:function(){
+                    // 请求失败的函数
+                    alert("登入失败！")
+                }
+            });
+        }
+
+     </script>
+
+</body>
+
+
+</html>

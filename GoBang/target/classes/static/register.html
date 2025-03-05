@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <div class="nav">
+        五子棋对战
+    </div>
+    <div class="login-container">
+        <!-- 登入界面的对话框 -->
+        <div class="login-dialog">
+
+            <!-- 提示信息 -->
+            <h3>注册</h3>
+            <div class="row">
+                <span>用户名</span>
+                <input type="text" id="username">
+            </div>
+
+            <div class="row">
+                <span>密码</span>
+                <input type="password" id="password">
+            </div>
+
+            <div class="row">
+                <button id="submit">提交</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="./js/jquery.min.js"></script>
+    <script>
+        let usernameInput=document.querySelector('#username');
+        let passwordInput=document.querySelector('#password');
+        let submitButton=document.querySelector('#submit');
+
+        submitButton.onclick=function(){
+            $.ajax({
+            type:'post',
+            url:'/register',
+            data:{
+                username:usernameInput.value,
+                password:passwordInput.value,
+            },
+            success:function(body){
+                // 如果注册成功，就返回一个新注册好的对象
+                if(body&&body.username){
+                    // 注册成功
+                    alert("注册成功！")
+                    location.href="/login.html"
+                }else{
+                    alert("注册失败！")
+                }
+            },
+            error:function(){
+                alert("注册失败!");
+            }
+        })
+        }
+    </script>
+
+</body>
+
+</html>
