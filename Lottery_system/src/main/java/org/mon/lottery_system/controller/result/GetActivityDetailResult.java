@@ -2,9 +2,9 @@ package org.mon.lottery_system.controller.result;
 
 import lombok.Data;
 
-import org.mon.lottery_system.service.enums.ActivityPrizeStatusEnum;
+
 import org.mon.lottery_system.service.enums.ActivityPrizeTiersEnum;
-import org.mon.lottery_system.service.enums.ActivityUserStatusEnum;
+
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -20,7 +20,7 @@ public class GetActivityDetailResult implements Serializable {
     private String activityName;
 
     //    活动描述
-    private String desc;
+    private String description;
 
     //    活动是否有效
     private Boolean valid;
@@ -29,11 +29,11 @@ public class GetActivityDetailResult implements Serializable {
 
 //    奖品信息：列表
 
-    private List<Prize> prizeDTOList;
+    private List<Prize> prizes;
 
 //    奖品信息：列表
 
-    private List<User> userDTOList;
+    private List<User> users;
 
 
     @Data
@@ -54,7 +54,7 @@ public class GetActivityDetailResult implements Serializable {
          * 奖品等级
          * @see ActivityPrizeTiersEnum#getMessage()
          */
-        private String Tier;
+        private String prizeTierName;
 
         private Long prizeAmount;
 

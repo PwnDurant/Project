@@ -65,11 +65,11 @@ public class ActivityController {
         GetActivityDetailResult getActivityDetailResult=new GetActivityDetailResult();
         getActivityDetailResult.setActivityId(activityDetailDTO.getActivityId());
         getActivityDetailResult.setActivityName(activityDetailDTO.getActivityName());
-        getActivityDetailResult.setDesc(activityDetailDTO.getDesc());
+        getActivityDetailResult.setDescription(activityDetailDTO.getDesc());
         getActivityDetailResult.setValid(activityDetailDTO.valid());
 
 //        抽奖顺序，先一后二 所以这里需要排序
-        getActivityDetailResult.setPrizeDTOList(
+        getActivityDetailResult.setPrizes(
                 activityDetailDTO.getPrizeDTOList().stream()
                         .sorted(Comparator.comparingInt(prizeDTO->prizeDTO.getTier().getCode()))
                         .map(prizeDTO -> {
@@ -79,14 +79,14 @@ public class ActivityController {
                             prize.setImageUrl(prizeDTO.getImageUrl());
                             prize.setPrice(prizeDTO.getPrice());
                             prize.setDescription(prizeDTO.getDescription());
-                            prize.setTier(prizeDTO.getTier().getMessage());
+                            prize.setPrizeTierName(prizeDTO.getTier().getMessage());
                             prize.setPrizeAmount(prizeDTO.getPrizeAmount());
                             prize.setValid(prizeDTO.valid());
                             return prize;
                         }).toList()
         );
 
-        getActivityDetailResult.setUserDTOList(
+        getActivityDetailResult.setUsers(
                 activityDetailDTO.getUserDTOList().stream()
                         .map(userDTO -> {
                             GetActivityDetailResult.User user=new GetActivityDetailResult.User();
