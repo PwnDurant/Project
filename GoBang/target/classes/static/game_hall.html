@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏大厅</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/game_hall.css">
+</head>
+
+<body>
+    <div class="nav">五子棋对战</div>
+    <div class="container">
+        <!-- 这个div在container中处于垂直水平居中 -->
+        <div>
+            <div id="screen"></div>
+            <div id="match-button">开始匹配</div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script>
+
+        $.ajax({
+            type:'get',
+            url:'/userInfo',
+            success:function(body){
+                let screenDiv=document.querySelector('#screen');
+                screenDiv.innerHTML='玩家:'+body.username+" 分数:"+body.score+"</br> 比赛场次:"+body.totalCount
+                +" 获胜场数:"+body.winCount
+            },
+            error:function(){
+                alert("获取用户信息失败!")
+            }
+        })
+    </script>
+</body>
+
+</html>

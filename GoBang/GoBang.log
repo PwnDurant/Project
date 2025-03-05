@@ -1,288 +1,40 @@
-2025-03-05T19:28:19.198+08:00  INFO 34646 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Starting GoBangApplication using Java 17.0.11 with PID 34646 (/Users/zhaoqianqian/IDEAUl/Project/GoBang/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/GoBang)
-2025-03-05T19:28:19.199+08:00  INFO 34646 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : No active profile set, falling back to 1 default profile: "default"
-2025-03-05T19:28:19.404+08:00  WARN 34646 --- [GoBang] [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[org.mon.gobang]' package. Please check your configuration.
-2025-03-05T19:28:19.535+08:00  INFO 34646 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-03-05T19:28:19.540+08:00  INFO 34646 --- [GoBang] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-03-05T19:28:19.541+08:00  INFO 34646 --- [GoBang] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
-2025-03-05T19:28:19.555+08:00  INFO 34646 --- [GoBang] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-03-05T19:28:19.556+08:00  INFO 34646 --- [GoBang] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 342 ms
-2025-03-05T19:28:19.742+08:00  INFO 34646 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-03-05T19:28:19.746+08:00  INFO 34646 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Started GoBangApplication in 0.722 seconds (process running for 0.918)
-2025-03-05T19:29:08.320+08:00  INFO 34646 --- [GoBang] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-05T19:29:08.320+08:00  INFO 34646 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-03-05T19:29:08.321+08:00  INFO 34646 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-03-05T19:30:46.660+08:00  INFO 34646 --- [GoBang] [http-nio-8080-exec-2] org.mon.gobang.api.TestApi               : 连接成功!
-2025-03-05T19:31:35.384+08:00  INFO 34646 --- [GoBang] [http-nio-8080-exec-5] org.mon.gobang.api.TestApi               : 收到消息:message:你好websocket
-2025-03-05T19:32:30.515+08:00  INFO 34646 --- [GoBang] [http-nio-8080-exec-9] org.mon.gobang.api.TestApi               : 连接关闭!
-2025-03-05T19:33:10.046+08:00  INFO 34646 --- [GoBang] [http-nio-8080-exec-1] org.mon.gobang.api.TestApi               : 连接成功!
-2025-03-05T19:34:31.307+08:00  INFO 34646 --- [GoBang] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-03-05T19:34:31.315+08:00  INFO 34646 --- [GoBang] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-03-05T19:34:31.319+08:00  WARN 34646 --- [GoBang] [SpringApplicationShutdownHook] org.mon.gobang.api.TestApi               : 连接异常!
-2025-03-05T19:34:31.319+08:00  INFO 34646 --- [GoBang] [SpringApplicationShutdownHook] org.mon.gobang.api.TestApi               : 连接关闭!
-2025-03-05T19:34:32.730+08:00  INFO 40457 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Starting GoBangApplication using Java 17.0.11 with PID 40457 (/Users/zhaoqianqian/IDEAUl/Project/GoBang/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/GoBang)
-2025-03-05T19:34:32.731+08:00  INFO 40457 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : No active profile set, falling back to 1 default profile: "default"
-2025-03-05T19:34:32.923+08:00  WARN 40457 --- [GoBang] [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[org.mon.gobang]' package. Please check your configuration.
-2025-03-05T19:34:33.036+08:00  INFO 40457 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-03-05T19:34:33.041+08:00  INFO 40457 --- [GoBang] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-03-05T19:34:33.042+08:00  INFO 40457 --- [GoBang] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
-2025-03-05T19:34:33.055+08:00  INFO 40457 --- [GoBang] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-03-05T19:34:33.055+08:00  INFO 40457 --- [GoBang] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 311 ms
-2025-03-05T19:34:33.232+08:00  INFO 40457 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-03-05T19:34:33.236+08:00  INFO 40457 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Started GoBangApplication in 0.672 seconds (process running for 0.838)
-2025-03-05T19:34:39.873+08:00  INFO 40457 --- [GoBang] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-05T19:34:39.873+08:00  INFO 40457 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-03-05T19:34:39.874+08:00  INFO 40457 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-03-05T19:34:39.930+08:00  INFO 40457 --- [GoBang] [http-nio-8080-exec-2] org.mon.gobang.api.TestApi               : 连接成功!
-2025-03-05T19:34:53.715+08:00  INFO 40457 --- [GoBang] [http-nio-8080-exec-3] org.mon.gobang.api.TestApi               : 收到消息:message:你好
-2025-03-05T19:35:09.830+08:00  INFO 40457 --- [GoBang] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-03-05T19:35:09.839+08:00  INFO 40457 --- [GoBang] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-03-05T19:35:09.843+08:00  WARN 40457 --- [GoBang] [SpringApplicationShutdownHook] org.mon.gobang.api.TestApi               : 连接异常!
-2025-03-05T19:35:09.843+08:00  INFO 40457 --- [GoBang] [SpringApplicationShutdownHook] org.mon.gobang.api.TestApi               : 连接关闭!
-2025-03-05T19:35:11.134+08:00  INFO 41232 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Starting GoBangApplication using Java 17.0.11 with PID 41232 (/Users/zhaoqianqian/IDEAUl/Project/GoBang/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/GoBang)
-2025-03-05T19:35:11.135+08:00  INFO 41232 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : No active profile set, falling back to 1 default profile: "default"
-2025-03-05T19:35:11.316+08:00  WARN 41232 --- [GoBang] [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[org.mon.gobang]' package. Please check your configuration.
-2025-03-05T19:35:11.431+08:00  INFO 41232 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-03-05T19:35:11.435+08:00  INFO 41232 --- [GoBang] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-03-05T19:35:11.435+08:00  INFO 41232 --- [GoBang] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
-2025-03-05T19:35:11.448+08:00  INFO 41232 --- [GoBang] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-03-05T19:35:11.448+08:00  INFO 41232 --- [GoBang] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 301 ms
-2025-03-05T19:35:11.598+08:00  INFO 41232 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-03-05T19:35:11.602+08:00  INFO 41232 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Started GoBangApplication in 0.644 seconds (process running for 0.807)
-2025-03-05T19:35:15.424+08:00  INFO 41232 --- [GoBang] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-05T19:35:15.424+08:00  INFO 41232 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-03-05T19:35:15.425+08:00  INFO 41232 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-03-05T19:35:15.478+08:00  INFO 41232 --- [GoBang] [http-nio-8080-exec-2] org.mon.gobang.api.TestApi               : 连接成功!
-2025-03-05T19:35:21.761+08:00  INFO 41232 --- [GoBang] [http-nio-8080-exec-3] org.mon.gobang.api.TestApi               : 收到消息:message:TextMessage payload=[你好], byteCount=6, last=true]
-2025-03-05T19:35:35.880+08:00  INFO 41232 --- [GoBang] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-03-05T19:35:35.888+08:00  INFO 41232 --- [GoBang] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-03-05T19:35:35.892+08:00  WARN 41232 --- [GoBang] [SpringApplicationShutdownHook] org.mon.gobang.api.TestApi               : 连接异常!
-2025-03-05T19:35:35.892+08:00  INFO 41232 --- [GoBang] [SpringApplicationShutdownHook] org.mon.gobang.api.TestApi               : 连接关闭!
-2025-03-05T20:26:44.862+08:00  INFO 24279 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Starting GoBangApplication using Java 17.0.11 with PID 24279 (/Users/zhaoqianqian/IDEAUl/Project/GoBang/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/GoBang)
-2025-03-05T20:26:44.863+08:00  INFO 24279 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : No active profile set, falling back to 1 default profile: "default"
-2025-03-05T20:26:45.206+08:00  INFO 24279 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-03-05T20:26:45.211+08:00  INFO 24279 --- [GoBang] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-03-05T20:26:45.212+08:00  INFO 24279 --- [GoBang] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
-2025-03-05T20:26:45.225+08:00  INFO 24279 --- [GoBang] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-03-05T20:26:45.225+08:00  INFO 24279 --- [GoBang] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 349 ms
-2025-03-05T20:26:45.435+08:00  INFO 24279 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-03-05T20:26:45.439+08:00  INFO 24279 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Started GoBangApplication in 0.765 seconds (process running for 0.959)
-2025-03-05T20:26:48.902+08:00  INFO 24279 --- [GoBang] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-05T20:26:48.902+08:00  INFO 24279 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-03-05T20:26:48.903+08:00  INFO 24279 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-03-05T20:26:48.926+08:00  INFO 24279 --- [GoBang] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-03-05T20:26:48.987+08:00  INFO 24279 --- [GoBang] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@13ee4611
-2025-03-05T20:26:48.988+08:00  INFO 24279 --- [GoBang] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-03-05T20:26:49.005+08:00  INFO 24279 --- [GoBang] [http-nio-8080-exec-1] org.mon.gobang.api.UserAPI               : [login] user:User(userId=1, username=zhangsan, password=123, score=1000, totalCount=0, winCount=0)
-2025-03-05T20:29:51.526+08:00  INFO 24279 --- [GoBang] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-03-05T20:29:51.531+08:00  INFO 24279 --- [GoBang] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-03-05T20:29:51.533+08:00  INFO 24279 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-03-05T20:29:51.537+08:00  INFO 24279 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-03-05T20:29:52.676+08:00  INFO 29598 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Starting GoBangApplication using Java 17.0.11 with PID 29598 (/Users/zhaoqianqian/IDEAUl/Project/GoBang/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/GoBang)
-2025-03-05T20:29:52.677+08:00  INFO 29598 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : No active profile set, falling back to 1 default profile: "default"
-2025-03-05T20:29:53.001+08:00  INFO 29598 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-03-05T20:29:53.006+08:00  INFO 29598 --- [GoBang] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-03-05T20:29:53.006+08:00  INFO 29598 --- [GoBang] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
-2025-03-05T20:29:53.021+08:00  INFO 29598 --- [GoBang] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-03-05T20:29:53.021+08:00  INFO 29598 --- [GoBang] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 331 ms
-2025-03-05T20:29:53.226+08:00  INFO 29598 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-03-05T20:29:53.231+08:00  INFO 29598 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Started GoBangApplication in 0.727 seconds (process running for 0.906)
-2025-03-05T20:29:56.984+08:00  INFO 29598 --- [GoBang] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-05T20:29:56.985+08:00  INFO 29598 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-03-05T20:29:56.985+08:00  INFO 29598 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2025-03-05T20:29:57.009+08:00  INFO 29598 --- [GoBang] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-03-05T20:29:58.032+08:00 ERROR 29598 --- [GoBang] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.mybatis.spring.MyBatisSystemException: 
-### Error querying database.  Cause: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: URLDecoder: Illegal hex characters in escape (%) pattern - Error at index 0 in: "@2"
-### The error may exist in file [/Users/zhaoqianqian/IDEAUl/Project/GoBang/target/classes/mapper/UserMapper.xml]
-### The error may involve org.mon.gobang.model.UserMapper.selectByName
-### The error occurred while executing a query
-### Cause: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: URLDecoder: Illegal hex characters in escape (%) pattern - Error at index 0 in: "@2"] with root cause
-
-java.lang.IllegalArgumentException: URLDecoder: Illegal hex characters in escape (%) pattern - Error at index 0 in: "@2"
-	at java.base/java.net.URLDecoder.decode(URLDecoder.java:237) ~[na:na]
-	at java.base/java.net.URLDecoder.decode(URLDecoder.java:147) ~[na:na]
-	at com.mysql.cj.conf.ConnectionUrlParser.decode(ConnectionUrlParser.java:561) ~[mysql-connector-j-9.1.0.jar:9.1.0]
-	at com.mysql.cj.conf.ConnectionUrlParser.processKeyValuePattern(ConnectionUrlParser.java:533) ~[mysql-connector-j-9.1.0.jar:9.1.0]
-	at com.mysql.cj.conf.ConnectionUrlParser.parseQuerySection(ConnectionUrlParser.java:509) ~[mysql-connector-j-9.1.0.jar:9.1.0]
-	at com.mysql.cj.conf.ConnectionUrlParser.getProperties(ConnectionUrlParser.java:655) ~[mysql-connector-j-9.1.0.jar:9.1.0]
-	at com.mysql.cj.conf.ConnectionUrl$Type.getConnectionUrlInstance(ConnectionUrl.java:206) ~[mysql-connector-j-9.1.0.jar:9.1.0]
-	at com.mysql.cj.conf.ConnectionUrl.getConnectionUrlInstance(ConnectionUrl.java:282) ~[mysql-connector-j-9.1.0.jar:9.1.0]
-	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:177) ~[mysql-connector-j-9.1.0.jar:9.1.0]
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137) ~[HikariCP-5.1.0.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360) ~[HikariCP-5.1.0.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202) ~[HikariCP-5.1.0.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461) ~[HikariCP-5.1.0.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550) ~[HikariCP-5.1.0.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98) ~[HikariCP-5.1.0.jar:na]
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-5.1.0.jar:na]
-	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:160) ~[spring-jdbc-6.2.3.jar:6.2.3]
-	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:118) ~[spring-jdbc-6.2.3.jar:6.2.3]
-	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81) ~[spring-jdbc-6.2.3.jar:6.2.3]
-	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:77) ~[mybatis-spring-3.0.4.jar:3.0.4]
-	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:64) ~[mybatis-spring-3.0.4.jar:3.0.4]
-	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:348) ~[mybatis-3.5.17.jar:3.5.17]
-	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:89) ~[mybatis-3.5.17.jar:3.5.17]
-	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:64) ~[mybatis-3.5.17.jar:3.5.17]
-	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336) ~[mybatis-3.5.17.jar:3.5.17]
-	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158) ~[mybatis-3.5.17.jar:3.5.17]
-	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110) ~[mybatis-3.5.17.jar:3.5.17]
-	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:90) ~[mybatis-3.5.17.jar:3.5.17]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154) ~[mybatis-3.5.17.jar:3.5.17]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) ~[mybatis-3.5.17.jar:3.5.17]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142) ~[mybatis-3.5.17.jar:3.5.17]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:75) ~[mybatis-3.5.17.jar:3.5.17]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:333) ~[mybatis-spring-3.0.4.jar:3.0.4]
-	at jdk.proxy2/jdk.proxy2.$Proxy62.selectOne(Unknown Source) ~[na:na]
-	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:154) ~[mybatis-spring-3.0.4.jar:3.0.4]
-	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87) ~[mybatis-3.5.17.jar:3.5.17]
-	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141) ~[mybatis-3.5.17.jar:3.5.17]
-	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86) ~[mybatis-3.5.17.jar:3.5.17]
-	at jdk.proxy2/jdk.proxy2.$Proxy63.selectByName(Unknown Source) ~[na:na]
-	at org.mon.gobang.api.UserAPI.login(UserAPI.java:27) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.3.jar:6.2.3]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.3.jar:6.2.3]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.3.jar:6.2.3]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.3.jar:6.2.3]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.3.jar:6.2.3]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.3.jar:6.2.3]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.3.jar:6.2.3]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.3.jar:6.2.3]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.3.jar:6.2.3]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.3.jar:6.2.3]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.36.jar:6.0]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.3.jar:6.2.3]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.36.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.3.jar:6.2.3]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.3.jar:6.2.3]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.3.jar:6.2.3]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
-	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
-
-2025-03-05T20:30:20.342+08:00  INFO 29598 --- [GoBang] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-03-05T20:30:20.349+08:00  INFO 29598 --- [GoBang] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-03-05T20:30:21.328+08:00  INFO 30412 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Starting GoBangApplication using Java 17.0.11 with PID 30412 (/Users/zhaoqianqian/IDEAUl/Project/GoBang/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/GoBang)
-2025-03-05T20:30:21.329+08:00  INFO 30412 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : No active profile set, falling back to 1 default profile: "default"
-2025-03-05T20:30:21.633+08:00  INFO 30412 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-03-05T20:30:21.637+08:00  INFO 30412 --- [GoBang] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-03-05T20:30:21.637+08:00  INFO 30412 --- [GoBang] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
-2025-03-05T20:30:21.649+08:00  INFO 30412 --- [GoBang] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-03-05T20:30:21.649+08:00  INFO 30412 --- [GoBang] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 306 ms
-2025-03-05T20:30:21.836+08:00  INFO 30412 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-03-05T20:30:21.840+08:00  INFO 30412 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Started GoBangApplication in 0.672 seconds (process running for 0.853)
-2025-03-05T20:30:25.515+08:00  INFO 30412 --- [GoBang] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-05T20:30:25.516+08:00  INFO 30412 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-03-05T20:30:25.516+08:00  INFO 30412 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2025-03-05T20:30:25.537+08:00  INFO 30412 --- [GoBang] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-03-05T20:30:25.591+08:00  INFO 30412 --- [GoBang] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4af9801c
-2025-03-05T20:30:25.591+08:00  INFO 30412 --- [GoBang] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-03-05T20:30:25.605+08:00  INFO 30412 --- [GoBang] [http-nio-8080-exec-1] org.mon.gobang.api.UserAPI               : [login] user:User(userId=1, username=zhangsan, password=123, score=1000, totalCount=0, winCount=0)
-2025-03-05T20:31:09.725+08:00  INFO 30412 --- [GoBang] [http-nio-8080-exec-2] org.mon.gobang.api.UserAPI               : [login] user:User(userId=1, username=zhangsan, password=123, score=1000, totalCount=0, winCount=0)
-2025-03-05T20:31:09.726+08:00  WARN 30412 --- [GoBang] [http-nio-8080-exec-2] org.mon.gobang.api.UserAPI               : 登入失败
-2025-03-05T20:31:13.842+08:00  INFO 30412 --- [GoBang] [http-nio-8080-exec-3] org.mon.gobang.api.UserAPI               : [login] user:User(userId=1, username=zhangsan, password=123, score=1000, totalCount=0, winCount=0)
-2025-03-05T20:33:47.823+08:00  INFO 30412 --- [GoBang] [http-nio-8080-exec-9] org.mon.gobang.api.UserAPI               : [login] user:User(userId=4, username=zhaoqianqian, password=123, score=1000, totalCount=0, winCount=0)
-2025-03-05T21:21:06.647+08:00  INFO 30412 --- [GoBang] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-03-05T21:21:06.655+08:00  INFO 30412 --- [GoBang] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-03-05T21:21:06.659+08:00  INFO 30412 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-03-05T21:21:06.661+08:00  INFO 30412 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-03-05T21:54:48.552+08:00  INFO 94815 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Starting GoBangApplication using Java 17.0.11 with PID 94815 (/Users/zhaoqianqian/IDEAUl/Project/GoBang/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/GoBang)
-2025-03-05T21:54:48.553+08:00  INFO 94815 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : No active profile set, falling back to 1 default profile: "default"
-2025-03-05T21:54:48.904+08:00  INFO 94815 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-03-05T21:54:48.910+08:00  INFO 94815 --- [GoBang] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-03-05T21:54:48.910+08:00  INFO 94815 --- [GoBang] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
-2025-03-05T21:54:48.926+08:00  INFO 94815 --- [GoBang] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-03-05T21:54:48.926+08:00  INFO 94815 --- [GoBang] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 360 ms
-2025-03-05T21:54:49.153+08:00  INFO 94815 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-03-05T21:54:49.158+08:00  INFO 94815 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Started GoBangApplication in 0.777 seconds (process running for 0.994)
-2025-03-05T21:55:07.158+08:00  INFO 94815 --- [GoBang] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-05T21:55:07.158+08:00  INFO 94815 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-03-05T21:55:07.159+08:00  INFO 94815 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-03-05T21:55:18.937+08:00  INFO 94815 --- [GoBang] [http-nio-8080-exec-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-03-05T21:55:19.020+08:00  INFO 94815 --- [GoBang] [http-nio-8080-exec-6] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1eaf51fd
-2025-03-05T21:55:19.021+08:00  INFO 94815 --- [GoBang] [http-nio-8080-exec-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-03-05T21:55:19.042+08:00  INFO 94815 --- [GoBang] [http-nio-8080-exec-6] org.mon.gobang.api.UserAPI               : [login] user:User(userId=1, username=zhangsan, password=123, score=1000, totalCount=0, winCount=0)
-2025-03-05T21:56:18.633+08:00  INFO 94815 --- [GoBang] [http-nio-8080-exec-10] org.mon.gobang.api.UserAPI               : [login] user:User(userId=4, username=zhaoqianqian, password=123, score=1000, totalCount=0, winCount=0)
-2025-03-05T22:20:47.029+08:00  WARN 94815 --- [GoBang] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=54s828ms).
-2025-03-05T22:28:37.726+08:00  WARN 94815 --- [GoBang] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m49s468ms).
-2025-03-05T22:31:32.655+08:00  WARN 94815 --- [GoBang] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m54s929ms).
-2025-03-05T22:42:53.288+08:00  WARN 94815 --- [GoBang] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11m20s633ms).
-2025-03-05T22:51:21.566+08:00  WARN 94815 --- [GoBang] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m28s277ms).
-2025-03-05T22:56:52.617+08:00  WARN 94815 --- [GoBang] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m26s614ms).
-2025-03-05T23:02:23.731+08:00  WARN 94815 --- [GoBang] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m1s96ms).
-2025-03-05T23:11:02.516+08:00  INFO 94815 --- [GoBang] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-03-05T23:11:02.523+08:00  INFO 94815 --- [GoBang] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-03-05T23:11:02.526+08:00  INFO 94815 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-03-05T23:11:02.528+08:00  INFO 94815 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-03-05T23:24:51.837+08:00  INFO 23538 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Starting GoBangApplication using Java 17.0.11 with PID 23538 (/Users/zhaoqianqian/IDEAUl/Project/GoBang/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/GoBang)
-2025-03-05T23:24:51.838+08:00  INFO 23538 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : No active profile set, falling back to 1 default profile: "default"
-2025-03-05T23:24:52.174+08:00  INFO 23538 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-03-05T23:24:52.180+08:00  INFO 23538 --- [GoBang] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-03-05T23:24:52.180+08:00  INFO 23538 --- [GoBang] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
-2025-03-05T23:24:52.194+08:00  INFO 23538 --- [GoBang] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-03-05T23:24:52.194+08:00  INFO 23538 --- [GoBang] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 343 ms
-2025-03-05T23:24:52.398+08:00  INFO 23538 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-03-05T23:24:52.403+08:00  INFO 23538 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Started GoBangApplication in 0.733 seconds (process running for 0.933)
-2025-03-05T23:24:58.766+08:00  INFO 23538 --- [GoBang] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-05T23:24:58.767+08:00  INFO 23538 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-03-05T23:24:58.768+08:00  INFO 23538 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2025-03-05T23:25:09.042+08:00  INFO 23538 --- [GoBang] [http-nio-8080-exec-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-03-05T23:25:09.118+08:00  INFO 23538 --- [GoBang] [http-nio-8080-exec-7] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@48fc6201
-2025-03-05T23:25:09.119+08:00  INFO 23538 --- [GoBang] [http-nio-8080-exec-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-03-05T23:28:44.227+08:00  INFO 23538 --- [GoBang] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-03-05T23:28:44.236+08:00  INFO 23538 --- [GoBang] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-03-05T23:28:44.239+08:00  INFO 23538 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-03-05T23:28:44.243+08:00  INFO 23538 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-03-05T23:28:45.370+08:00  INFO 32031 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Starting GoBangApplication using Java 17.0.11 with PID 32031 (/Users/zhaoqianqian/IDEAUl/Project/GoBang/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/GoBang)
-2025-03-05T23:28:45.371+08:00  INFO 32031 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : No active profile set, falling back to 1 default profile: "default"
-2025-03-05T23:28:45.702+08:00  INFO 32031 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-03-05T23:28:45.708+08:00  INFO 32031 --- [GoBang] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-03-05T23:28:45.708+08:00  INFO 32031 --- [GoBang] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
-2025-03-05T23:28:45.722+08:00  INFO 32031 --- [GoBang] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-03-05T23:28:45.722+08:00  INFO 32031 --- [GoBang] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 337 ms
-2025-03-05T23:28:45.925+08:00  INFO 32031 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-03-05T23:28:45.930+08:00  INFO 32031 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Started GoBangApplication in 0.733 seconds (process running for 0.924)
-2025-03-05T23:28:52.917+08:00  INFO 32031 --- [GoBang] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-05T23:28:52.918+08:00  INFO 32031 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-03-05T23:28:52.919+08:00  INFO 32031 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-03-05T23:28:58.263+08:00  INFO 32031 --- [GoBang] [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-03-05T23:28:58.335+08:00  INFO 32031 --- [GoBang] [http-nio-8080-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4d345611
-2025-03-05T23:28:58.336+08:00  INFO 32031 --- [GoBang] [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-03-05T23:30:00.789+08:00  INFO 32031 --- [GoBang] [http-nio-8080-exec-5] org.mon.gobang.api.UserAPI               : [login] user:User(userId=9, username=test, password=test, score=1000, totalCount=0, winCount=0)
-2025-03-05T23:30:26.878+08:00  INFO 32031 --- [GoBang] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-03-05T23:30:26.882+08:00  INFO 32031 --- [GoBang] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-03-05T23:30:26.884+08:00  INFO 32031 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-03-05T23:30:26.889+08:00  INFO 32031 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-06T00:00:14.522+08:00  INFO 1412 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Starting GoBangApplication using Java 17.0.11 with PID 1412 (/Users/zhaoqianqian/IDEAUl/Project/GoBang/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/GoBang)
+2025-03-06T00:00:14.524+08:00  INFO 1412 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T00:00:14.852+08:00  INFO 1412 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-06T00:00:14.857+08:00  INFO 1412 --- [GoBang] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-06T00:00:14.857+08:00  INFO 1412 --- [GoBang] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-06T00:00:14.871+08:00  INFO 1412 --- [GoBang] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-06T00:00:14.871+08:00  INFO 1412 --- [GoBang] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 333 ms
+2025-03-06T00:00:15.063+08:00  INFO 1412 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-06T00:00:15.067+08:00  INFO 1412 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Started GoBangApplication in 0.713 seconds (process running for 0.915)
+2025-03-06T00:00:28.662+08:00  INFO 1412 --- [GoBang] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-06T00:00:28.663+08:00  INFO 1412 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-06T00:00:28.663+08:00  INFO 1412 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-03-06T00:00:32.931+08:00  INFO 1412 --- [GoBang] [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-06T00:00:33.000+08:00  INFO 1412 --- [GoBang] [http-nio-8080-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7def3ab7
+2025-03-06T00:00:33.001+08:00  INFO 1412 --- [GoBang] [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-06T00:00:33.017+08:00  INFO 1412 --- [GoBang] [http-nio-8080-exec-2] org.mon.gobang.api.UserAPI               : [login] user:User(userId=4, username=zhaoqianqian, password=123, score=1000, totalCount=0, winCount=0)
+2025-03-06T00:01:28.709+08:00  INFO 1412 --- [GoBang] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-06T00:01:28.714+08:00  INFO 1412 --- [GoBang] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-06T00:01:28.717+08:00  INFO 1412 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-06T00:01:28.720+08:00  INFO 1412 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-06T00:01:29.756+08:00  INFO 4191 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Starting GoBangApplication using Java 17.0.11 with PID 4191 (/Users/zhaoqianqian/IDEAUl/Project/GoBang/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/GoBang)
+2025-03-06T00:01:29.759+08:00  INFO 4191 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T00:01:30.094+08:00  INFO 4191 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-06T00:01:30.100+08:00  INFO 4191 --- [GoBang] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-06T00:01:30.100+08:00  INFO 4191 --- [GoBang] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-06T00:01:30.113+08:00  INFO 4191 --- [GoBang] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-06T00:01:30.114+08:00  INFO 4191 --- [GoBang] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 333 ms
+2025-03-06T00:01:30.310+08:00  INFO 4191 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-06T00:01:30.315+08:00  INFO 4191 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Started GoBangApplication in 0.745 seconds (process running for 0.938)
+2025-03-06T00:01:33.068+08:00  INFO 4191 --- [GoBang] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-06T00:01:33.068+08:00  INFO 4191 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-06T00:01:33.069+08:00  INFO 4191 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-06T00:02:26.210+08:00  INFO 4191 --- [GoBang] [http-nio-8080-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-06T00:02:26.282+08:00  INFO 4191 --- [GoBang] [http-nio-8080-exec-5] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@636b5bc
+2025-03-06T00:02:26.283+08:00  INFO 4191 --- [GoBang] [http-nio-8080-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-06T00:02:26.298+08:00  INFO 4191 --- [GoBang] [http-nio-8080-exec-5] org.mon.gobang.api.UserAPI               : [login] user:User(userId=4, username=zhaoqianqian, password=123, score=1000, totalCount=0, winCount=0)
+2025-03-06T00:29:42.322+08:00  INFO 4191 --- [GoBang] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-06T00:29:42.328+08:00  INFO 4191 --- [GoBang] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-06T00:29:42.331+08:00  INFO 4191 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-06T00:29:42.336+08:00  INFO 4191 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
