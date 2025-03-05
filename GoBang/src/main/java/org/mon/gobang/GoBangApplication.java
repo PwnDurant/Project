@@ -1,0 +1,13 @@
+package org.mon.gobang;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class GoBangApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(GoBangApplication.class, args);
+    }
+
+}
