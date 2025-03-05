@@ -14,7 +14,7 @@ public interface WinningRecordMapper {
     @Insert("<script>" +
             " insert into winning_record (activity_id,activity_name,prize_id,prize_name,prize_tier,winner_id,winner_name,winner_email,winner_phone_number,winning_time)" +
             " values <foreach collection='items' item='item' index='index' separator=','>"+
-            " (#{item.activityId},#{item.activityName},#{item.prizeId},#{item.prizeName},#{item.prizeTier},#{item.winnerId},#{item.winnerName},#{item.winnerEmail},#{item.winnerPhoneNumber},#{item.winnerTime})"+
+            " (#{item.activityId},#{item.activityName},#{item.prizeId},#{item.prizeName},#{item.prizeTier},#{item.winnerId},#{item.winnerName},#{item.winnerEmail},#{item.winnerPhoneNumber},#{item.winningTime})"+
             " </foreach>"+
             " </script>")
     @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")

@@ -2,11 +2,13 @@ package org.mon.lottery_system.service.dto;
 
 
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.mon.lottery_system.dao.dataobject.BaseDO;
 import org.mon.lottery_system.service.enums.ActivityStatusEnum;
 
 import java.io.Serializable;
 
+@Slf4j
 @Data
 public class ActivityDTO implements Serializable {
 
@@ -27,7 +29,10 @@ public class ActivityDTO implements Serializable {
      * @return
      */
     public Boolean valid(){
+        log.warn("开始转换");
         return status.equals(ActivityStatusEnum.RUNNING);
+//        log.warn("转换成功");
+
     }
 
 

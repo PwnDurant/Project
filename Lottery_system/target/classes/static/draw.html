@@ -495,6 +495,7 @@
                 if (result.code != 200) {
                     alert("获取活动详情失败！" + result.msg);
                 } else {
+                    console.log(result.data);
                     names = result.data.users;
                     steps = result.data.prizes;
                     if (func) func();

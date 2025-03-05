@@ -24,7 +24,7 @@ public class DlxReceiver {
     public void process(Map<String,String> map){
 //        死信队列的处理方法
         log.info("处理异常消息！");
-        rabbitTemplate.convertAndSend(EXCHANGE_NAME,ROUTING,map);
+//        rabbitTemplate.convertAndSend(EXCHANGE_NAME,ROUTING,map);
 
 //        1，接收到异常消息，可以将异常消息存到数据库表中
 //        2，存放后，当前异常消息消费完成，死信队列消息处理完成，但是异常消息被我们持久化储存到表中

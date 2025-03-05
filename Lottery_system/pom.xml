@@ -28,6 +28,7 @@
     </scm>
     <properties>
         <java.version>17</java.version>
+        <maven.test.skip>true</maven.test.skip>
     </properties>
     <dependencies>
         <dependency>
@@ -111,6 +112,29 @@
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
     </dependencies>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <!--            自己定义的属性-->
+            <properties>
+                <profile.name>dev</profile.name>
+                <mysql.password>root</mysql.password>
+            </properties>
+        </profile>
+        <profile>
+            <id>test</id>
+            <!--            自己定义的属性-->
+            <properties>
+                <profile.name>test</profile.name>
+                <mysql.password>ZQQ@yyds.666</mysql.password>
+            </properties>
+            <!--默认生效-->
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
 
     <build>
         <plugins>

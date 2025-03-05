@@ -133,6 +133,7 @@ public class ActivityServiceImpl implements ActivityService {
 
 //        获取当前页列表
         List<ActivityDO> activityDOList=activityMapper.selectActivityList(param.offset(),param.getPageSize());
+        log.warn("从数据库中查到的数据为:{}",activityDOList);
         List<ActivityDTO> activityDTOList=activityDOList.stream()
                 .map(activityDO -> {
                     ActivityDTO activityDTO=new ActivityDTO();
@@ -142,6 +143,7 @@ public class ActivityServiceImpl implements ActivityService {
                     activityDTO.setStatus(ActivityStatusEnum.forName(activityDO.getStatus()));
                     return activityDTO;
                 }).toList();
+        log.warn("转换的数据为:{}",activityDTOList);
 
         return new PageListDTO<>(total,activityDTOList);
 
@@ -162,10 +164,7 @@ public class ActivityServiceImpl implements ActivityService {
             log.info("查询活动详细信息detailDTO:{}",JacksonUtil.writeValueAsString(detailDTO));
             return detailDTO;
         }
-
-
 //        如果没有查到，查表
-
 //        查活动表
         ActivityDO aDO=activityMapper.selectById(activityId);
 

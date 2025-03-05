@@ -21,8 +21,8 @@ public class DrawPrizeParam implements Serializable {
     @NotNull(message = "奖品Id不能为空")
     private Long prizeId;
 //    奖品等级
-    @NotBlank(message = "奖品等级不能为空")
-    private String prizeTiers;
+//    @NotBlank(message = "奖品等级l不能为空")
+//    private String prizeTiers;
 //    中奖时间
     @NotNull(message = "中奖时间不能为空")
     private Date winningTime;

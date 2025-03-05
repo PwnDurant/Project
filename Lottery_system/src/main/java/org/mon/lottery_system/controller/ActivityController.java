@@ -40,7 +40,7 @@ public class ActivityController {
     @RequestMapping("/activity/find-list")
     public CommonResult<FindActivityListResult> findActivityList(PageParam param){
 
-        log.info("findActivityList PageParam:{}", JacksonUtil.writeValueAsString(param));
+        log.warn("findActivityList PageParam:{}", JacksonUtil.writeValueAsString(param));
 
         return CommonResult.success(
                 converToFindActivityListResult(
@@ -52,8 +52,8 @@ public class ActivityController {
     @RequestMapping("/activity-detail/find")
     public CommonResult<GetActivityDetailResult> getActivityDetail(Long activityId){
         log.info("getActivityDetail getActivityDetail:{}",activityId);
-
         ActivityDetailDTO activityDetailDTO=activityService.getActivityDetail(activityId);
+        log.warn("从service中拿到的结果:{}",activityDetailDTO);
         return CommonResult.success(converToGetActivityDetailResult(activityDetailDTO));
     }
 
@@ -118,6 +118,7 @@ public class ActivityController {
                     return activityInfo;
                 }).toList()
         );
+        log.warn("返回的结果数据为：{}",result);
 //        log.warn("result:{},",JacksonUtil.writeValueAsString(result));
         return result;
     }
