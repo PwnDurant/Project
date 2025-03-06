@@ -65,7 +65,7 @@
             }else if(resp.message=='matchSuccess'){
                 // 已经匹配到对手了
                 console.log("进入游戏房间");
-                location.href='"/game_room.html';
+                location.href='/game_room.html';
             
             }else{
                 console.log("收到了非法的响应:message="+resp.message);
@@ -77,6 +77,8 @@
         }
         websocket.onclose=function(){
             console.log("连接断开");
+            alert("当前和服务器的连接已经断开");
+            location.href="/login.html"
         }
         // 监听页面关闭事件，在页面关闭之前，手动调用这里的websocket的close方法
         window.onbeforeunload=function(){
@@ -98,7 +100,7 @@
                 }else if(matchButton.innerHTML=='匹配中...(点击停止)'){
                     console.log("结束匹配");
                     websocket.send(JSON.stringify({
-                        message:'stopMtch',
+                        message:'stopMatch',
                     }));
                 }
             }else{

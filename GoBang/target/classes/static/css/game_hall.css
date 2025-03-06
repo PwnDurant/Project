@@ -1,11 +1,4 @@
-.container{
-    width: 100%;
-    height:calc(100% - 50px);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 #screen{
     width:400px;

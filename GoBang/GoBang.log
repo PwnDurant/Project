@@ -38,3 +38,442 @@
 2025-03-06T00:29:42.328+08:00  INFO 4191 --- [GoBang] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
 2025-03-06T00:29:42.331+08:00  INFO 4191 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-03-06T00:29:42.336+08:00  INFO 4191 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-06T09:39:28.342+08:00  INFO 31647 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Starting GoBangApplication using Java 17.0.11 with PID 31647 (/Users/zhaoqianqian/IDEAUl/Project/GoBang/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/GoBang)
+2025-03-06T09:39:28.343+08:00  INFO 31647 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T09:39:28.674+08:00  INFO 31647 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-06T09:39:28.680+08:00  INFO 31647 --- [GoBang] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-06T09:39:28.680+08:00  INFO 31647 --- [GoBang] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-06T09:39:28.695+08:00  INFO 31647 --- [GoBang] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-06T09:39:28.695+08:00  INFO 31647 --- [GoBang] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 337 ms
+2025-03-06T09:39:28.902+08:00  INFO 31647 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-06T09:39:28.906+08:00  INFO 31647 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Started GoBangApplication in 0.747 seconds (process running for 0.948)
+2025-03-06T09:39:29.360+08:00  INFO 31647 --- [GoBang] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-06T09:39:29.367+08:00  INFO 31647 --- [GoBang] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-06T10:55:37.011+08:00  INFO 8127 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Starting GoBangApplication using Java 17.0.11 with PID 8127 (/Users/zhaoqianqian/IDEAUl/Project/GoBang/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/GoBang)
+2025-03-06T10:55:37.012+08:00  INFO 8127 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T10:55:37.339+08:00  INFO 8127 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-06T10:55:37.344+08:00  INFO 8127 --- [GoBang] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-06T10:55:37.344+08:00  INFO 8127 --- [GoBang] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-06T10:55:37.359+08:00  INFO 8127 --- [GoBang] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-06T10:55:37.359+08:00  INFO 8127 --- [GoBang] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 334 ms
+2025-03-06T10:55:37.555+08:00  INFO 8127 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-06T10:55:37.559+08:00  INFO 8127 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Started GoBangApplication in 0.71 seconds (process running for 0.883)
+2025-03-06T10:55:42.319+08:00  INFO 8127 --- [GoBang] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-06T10:55:42.320+08:00  INFO 8127 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-06T10:55:42.322+08:00  INFO 8127 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-03-06T10:55:47.252+08:00  WARN 8127 --- [GoBang] [http-nio-8080-exec-10] w.s.h.ExceptionWebSocketHandlerDecorator : Unhandled exception after connection closed for ExceptionWebSocketHandlerDecorator [delegate=LoggingWebSocketHandlerDecorator [delegate=org.mon.gobang.api.MatchAPI@7945b206]]
+
+java.lang.IllegalStateException: Message will not be sent because the WebSocket session has been closed
+	at org.apache.tomcat.websocket.WsRemoteEndpointImplBase.writeMessagePart(WsRemoteEndpointImplBase.java:455) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsRemoteEndpointImplBase.sendMessageBlockInternal(WsRemoteEndpointImplBase.java:313) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsRemoteEndpointImplBase.sendMessageBlock(WsRemoteEndpointImplBase.java:266) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsRemoteEndpointImplBase.sendMessageBlock(WsRemoteEndpointImplBase.java:250) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsRemoteEndpointImplBase.sendPartialString(WsRemoteEndpointImplBase.java:223) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsRemoteEndpointBasic.sendText(WsRemoteEndpointBasic.java:48) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketSession.sendTextMessage(StandardWebSocketSession.java:217) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.adapter.AbstractWebSocketSession.sendMessage(AbstractWebSocketSession.java:108) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.mon.gobang.api.MatchAPI.afterConnectionClosed(MatchAPI.java:140) ~[classes/:na]
+	at org.springframework.web.socket.handler.WebSocketHandlerDecorator.afterConnectionClosed(WebSocketHandlerDecorator.java:85) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.handler.LoggingWebSocketHandlerDecorator.afterConnectionClosed(LoggingWebSocketHandlerDecorator.java:72) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.handler.ExceptionWebSocketHandlerDecorator.afterConnectionClosed(ExceptionWebSocketHandlerDecorator.java:78) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter.onClose(StandardWebSocketHandlerAdapter.java:144) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.apache.tomcat.websocket.WsSession.fireEndpointOnClose(WsSession.java:733) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsSession.onClose(WsSession.java:641) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsFrameBase.processDataControl(WsFrameBase.java:347) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsFrameBase.processData(WsFrameBase.java:279) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsFrameBase.processInputBuffer(WsFrameBase.java:130) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFrameServer.onDataAvailable(WsFrameServer.java:85) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFrameServer.doOnDataAvailable(WsFrameServer.java:184) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFrameServer.notifyDataAvailable(WsFrameServer.java:164) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsHttpUpgradeHandler.upgradeDispatch(WsHttpUpgradeHandler.java:152) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.coyote.http11.upgrade.UpgradeProcessorInternal.dispatch(UpgradeProcessorInternal.java:60) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:57) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2025-03-06T10:55:51.568+08:00  INFO 8127 --- [GoBang] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-06T10:55:51.647+08:00  INFO 8127 --- [GoBang] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@32104875
+2025-03-06T10:55:51.647+08:00  INFO 8127 --- [GoBang] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-06T10:55:51.665+08:00  INFO 8127 --- [GoBang] [http-nio-8080-exec-1] org.mon.gobang.api.UserAPI               : [login] user:User(userId=4, username=zhaoqianqian, password=123, score=1000, totalCount=0, winCount=0)
+2025-03-06T10:55:53.041+08:00  INFO 8127 --- [GoBang] [http-nio-8080-exec-4] org.mon.gobang.api.MatchAPI              : 玩家:zhaoqianqian,进入游戏大厅
+2025-03-06T10:56:53.776+08:00  INFO 8127 --- [GoBang] [http-nio-8080-exec-7] org.mon.gobang.game.Matcher              : 把玩家:zhaoqianqian,加入到normalQueue中
+2025-03-06T11:06:18.799+08:00  INFO 8127 --- [GoBang] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-06T11:06:18.803+08:00  INFO 8127 --- [GoBang] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-06T11:06:18.806+08:00  INFO 8127 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-06T11:06:18.812+08:00  INFO 8127 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-06T11:06:18.814+08:00  INFO 8127 --- [GoBang] [SpringApplicationShutdownHook] org.mon.gobang.game.Matcher              : 把玩家:zhaoqianqian移除队列:normalQueue
+2025-03-06T11:06:18.814+08:00  INFO 8127 --- [GoBang] [SpringApplicationShutdownHook] org.mon.gobang.game.Matcher              : 把玩家:zhaoqianqian移除队列:normalQueue
+2025-03-06T11:06:20.402+08:00  INFO 32755 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Starting GoBangApplication using Java 17.0.11 with PID 32755 (/Users/zhaoqianqian/IDEAUl/Project/GoBang/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/GoBang)
+2025-03-06T11:06:20.403+08:00  INFO 32755 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T11:06:20.756+08:00  INFO 32755 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-06T11:06:20.761+08:00  INFO 32755 --- [GoBang] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-06T11:06:20.761+08:00  INFO 32755 --- [GoBang] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-06T11:06:20.777+08:00  INFO 32755 --- [GoBang] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-06T11:06:20.777+08:00  INFO 32755 --- [GoBang] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 360 ms
+2025-03-06T11:06:21.025+08:00  INFO 32755 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-06T11:06:21.029+08:00  INFO 32755 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Started GoBangApplication in 0.814 seconds (process running for 1.009)
+2025-03-06T11:07:02.798+08:00  INFO 32755 --- [GoBang] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-06T11:07:02.799+08:00  INFO 32755 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-06T11:07:02.800+08:00  INFO 32755 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-03-06T11:07:02.826+08:00  INFO 32755 --- [GoBang] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-06T11:07:02.885+08:00  INFO 32755 --- [GoBang] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@73a2f753
+2025-03-06T11:07:02.886+08:00  INFO 32755 --- [GoBang] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-06T11:07:02.903+08:00  INFO 32755 --- [GoBang] [http-nio-8080-exec-1] org.mon.gobang.api.UserAPI               : [login] user:User(userId=4, username=zhaoqianqian, password=123, score=1000, totalCount=0, winCount=0)
+2025-03-06T11:07:04.331+08:00  INFO 32755 --- [GoBang] [http-nio-8080-exec-4] org.mon.gobang.api.MatchAPI              : 玩家:zhaoqianqian,进入游戏大厅
+2025-03-06T11:07:06.270+08:00  INFO 32755 --- [GoBang] [http-nio-8080-exec-5] org.mon.gobang.game.Matcher              : 把玩家:zhaoqianqian,加入到normalQueue中
+2025-03-06T11:08:31.244+08:00  INFO 32755 --- [GoBang] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-06T11:08:31.246+08:00  INFO 32755 --- [GoBang] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-06T11:08:31.248+08:00  INFO 32755 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-06T11:08:31.252+08:00  INFO 32755 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-06T11:08:31.253+08:00  INFO 32755 --- [GoBang] [SpringApplicationShutdownHook] org.mon.gobang.game.Matcher              : 把玩家:zhaoqianqian移除队列:normalQueue
+2025-03-06T11:08:31.253+08:00  INFO 32755 --- [GoBang] [SpringApplicationShutdownHook] org.mon.gobang.game.Matcher              : 把玩家:zhaoqianqian移除队列:normalQueue
+2025-03-06T11:08:32.254+08:00  INFO 37794 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Starting GoBangApplication using Java 17.0.11 with PID 37794 (/Users/zhaoqianqian/IDEAUl/Project/GoBang/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/GoBang)
+2025-03-06T11:08:32.254+08:00  INFO 37794 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T11:08:32.612+08:00  INFO 37794 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-06T11:08:32.617+08:00  INFO 37794 --- [GoBang] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-06T11:08:32.617+08:00  INFO 37794 --- [GoBang] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-06T11:08:32.631+08:00  INFO 37794 --- [GoBang] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-06T11:08:32.631+08:00  INFO 37794 --- [GoBang] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 346 ms
+2025-03-06T11:08:32.817+08:00  INFO 37794 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-06T11:08:32.822+08:00  INFO 37794 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Started GoBangApplication in 0.73 seconds (process running for 0.921)
+2025-03-06T11:08:38.258+08:00  INFO 37794 --- [GoBang] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-06T11:08:38.259+08:00  INFO 37794 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-06T11:08:38.260+08:00  INFO 37794 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-06T11:08:41.794+08:00 ERROR 37794 --- [GoBang] [http-nio-8080-exec-4] w.s.h.ExceptionWebSocketHandlerDecorator : Closing session due to exception for StandardWebSocketSession[id=401b6977-26b9-6f91-655e-d1eef9d9b185, uri=ws://127.0.0.1:8080/findMatch]
+
+java.lang.NullPointerException: Cannot invoke "org.mon.gobang.model.User.getScore()" because "user" is null
+	at org.mon.gobang.game.Matcher.add(Matcher.java:36) ~[classes/:na]
+	at org.mon.gobang.api.MatchAPI.handleTextMessage(MatchAPI.java:82) ~[classes/:na]
+	at org.springframework.web.socket.handler.AbstractWebSocketHandler.handleMessage(AbstractWebSocketHandler.java:43) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.handler.WebSocketHandlerDecorator.handleMessage(WebSocketHandlerDecorator.java:75) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.handler.LoggingWebSocketHandlerDecorator.handleMessage(LoggingWebSocketHandlerDecorator.java:56) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.handler.ExceptionWebSocketHandlerDecorator.handleMessage(ExceptionWebSocketHandlerDecorator.java:58) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter.handleTextMessage(StandardWebSocketHandlerAdapter.java:113) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter$3.onMessage(StandardWebSocketHandlerAdapter.java:84) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter$3.onMessage(StandardWebSocketHandlerAdapter.java:81) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.apache.tomcat.websocket.WsFrameBase.sendMessageText(WsFrameBase.java:390) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFrameServer.sendMessageText(WsFrameServer.java:130) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsFrameBase.processDataText(WsFrameBase.java:484) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsFrameBase.processData(WsFrameBase.java:284) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsFrameBase.processInputBuffer(WsFrameBase.java:130) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFrameServer.onDataAvailable(WsFrameServer.java:85) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFrameServer.doOnDataAvailable(WsFrameServer.java:184) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFrameServer.notifyDataAvailable(WsFrameServer.java:164) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsHttpUpgradeHandler.upgradeDispatch(WsHttpUpgradeHandler.java:152) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.coyote.http11.upgrade.UpgradeProcessorInternal.dispatch(UpgradeProcessorInternal.java:60) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:57) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2025-03-06T11:08:41.798+08:00  WARN 37794 --- [GoBang] [http-nio-8080-exec-4] w.s.h.ExceptionWebSocketHandlerDecorator : Unhandled exception after connection closed for ExceptionWebSocketHandlerDecorator [delegate=LoggingWebSocketHandlerDecorator [delegate=org.mon.gobang.api.MatchAPI@7d42542]]
+
+java.lang.IllegalStateException: Message will not be sent because the WebSocket session has been closed
+	at org.apache.tomcat.websocket.WsRemoteEndpointImplBase.writeMessagePart(WsRemoteEndpointImplBase.java:455) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsRemoteEndpointImplBase.sendMessageBlockInternal(WsRemoteEndpointImplBase.java:313) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsRemoteEndpointImplBase.sendMessageBlock(WsRemoteEndpointImplBase.java:266) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsRemoteEndpointImplBase.sendMessageBlock(WsRemoteEndpointImplBase.java:250) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsRemoteEndpointImplBase.sendPartialString(WsRemoteEndpointImplBase.java:223) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsRemoteEndpointBasic.sendText(WsRemoteEndpointBasic.java:48) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketSession.sendTextMessage(StandardWebSocketSession.java:217) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.adapter.AbstractWebSocketSession.sendMessage(AbstractWebSocketSession.java:108) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.mon.gobang.api.MatchAPI.afterConnectionClosed(MatchAPI.java:142) ~[classes/:na]
+	at org.springframework.web.socket.handler.WebSocketHandlerDecorator.afterConnectionClosed(WebSocketHandlerDecorator.java:85) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.handler.LoggingWebSocketHandlerDecorator.afterConnectionClosed(LoggingWebSocketHandlerDecorator.java:72) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.handler.ExceptionWebSocketHandlerDecorator.afterConnectionClosed(ExceptionWebSocketHandlerDecorator.java:78) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter.onClose(StandardWebSocketHandlerAdapter.java:144) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.apache.tomcat.websocket.WsSession.fireEndpointOnClose(WsSession.java:733) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsSession.doClose(WsSession.java:590) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsSession.doClose(WsSession.java:556) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsSession.close(WsSession.java:544) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketSession.closeInternal(StandardWebSocketSession.java:237) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.adapter.AbstractWebSocketSession.close(AbstractWebSocketSession.java:144) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.handler.ExceptionWebSocketHandlerDecorator.tryCloseWithError(ExceptionWebSocketHandlerDecorator.java:94) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.handler.ExceptionWebSocketHandlerDecorator.handleMessage(ExceptionWebSocketHandlerDecorator.java:61) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter.handleTextMessage(StandardWebSocketHandlerAdapter.java:113) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter$3.onMessage(StandardWebSocketHandlerAdapter.java:84) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter$3.onMessage(StandardWebSocketHandlerAdapter.java:81) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.apache.tomcat.websocket.WsFrameBase.sendMessageText(WsFrameBase.java:390) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFrameServer.sendMessageText(WsFrameServer.java:130) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsFrameBase.processDataText(WsFrameBase.java:484) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsFrameBase.processData(WsFrameBase.java:284) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsFrameBase.processInputBuffer(WsFrameBase.java:130) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFrameServer.onDataAvailable(WsFrameServer.java:85) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFrameServer.doOnDataAvailable(WsFrameServer.java:184) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFrameServer.notifyDataAvailable(WsFrameServer.java:164) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsHttpUpgradeHandler.upgradeDispatch(WsHttpUpgradeHandler.java:152) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.coyote.http11.upgrade.UpgradeProcessorInternal.dispatch(UpgradeProcessorInternal.java:60) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:57) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2025-03-06T11:08:51.074+08:00  INFO 37794 --- [GoBang] [http-nio-8080-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-06T11:08:51.150+08:00  INFO 37794 --- [GoBang] [http-nio-8080-exec-5] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3708cbfe
+2025-03-06T11:08:51.151+08:00  INFO 37794 --- [GoBang] [http-nio-8080-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-06T11:08:51.169+08:00  INFO 37794 --- [GoBang] [http-nio-8080-exec-5] org.mon.gobang.api.UserAPI               : [login] user:User(userId=4, username=zhaoqianqian, password=123, score=1000, totalCount=0, winCount=0)
+2025-03-06T11:08:52.588+08:00  INFO 37794 --- [GoBang] [http-nio-8080-exec-8] org.mon.gobang.api.MatchAPI              : 玩家:zhaoqianqian,进入游戏大厅
+2025-03-06T11:08:54.122+08:00  INFO 37794 --- [GoBang] [http-nio-8080-exec-9] org.mon.gobang.game.Matcher              : 把玩家:zhaoqianqian,加入到normalQueue中
+2025-03-06T11:08:55.039+08:00  INFO 37794 --- [GoBang] [http-nio-8080-exec-10] org.mon.gobang.game.Matcher              : 把玩家:zhaoqianqian移除队列:normalQueue
+2025-03-06T11:09:03.676+08:00  INFO 37794 --- [GoBang] [http-nio-8080-exec-1] org.mon.gobang.game.Matcher              : 把玩家:zhaoqianqian,加入到normalQueue中
+2025-03-06T11:11:08.570+08:00  INFO 37794 --- [GoBang] [http-nio-8080-exec-10] org.mon.gobang.api.UserAPI               : [login] user:User(userId=4, username=zhaoqianqian, password=123, score=1000, totalCount=0, winCount=0)
+2025-03-06T11:11:10.385+08:00  INFO 37794 --- [GoBang] [http-nio-8080-exec-3] org.mon.gobang.game.Matcher              : 把玩家:zhaoqianqian移除队列:normalQueue
+2025-03-06T11:11:47.861+08:00  INFO 37794 --- [GoBang] [http-nio-8080-exec-4] org.mon.gobang.api.UserAPI               : [login] user:User(userId=4, username=zhaoqianqian, password=123, score=1000, totalCount=0, winCount=0)
+2025-03-06T11:11:49.155+08:00  INFO 37794 --- [GoBang] [http-nio-8080-exec-5] org.mon.gobang.game.Matcher              : 把玩家:zhaoqianqian移除队列:normalQueue
+2025-03-06T11:11:53.986+08:00  INFO 37794 --- [GoBang] [http-nio-8080-exec-10] org.mon.gobang.game.Matcher              : 把玩家:zhaoqianqian移除队列:normalQueue
+2025-03-06T11:12:03.473+08:00  INFO 37794 --- [GoBang] [http-nio-8080-exec-9] org.mon.gobang.api.UserAPI               : [login] user:User(userId=4, username=zhaoqianqian, password=123, score=1000, totalCount=0, winCount=0)
+2025-03-06T11:12:04.841+08:00  INFO 37794 --- [GoBang] [http-nio-8080-exec-2] org.mon.gobang.game.Matcher              : 把玩家:zhaoqianqian移除队列:normalQueue
+2025-03-06T11:12:18.399+08:00  INFO 37794 --- [GoBang] [http-nio-8080-exec-4] org.mon.gobang.api.UserAPI               : [login] user:User(userId=2, username=lisi, password=123, score=1000, totalCount=0, winCount=0)
+2025-03-06T11:12:19.578+08:00  INFO 37794 --- [GoBang] [http-nio-8080-exec-7] org.mon.gobang.api.MatchAPI              : 玩家:lisi,进入游戏大厅
+2025-03-06T11:12:42.783+08:00  INFO 37794 --- [GoBang] [http-nio-8080-exec-10] org.mon.gobang.game.Matcher              : 把玩家:zhaoqianqian,加入到normalQueue中
+2025-03-06T11:12:44.576+08:00  INFO 37794 --- [GoBang] [http-nio-8080-exec-9] org.mon.gobang.game.Matcher              : 把玩家:lisi,加入到normalQueue中
+2025-03-06T11:14:23.639+08:00  INFO 37794 --- [GoBang] [http-nio-8080-exec-2] org.mon.gobang.game.Matcher              : 把玩家:zhaoqianqian移除队列:normalQueue
+2025-03-06T11:14:25.132+08:00  INFO 37794 --- [GoBang] [http-nio-8080-exec-4] org.mon.gobang.game.Matcher              : 把玩家:zhaoqianqian,加入到normalQueue中
+2025-03-06T11:14:52.987+08:00  INFO 37794 --- [GoBang] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-06T11:14:52.989+08:00  INFO 37794 --- [GoBang] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-06T11:14:52.991+08:00  INFO 37794 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-06T11:14:52.996+08:00  INFO 37794 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-06T11:14:52.997+08:00  INFO 37794 --- [GoBang] [SpringApplicationShutdownHook] org.mon.gobang.game.Matcher              : 把玩家:zhaoqianqian移除队列:normalQueue
+2025-03-06T11:14:52.997+08:00  INFO 37794 --- [GoBang] [SpringApplicationShutdownHook] org.mon.gobang.game.Matcher              : 把玩家:zhaoqianqian移除队列:normalQueue
+2025-03-06T11:14:52.997+08:00  INFO 37794 --- [GoBang] [SpringApplicationShutdownHook] org.mon.gobang.game.Matcher              : 把玩家:lisi移除队列:normalQueue
+2025-03-06T11:14:52.997+08:00  INFO 37794 --- [GoBang] [SpringApplicationShutdownHook] org.mon.gobang.game.Matcher              : 把玩家:lisi移除队列:normalQueue
+2025-03-06T11:14:54.445+08:00  INFO 52443 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Starting GoBangApplication using Java 17.0.11 with PID 52443 (/Users/zhaoqianqian/IDEAUl/Project/GoBang/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/GoBang)
+2025-03-06T11:14:54.445+08:00  INFO 52443 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T11:14:54.761+08:00  INFO 52443 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-06T11:14:54.766+08:00  INFO 52443 --- [GoBang] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-06T11:14:54.767+08:00  INFO 52443 --- [GoBang] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-06T11:14:54.780+08:00  INFO 52443 --- [GoBang] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-06T11:14:54.781+08:00  INFO 52443 --- [GoBang] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 321 ms
+2025-03-06T11:14:54.983+08:00  INFO 52443 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-06T11:14:54.988+08:00  INFO 52443 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Started GoBangApplication in 0.712 seconds (process running for 0.884)
+2025-03-06T11:15:00.446+08:00  INFO 52443 --- [GoBang] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-06T11:15:00.446+08:00  INFO 52443 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-06T11:15:00.447+08:00  INFO 52443 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-06T11:15:03.323+08:00 ERROR 52443 --- [GoBang] [http-nio-8080-exec-4] w.s.h.ExceptionWebSocketHandlerDecorator : Closing session due to exception for StandardWebSocketSession[id=520cc775-4128-cd7c-a85b-1848e59a884d, uri=ws://127.0.0.1:8080/findMatch]
+
+java.lang.NullPointerException: Cannot invoke "org.mon.gobang.model.User.getScore()" because "user" is null
+	at org.mon.gobang.game.Matcher.add(Matcher.java:36) ~[classes/:na]
+	at org.mon.gobang.api.MatchAPI.handleTextMessage(MatchAPI.java:82) ~[classes/:na]
+	at org.springframework.web.socket.handler.AbstractWebSocketHandler.handleMessage(AbstractWebSocketHandler.java:43) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.handler.WebSocketHandlerDecorator.handleMessage(WebSocketHandlerDecorator.java:75) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.handler.LoggingWebSocketHandlerDecorator.handleMessage(LoggingWebSocketHandlerDecorator.java:56) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.handler.ExceptionWebSocketHandlerDecorator.handleMessage(ExceptionWebSocketHandlerDecorator.java:58) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter.handleTextMessage(StandardWebSocketHandlerAdapter.java:113) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter$3.onMessage(StandardWebSocketHandlerAdapter.java:84) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter$3.onMessage(StandardWebSocketHandlerAdapter.java:81) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.apache.tomcat.websocket.WsFrameBase.sendMessageText(WsFrameBase.java:390) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFrameServer.sendMessageText(WsFrameServer.java:130) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsFrameBase.processDataText(WsFrameBase.java:484) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsFrameBase.processData(WsFrameBase.java:284) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsFrameBase.processInputBuffer(WsFrameBase.java:130) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFrameServer.onDataAvailable(WsFrameServer.java:85) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFrameServer.doOnDataAvailable(WsFrameServer.java:184) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFrameServer.notifyDataAvailable(WsFrameServer.java:164) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsHttpUpgradeHandler.upgradeDispatch(WsHttpUpgradeHandler.java:152) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.coyote.http11.upgrade.UpgradeProcessorInternal.dispatch(UpgradeProcessorInternal.java:60) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:57) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2025-03-06T11:15:03.328+08:00  WARN 52443 --- [GoBang] [http-nio-8080-exec-4] w.s.h.ExceptionWebSocketHandlerDecorator : Unhandled exception after connection closed for ExceptionWebSocketHandlerDecorator [delegate=LoggingWebSocketHandlerDecorator [delegate=org.mon.gobang.api.MatchAPI@7945b206]]
+
+java.lang.IllegalStateException: Message will not be sent because the WebSocket session has been closed
+	at org.apache.tomcat.websocket.WsRemoteEndpointImplBase.writeMessagePart(WsRemoteEndpointImplBase.java:455) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsRemoteEndpointImplBase.sendMessageBlockInternal(WsRemoteEndpointImplBase.java:313) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsRemoteEndpointImplBase.sendMessageBlock(WsRemoteEndpointImplBase.java:266) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsRemoteEndpointImplBase.sendMessageBlock(WsRemoteEndpointImplBase.java:250) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsRemoteEndpointImplBase.sendPartialString(WsRemoteEndpointImplBase.java:223) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsRemoteEndpointBasic.sendText(WsRemoteEndpointBasic.java:48) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketSession.sendTextMessage(StandardWebSocketSession.java:217) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.adapter.AbstractWebSocketSession.sendMessage(AbstractWebSocketSession.java:108) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.mon.gobang.api.MatchAPI.afterConnectionClosed(MatchAPI.java:142) ~[classes/:na]
+	at org.springframework.web.socket.handler.WebSocketHandlerDecorator.afterConnectionClosed(WebSocketHandlerDecorator.java:85) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.handler.LoggingWebSocketHandlerDecorator.afterConnectionClosed(LoggingWebSocketHandlerDecorator.java:72) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.handler.ExceptionWebSocketHandlerDecorator.afterConnectionClosed(ExceptionWebSocketHandlerDecorator.java:78) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter.onClose(StandardWebSocketHandlerAdapter.java:144) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.apache.tomcat.websocket.WsSession.fireEndpointOnClose(WsSession.java:733) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsSession.doClose(WsSession.java:590) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsSession.doClose(WsSession.java:556) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsSession.close(WsSession.java:544) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketSession.closeInternal(StandardWebSocketSession.java:237) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.adapter.AbstractWebSocketSession.close(AbstractWebSocketSession.java:144) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.handler.ExceptionWebSocketHandlerDecorator.tryCloseWithError(ExceptionWebSocketHandlerDecorator.java:94) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.handler.ExceptionWebSocketHandlerDecorator.handleMessage(ExceptionWebSocketHandlerDecorator.java:61) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter.handleTextMessage(StandardWebSocketHandlerAdapter.java:113) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter$3.onMessage(StandardWebSocketHandlerAdapter.java:84) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter$3.onMessage(StandardWebSocketHandlerAdapter.java:81) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.apache.tomcat.websocket.WsFrameBase.sendMessageText(WsFrameBase.java:390) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFrameServer.sendMessageText(WsFrameServer.java:130) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsFrameBase.processDataText(WsFrameBase.java:484) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsFrameBase.processData(WsFrameBase.java:284) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsFrameBase.processInputBuffer(WsFrameBase.java:130) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFrameServer.onDataAvailable(WsFrameServer.java:85) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFrameServer.doOnDataAvailable(WsFrameServer.java:184) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFrameServer.notifyDataAvailable(WsFrameServer.java:164) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsHttpUpgradeHandler.upgradeDispatch(WsHttpUpgradeHandler.java:152) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.coyote.http11.upgrade.UpgradeProcessorInternal.dispatch(UpgradeProcessorInternal.java:60) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:57) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2025-03-06T11:15:11.482+08:00  INFO 52443 --- [GoBang] [http-nio-8080-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-06T11:15:11.550+08:00  INFO 52443 --- [GoBang] [http-nio-8080-exec-5] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@40ee30e4
+2025-03-06T11:15:11.551+08:00  INFO 52443 --- [GoBang] [http-nio-8080-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-06T11:15:11.565+08:00  INFO 52443 --- [GoBang] [http-nio-8080-exec-5] org.mon.gobang.api.UserAPI               : [login] user:User(userId=2, username=lisi, password=123, score=1000, totalCount=0, winCount=0)
+2025-03-06T11:15:12.905+08:00  INFO 52443 --- [GoBang] [http-nio-8080-exec-7] org.mon.gobang.api.MatchAPI              : 玩家:lisi,进入游戏大厅
+2025-03-06T11:15:24.120+08:00  INFO 52443 --- [GoBang] [http-nio-8080-exec-8] org.mon.gobang.api.UserAPI               : [login] user:User(userId=4, username=zhaoqianqian, password=123, score=1000, totalCount=0, winCount=0)
+2025-03-06T11:15:25.383+08:00  INFO 52443 --- [GoBang] [http-nio-8080-exec-1] org.mon.gobang.api.MatchAPI              : 玩家:zhaoqianqian,进入游戏大厅
+2025-03-06T11:15:27.820+08:00  INFO 52443 --- [GoBang] [http-nio-8080-exec-2] org.mon.gobang.game.Matcher              : 把玩家:zhaoqianqian,加入到normalQueue中
+2025-03-06T11:15:29.527+08:00  INFO 52443 --- [GoBang] [http-nio-8080-exec-3] org.mon.gobang.game.Matcher              : 把玩家:lisi,加入到normalQueue中
+2025-03-06T11:16:08.824+08:00  INFO 52443 --- [GoBang] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-06T11:16:08.826+08:00  INFO 52443 --- [GoBang] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-06T11:16:08.828+08:00  INFO 52443 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-06T11:16:08.831+08:00  INFO 52443 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-06T11:16:08.832+08:00  INFO 52443 --- [GoBang] [SpringApplicationShutdownHook] org.mon.gobang.game.Matcher              : 把玩家:lisi移除队列:normalQueue
+2025-03-06T11:16:08.832+08:00  INFO 52443 --- [GoBang] [SpringApplicationShutdownHook] org.mon.gobang.game.Matcher              : 把玩家:lisi移除队列:normalQueue
+2025-03-06T11:16:08.832+08:00  INFO 52443 --- [GoBang] [SpringApplicationShutdownHook] org.mon.gobang.game.Matcher              : 把玩家:zhaoqianqian移除队列:normalQueue
+2025-03-06T11:16:08.832+08:00  INFO 52443 --- [GoBang] [SpringApplicationShutdownHook] org.mon.gobang.game.Matcher              : 把玩家:zhaoqianqian移除队列:normalQueue
+2025-03-06T11:16:10.349+08:00  INFO 55344 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Starting GoBangApplication using Java 17.0.11 with PID 55344 (/Users/zhaoqianqian/IDEAUl/Project/GoBang/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/GoBang)
+2025-03-06T11:16:10.350+08:00  INFO 55344 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T11:16:10.665+08:00  INFO 55344 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-06T11:16:10.670+08:00  INFO 55344 --- [GoBang] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-06T11:16:10.670+08:00  INFO 55344 --- [GoBang] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-06T11:16:10.683+08:00  INFO 55344 --- [GoBang] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-06T11:16:10.683+08:00  INFO 55344 --- [GoBang] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 319 ms
+2025-03-06T11:16:10.878+08:00  INFO 55344 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-06T11:16:10.882+08:00  INFO 55344 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Started GoBangApplication in 0.698 seconds (process running for 0.895)
+2025-03-06T11:16:21.676+08:00  INFO 55344 --- [GoBang] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-06T11:16:21.677+08:00  INFO 55344 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-06T11:16:21.678+08:00  INFO 55344 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-06T11:16:58.213+08:00  INFO 55344 --- [GoBang] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-06T11:16:58.219+08:00  INFO 55344 --- [GoBang] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-06T11:16:59.155+08:00  INFO 57216 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Starting GoBangApplication using Java 17.0.11 with PID 57216 (/Users/zhaoqianqian/IDEAUl/Project/GoBang/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/GoBang)
+2025-03-06T11:16:59.155+08:00  INFO 57216 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T11:16:59.506+08:00  INFO 57216 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-06T11:16:59.511+08:00  INFO 57216 --- [GoBang] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-06T11:16:59.511+08:00  INFO 57216 --- [GoBang] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-06T11:16:59.525+08:00  INFO 57216 --- [GoBang] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-06T11:16:59.526+08:00  INFO 57216 --- [GoBang] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 356 ms
+2025-03-06T11:16:59.747+08:00  INFO 57216 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-06T11:16:59.752+08:00  INFO 57216 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Started GoBangApplication in 0.779 seconds (process running for 0.955)
+2025-03-06T11:17:15.449+08:00  INFO 57216 --- [GoBang] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-06T11:17:15.449+08:00  INFO 57216 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-06T11:17:15.450+08:00  INFO 57216 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-06T11:17:15.476+08:00  INFO 57216 --- [GoBang] [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-06T11:17:15.531+08:00  INFO 57216 --- [GoBang] [http-nio-8080-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@281b289d
+2025-03-06T11:17:15.531+08:00  INFO 57216 --- [GoBang] [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-06T11:17:15.545+08:00  INFO 57216 --- [GoBang] [http-nio-8080-exec-2] org.mon.gobang.api.UserAPI               : [login] user:User(userId=4, username=zhaoqianqian, password=123, score=1000, totalCount=0, winCount=0)
+2025-03-06T11:17:15.545+08:00  INFO 57216 --- [GoBang] [http-nio-8080-exec-1] org.mon.gobang.api.UserAPI               : [login] user:User(userId=4, username=zhaoqianqian, password=123, score=1000, totalCount=0, winCount=0)
+2025-03-06T11:17:18.125+08:00  INFO 57216 --- [GoBang] [http-nio-8080-exec-5] org.mon.gobang.api.MatchAPI              : 玩家:zhaoqianqian,进入游戏大厅
+2025-03-06T11:17:20.666+08:00  INFO 57216 --- [GoBang] [http-nio-8080-exec-6] org.mon.gobang.api.UserAPI               : [login] user:User(userId=2, username=lisi, password=123, score=1000, totalCount=0, winCount=0)
+2025-03-06T11:17:21.752+08:00  INFO 57216 --- [GoBang] [http-nio-8080-exec-9] org.mon.gobang.api.MatchAPI              : 玩家:lisi,进入游戏大厅
+2025-03-06T11:17:25.818+08:00  INFO 57216 --- [GoBang] [http-nio-8080-exec-10] org.mon.gobang.game.Matcher              : 把玩家:zhaoqianqian,加入到normalQueue中
+2025-03-06T11:17:27.759+08:00  INFO 57216 --- [GoBang] [http-nio-8080-exec-2] org.mon.gobang.game.Matcher              : 把玩家:lisi,加入到normalQueue中
+2025-03-06T11:17:27.772+08:00  INFO 57216 --- [GoBang] [http-nio-8080-exec-3] org.mon.gobang.game.Matcher              : 把玩家:lisi移除队列:normalQueue
+2025-03-06T11:17:27.772+08:00  INFO 57216 --- [GoBang] [http-nio-8080-exec-1] org.mon.gobang.game.Matcher              : 把玩家:zhaoqianqian移除队列:normalQueue
+2025-03-06T11:24:21.598+08:00  INFO 57216 --- [GoBang] [http-nio-8080-exec-10] org.mon.gobang.api.UserAPI               : [login] user:User(userId=4, username=zhaoqianqian, password=123, score=1000, totalCount=0, winCount=0)
+2025-03-06T11:24:22.687+08:00  INFO 57216 --- [GoBang] [http-nio-8080-exec-1] org.mon.gobang.api.MatchAPI              : 玩家:zhaoqianqian,进入游戏大厅
+2025-03-06T11:24:32.014+08:00  INFO 57216 --- [GoBang] [http-nio-8080-exec-5] org.mon.gobang.api.UserAPI               : [login] user:User(userId=4, username=zhaoqianqian, password=123, score=1000, totalCount=0, winCount=0)
+2025-03-06T11:24:33.210+08:00  INFO 57216 --- [GoBang] [http-nio-8080-exec-7] org.mon.gobang.game.Matcher              : 把玩家:zhaoqianqian移除队列:normalQueue
+2025-03-06T11:27:46.948+08:00  INFO 57216 --- [GoBang] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-06T11:27:46.951+08:00  INFO 57216 --- [GoBang] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-06T11:27:46.953+08:00  INFO 57216 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-06T11:27:46.958+08:00  INFO 57216 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-06T11:27:46.959+08:00  INFO 57216 --- [GoBang] [SpringApplicationShutdownHook] org.mon.gobang.game.Matcher              : 把玩家:zhaoqianqian移除队列:normalQueue
+2025-03-06T11:27:46.959+08:00  INFO 57216 --- [GoBang] [SpringApplicationShutdownHook] org.mon.gobang.game.Matcher              : 把玩家:zhaoqianqian移除队列:normalQueue
+2025-03-06T17:19:08.161+08:00  INFO 63196 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Starting GoBangApplication using Java 17.0.11 with PID 63196 (/Users/zhaoqianqian/IDEAUl/Project/GoBang/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/GoBang)
+2025-03-06T17:19:08.162+08:00  INFO 63196 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T17:19:08.501+08:00  INFO 63196 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-06T17:19:08.507+08:00  INFO 63196 --- [GoBang] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-06T17:19:08.507+08:00  INFO 63196 --- [GoBang] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-06T17:19:08.519+08:00  INFO 63196 --- [GoBang] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-06T17:19:08.520+08:00  INFO 63196 --- [GoBang] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 343 ms
+2025-03-06T17:19:08.729+08:00  INFO 63196 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-06T17:19:08.733+08:00  INFO 63196 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Started GoBangApplication in 0.757 seconds (process running for 0.986)
+2025-03-06T17:19:19.750+08:00  INFO 63196 --- [GoBang] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-06T17:19:19.750+08:00  INFO 63196 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-06T17:19:19.751+08:00  INFO 63196 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-06T17:24:06.255+08:00  INFO 63196 --- [GoBang] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-06T17:24:06.262+08:00  INFO 63196 --- [GoBang] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-06T17:32:22.932+08:00  INFO 95810 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Starting GoBangApplication using Java 17.0.11 with PID 95810 (/Users/zhaoqianqian/IDEAUl/Project/GoBang/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/GoBang)
+2025-03-06T17:32:22.933+08:00  INFO 95810 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T17:32:23.270+08:00  INFO 95810 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-06T17:32:23.275+08:00  INFO 95810 --- [GoBang] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-06T17:32:23.275+08:00  INFO 95810 --- [GoBang] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-06T17:32:23.288+08:00  INFO 95810 --- [GoBang] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-06T17:32:23.288+08:00  INFO 95810 --- [GoBang] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 340 ms
+2025-03-06T17:32:23.484+08:00  INFO 95810 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-06T17:32:23.488+08:00  INFO 95810 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Started GoBangApplication in 0.727 seconds (process running for 0.915)
+2025-03-06T17:32:32.614+08:00  INFO 95810 --- [GoBang] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-06T17:32:32.614+08:00  INFO 95810 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-06T17:32:32.616+08:00  INFO 95810 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-06T17:32:32.684+08:00  INFO 95810 --- [GoBang] [http-nio-8080-exec-5] org.mon.gobang.api.TestApi               : 连接成功!
+2025-03-06T17:38:13.619+08:00  INFO 95810 --- [GoBang] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-06T17:38:13.627+08:00  INFO 95810 --- [GoBang] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-06T17:38:13.635+08:00  WARN 95810 --- [GoBang] [SpringApplicationShutdownHook] org.mon.gobang.api.TestApi               : 连接异常!
+2025-03-06T17:38:13.635+08:00  INFO 95810 --- [GoBang] [SpringApplicationShutdownHook] org.mon.gobang.api.TestApi               : 连接关闭!
+2025-03-06T17:38:14.807+08:00  INFO 12307 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Starting GoBangApplication using Java 17.0.11 with PID 12307 (/Users/zhaoqianqian/IDEAUl/Project/GoBang/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/GoBang)
+2025-03-06T17:38:14.808+08:00  INFO 12307 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T17:38:15.126+08:00  INFO 12307 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-06T17:38:15.130+08:00  INFO 12307 --- [GoBang] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-06T17:38:15.130+08:00  INFO 12307 --- [GoBang] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-06T17:38:15.143+08:00  INFO 12307 --- [GoBang] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-06T17:38:15.143+08:00  INFO 12307 --- [GoBang] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 322 ms
+2025-03-06T17:38:15.335+08:00  INFO 12307 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-06T17:38:15.339+08:00  INFO 12307 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Started GoBangApplication in 0.711 seconds (process running for 0.893)
+2025-03-06T17:38:21.047+08:00  INFO 12307 --- [GoBang] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-06T17:38:21.048+08:00  INFO 12307 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-06T17:38:21.049+08:00  INFO 12307 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-06T17:38:21.153+08:00  INFO 12307 --- [GoBang] [http-nio-8080-exec-5] org.mon.gobang.api.TestApi               : 连接成功!
+2025-03-06T17:39:05.379+08:00  INFO 12307 --- [GoBang] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-06T17:39:05.385+08:00  INFO 12307 --- [GoBang] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-06T17:39:05.389+08:00  WARN 12307 --- [GoBang] [SpringApplicationShutdownHook] org.mon.gobang.api.TestApi               : 连接异常!
+2025-03-06T17:39:05.390+08:00  INFO 12307 --- [GoBang] [SpringApplicationShutdownHook] org.mon.gobang.api.TestApi               : 连接关闭!
+2025-03-06T17:39:06.517+08:00  INFO 14305 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Starting GoBangApplication using Java 17.0.11 with PID 14305 (/Users/zhaoqianqian/IDEAUl/Project/GoBang/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/GoBang)
+2025-03-06T17:39:06.517+08:00  INFO 14305 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T17:39:06.835+08:00  INFO 14305 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-06T17:39:06.839+08:00  INFO 14305 --- [GoBang] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-06T17:39:06.839+08:00  INFO 14305 --- [GoBang] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-06T17:39:06.852+08:00  INFO 14305 --- [GoBang] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-06T17:39:06.852+08:00  INFO 14305 --- [GoBang] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 320 ms
+2025-03-06T17:39:07.050+08:00  INFO 14305 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-06T17:39:07.054+08:00  INFO 14305 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Started GoBangApplication in 0.72 seconds (process running for 0.897)
+2025-03-06T17:39:11.833+08:00  INFO 14305 --- [GoBang] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-06T17:39:11.834+08:00  INFO 14305 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-06T17:39:11.835+08:00  INFO 14305 --- [GoBang] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-06T17:39:11.905+08:00  INFO 14305 --- [GoBang] [http-nio-8080-exec-4] org.mon.gobang.api.TestApi               : 连接成功!
+2025-03-06T17:44:55.135+08:00  INFO 14305 --- [GoBang] [http-nio-8080-exec-7] org.mon.gobang.api.TestApi               : 连接关闭!
+2025-03-06T17:45:03.013+08:00  INFO 14305 --- [GoBang] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-06T17:45:03.021+08:00  INFO 14305 --- [GoBang] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-06T17:45:45.770+08:00  INFO 29863 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Starting GoBangApplication using Java 17.0.11 with PID 29863 (/Users/zhaoqianqian/IDEAUl/Project/GoBang/target/classes started by zhaoqianqian in /Users/zhaoqianqian/IDEAUl/Project/GoBang)
+2025-03-06T17:45:45.771+08:00  INFO 29863 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T17:45:46.103+08:00  INFO 29863 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-06T17:45:46.108+08:00  INFO 29863 --- [GoBang] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-06T17:45:46.108+08:00  INFO 29863 --- [GoBang] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-06T17:45:46.121+08:00  INFO 29863 --- [GoBang] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-06T17:45:46.121+08:00  INFO 29863 --- [GoBang] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 337 ms
+2025-03-06T17:45:46.312+08:00  INFO 29863 --- [GoBang] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-06T17:45:46.316+08:00  INFO 29863 --- [GoBang] [main] org.mon.gobang.GoBangApplication         : Started GoBangApplication in 0.71 seconds (process running for 0.905)

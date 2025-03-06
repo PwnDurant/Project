@@ -3,8 +3,9 @@ package org.mon.gobang.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.jdbc.Null;
+import org.mon.gobang.game.MatchRequest;
 import org.mon.gobang.game.MatchResponse;
+import org.mon.gobang.game.Matcher;
 import org.mon.gobang.game.OnlineUserManager;
 import org.mon.gobang.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,9 @@ public class MatchAPI extends TextWebSocketHandler {
 
     @Autowired
     private OnlineUserManager onlineUserManager;
+
+    @Autowired
+    private Matcher matcher;
 
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
@@ -65,6 +69,36 @@ public class MatchAPI extends TextWebSocketHandler {
     @Override
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
 
+//        实现处理开始匹配请求，和停止匹配请求
+        User user=(User) session.getAttributes().get("user");
+//        获取到客户端给服务器发送数据
+        String payload= message.getPayload();
+//        当前是一个json，要转换为java对象
+        MatchRequest matchRequest=objectMapper.readValue(payload, MatchRequest.class);
+        MatchResponse matchResponse=new MatchResponse();
+        if(matchRequest.getMessage().equals("startMatch")){
+//            进入匹配队列
+//            TODO
+            matcher.add(user);
+//            把玩家信息放入匹配队列之后，就返回一个响应给客户端
+            matchResponse.setOk(true);
+            matchResponse.setMessage("startMatch");
+        } else if (matchRequest.getMessage().equals("stopMatch")) {
+//            退出匹配队列
+//            TODO
+            matcher.remove(user);
+//            把当前用户从队列移除
+            matchResponse.setOk(true);
+            matchResponse.setMessage("stopMatch");
+        }else{
+//            非法情况
+            matchResponse.setOk(false);
+            matchResponse.setReason("非法匹配请求！");
+        }
+//        服务器在处理匹配请求的时候，应该要返回一个请求
+        String jsonString=objectMapper.writeValueAsString(matchResponse);
+        session.sendMessage(new TextMessage(jsonString));
+
     }
 
     @Override
@@ -76,6 +110,7 @@ public class MatchAPI extends TextWebSocketHandler {
             if(webSocketSession==session){
                 onlineUserManager.exitGameHall(user.getUserId());
             }
+            matcher.remove(user);
         }catch (NullPointerException e){
             //            表示未登入
             e.printStackTrace();
@@ -96,6 +131,7 @@ public class MatchAPI extends TextWebSocketHandler {
             if(webSocketSession==session){
                 onlineUserManager.exitGameHall(user.getUserId());
             }
+            matcher.remove(user);
         }catch (NullPointerException e){
 
             //            表示未登入
