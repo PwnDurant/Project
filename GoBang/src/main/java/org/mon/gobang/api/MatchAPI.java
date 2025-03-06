@@ -35,6 +35,20 @@ public class MatchAPI extends TextWebSocketHandler {
 
         try{
             User user=(User)session.getAttributes().get("user");
+
+//            先判断当前用户是否是在线状态，如果是，就不应该进行后续操作
+            WebSocketSession webSocketSession=onlineUserManager.getFromGameHall(user.getUserId());
+            if(webSocketSession!=null){
+//                当前用户已经登入
+//                告诉客户端不能重复登入
+                MatchResponse response=new MatchResponse();
+                response.setOk(false);
+                response.setReason("禁止多开！");
+                session.sendMessage(new TextMessage(objectMapper.writeValueAsString(response)));
+                session.close();
+                return ;
+            }
+
 //        把玩家设置为在线状态
             onlineUserManager.enterGameHall(user.getUserId(),session);
             log.info("玩家:{},进入游戏大厅",user.getUsername());
@@ -58,7 +72,10 @@ public class MatchAPI extends TextWebSocketHandler {
         try{
             //        玩家下线，从onlineUserManager删除
             User user=(User)session.getAttributes().get("user");
-            onlineUserManager.exitGameHall(user.getUserId());
+            WebSocketSession webSocketSession=onlineUserManager.getFromGameHall(user.getUserId());
+            if(webSocketSession==session){
+                onlineUserManager.exitGameHall(user.getUserId());
+            }
         }catch (NullPointerException e){
             //            表示未登入
             e.printStackTrace();
@@ -75,7 +92,10 @@ public class MatchAPI extends TextWebSocketHandler {
         try{
             //        玩家下线，从onlineUserManager删除
             User user=(User)session.getAttributes().get("user");
-            onlineUserManager.exitGameHall(user.getUserId());
+            WebSocketSession webSocketSession=onlineUserManager.getFromGameHall(user.getUserId());
+            if(webSocketSession==session){
+                onlineUserManager.exitGameHall(user.getUserId());
+            }
         }catch (NullPointerException e){
 
             //            表示未登入
