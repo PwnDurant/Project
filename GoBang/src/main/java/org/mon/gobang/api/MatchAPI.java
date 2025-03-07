@@ -42,14 +42,16 @@ public class MatchAPI extends TextWebSocketHandler {
 
 //            先判断当前用户是否是在线状态，如果是，就不应该进行后续操作
             WebSocketSession webSocketSession=onlineUserManager.getFromGameHall(user.getUserId());
-            if(webSocketSession!=null){
+            if(onlineUserManager.getFromGameHall(user.getUserId())!=null||onlineUserManager.getFromGameRoom(user.getUserId())!=null){
 //                当前用户已经登入
 //                告诉客户端不能重复登入
                 MatchResponse response=new MatchResponse();
-                response.setOk(false);
+                response.setOk(true);
                 response.setReason("禁止多开！");
+                response.setMessage("repeat");
                 session.sendMessage(new TextMessage(objectMapper.writeValueAsString(response)));
-                session.close();
+//                session.close();
+//                返回一个特殊的message
                 return ;
             }
 
@@ -58,11 +60,13 @@ public class MatchAPI extends TextWebSocketHandler {
             log.info("玩家:{},进入游戏大厅",user.getUsername());
         }catch (NullPointerException e){
 //            表示未登入
-            e.printStackTrace();
-            MatchResponse matchResponse=new MatchResponse();
-            matchResponse.setOk(false);
-            matchResponse.setReason("您尚未登入，不能进行后续匹配！");
-            session.sendMessage(new TextMessage(objectMapper.writeValueAsString(matchResponse)));
+
+            System.out.println("当前用户未登入");
+//            e.printStackTrace();
+//            MatchResponse matchResponse=new MatchResponse();
+//            matchResponse.setOk(false);
+//            matchResponse.setReason("您尚未登入，不能进行后续匹配！");
+//            session.sendMessage(new TextMessage(objectMapper.writeValueAsString(matchResponse)));
         }
     }
 
@@ -113,11 +117,12 @@ public class MatchAPI extends TextWebSocketHandler {
             matcher.remove(user);
         }catch (NullPointerException e){
             //            表示未登入
-            e.printStackTrace();
-            MatchResponse matchResponse=new MatchResponse();
-            matchResponse.setOk(false);
-            matchResponse.setReason("您尚未登入，不能进行后续匹配！");
-            session.sendMessage(new TextMessage(objectMapper.writeValueAsString(matchResponse)));
+            System.out.println("当前用户未登入");
+//            e.printStackTrace();
+//            MatchResponse matchResponse=new MatchResponse();
+//            matchResponse.setOk(false);
+//            matchResponse.setReason("您尚未登入，不能进行后续匹配！");
+//            session.sendMessage(new TextMessage(objectMapper.writeValueAsString(matchResponse)));
         }
 
     }

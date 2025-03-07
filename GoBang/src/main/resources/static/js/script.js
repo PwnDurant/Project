@@ -21,9 +21,8 @@ function setScreenText(me) {
 //////////////////////////////////////////////////
 // 初始化 websocket
 //////////////////////////////////////////////////
-// 
 // 此处写的路径要写作 /game, 不要写作 /game/
-let websocketUrl = "ws://" + location.host + "/test";
+let websocketUrl = "ws://" + location.host + "/game";
 let websocket = new WebSocket(websocketUrl);
 
 websocket.onopen = function() {
@@ -64,7 +63,7 @@ websocket.onmessage = function(event) {
         initGame();
         // 设置显示区域的内容
         setScreenText(gameInfo.isWhite);
-    } else if (resp.message == 'repeatConnection') {
+    } else if (resp.message == 'repeat') {
         alert("检测到游戏多开! 请使用其他账号登录!");
         location.assign("/login.html");
     }
@@ -75,6 +74,7 @@ websocket.onmessage = function(event) {
 //////////////////////////////////////////////////
 function initGame() {
     // 是我下还是对方下. 根据服务器分配的先后手情况决定
+    console.log("初始化")
     let me = gameInfo.isWhite;
     // 游戏是否结束
     let over = false;
@@ -88,11 +88,6 @@ function initGame() {
     }
     let chess = document.querySelector('#chess');
     let context = chess.getContext('2d');
-    if (!chess) {
-        console.error("获取 canvas 失败！");
-    }
-    if (!context) {
-        console.error("获取 canvas 上下文失败！");
     context.strokeStyle = "#BFBFBF";
     // 背景图片
     let logo = new Image();
@@ -221,4 +216,4 @@ function initGame() {
             fatherDiv.appendChild(backBtn);
         }
     }
-}}
+}
