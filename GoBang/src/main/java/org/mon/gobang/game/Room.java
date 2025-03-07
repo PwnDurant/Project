@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.mon.gobang.GoBangApplication;
 import org.mon.gobang.model.User;
+import org.mon.gobang.model.UserMapper;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 import java.io.IOException;
@@ -19,7 +20,6 @@ public class Room {
 
     private int whiteUser;
 
-
     private User user1;
     private User user2;
 
@@ -31,6 +31,7 @@ public class Room {
 //        通过在入口类的context手动获取
         onlineUserManager= GoBangApplication.context.getBean(OnlineUserManager.class);
         roomManager=GoBangApplication.context.getBean(RoomManager.class);
+        userMapper=GoBangApplication.context.getBean(UserMapper.class);
     }
 
 
@@ -53,6 +54,8 @@ public class Room {
 
 //    @Resource(name = "roomManager")
     private RoomManager roomManager;
+
+    private UserMapper userMapper;
 
     public void putChess(String jsonString) throws IOException {
 //    记录当前落子的位置
@@ -104,6 +107,13 @@ public class Room {
 //        如果胜负已分
         if(response.getWinner()!=0){
             System.out.println("开始销毁房间");
+
+//            更新获胜和失败的信息
+            int winUserId= response.getWinner();
+            int loseUserId=response.getWinner()==user1.getUserId()?user2.getUserId():user1.getUserId();
+            userMapper.userWin(winUserId);
+            userMapper.userLose(loseUserId);
+
             roomManager.del(roomId,user1.getUserId(),user2.getUserId());
         }
 

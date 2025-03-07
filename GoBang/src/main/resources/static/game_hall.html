@@ -36,7 +36,8 @@
 
         // 此处进行初始化websocket，并实现前端的匹配逻辑
         // 创建Websocket实例
-        let websocket = new WebSocket("ws://127.0.0.1:8080/findMatch");
+        let websocketUrl = 'ws://' + location.host + '/findMatch';
+        let websocket = new WebSocket(websocketUrl);
         websocket.onopen = function () {
             console.log("连接建立");
         }
@@ -66,11 +67,11 @@
             } else if (resp.message == 'matchSuccess') {
                 // 已经匹配到对手了
                 console.log("进入游戏房间");
-                location.href = '/game_room.html';
+                location.replace("/game_room.html");
 
             } else if (resp.message == 'repeat') {
                 alert("当前监测到多开，请使用其它账号！");
-                location.href = "/login.html"
+                location.replace("/login.html");
             } else {
                 console.log("收到了非法的响应:message=" + resp.message);
 
@@ -108,7 +109,7 @@
             } else {
                 // 说明连接当前是异常的状态
                 alert("当前您的连接已经断开，请重新登入!");
-                location.href = "/login.html"
+                location.replace("/login.html");
             }
         }
     </script>

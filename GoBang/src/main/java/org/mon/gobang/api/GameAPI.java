@@ -3,6 +3,7 @@ package org.mon.gobang.api;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.mon.gobang.game.*;
 import org.mon.gobang.model.User;
+import org.mon.gobang.model.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.CloseStatus;
@@ -20,6 +21,9 @@ public class GameAPI extends TextWebSocketHandler {
 
     @Autowired
     private RoomManager roomManager;
+
+    @Autowired
+    private UserMapper userMapper;
 
     @Autowired
     private OnlineUserManager onlineUserManager;
@@ -112,6 +116,8 @@ public class GameAPI extends TextWebSocketHandler {
             onlineUserManager.exitGameRoom(user.getUserId());
         }
         System.out.println("当前用户"+user.getUserId()+"离开房间");
+        //        通知对手获胜
+        noticeThatUserWin(user);
 
     }
 
@@ -143,32 +149,40 @@ public class GameAPI extends TextWebSocketHandler {
         Room room=roomManager.getRoomByUserId(user.getUserId());
 //        3,通过room对象来处理这次具体的请求
         room.putChess(message.getPayload());
-//        通知对手获胜
-        noticeThatUserWin(user);
+
     }
 
     private void noticeThatUserWin(User user) throws IOException {
-//        根据当前玩家找到玩家所在的房间
-        Room room=roomManager.getRoomByUserId(user.getUserId());
-        if(room==null){
-//            这个情况意味着房间已经释放了，也没有对手了
-            System.out.println("房间已经释放");
+        // 1. 根据当前玩家, 找到玩家所在的房间
+        Room room = roomManager.getRoomByUserId(user.getUserId());
+        if (room == null) {
+            // 这个情况意味着房间已经被释放了, 也就没有 "对手" 了
+            System.out.println("当前房间已经释放, 无需通知对手!");
             return;
         }
-//        找到对手
-        User thatUser=(user==room.getUser1())?room.getUser2():room.getUser1();
-//        找到对手的在线状态
-        WebSocketSession webSocketSession= onlineUserManager.getFromGameRoom(thatUser.getUserId());
-        if(webSocketSession==null){
-//            意味着对手也掉线了
-            System.out.println("两个都掉线了，无需通知");
-            return ;
+
+        // 2. 根据房间找到对手
+        User thatUser = (user == room.getUser1()) ? room.getUser2() : room.getUser1();
+        // 3. 找到对手的在线状态
+        WebSocketSession webSocketSession = onlineUserManager.getFromGameRoom(thatUser.getUserId());
+        if (webSocketSession == null) {
+            // 这就意味着对手也掉线了!
+            System.out.println("对手也已经掉线了, 无需通知!");
+            return;
         }
-//        构造响应通知对手
-        GameResponse response=new GameResponse();
-        response.setMessage("putChess");
-        response.setUserId(thatUser.getUserId());
-        response.setWinner(thatUser.getUserId());
-        webSocketSession.sendMessage(new TextMessage(objectMapper.writeValueAsString(response)));
+        // 4. 构造一个响应, 来通知对手, 你是获胜方
+        GameResponse resp = new GameResponse();
+        resp.setMessage("putChess");
+        resp.setUserId(thatUser.getUserId());
+        resp.setWinner(thatUser.getUserId());
+        webSocketSession.sendMessage(new TextMessage(objectMapper.writeValueAsString(resp)));
+
+//        更新信息
+        userMapper.userWin(thatUser.getUserId());
+        userMapper.userLose(user.getUserId());
+
+//        释放房间对象
+        roomManager.del(room.getRoomId(),room.getUser1().getUserId(),room.getUser2().getUserId());
+
     }
 }

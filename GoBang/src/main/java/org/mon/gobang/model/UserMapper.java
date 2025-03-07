@@ -12,4 +12,7 @@ public interface UserMapper {
 //    根据用户名，来查询用户的详细信息，用于登入功能
     User selectByName(String username);
 
+    void userWin(int userId);
+
+    void userLose(int userId);
 }

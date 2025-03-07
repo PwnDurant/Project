@@ -59,19 +59,16 @@ public class Matcher {
         if(user.getScore()<2000){
             synchronized (normalQueue){
                 normalQueue.remove(user);
-                normalQueue.notify();
             }
             log.info("把玩家:{}移除队列:normalQueue",user.getUsername());
         }else if(user.getScore()<3000){
             synchronized (highQueue) {
                 highQueue.remove(user);
-                highQueue.notify();
             }
             log.info("把玩家:{}移除队列:highQueue",user.getUsername());
         }else{
             synchronized (veryHighQueue){
                 veryHighQueue.remove(user);
-                veryHighQueue.notify();
             }
             log.info("把玩家:{}移除队列:veryHighQueue",user.getUsername());
         }

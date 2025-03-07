@@ -21,6 +21,7 @@ function setScreenText(me) {
 //////////////////////////////////////////////////
 // 初始化 websocket
 //////////////////////////////////////////////////
+
 // 此处写的路径要写作 /game, 不要写作 /game/
 let websocketUrl = "ws://" + location.host + "/game";
 let websocket = new WebSocket(websocketUrl);
@@ -43,9 +44,10 @@ window.onbeforeunload = function() {
 
 // 处理服务器返回的响应数据
 websocket.onmessage = function(event) {
+    
     console.log("[handlerGameReady] " + event.data);
     let resp = JSON.parse(event.data);
-
+    console.log(resp.message);
     if (!resp.ok) {
         alert("连接游戏失败! reason: " + resp.reason);
         // 如果出现连接失败的情况, 回到游戏大厅
@@ -73,8 +75,9 @@ websocket.onmessage = function(event) {
 // 初始化一局游戏
 //////////////////////////////////////////////////
 function initGame() {
+    console.log("开始初始化棋盘");
+    
     // 是我下还是对方下. 根据服务器分配的先后手情况决定
-    console.log("初始化")
     let me = gameInfo.isWhite;
     // 游戏是否结束
     let over = false;

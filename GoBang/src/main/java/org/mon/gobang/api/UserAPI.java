@@ -57,7 +57,8 @@ public class UserAPI {
         try{
             HttpSession httpSession= request.getSession(false);
             User user=(User)httpSession.getAttribute("user");
-            return user;
+//            拿着这个user对象去数据库中找最新的对象
+            return userMapper.selectByName(user.getUsername());
         }catch (NullPointerException e){
             return new User();
         }
