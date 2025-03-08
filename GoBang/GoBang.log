@@ -1789,3 +1789,36 @@ java.lang.IllegalStateException: The remote endpoint was in state [TEXT_PARTIAL_
 2025-03-07T15:36:19.947+08:00  INFO 94144 --- [GoBang] [http-nio-8080-exec-10] org.mon.gobang.game.Matcher              : 把玩家:lisi,加入到normalQueue中
 2025-03-07T15:36:21.439+08:00  INFO 94144 --- [GoBang] [http-nio-8080-exec-1] org.mon.gobang.game.Matcher              : 把玩家:zhangsan,加入到normalQueue中
 2025-03-07T15:36:21.442+08:00  INFO 94144 --- [GoBang] [http-nio-8080-exec-2] org.mon.gobang.game.Matcher              : 把玩家:lisi移除队列:normalQueue
+2025-03-07T15:43:25.292+08:00  INFO 94144 --- [GoBang] [http-nio-8080-exec-6] org.mon.gobang.game.Matcher              : 把玩家:zhangsan移除队列:normalQueue
+2025-03-07T15:43:25.341+08:00  WARN 94144 --- [GoBang] [http-nio-8080-exec-9] w.s.h.ExceptionWebSocketHandlerDecorator : Unhandled exception after connection closed for ExceptionWebSocketHandlerDecorator [delegate=LoggingWebSocketHandlerDecorator [delegate=org.mon.gobang.api.GameAPI@5482bcac]]
+
+java.lang.NullPointerException: Cannot invoke "org.mon.gobang.model.User.getUserId()" because "thatUser" is null
+	at org.mon.gobang.api.GameAPI.noticeThatUserWin(GameAPI.java:167) ~[classes/:na]
+	at org.mon.gobang.api.GameAPI.afterConnectionClosed(GameAPI.java:120) ~[classes/:na]
+	at org.springframework.web.socket.handler.WebSocketHandlerDecorator.afterConnectionClosed(WebSocketHandlerDecorator.java:85) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.handler.LoggingWebSocketHandlerDecorator.afterConnectionClosed(LoggingWebSocketHandlerDecorator.java:72) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.handler.ExceptionWebSocketHandlerDecorator.afterConnectionClosed(ExceptionWebSocketHandlerDecorator.java:78) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter.onClose(StandardWebSocketHandlerAdapter.java:144) ~[spring-websocket-6.2.3.jar:6.2.3]
+	at org.apache.tomcat.websocket.WsSession.fireEndpointOnClose(WsSession.java:733) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsSession.onClose(WsSession.java:641) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsFrameBase.processDataControl(WsFrameBase.java:347) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsFrameBase.processData(WsFrameBase.java:279) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.WsFrameBase.processInputBuffer(WsFrameBase.java:130) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFrameServer.onDataAvailable(WsFrameServer.java:85) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFrameServer.doOnDataAvailable(WsFrameServer.java:184) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFrameServer.notifyDataAvailable(WsFrameServer.java:164) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsHttpUpgradeHandler.upgradeDispatch(WsHttpUpgradeHandler.java:152) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.coyote.http11.upgrade.UpgradeProcessorInternal.dispatch(UpgradeProcessorInternal.java:60) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:57) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2025-03-07T15:43:30.292+08:00  INFO 94144 --- [GoBang] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-07T15:43:30.298+08:00  INFO 94144 --- [GoBang] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-07T15:43:30.302+08:00  INFO 94144 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-07T15:43:30.307+08:00  INFO 94144 --- [GoBang] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
