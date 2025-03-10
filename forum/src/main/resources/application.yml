@@ -22,6 +22,9 @@ logging:
   file:
     path: /Users/zhaoqianqian/Downloads/Log  # 日志存放位置
 
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml #指定xxxMapper.xml的扫描路径
+
 
 
 
