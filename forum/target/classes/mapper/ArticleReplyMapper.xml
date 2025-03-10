@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zqq.forum.dao.ArticleReplyMapper">
+  <resultMap id="BaseResultMap" type="com.zqq.forum.model.ArticleReply">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="articleId" jdbcType="BIGINT" property="articleId" />
+    <result column="postUserId" jdbcType="BIGINT" property="postUserId" />
+    <result column="replyId" jdbcType="BIGINT" property="replyId" />
+    <result column="replyUserId" jdbcType="BIGINT" property="replyUserId" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="likeCount" jdbcType="INTEGER" property="likeCount" />
+    <result column="state" jdbcType="TINYINT" property="state" />
+    <result column="deleteState" jdbcType="TINYINT" property="deleteState" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, articleId, postUserId, replyId, replyUserId, content, likeCount, state, deleteState, 
+    createTime, updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_article_reply
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <insert id="insert" parameterType="com.zqq.forum.model.ArticleReply" useGeneratedKeys="true" keyProperty="id">
+    insert into t_article_reply (id, articleId, postUserId, 
+      replyId, replyUserId, content, 
+      likeCount, state, deleteState, 
+      createTime, updateTime)
+    values (#{id,jdbcType=BIGINT}, #{articleId,jdbcType=BIGINT}, #{postUserId,jdbcType=BIGINT}, 
+      #{replyId,jdbcType=BIGINT}, #{replyUserId,jdbcType=BIGINT}, #{content,jdbcType=VARCHAR}, 
+      #{likeCount,jdbcType=INTEGER}, #{state,jdbcType=TINYINT}, #{deleteState,jdbcType=TINYINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zqq.forum.model.ArticleReply" useGeneratedKeys="true" keyProperty="id">
+    insert into t_article_reply
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="articleId != null">
+        articleId,
+      </if>
+      <if test="postUserId != null">
+        postUserId,
+      </if>
+      <if test="replyId != null">
+        replyId,
+      </if>
+      <if test="replyUserId != null">
+        replyUserId,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="likeCount != null">
+        likeCount,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+      <if test="deleteState != null">
+        deleteState,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+      <if test="updateTime != null">
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="articleId != null">
+        #{articleId,jdbcType=BIGINT},
+      </if>
+      <if test="postUserId != null">
+        #{postUserId,jdbcType=BIGINT},
+      </if>
+      <if test="replyId != null">
+        #{replyId,jdbcType=BIGINT},
+      </if>
+      <if test="replyUserId != null">
+        #{replyUserId,jdbcType=BIGINT},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="likeCount != null">
+        #{likeCount,jdbcType=INTEGER},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=TINYINT},
+      </if>
+      <if test="deleteState != null">
+        #{deleteState,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zqq.forum.model.ArticleReply">
+    update t_article_reply
+    <set>
+      <if test="articleId != null">
+        articleId = #{articleId,jdbcType=BIGINT},
+      </if>
+      <if test="postUserId != null">
+        postUserId = #{postUserId,jdbcType=BIGINT},
+      </if>
+      <if test="replyId != null">
+        replyId = #{replyId,jdbcType=BIGINT},
+      </if>
+      <if test="replyUserId != null">
+        replyUserId = #{replyUserId,jdbcType=BIGINT},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="likeCount != null">
+        likeCount = #{likeCount,jdbcType=INTEGER},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=TINYINT},
+      </if>
+      <if test="deleteState != null">
+        deleteState = #{deleteState,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zqq.forum.model.ArticleReply">
+    update t_article_reply
+    set articleId = #{articleId,jdbcType=BIGINT},
+      postUserId = #{postUserId,jdbcType=BIGINT},
+      replyId = #{replyId,jdbcType=BIGINT},
+      replyUserId = #{replyUserId,jdbcType=BIGINT},
+      content = #{content,jdbcType=VARCHAR},
+      likeCount = #{likeCount,jdbcType=INTEGER},
+      state = #{state,jdbcType=TINYINT},
+      deleteState = #{deleteState,jdbcType=TINYINT},
+      createTime = #{createTime,jdbcType=TIMESTAMP},
+      updateTime = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!-- 驱动包路径，location中路径替换成自己本地路径 -->
+    <classPathEntry location="/Users/zhaoqianqian/.m2/repository/mysql/mysql-connector-java/8.0.30/mysql-connector-java-8.0.30.jar"/>
+
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <!-- 禁用自动生成的注释 -->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <!-- 连接配置 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/forum_db?characterEncoding=utf8&amp;useSSL=false"
+                        userId="root"
+                        password="zqq13127837702">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <!-- 小数统一转为BigDecimal -->
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- 实体类生成位置 -->
+        <javaModelGenerator targetPackage="com.zqq.forum.model" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- mapper.xml生成位置 -->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!-- DAO类生成位置 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.zqq.forum.dao" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!-- 配置生成表与实例, 只需要修改表名tableName, 与对应类名domainObjectName 即可-->
+        <table tableName="t_article" domainObjectName="Article" enableSelectByExample="false"
+               enableDeleteByExample="false" enableDeleteByPrimaryKey="false" enableCountByExample="false"
+               enableUpdateByExample="false">
+            <!-- 类的属性用数据库中的真实字段名做为属性名, 不指定这个属性会自动转换 _ 为驼峰命名规则-->
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_article_reply" domainObjectName="ArticleReply" enableSelectByExample="false"
+               enableDeleteByExample="false" enableDeleteByPrimaryKey="false" enableCountByExample="false"
+               enableUpdateByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_board" domainObjectName="Board" enableSelectByExample="false" enableDeleteByExample="false"
+               enableDeleteByPrimaryKey="false" enableCountByExample="false" enableUpdateByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_message" domainObjectName="Message" enableSelectByExample="false"
+               enableDeleteByExample="false" enableDeleteByPrimaryKey="false" enableCountByExample="false"
+               enableUpdateByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_user" domainObjectName="User" enableSelectByExample="false" enableDeleteByExample="false"
+               enableDeleteByPrimaryKey="false" enableCountByExample="false" enableUpdateByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+
+    </context>
+</generatorConfiguration>
