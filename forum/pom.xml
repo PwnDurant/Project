@@ -38,6 +38,10 @@
 
 <!--        <mybaits-generator-plugin-version>1.4.1</mybaits-generator-plugin-version>-->
 
+        <!-- springfox -->
+<!--        <springfox-boot-starter.version>3.0.0</springfox-boot-starter.version>-->
+
+
     </properties>
     <dependencies>
         <dependency>
@@ -75,6 +79,23 @@
             <artifactId>mybatis-spring-boot-starter-test</artifactId>
             <version>3.0.4</version>
             <scope>test</scope>
+        </dependency>
+
+        <!-- API文档生成，基于swagger2 -->
+<!--        <dependency>-->
+<!--            <groupId>io.springfox</groupId>-->
+<!--            <artifactId>springfox-boot-starter</artifactId>-->
+<!--            <version>${springfox-boot-starter.version}</version>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash; SpringBoot健康监控 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-actuator</artifactId>-->
+<!--        </dependency>-->
+
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
         </dependency>
     </dependencies>
 
