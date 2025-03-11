@@ -1,0 +1,245 @@
+<!doctype html>
+
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>比特论坛 - 用户注册</title>
+  <!-- 导入CSS -->
+  <link href="./dist/css/tabler.min.css?1674944402" rel="stylesheet" />
+  <link rel="stylesheet" href="./dist/css/jquery.toast.css">
+  <!-- 设置字体 -->
+  <!-- <style>
+      @import url('https://rsms.me/inter/inter.css');
+      :root {
+      	--tblr-font-sans-serif: 'Inter Var', -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
+      }
+      body {
+      	font-feature-settings: "cv03", "cv04", "cv11";
+      }
+    </style> -->
+</head>
+
+<body class="d-flex flex-column">
+  <!-- 正文 -->
+  <div class="page page-center">
+    <div class="container container-tight py-4">
+      <div class="text-center mb-4">
+        <img src="./image/bit-forum-logo01.png" height="50" alt="">
+      </div>
+      <form id="signUpForm" class="card card-md" autocomplete="off" novalidate>
+        <div class="card-body">
+          <h2 class="text-center mb-4">用户注册</h2>
+          <!-- 用户名 -->
+          <div class="mb-3">
+            <label class="form-label required">用户名</label>
+            <input type="text" class="form-control " placeholder="请输入用户名" name="username" id="username">
+            <div class="invalid-feedback">用户名不能为空</div>
+          </div>
+          <!-- 昵称 -->
+          <div class="mb-3">
+            <label class="form-label required">昵称</label>
+            <input type="text" class="form-control" placeholder="请输入昵称" name="nickname" id="nickname">
+            <div class="invalid-feedback">昵称不能为空</div>
+          </div>
+          <!-- 密码 -->
+          <div class="mb-3">
+            <label class="form-label required">密码</label>
+            <div class="input-group input-group-flat">
+              <input type="password" class="form-control" placeholder="请输入密码" autocomplete="off" name="password"
+                id="password">
+              <span class="input-group-text">
+                <a href="javascript:void(0);" class="link-secondary" id="password_a" title="显示密码"
+                  data-bs-toggle="tooltip"><!-- Download SVG icon from http://tabler-icons.io/i/eye -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M12 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                    <path
+                      d="M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7" />
+                  </svg>
+                </a>
+              </span>
+              <div class="invalid-feedback">密码不能为空</div>
+            </div>
+          </div>
+          <!-- 确认密码 -->
+          <div class="mb-3">
+            <label class="form-label required">确认密码</label>
+            <div class="input-group input-group-flat">
+              <input type="password" class="form-control" placeholder="再次输入密码" autocomplete="off" name="passwordRepeat"
+                id="passwordRepeat">
+              <span class="input-group-text">
+                <a href="javascript:void(0);" class="link-secondary" id="passwordRepeat_a" title="显示密码"
+                  data-bs-toggle="tooltip"><!-- Download SVG icon from http://tabler-icons.io/i/eye -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M12 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                    <path
+                      d="M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7" />
+                  </svg>
+                </a>
+              </span>
+              <div class="invalid-feedback">请检查确认密码</div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-check">
+              <input type="checkbox" class="form-check-input" id="policy" />
+              <span class="form-check-label">同意 <a href="#" tabindex="-1">比特论坛使用条款和隐私政策</a>.</span>
+            </label>
+          </div>
+          <div class="form-footer">
+            <button type="button" class="btn btn-primary w-100" id="submit">注册</button>
+          </div>
+        </div>
+      </form>
+      <div class="text-center text-muted mt-3">
+        我已有一个账户? <a href="./sign-in.html" tabindex="-1">登录</a>
+      </div>
+    </div>
+  </div>
+</body>
+<!-- 导入JS -->
+<script src="./dist/js/tabler.min.js"></script>
+<script src="./dist/js/jquery-3.6.3.min.js"></script>
+<script src="./dist/js/jquery.toast.js"></script>
+<script>
+
+// 当前页加载成功后执行的方法
+$(function () {
+  // 获取表单并校验
+  $('#submit').click(function () {
+    let checkForm = true;
+    // 校验用户名
+    if (!$('#username').val()) {
+      $('#username').addClass('is-invalid');
+      checkForm = false;
+    }
+    // 校验昵称
+    if (!$('#nickname').val()) {
+      $('#nickname').addClass('is-invalid');
+      checkForm = false;
+    }
+    // 校验密码非空
+    if (!$('#password').val()) {
+      $('#password').addClass('is-invalid');
+      checkForm = false;
+    }
+    // 校验确认密码非空, 校验密码与重复密码是否相同
+    if (!$('#passwordRepeat').val() || $('#password').val() != $('#passwordRepeat').val()) {
+      $('#passwordRepeat').addClass('is-invalid');
+      checkForm = false;
+    }
+
+    // 检验政策是否勾选
+    if (!$('#policy').prop('checked')) {
+      $('#policy').addClass('is-invalid');
+      checkForm = false;
+    }
+    // 根据判断结果提交表单
+    if (!checkForm) {
+      return;
+    }
+    
+    // 构造数据
+    let postData = {
+      username : $('#username').val(),
+      nickname : $('#nickname').val(),
+      password : $('#password').val(),
+      passwordRepeat : $('#passwordRepeat').val()
+    };
+
+    // 发送AJAX请求 
+    // contentType = application/x-www-form-urlencoded
+    // 成功后跳转到 sign-in.html
+    $.ajax ({
+      type : 'post',
+      url  : 'user/register',
+      contentType : 'application/x-www-form-urlencoded',
+      data : postData,
+      // 回调方法
+      success: function(respData){
+        // 判断返回的状态码
+        if (respData.code == 0) {
+          // 跳转到登录页面
+          location.assign('/sign-in.html');
+        } else {
+          // 提示信息
+          $.toast({
+              heading: '警告',
+              text: respData.message,
+              icon: 'warning'
+          });
+        }
+      }, 
+      error : function() {
+        // 提示信息
+        $.toast({
+              heading: '错误',
+              text: '访问出现问题，请与管理员联系.',
+              icon: 'error'
+          });
+      }
+    });
+  });
+
+  // 表单元单独检验
+  $('#username, #nickname, #password').on('blur', function () {
+    if ($(this).val()) {
+      $(this).removeClass('is-invalid');
+      $(this).addClass('is-valid');
+    } else {
+      $(this).removeClass('is-valid');
+      $(this).addClass('is-invalid');
+    }
+  })
+
+  // 检验确认密码
+  $('#passwordRepeat').on('blur', function () {
+    if ($(this).val() && $(this).val() == $('#password').val()) {
+      $(this).removeClass('is-invalid');
+      $(this).addClass('is-valid');
+    } else {
+      $(this).removeClass('is-valid');
+      $(this).addClass('is-invalid');
+    }
+  })
+
+  // 校验政策是否勾选
+  $('#policy').on('change', function () {
+    if ($(this).prop('checked')) {
+      $(this).removeClass('is-invalid');
+      $(this).addClass('is-valid');
+    } else {
+      $(this).removeClass('is-valid');
+      $(this).addClass('is-invalid');
+    }
+  })
+
+
+  // 密码框右侧明文密文切换按钮
+  $('#passwordRepeat_a').click(function () {
+    if($('#passwordRepeat').attr('type') == 'password') {
+      $('#passwordRepeat').attr('type', 'text');
+    } else {
+      $('#passwordRepeat').attr('type', 'password');
+    }
+  });
+  $('#password_a').click(function () {
+    if($('#password').attr('type') == 'password') {
+      $('#password').attr('type', 'text');
+    } else {
+      $('#password').attr('type', 'password');
+    }
+  });
+});
+
+
+</script>
+
+</html>

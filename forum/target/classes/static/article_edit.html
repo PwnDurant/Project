@@ -1,0 +1,242 @@
+<!-- Page header -->
+<div class="page-header d-print-none">
+  <div class="container-xl">
+    <div class="row g-2 align-items-center">
+      <div class="col">
+        <h2 class="page-title">
+          编辑
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Page body -->
+<div class="page-body">
+  <div class="container-xl">
+    <div class="card">
+      <div class="row g-0">
+        <div class="col d-flex flex-column">
+          <div class="card-body">
+            <!-- 帖子Id -->
+            <input type="text" id="edit_article_id" style="display: none;">
+            <!-- 版块 -->
+            <div class="row align-items-center">
+              <div class="col-2">
+                <h2 class="mb-4">版块</h2>
+              </div>
+              <div class="col-10">
+                <h2 class="mb-4" id="edit_article_board_name"></h2>
+              </div>
+            </div>
+
+            <!-- 标题 -->
+            <div class="row">
+              
+              <div class="col-2">
+                <h2 class="mb-4">标题</h2>
+              </div>
+              <div class="col-10">
+                <!-- <h2 class="mb-4" id="edit_article_title"></h2> -->
+                <input id="edit_article_title" type="text" class="form-control" placeholder="请输入标题">
+              </div>
+            </div>
+
+            <!-- 内容 -->
+            <div class="row">
+              <div class="col-2">
+                <h2 class="mb-4">内容</h2>
+              </div>
+              <div class="col-10" style="height: 680px;">
+                <div id="edit_article_content_area">
+                  <!-- textarea也是一个表单控件，当在editor.md中编辑好的内容会关联这个文本域上 -->
+                  <textarea id="edit_article_content" style="display: none;"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer bg-transparent mt-auto">
+            <!-- 操作区 结束 -->
+            <div class="col-auto row g-2 justify-content-end">
+              <div class="col-auto">
+                <div class="col-6 col-sm-4 col-md-2 col-xl-auto py-3">
+                  <a href="javascript:void(0);" class="btn btn-tabler w-100" id="edit_article_submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24"
+                      height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
+                      <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
+                      <path d="M16 5l3 3"></path>
+                    </svg>
+                    <span>提交</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function () {
+    // ========================== 获取帖子详情 ========================== 
+    // 成功后，设置ID,版块名，标题，并初始编辑区同时设置正文initEditor(edit_article.content);
+    $.ajax({
+      type : 'get',
+      url : 'article/details?id=' + currentArticle.id,
+      // 回调
+      success : function (respData) {
+        if (respData.code == 0) {
+          // 成功
+          let article = respData.data;
+          // 0. 设置帖子id
+          $('#edit_article_id').val(article.id);
+          // 1. 设置版块名
+          $('#edit_article_board_name').html(article.board.name);
+          // 2. 设置标题
+          $('#edit_article_title').val(article.title); // 设置input的内容用的是val()
+          // 3. 设置正文
+          initEditor(article.content);
+
+        } else {
+          // 失败
+          $.toast({
+              heading: '警告',
+              text: respData.message,
+              icon: 'warning'
+          });
+        }
+      },
+      error : function () {
+        // 提示信息
+        $.toast({
+            heading: '错误',
+            text: '访问出现问题，请与管理员联系.',
+            icon: 'error'
+        });
+      }
+
+    });
+    
+    // ========================== 初始化编辑器 ========================== 
+    var editor;
+    function initEditor (md) {
+      console.log('编辑区内容：' + md);
+      editor = editormd("edit_article_content_area", {
+      width: "100%",
+      height: "100%",
+      // theme : "dark",
+      // previewTheme : "dark",
+      // editorTheme : "pastel-on-dark",
+      codeFold: true,
+      markdown : md, // 处理编辑区内容
+      //syncScrolling : false,
+      saveHTMLToTextarea: true,    // 保存 HTML 到 Textarea
+      searchReplace: true,
+      watch : true,                    // 实时预览
+      htmlDecode: "style,script,iframe|on*",            // 开启 HTML 标签解析，为了安全性，默认不开启    
+      // toolbar  : false,             //关闭工具栏
+      // previewCodeHighlight : false, // 关闭预览 HTML 的代码块高亮，默认开启
+      emoji: true,
+      taskList: true,
+      tocm: true,         // Using [TOCM]
+      tex: true,                     // 开启科学公式TeX语言支持，默认关闭
+      // flowChart: true,               // 开启流程图支持，默认关闭
+      // sequenceDiagram: true,         // 开启时序/序列图支持，默认关闭,
+      placeholder: '开始创作...',     // 占位符
+      path: "./dist/editor.md/lib/"
+    });
+    }
+
+    // ========================== 处理提交修改事件 ========================== 
+    $('#edit_article_submit').click(function () {
+        // ID
+        let articleIdEl = $('#edit_article_id');
+        if (!articleIdEl.val()) {
+          // 提示
+          $.toast({
+              heading: '提示',
+              text: '帖子状态异常',
+              icon: 'warning'
+          });
+          return;
+        }
+
+        // 标题
+        let articleTitleEl = $('#edit_article_title');
+        if (!articleTitleEl.val()) {
+          // 获取焦点
+          articleTitleEl.focus();
+          // 提示
+          $.toast({
+              heading: '提示',
+              text: '请输入帖子标题',
+              icon: 'warning'
+          });
+          return;
+        }
+        // content
+        let articleContentEl = $('#edit_article_content');
+        // 非空校验
+        if (!articleContentEl.val()) {
+          // 提示
+          $.toast({
+              heading: '提示',
+              text: '请输入帖子内容',
+              icon: 'warning'
+          });
+          return;
+      }
+
+        // 构造修改对象
+        let postData = {
+          id : articleIdEl.val(),
+          title : articleTitleEl.val(),
+          content : articleContentEl.val()
+        };
+
+        // 发送修改请求, 成功后跳转至首页changeNavActive($('#nav_board_index'));
+        $.ajax({
+          type : 'post',
+          url : 'article/modify',
+          contentType : 'application/x-www-form-urlencoded',
+          data : postData,
+          // 回调
+          success : function (respData) {
+            if (respData.code == 0) {
+              // 成功
+              $.toast({
+                  heading: '成功',
+                  text: '修改成功',
+                  icon: 'success'
+              });
+              // 跳转到主页列表
+              changeNavActive($('#nav_board_index'));
+            } else {
+              // 失败
+              $.toast({
+                  heading: '警告',
+                  text: respData.message,
+                  icon: 'warning'
+              });
+            }
+          },
+          error : function () {
+            $.toast({
+                heading: '错误',
+                text: '访问出现问题，请与管理员联系.',
+                icon: 'error'
+            });
+          }
+
+        });
+    });
+    
+  });
+
+</script>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zqq.forum.dao.UserMapper">
+
+<!--    根据用户名去查询用户信息-->
+    <select id="selectByUserName" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select
+            <include refid="Base_Column_List" />
+            from t_user
+            where deleteState=0
+        and username=#{username,jdbcType=VARCHAR}
+    </select>
+
+</mapper>

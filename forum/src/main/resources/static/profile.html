@@ -1,0 +1,316 @@
+<!-- Page header -->
+<div class="page-header d-print-none">
+  <div class="container-xl">
+    <div class="row align-items-center">
+      <input type="text" style="display: none;" id="profile_user_id">
+      <div class="col-auto">
+        <span id="profile_avatar" class="avatar avatar-lg rounded"
+          style="background-image: url(./image/avatar02.jpeg)"></span>
+      </div>
+      <div class="col">
+        <h1 id="profile_nickname" class="fw-bold"></h1>
+        <!-- <div class="my-2">描述信息</div> -->
+        <div class="list-inline list-inline-dots text-muted">
+          <div class="list-inline-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message-plus" width="24"
+              height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4"></path>
+              <path d="M10 11l4 0"></path>
+              <path d="M12 9l0 4"></path>
+            </svg>
+            发贴数: <span id="profile_articleCount">666</span>
+          </div>
+          <div class="list-inline-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-inline" width="24" height="24" viewBox="0 0 24 24"
+              stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M3 5m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
+              <path d="M3 7l9 6l9 -6" />
+            </svg>
+            邮箱: <a id="profile_email" href="javascript:void(0);" class="text-reset"> - </a>
+          </div>
+          <div class="list-inline-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="24"
+              height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+              <path d="M6 21v-2a4 4 0 0 1 4 -4h4c.374 0 .735 .051 1.079 .147"></path>
+              <path d="M16 19h6"></path>
+              <path d="M19 16v6"></path>
+            </svg>
+            注册日期: <span id="profile_createTime"></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-auto ms-auto" style="display: none;" id="div_profile_send_message">
+        <div class="btn-list">
+          <a href="javascript:void(0);" class="btn btn-primary" id="btn_profile_send_message" data-bs-toggle="modal" data-bs-target="#index_message_modal">
+            <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+              stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4" />
+              <path d="M8 9l8 0" />
+              <path d="M8 13l6 0" />
+            </svg>
+            发私信
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Page body -->
+<div class="page-body">
+  <div class="container-xl">
+    <div class="row g-3">
+      <div class="col">
+        <ul id="profile_article_body" class="timeline">
+          <!-- 动态构建帖子列表 -->
+
+        </ul>
+      </div>
+      <!-- 右侧部分 -->
+      <div class="col-lg-4">
+        <div class="row row-cards">
+          <!-- 个人介绍 -->
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title">个人介绍</h2>
+                <div id="profile_remark">
+                  <p>这家伙很懒，什么也没有留下...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function () {
+    // 构造查询用户信息的queryString
+    let userInfoQueryString = '';
+    if (profileUserId) {
+      userInfoQueryString = '?id=' + profileUserId
+    }
+    // ============= 获取用户信息 =============
+    // 成功时调用initProfileUserInfo()方法，初始化用户数据
+    $.ajax({
+      type : 'get',
+      url : 'user/info' + userInfoQueryString,
+      // 回调
+      success : function (respData) {
+        if (respData.code == 0) {
+          // 成功
+          initProfileUserInfo(respData.data);
+        } else {
+          // 提示信息
+          $.toast({
+                heading: '警告',
+                text: respData.message,
+                icon: 'warning'
+            });
+          }
+        },
+        error : function () {
+          // 提示信息
+          $.toast({
+              heading: '错误',
+              text: '访问出现问题，请与管理员联系.',
+              icon: 'error'
+          });
+        }
+    });
+
+    // ============= 设置Profile页面用户信息 ================
+    function initProfileUserInfo(user) {
+      console.log(user);
+      // 默认头像路径
+      if (!user.avatarUrl) {
+        user.avatarUrl = avatarUrl;
+      }
+      console.log('currentUserId = '+currentUserId);
+      // 站内信按钮
+      if (user.id != currentUserId) {
+        // 显示站内信按钮
+        $('#div_profile_send_message').show();
+        // 设置站内信目标用户信息
+        $('#btn_profile_send_message').click(function() {
+          setMessageReceiveUserInfo(user.id, user.nickname);
+        });
+      }
+      // 设置用户ID
+      $('#profile_user_id').val(user.id);
+      // 设置头像
+      $('#profile_avatar').css('background-image', 'url(' + user.avatarUrl + ')');
+      // 用户昵称
+      $('#profile_nickname').html(user.nickname);
+      // 发贴数
+      $('#profile_articleCount').html(user.articleCount);
+      // 邮箱
+      if (user.email) {
+        $('#profile_email').html(user.email);
+      }
+      // 注册日期
+      $('#profile_createTime').html(user.createTime);
+      // 个人介绍
+      if (user.remark) {
+        $('#profile_remark').html(user.remark);
+      }
+    }
+
+    // 构造查询用户信息的queryString
+    let articleListQueryString = '';
+    if (profileUserId) {
+      articleListQueryString = '?userId=' + profileUserId
+    }
+    // ============= 获取当前用户发贴 =============
+    // url: 'article/getAllByUserId' + articleListQueryString
+    // 成功后，调用buildProfileUserArticle()方法，构造帖子列表
+    $.ajax({
+      type : 'get',
+      url : 'article/getAllByUserId' + articleListQueryString,
+      // 回调
+      success : function (respData) {
+        if (respData.code == 0) {
+          // 成功
+          buildProfileUserArticle(respData.data);
+        } else {
+          // 提示信息
+          $.toast({
+                heading: '警告',
+                text: respData.message,
+                icon: 'warning'
+            });
+          }
+        },
+        error : function () {
+          // 提示信息
+          $.toast({
+              heading: '错误',
+              text: '访问出现问题，请与管理员联系.',
+              icon: 'error'
+          });
+        }
+    });
+
+    // ============= 构建用户帖子列表 =============
+    function buildProfileUserArticle(data) {
+      // 没有帖子
+      if(data.length == 0) {
+        $('#profile_article_body').html('还没有帖子');
+        return;
+      }
+      // 构建帖子列表
+      data.forEach(article => {
+        let articleHtmlStr = ' <li class="timeline-event">'
+        + ' <div class="timeline-event-icon bg-twitter-lt">'
+        + ' <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message-plus" width="24"'
+        + ' height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"'
+        + ' stroke-linecap="round" stroke-linejoin="round">'
+        + ' <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>'
+        + ' <path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4"></path>'
+        + ' <path d="M10 11l4 0"></path>'
+        + ' <path d="M12 9l0 4"></path>'
+        + ' </svg>'
+        + ' </div>'
+        + ' <div class="card timeline-event-card">'
+        + ' <div class="card-body">'
+        + ' <div>'
+        + ' <div class="row">'
+        + ' <div class="col">'
+        + ' <div class="text-truncate">'
+        + ' <a href="javascript:void(0);"  class="profile_article_list_a_title">'
+        + ' <strong>' + article.title + '</strong>'
+        + ' </a>'
+        + ' </div>'
+        + ' <div class="text-muted mt-2">'
+        + ' <div class="row">'
+        + ' <div class="col">'
+        + ' <ul class="list-inline list-inline-dots mb-0">'
+        + ' <li class="list-inline-item">'
+        + ' <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock-edit"'
+        + ' width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"'
+        + ' fill="none" stroke-linecap="round" stroke-linejoin="round">'
+        + ' <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>'
+        + ' <path d="M21 12a9 9 0 1 0 -9.972 8.948c.32 .034 .644 .052 .972 .052"></path>'
+        + ' <path d="M12 7v5l2 2"></path>'
+        + ' <path d="M18.42 15.61a2.1 2.1 0 0 1 2.97 2.97l-3.39 3.42h-3v-3l3.42 -3.39z"></path>'
+        + ' </svg> '
+        + article.createTime
+        + ' </li>'
+        + ' </ul>'
+        + ' </div>'
+        + ' <div class="col-auto d-none d-md-inline">'
+        + ' <ul class="list-inline list-inline-dots mb-0">'
+        + ' <li class="list-inline-item">'
+        + ' <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eye"'
+        + ' width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"'
+        + ' fill="none" stroke-linecap="round" stroke-linejoin="round">'
+        + ' <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>'
+        + ' <path d="M12 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>'
+        + ' <path'
+        + ' d="M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7">'
+        + ' </path>'
+        + ' </svg> '
+        + article.visitCount
+        + ' </li>'
+        + ' <li class="list-inline-item">'
+        + ' <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart"'
+        + ' width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"'
+        + ' fill="none" stroke-linecap="round" stroke-linejoin="round">'
+        + ' <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>'
+        + ' <path'
+        + ' d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572">'
+        + ' </path>'
+        + ' </svg> '
+        + article.likeCount
+        + ' </li>'
+        + ' <li class="list-inline-item">'
+        + ' <svg xmlns="http://www.w3.org/2000/svg"'
+        + ' class="icon icon-tabler icon-tabler-message-circle" width="24" height="24"'
+        + ' viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"'
+        + ' stroke-linecap="round" stroke-linejoin="round">'
+        + ' <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>'
+        + ' <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1"></path>'
+        + ' <path d="M12 12l0 .01"></path>'
+        + ' <path d="M8 12l0 .01"></path>'
+        + ' <path d="M16 12l0 .01"></path>'
+        + ' </svg> '
+        + article.replyCount
+        + ' </li>'
+        + ' </ul>'
+        + ' </div>'
+        + ' </div>'
+        + ' </div>'
+        + ' </div>'
+        + ' </div>'
+        + ' </div>'
+        + ' </div>'
+        + ' </div>'
+        + ' </li>';
+        
+        // 追加到父标签
+        let profileArtilceItem = $(articleHtmlStr);
+        // 获取标题的 a 标签
+        let articleTitle = profileArtilceItem.find('.profile_article_list_a_title');
+        // 处理标题点击事件
+        articleTitle.click(function() {
+          // 通过全局变量保存当前访问的帖子信息
+          currentArticle = article;
+          $('#bit-forum-content').load('details.html');
+        });
+        // 追加到父标签
+        $('#profile_article_body').append(profileArtilceItem);
+        
+      });
+    }
+  });
+</script>

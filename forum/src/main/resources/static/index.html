@@ -1,0 +1,830 @@
+<!doctype html>
+
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>比特论坛</title>
+  <!-- 导入CSS -->
+  <link href="./dist/css/tabler.min.css?1674944402" rel="stylesheet" />
+  <link rel="stylesheet" href="./dist/css/jquery.toast.css">
+  <link rel="stylesheet" href="./dist/editor.md/css/editormd.min.css">
+  <!-- 设置字体 -->
+  <!-- <style>
+      @import url('https://rsms.me/inter/inter.css');
+      :root {
+      	--tblr-font-sans-serif: 'Inter Var', -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
+      }
+      body {
+      	font-feature-settings: "cv03", "cv04", "cv11";
+      }
+    </style> -->
+</head>
+
+<body>
+  <!-- page 页面开始 -->
+  <div class="page">
+    <!-- 头部 导航 开始 -->
+    <header class="navbar navbar-expand-md navbar-light d-print-none">
+      <div class="container-xl">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu"
+          aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- 导航左侧 logo 按钮 -->
+        <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
+          <a href="#">
+            <img src="./image/bit-forum-logo.png" width="32" height="32" alt="Tabler" class="navbar-brand-image me-3">
+          </a>
+        </h1>
+        <!-- 导航右侧 -->
+        <div class="navbar-nav flex-row order-md-last">
+          <!-- 搜索框 -->
+          <div class="nav-item d-none d-md-flex me-3">
+            <div class="my-2 my-md-0 flex-grow-1 flex-md-grow-0 order-first order-md-last">
+              <form action="./" method="get" autocomplete="off" novalidate>
+                <div class="input-icon">
+                  <span class="input-icon-addon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                      stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                      <path d="M21 21l-6 -6" />
+                    </svg>
+                  </span>
+                  <input type="text" value="" class="form-control" placeholder="输入关键字..."
+                    aria-label="Search in website">
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- 主题样式日夜转换 -->
+          <div class="d-none d-md-flex">
+            <a href="?theme=dark" class="nav-link px-0 hide-theme-dark" title="切换至夜间模式" data-bs-toggle="tooltip"
+              data-bs-placement="bottom">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+              </svg>
+            </a>
+            <a href="?theme=light" class="nav-link px-0 hide-theme-light" title="切换至白天模式" data-bs-toggle="tooltip"
+              data-bs-placement="bottom">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+                <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+              </svg>
+            </a>
+
+            <!-- 小铃铛，站内信 -->
+            <div class="nav-item dropdown d-none d-md-flex me-3">
+              <a class="nav-link px-0" data-bs-toggle="offcanvas" href="#index_message_offcanvasEnd" aria-controls="offcanvasEnd">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" /><path d="M9 17v1a3 3 0 0 0 6 0v-1" /></svg>
+                <!-- 小红点 -->
+                <span class="badge bg-red" id="index_nva_message_badge" style="display: none;"></span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 用户信息 -->
+          <div class="nav-item dropdown">
+            <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown"
+              aria-label="Open user menu">
+              <!-- 用户头像，也可以用img标签 -->
+              <span id="index_nav_avatar" class="avatar avatar-sm"
+                style="background-image: url(./image/avatar01.jpeg)"></span>
+              <div class="d-none d-xl-block ps-2">
+                <!-- 用户名 -->
+                <div id="index_nav_nickname"></div>
+                <!-- 副标题 -->
+                <div id="index_nav_name_sub" class="mt-1 small text-muted"></div>
+              </div>
+            </a>
+            <!-- 下拉菜单 -->
+            <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+              <a href="javascript:void(0);" id="index_user_profile" class="dropdown-item">我的帖子</a>
+              <a href="javascript:void(0);" id="index_user_settings" class="dropdown-item">个人中心</a>
+              <!-- <a href="#" class="dropdown-item">状态</a> -->
+              <!-- <a href="#" class="dropdown-item">生成二唯码</a> -->
+              <div class="dropdown-divider"></div>
+              <a id="index_user_logout" href="javascript:void(0);" class="dropdown-item"><span
+                  class="text-red">退出</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 论坛版块导航 -->
+    <header class="navbar-expand-md">
+      <div class="collapse navbar-collapse" id="navbar-menu">
+        <div class="navbar navbar-light">
+          <div class="container-xl">
+            <ul id="topBoardList" class="navbar-nav">
+              <li class="nav-item active" id="nav_board_index">
+                <!-- 首页 -->
+                <a class="nav-link" href="javascript:void(0);">
+                  <span
+                    class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/star -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                      stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path
+                        d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
+                    </svg>
+                  </span>
+                  <span class="nav-link-title">
+                    首页
+                  </span>
+                </a>
+              </li>
+              <!-- 其他版块动态生成 -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- 头部 导航 结束 -->
+    
+    <!-- 正文 开始 -->
+    <div class="page-wrapper" id="page-wrapper">
+      <!-- 正文部分动态加载 -->
+      <div id="bit-forum-content">
+          <!-- 动态的添加HTML代码片段 -->
+      </div>
+      
+      <!-- 站内信区域 开始 -->
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="index_message_offcanvasEnd" aria-labelledby="offcanvasEndLabel" style="width: 650px">
+        <div class="offcanvas-header">
+          <h2 class="offcanvas-title" id="offcanvasEndLabel">所有站内信</h2>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body" id="index_div_message">
+          <div class="list-group list-group-flush list-group-hoverable" id="index_div_message_list">
+            <!-- 站内信列表开始 动态加载 -->
+            
+            <!-- 站内信列表结束 -->
+          </div>
+        </div>
+      </div>
+      <!-- 站内信区域 结束 -->
+      <!-- 页脚 开始 -->
+      <footer class="footer footer-transparent d-print-none align-self-center">
+        <div class="container-xl">
+          <div class="row text-center align-items-center">
+            <div class="col-lg-auto ms-lg-auto">
+              <ul class="list-inline list-inline-dots mb-0">
+                <li class="list-inline-item">
+                  Copyright &copy; 2023
+                  <a href="#" class="link-secondary">比特论坛</a>
+                  版权所有
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://gitee.com/guangchen01/bit_forum" class="link-secondary">
+                    GITEE
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- 页脚 结束 -->
+      </footer>
+    </div>
+
+    <!-- page 页面结束 -->
+  </div>
+
+  <!-- 发送站内信模态框 -->
+  <div class="modal modal-blur fade" id="index_message_modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">发送站内信</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-lg-12">
+              <div>
+                <input type="text" style="display: none;" id="index_message_receive_user_id">
+                <label class="form-label" id="index_message_receive_user_name">发送给: </label>
+                <textarea class="form-control" rows="5" id="index_message_receive_content"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="javascript:void(0);" class="btn me-auto" data-bs-dismiss="modal" id="index_message_receive_cancel">
+            取消
+          </a>
+          <a href="javascript:void(0);" class="btn btn-primary ms-auto" data-bs-dismiss="modal" id="btn_index_send_message">
+            <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-send" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M10 14l11 -11"></path>
+              <path d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5"></path>
+           </svg>
+            发送
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 阅读和回复站内信模态框 -->
+  <div class="modal modal-blur fade" id="index_message_reply_modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="index_message_detail_title">站内信详情</h5>
+          <input type="text" style="display: none;" id="index_message_detail_id">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-lg-12">
+              <div>
+                <p id="index_message_detail_content"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body" style="display: none;" id="index_message_reply_div">
+          <div class="row">
+            <div class="col-lg-12">
+              <div>
+                <input type="text" style="display: none;" id="index_message_reply_receive_user_id">
+                <label class="form-label" id="index_message_reply_receive_user_name">回复给: </label>
+                <textarea class="form-control" rows="5" id="index_message_reply_receive_content" placeholder="请输入回复内容"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="javascript:void(0);" class="btn me-auto" data-bs-dismiss="modal" id="index_message_reply_cancel">
+            取消
+          </a>
+          <a href="javascript:void(0);" class="btn btn-primary ms-auto" id="btn_index_message_reply">
+            <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M8 9h8"></path>
+              <path d="M8 13h6"></path>
+              <path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z"></path>
+           </svg>
+            回复
+          </a>
+          <a href="javascript:void(0);" class="btn btn-primary ms-auto" data-bs-dismiss="modal" id="btn_index_send_message_reply" style="display: none;">
+            <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-send" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M10 14l11 -11"></path>
+              <path d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5"></path>
+           </svg>
+            发送
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<!-- 导入JS -->
+<script src="./dist/js/tabler.min.js"></script>
+<script src="./dist/js/theme.min.js"></script>
+<script src="./dist/js/jquery-3.6.3.min.js"></script>
+<script src="./dist/js/jquery.toast.js"></script>
+<script src="./js/common.js"></script>
+<!-- 编辑器 -->
+<script src="./dist/editor.md/editormd.min.js"></script>
+<script src="./dist/editor.md/lib/marked.min.js"></script>
+<script src="./dist/editor.md/lib/prettify.min.js"></script>
+<script src="./dist/libs/tinymce/tinymce.min.js" defer></script>
+<script>
+  $(function () {
+    //========================= 获取用户信息 =======================
+    // 成功后，手动设置用户信息
+    // $('#index_nav_avatar').css('background-image', 'url(' + user.avatarUrl + ')');
+    $.ajax({
+      // 请求的方法
+      type : 'get',
+      // 没有参数，表示获取当前登录用户的信息
+      url : 'user/info',
+      // 成功回调
+      success : function(respData) {
+        // 判断响应的状态码
+        if (respData.code == 0) {
+          // 设置页面上用户的信息
+          let user = respData.data;
+          // 判断用户头像是否有效
+          if (!user.avatarUrl) {
+            // 设置默认的头像地址
+            user.avatarUrl = avatarUrl;
+          }
+          // 设置页面上的头像
+          $('#index_nav_avatar').css('background-image', 'url(' + user.avatarUrl + ')');
+          // 用户昵称
+          $('#index_nav_nickname').html(user.nickname);
+          // 设置用户组
+          let subName = user.isAdmin == 1 ? '管理员' : '普通用户';
+          $('#index_nav_name_sub').html(subName);
+          currentUserId = user.id;
+
+        } else {
+          // 提示信息
+          $.toast({
+              heading: '警告',
+              text: respData.message,
+              icon: 'warning'
+          });
+        }
+      },
+      // 失败回调
+      error : function () {
+        // 提示信息
+        $.toast({
+            heading: '错误',
+            text: '访问出现问题，请与管理员联系.',
+            icon: 'error'
+        });
+      }
+    });
+
+    // ========================= 获取版块信息 =======================
+    // 成功后，调用buildTopBoard()方法，构建版块列表
+    $.ajax({
+      type: 'get',
+      url: 'board/topList',
+      success : function (respData) {
+        if(respData.code == 0) {
+          // 构建版块列表
+          buildTopBoard(respData.data);
+        } else {
+          // 提示信息
+          $.toast({
+              heading: '警告',
+              text: respData.message,
+              icon: 'warning'
+          });
+        }
+      },
+      error : function () {
+        // 提示信息
+        $.toast({
+            heading: '错误',
+            text: '访问出现问题，请与管理员联系.',
+            icon: 'error'
+        });
+      }
+      
+    });
+
+    //========================= 构造首页版块=======================
+    // 构造首页版块
+    function buildTopBoard(data) {
+      // 版块导航
+      let navBoardListEl = $('#topBoardList');
+      // 遍历版块
+      data.forEach(board => {
+        // 构建版块
+        let itemHtml = '<li class="nav-item">'
+          + '<a class="nav-link" href="javascript:void(0);">'
+          + '<span class="nav-link-icon d-md-none d-lg-inline-block">'
+          + '<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-point-filled" width="24"'
+          + 'height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"'
+          + 'stroke-linecap="round" stroke-linejoin="round">'
+          + '<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>'
+          + '<path d="M12 7a5 5 0 1 1 -4.995 5.217l-.005 -.217l.005 -.217a5 5 0 0 1 4.995 -4.783z"'
+          + 'stroke-width="0" fill="currentColor"></path>'
+          + '</svg>'
+          + '</span>'
+          + '<span class="nav-link-title">'
+          + board.name
+          + '</span>'
+          + '</a>'
+          + '</li>'
+        // 为版块绑定当前版块数据对象以便后续获取
+        let boardItem = $(itemHtml);
+        // 把版块信息绑定到当前导航单元
+        boardItem.data('board', board);
+        console.log('data = ' + boardItem.data('board').name + ', id = ' + boardItem.data('board').id);
+        // 处理点击事件
+        boardItem.click(function () {
+          // alert('data = ' + boardItem.data('board').name + ', id = ' + boardItem.data('board').id);
+          // 激活效果
+          changeNavActive(boardItem);
+        });
+        // 加入版块导航
+        navBoardListEl.append(boardItem);
+      });
+    }
+
+    // ========================= 绑定导航栏中首页点击事件 =======================
+    $('#nav_board_index').click(function () {
+      // 激活效果
+      changeNavActive($(this));
+    });
+
+
+    // ========================= 起始页而加载首页帖子列表 ========================= 
+    buildArticleList();
+
+
+    // ============================ 处理个设置心点击事件 ===========================
+    $('#index_user_settings').click(function () {
+      console.log('加载设置中心页面');
+      removeNavActive();
+      $('#bit-forum-content').load('settings.html');
+    });
+
+    // ============================ 处理个人中心点击事件 ===========================
+    $('#index_user_profile').click(function () {
+      console.log('加载个人中心页面');
+      removeNavActive();
+      // 清空要查看的用户Id，表示要查看的是自己
+      profileUserId = undefined;
+      // 加载个人帖子列表
+      $('#bit-forum-content').load('profile.html');
+    });
+
+    // ============================ 处理退出登录点击事件 ===========================
+    // 成功后，跳转到sign-in.html
+    $('#index_user_logout').click(function () {
+      $.ajax({
+        type : 'get',
+        url : 'user/logout',
+        complete : function () {
+          // 当前请求完成时，不论成功与失败都跳转到登录页面
+          location.assign('/sign-in.html');
+        }
+      });
+    });
+
+    // ============ 发送站内信 ==============
+    $('#btn_index_send_message').click(function() {
+      // 获取输入内容
+      let receiveUserIdEl = $('#index_message_receive_user_id');
+      let messageContentEl = $('#index_message_receive_content');
+      // 校验
+      if (!receiveUserIdEl.val()) {
+        $.toast({
+            heading: '警告',
+            text: '出错了，请联系管理员',
+            icon: 'warning'
+          });
+          return;
+      }
+      if (!messageContentEl.val()) {
+        $.toast({
+          heading: '警告',
+          text: '请输入要发送的内容',
+          icon: 'warning'
+        });
+        // 输入框
+        messageContentEl.focus();
+        retrun;
+      }
+
+      // 构造发送数据
+      let postData = {
+        receiveUserId : receiveUserIdEl.val(),
+        content : messageContentEl.val()
+      };
+
+      // 发送站内信请求 url = message/send, 成功与失败都调用cleanMessageForm()方法，清空输入框
+      $.ajax({
+        type : 'post',
+        url : 'message/send',
+        contentType : 'application/x-www-form-urlencoded',
+        data : postData,
+        // 回调
+        success : function (respData) {
+          if (respData.code == 0) {
+            // 成功
+            cleanMessageForm();
+            // 提示信息
+            $.toast({
+                  heading: '成功',
+                  text: respData.message,
+                  icon: 'success'
+              });
+          } else {
+            // 提示信息
+            $.toast({
+                  heading: '警告',
+                  text: respData.message,
+                  icon: 'warning'
+              });
+            }
+          },
+          error : function () {
+            // 提示信息
+            $.toast({
+                heading: '错误',
+                text: '访问出现问题，请与管理员联系.',
+                icon: 'error'
+            });
+          }
+
+      });
+    });
+
+    // 清空站内信输入区
+    function cleanMessageForm () {
+      $('#index_message_receive_user_id').val('');
+      $('#index_message_receive_user_name').html('');
+      $('#index_message_receive_content').val('');
+    }
+    // ============ 站内信取消接钮事件 ============
+    $('#index_message_receive_cancel').click(function () {
+      // 清空
+      cleanMessageForm();
+    });
+
+    // ============ 获取用户未读站内信数量 ============
+    // url = message/getUnreadCount
+    // 成功后，处理小红点是否显示 #index_nva_message_badge
+    function requestMessageUnreadCount () {
+      $.ajax({
+        type : 'get',
+        url : 'message/getUnreadCount',
+        // 回调
+        success : function (respData) {
+          if (respData.code == 0) {
+            // 成功, 根据未读数来判断是否显示小红点
+            // 获取要操作的HTML的元素
+            let messageBadgeEl = $('#index_nva_message_badge');
+            if (respData.data > 0) {
+              // 显示
+              messageBadgeEl.show();
+            } else {
+              // 隐藏
+              messageBadgeEl.hide();
+            }
+            
+          } else {
+            // 提示信息
+            $.toast({
+                  heading: '警告',
+                  text: respData.message,
+                  icon: 'warning'
+              });
+            }
+          },
+          error : function () {
+            // 提示信息
+            $.toast({
+                heading: '错误',
+                text: '访问出现问题，请与管理员联系.',
+                icon: 'error'
+            });
+          }
+      });
+    }
+
+    // 方法调用
+    requestMessageUnreadCount();
+    
+
+    // ============ 获取用户所有站内信 ============
+    // 成功后，调用buildMessageList() 方法构建站内信列表
+    function requestMessageList () {
+      $.ajax({
+        type : 'get',
+        url : 'message/getAll',
+        // 回调
+        success : function (respData) {
+          if (respData.code == 0) {
+            // 成功，构建站内信列表
+            buildMessageList(respData.data);  
+          } else {
+            // 提示信息
+            $.toast({
+                  heading: '警告',
+                  text: respData.message,
+                  icon: 'warning'
+              });
+            }
+          },
+          error : function () {
+            // 提示信息
+            $.toast({
+                heading: '错误',
+                text: '访问出现问题，请与管理员联系.',
+                icon: 'error'
+            });
+          }
+      });
+    }
+    // 方法调用
+    requestMessageList();
+    
+
+    // ============ 处理站内信列表页面 ============
+    function buildMessageList(messageList) {
+      // 获取父标签
+      let messageDivEl = $('#index_div_message');
+      if (!messageList || messageList.length == 0) {
+        messageDivEl.html('<strong>没有站内信</strong>');
+        return;
+      }
+      // 获取站内信列表父标签
+      let messageListDivEl = $('#index_div_message_list');
+      messageListDivEl.html('');
+      // 遍历结果
+      messageList.forEach(messageItem => {
+        let itemHtml = ' <div class="list-group-item"> '
+          + ' <div class="row align-items-center"> '
+          + ' <div class="col-auto"><span class="status-dot d-block"></span></div> '
+          + ' <div class="col text-truncate"> '
+          + ' <a href="javascript:void(0);" class="text-body d-block index_message_title" data-bs-toggle="modal" data-bs-target="#index_message_reply_modal"> '
+          +  ' <span class="index_message_item_statue">[已读]</span> &nbsp; '
+          + ' <span>来自 <strong> '+ messageItem.postUser.nickname 
+          + ' </strong> 的消息</span></a> '
+          + ' <div class="d-block text-muted text-truncate mt-n1"> '
+          + messageItem.content
+          + ' </div> '
+          + ' </div> '
+          + ' <div class="col-auto"> '
+          + ' <a href="javascript:void(0);" class="list-group-item-actions" data-bs-toggle="modal" data-bs-target="#index_message_reply_modal"> '
+          + ' <svg xmlns="http://www.w3.org/2000/svg" class="icon text-muted bi bi-reply" width="24" height="24" '
+          + ' fill="currentColor" viewBox="0 0 16 16"> '
+          + ' <path d="M6.598 5.013a.144.144 0 0 1 .202.134V6.3a.5.5 0 0 0 .5.5c.667 0 2.013.005 3.3.822.984.624 1.99 1.76 2.595 3.876-1.02-.983-2.185-1.516-3.205-1.799a8.74 8.74 0 0 0-1.921-.306 7.404 7.404 0 0 0-.798.008h-.013l-.005.001h-.001L7.3 9.9l-.05-.498a.5.5 0 0 0-.45.498v1.153c0 .108-.11.176-.202.134L2.614 8.254a.503.503 0 0 0-.042-.028.147.147 0 0 1 0-.252.499.499 0 0 0 .042-.028l3.984-2.933zM7.8 10.386c.068 0 .143.003.223.006.434.02 1.034.086 1.7.271 1.326.368 2.896 1.202 3.94 3.08a.5.5 0 0 0 .933-.305c-.464-3.71-1.886-5.662-3.46-6.66-1.245-.79-2.527-.942-3.336-.971v-.66a1.144 1.144 0 0 0-1.767-.96l-3.994 2.94a1.147 1.147 0 0 0 0 1.946l3.994 2.94a1.144 1.144 0 0 0 1.767-.96v-.667z"/> '
+          + ' </svg> '
+          + ' </a> '
+          + ' </div> '
+          + ' </div> '
+          + ' </div>';
+        
+        // 转为jQuery对象
+        let messageItemEL = $(itemHtml);
+        // 设置状态 bg-green bg-red status-dot-animated
+        let statusDotEl = messageItemEL.find('.status-dot');
+        let statusDescEl = messageItemEL.find('.index_message_item_statue');
+        if (messageItem.state == 0) {
+          // 未读
+          statusDotEl.addClass('status-dot-animated bg-red');
+          statusDescEl.html('[未读]');
+        } else if (messageItem.state == 1) {
+          // 已读
+          statusDescEl.html('[已读]');
+        } else if (messageItem.state == 2) {
+          // 已回复
+          statusDotEl.addClass('bg-green');
+          statusDescEl.html('[已回复]');
+        }
+        // 绑定数据
+        messageItemEL.data('message', messageItem);
+        // 绑定点击事件
+        messageItemEL.find('.list-group-item-actions, .index_message_title').click(function () {
+          // 详情与回复页面数据
+          // 站内信Id
+          $('#index_message_detail_id').val(messageItem.id);
+          // 标题
+          $('#index_message_detail_title').html('收到来自 <strong>' + messageItem.postUser.nickname + '</strong> 的新消息');
+          // 内容
+          $('#index_message_detail_content').html(messageItem.content);
+          // 接收者Id
+          $('#index_message_reply_receive_user_id').val(messageItem.postUser.id);
+          // 接收者信息
+          $('#index_message_reply_receive_user_name').html('回复给: ' + messageItem.postUser.nickname);
+          // 复位回复区域
+          $('#index_message_reply_div').hide();
+          // 复位接钮显示 
+          $('#btn_index_message_reply').show();
+          $('#btn_index_send_message_reply').hide();
+
+          // 发送请求，更新状态为已读
+          if (messageItem.state == 0 && statusDotEl.hasClass('status-dot-animated bg-red')) {
+            $.ajax ({
+              type : 'post',
+              url : 'message/markRead',
+              contentType : 'application/x-www-form-urlencoded',
+              data : {id : messageItem.id},
+              // 成功回调
+              success : function (respData) {
+                if (respData.code == 0) {
+                  // 更新页面显示效果和messageItem.state
+                  statusDotEl.removeClass('status-dot-animated bg-red');
+                  // 修改未读为已读
+                  statusDescEl.html('[已读]');
+                  // 修改本地的对象状态属性
+                  messageItem.state = 1;
+                }
+              }
+            });
+          }
+        });
+
+        // 添加到列表
+        messageListDivEl.append(messageItemEL);
+
+      });
+    }
+    
+    // ============ 处理阅读和回复站内信 ============
+    // 清空站内信输入区
+    function cleanMessageReplyForm () {
+      // 详情区
+      $('#index_message_detail_id').val('');
+      $('#index_message_detail_title').html('');
+      $('#index_message_detail_content').html('');
+      // 回复区
+      $('#index_message_reply_receive_user_id').val('');
+      $('#index_message_reply_receive_user_name').html('');
+      $('#index_message_reply_receive_content').val('');
+    }
+    // ============ 站内信取消接钮事件 ============
+    $('#index_message_reply_cancel').click(function () {
+      // 清空
+      cleanMessageReplyForm();
+    });
+
+    // 处理回复站内信按钮事件
+    $('#btn_index_message_reply').click(function () {
+      // 清空内容区
+      $('#index_message_reply_receive_content').val('');
+      // 显示回复区域
+      $('#index_message_reply_div').show();
+      // 隐藏回复按钮，显示发送按钮
+      $(this).hide();
+      $('#btn_index_send_message_reply').show();
+    });
+
+    // ============ 绑定发送按钮事件 ============
+    $('#btn_index_send_message_reply').click(function () {
+      // 校验用户输入
+      let replyReceiveContentEl = $('#index_message_reply_receive_content');
+      if (!replyReceiveContentEl.val()) {
+        $.toast({
+          heading: '警告',
+          text: '请输入要回复的内容',
+          icon: 'warning'
+        });
+        // 输入框
+        replyReceiveContentEl.focus();
+        retrun;
+      }
+
+      // 构造请求数据
+      let postData = {
+        repliedId: $('#index_message_detail_id').val(),
+        content: replyReceiveContentEl.val()
+      };
+
+      // 发送请求 message/reply
+      // 回复成功后刷新未读标识和站内信列表
+      // requestMessageUnreadCount();
+      // requestMessageList();
+      // // 清空输入区
+      // cleanMessageReplyForm ();
+      $.ajax ({
+        type : 'post',
+        url : 'message/reply',
+        contentType : 'application/x-www-form-urlencoded',
+        data : postData,
+        // 回调
+        success : function (respData) {
+          if (respData.code == 0) {
+            // 回复成功后刷新未读标识和站内信列表
+            requestMessageUnreadCount();
+            requestMessageList();
+            // 清空输入区
+            cleanMessageReplyForm ();
+            // 提示信息
+            $.toast({
+                  heading: '成功',
+                  text: respData.message,
+                  icon: 'success'
+              });
+          } else {
+            // 提示信息
+            $.toast({
+                  heading: '警告',
+                  text: respData.message,
+                  icon: 'warning'
+              });
+            }
+          },
+          error : function () {
+            // 提示信息
+            $.toast({
+                heading: '错误',
+                text: '访问出现问题，请与管理员联系.',
+                icon: 'error'
+            });
+          }
+      });
+
+
+    });
+  });
+</script>
+
+</html>

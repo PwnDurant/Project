@@ -1,0 +1,444 @@
+<!-- Page header -->
+<div class="page-header d-print-none">
+  <div class="container-xl">
+    <div class="row g-2 align-items-center">
+      <div class="col">
+        <h2 class="page-title">
+          用户中心
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Page body -->
+<div class="page-body">
+  <div class="container-xl">
+    <div class="card">
+      <div class="row g-0">
+        <div class="col-3 d-none d-md-block border-end">
+          <div class="card-body">
+            <div class="list-group list-group-transparent">
+              <a href="javascript:void(0);"
+                class="list-group-item list-group-item-action d-flex align-items-center active">我的账户</a>
+              <!-- <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">修改密码</a>
+                      <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">个人简介</a> -->
+            </div>
+          </div>
+        </div>
+        <div class="col d-flex flex-column">
+          <div class="card-body">
+            <!-- 昵称 -->
+            <h2 id="settings_nickname" class="mb-4"></h2>
+            <input type="text" style="display: none;" id="settings_user_id">
+            <div class="row align-items-center">
+              <div class="col-auto">
+                <a id="settings_avatar" class="avatar avatar-xl" style="background-image: url(./image/avatar02.jpeg)"
+                  onclick="openFileDialog()"></a>
+                <!-- 文件选择 -->
+                <input type="file" class="form-control" style="display: none;" id="settings_input_chooiceAvatar">
+              </div>
+
+              <div class="col-auto"><a href="javascript:void(0);" class="btn" onclick="openFileDialog()">
+                  修改头像
+                </a>
+
+              </div>
+            </div>
+            <h3 class="card-title mt-4">昵称</h3>
+            <div class="row">
+              <div class="col-9">
+                <input id="setting_input_nickname" type="text" class="form-control">
+                <div class="invalid-feedback">昵称不能为空</div>
+              </div>
+              <div class="col-3">
+                <a id="setting_submit_nickname" href="javascript:void(0)" class="btn">
+                  修 改
+                </a>
+              </div>
+            </div>
+            <hr>
+            <h3 class="card-title mt-4">邮箱地址</h3>
+            <div>
+              <div class="row g-3">
+                <div class="col-9">
+                  <input id="setting_input_email" type="text" class="form-control">
+                  <div class="invalid-feedback">邮箱地址不能为空</div>
+                </div>
+                <div class="col-3">
+                  <a id="setting_submit_email" href="javascript:void(0)" class="btn">
+                    修 改
+                  </a>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <h3 class="card-title mt-4">电话号码</h3>
+            <div>
+              <div class="row g-3">
+                <div class="col-9">
+                  <input id="setting_input_phoneNum" type="text" class="form-control">
+                  <div class="invalid-feedback">电话号码不能为空</div>
+                </div>
+                <div class="col-3">
+                  <a id="setting_submit_phoneNum" href="javascript:void(0);" class="btn">
+                    修 改
+                  </a>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <h3 class="card-title mt-4">修改密码</h3>
+            <div>
+              <div class="row g-3">
+                <!-- 表单 -->
+                <div class="col-9">
+                  <form autocomplete="off" novalidate>
+                    <div class="mb-2">
+                      <label class="form-label required">
+                        原密码
+                      </label>
+                      <div class="input-group input-group-flat">
+                        <input id="settings_input_oldPassword" type="password" class="form-control" placeholder="请输入密码" autocomplete="off">
+                        <span class="input-group-text">
+                          <a href="#" class="link-secondary" title="显示密码"
+                            data-bs-toggle="tooltip"><!-- Download SVG icon from http://tabler-icons.io/i/eye -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                              stroke-linecap="round" stroke-linejoin="round">
+                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                              <path d="M12 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                              <path
+                                d="M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7" />
+                            </svg>
+                          </a>
+                        </span>
+                        <div class="invalid-feedback">原密码不能为空</div>
+                      </div>
+                    </div>
+
+                    <div class="mb-2">
+                      <label class="form-label required">
+                        新原密码
+                      </label>
+                      <div class="input-group input-group-flat">
+                        <input id="settings_input_newPassword" type="password" class="form-control" placeholder="请输入密码" autocomplete="off">
+                        <span class="input-group-text">
+                          <a href="#" class="link-secondary" title="显示密码"
+                            data-bs-toggle="tooltip"><!-- Download SVG icon from http://tabler-icons.io/i/eye -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                              stroke-linecap="round" stroke-linejoin="round">
+                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                              <path d="M12 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                              <path
+                                d="M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7" />
+                            </svg>
+                          </a>
+                        </span>
+                        <div class="invalid-feedback">新密码不能为空</div>
+                      </div>
+                    </div>
+                    <div class="mb-2">
+                      <label class="form-label required">
+                        确认密码
+                      </label>
+                      <div class="input-group input-group-flat">
+                        <input id="settings_input_passwordRepeat" type="password" class="form-control" placeholder="请输入密码" autocomplete="off">
+                        <span class="input-group-text">
+                          <a href="#" class="link-secondary" title="显示密码"
+                            data-bs-toggle="tooltip"><!-- Download SVG icon from http://tabler-icons.io/i/eye -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                              stroke-linecap="round" stroke-linejoin="round">
+                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                              <path d="M12 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                              <path
+                                d="M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7" />
+                            </svg>
+                          </a>
+                        </span>
+                        <div class="invalid-feedback">确认密码不能为空</div>
+                      </div>
+                    </div>
+
+                    <div class="form-footer">
+                      <button id="settings_submit_password" type="button" class="btn btn-outline-danger w-100">提交修改</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <h3 class="card-title mt-4">个人简介</h3>
+            <div class="row">
+              <div class="col-9">
+                <textarea id="settings_textarea_remark" class="form-control" placeholder="写点自我介绍，可以让朋友们了解你..."
+                  rows="5"></textarea>
+                <div class="invalid-feedback">个人简介不能为空</div>
+              </div>
+              <div class="col-3">
+                <a href="javascript:void(0);" class="btn" id="settings_submit_remark">
+                  修 改
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(function() {
+    // ================= 获取用户详情，初始化页面内容 =================
+    // 发送AJAX请求，成功时 调用initUserInfo方法，完成页面数据初始化
+    $.ajax({
+      type : 'get',
+      url : 'user/info',
+      // 回调
+      success : function (respData) {
+        if (respData.code == 0) {
+          // 成功
+          initUserInfo(respData.data);
+        } else {
+          // 提示信息
+          $.toast({
+                heading: '警告',
+                text: respData.message,
+                icon: 'warning'
+            });
+          }
+        },
+        error : function () {
+          // 提示信息
+          $.toast({
+              heading: '错误',
+              text: '访问出现问题，请与管理员联系.',
+              icon: 'error'
+          });
+        }
+    });
+  });
+
+  // ================= 设置用户信息 =================
+  function initUserInfo(user) {
+    // 默认头像路径
+    if (!user.avatarUrl) {
+      user.avatarUrl = avatarUrl;
+    }
+    // 用户Id
+    $('#settings_user_id').val(user.id);
+    // title 昵称
+    $('#settings_nickname').html(user.nickname);
+    // 头像
+    $('#settings_avatar').css('background-image', 'url(' + user.avatarUrl + ')');
+    // 昵称
+    $('#setting_input_nickname').val(user.nickname);
+    // 邮箱
+    $('#setting_input_email').val(user.email);
+    // 电话
+    $('#setting_input_phoneNum').val(user.phoneNum);
+    // 个人简历
+    $('#settings_textarea_remark').html(user.remark);
+  }
+
+  // ================= 封装ajax请求 =================
+  function changeUserInfo(userInfo, type) {
+    // 校验用户信息
+    if (!userInfo) {
+      $.toast({
+        heading: '提示',
+        text: '请检查要修改的内容是否正确或联系管理员',
+        icon: 'info'
+      });
+      return;
+    }
+
+    // 定义接口路径
+    let userURL = 'user/modifyInfo';
+    if (type == 1) {
+      userURL = 'user/modifyInfo';
+    } else if (type == 2) {
+      userURL = 'user/modifyPwd';
+    }
+
+    // 发送请求，提示响应结果
+    $.ajax({
+      type : 'post',
+      url : userURL,
+      contentType : 'application/x-www-form-urlencoded',
+      data : userInfo,
+      // 回调
+      success : function (respData) {
+        if (respData.code == 0) {
+          // 获取用户对象
+          let user = respData.data;
+
+          // user对象有效，并且昵称有效 修改页面中的内容
+          if (user && user.nickname) {
+            // 个人中心页面中的昵称
+            $('#settings_nickname').html(user.nickname);
+            // 导航栏中的昵称
+            $('#index_nav_nickname').html(user.nickname);
+          }
+          // 如查密码修改成功强制登录
+          if (type == 2) {
+            location.assign('sign-in.html');
+            return;
+          }
+          // 提示信息
+          $.toast({
+                heading: '成功',
+                text: respData.message,
+                icon: 'success'
+            });
+        } else {
+          // 提示信息
+          $.toast({
+                heading: '警告',
+                text: respData.message,
+                icon: 'warning'
+            });
+          }
+        },
+        error : function () {
+          // 提示信息
+          $.toast({
+              heading: '错误',
+              text: '访问出现问题，请与管理员联系.',
+              icon: 'error'
+          });
+        }
+      
+    });
+
+  }
+
+  // ================= 处理选择头像事件 =================
+  function openFileDialog () {
+    // 触发选择文件按钮的点击事件
+    $('#settings_input_chooiceAvatar').click();
+  }
+
+  // ================= 修改用户昵称 =================
+  $('#setting_submit_nickname').click(function(){
+    // 获取值
+    let nicknameEl = $('#setting_input_nickname');
+    // 校验
+    if(!nicknameEl.val()) {
+      nicknameEl.focus();
+      return false;
+    }
+    // 构造数据
+    let nicknameObj = {
+      nickname : nicknameEl.val()
+    }
+    // 发送请求
+    changeUserInfo(nicknameObj);
+  });
+
+  // ================= 修改邮箱 =================
+  $('#setting_submit_email').click(function(){
+    // 获取值
+    let emailEl = $('#setting_input_email');
+    // 校验
+    if(!emailEl.val()) {
+      emailEl.focus();
+      return false;
+    }
+    // 构造数据
+    let emailObj = {
+      email : emailEl.val()
+    }
+    // 发送请求
+    changeUserInfo(emailObj);
+  });
+
+  // ================= 修改电话 =================
+  $('#setting_submit_phoneNum').click(function(){
+    // 获取值
+    let phoneNumEl = $('#setting_input_phoneNum');
+    // 校验
+    if(!phoneNumEl.val()) {
+      phoneNumEl.focus();
+      return false;
+    }
+    // 构造数据
+    let phoneNumObj = {
+      phoneNum : phoneNumEl.val()
+    }
+    // 发送请求
+    changeUserInfo(phoneNumObj);
+  });
+
+  
+  // ================= 修改个人介绍 =================
+  $('#settings_submit_remark').click(function(){
+    // 获取值
+    let remarkEl = $('#settings_textarea_remark');
+    // 校验
+    if(!remarkEl.val()) {
+      remarkEl.focus();
+      return false;
+    }
+    // 构造数据
+    let remarkObj = {
+      remark : remarkEl.val()
+    }
+    // 发送请求
+    changeUserInfo(remarkObj);
+  });
+
+  // ================= 修改密码 =================
+  $('#settings_submit_password').click(function() {
+    // 获取值
+    let oldPasswordEl = $('#settings_input_oldPassword');
+    // 校验
+    if(!oldPasswordEl.val()) {
+      oldPasswordEl.focus();
+      return false;
+    }
+    // 获取值
+    let newPasswordEl = $('#settings_input_newPassword');
+    // 校验
+    if(!newPasswordEl.val()) {
+      newPasswordEl.focus();
+      return false;
+    }
+    // 获取值
+    let passwordRepeatEl = $('#settings_input_passwordRepeat');
+    // 校验
+    if(!passwordRepeatEl.val()) {
+      passwordRepeatEl.focus();
+      return false;
+    }
+
+    // 两次输入的密码是否相同
+    if (newPasswordEl.val() != passwordRepeatEl.val()) {
+      $.toast({
+        heading: '提示',
+        text: '两次输入的密码不相同',
+        icon: 'warning'
+      });
+      // 获取焦点
+      passwordRepeatEl.focus();
+      return false;
+    }
+
+    // 构造数据
+    let  passwrodObj = {
+      oldPassword : oldPasswordEl.val(),
+      newPassword : newPasswordEl.val(),
+      passwordRepeat : passwordRepeatEl.val()
+
+    }
+    // 发送请求
+    changeUserInfo(passwrodObj, 2);
+    // 清空输入框
+    oldPasswordEl.val('');
+    newPasswordEl.val('');
+    passwordRepeatEl.val('');
+  });
+  
+</script>

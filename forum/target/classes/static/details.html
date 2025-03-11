@@ -1,0 +1,624 @@
+<!-- Page header -->
+<div class="page-header d-print-none">
+  <div class="container-xl">
+    <!-- 帖子Id -->
+    <input type="text" style="display: none;" id="details_article_id">
+    <div class="row g-2 align-items-center">
+      <div class="col">
+        <!-- 帖子标题 -->
+        <h2 class="page-title" id="details_article_title"></h2>
+      </div>
+    </div>
+    <div class="col-auto d-none d-md-inline" style="padding: 0px 3px;">
+      <ul class="list-inline list-inline-dots mb-0">
+        <li class="list-inline-item">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock-edit" width="24" height="24"
+            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M21 12a9 9 0 1 0 -9.972 8.948c.32 .034 .644 .052 .972 .052"></path>
+            <path d="M12 7v5l2 2"></path>
+            <path d="M18.42 15.61a2.1 2.1 0 0 1 2.97 2.97l-3.39 3.42h-3v-3l3.42 -3.39z"></path>
+          </svg>
+          <!-- 发布时间 -->
+          <span id="details_article_createTime"></span>
+        </li>
+        <li class="list-inline-item">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eye" width="24" height="24"
+            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+            <path d="M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7">
+            </path>
+          </svg>
+          <!-- 访问数量 -->
+          <span id="details_article_visitCount"></span>
+        </li>
+        <li class="list-inline-item">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="24" height="24"
+            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"></path>
+          </svg>
+          <!-- 点赞数量 -->
+          <span id="details_article_likeCount"></span>
+        </li>
+        <li class="list-inline-item">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message-circle" width="24"
+            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1"></path>
+            <path d="M12 12l0 .01"></path>
+            <path d="M8 12l0 .01"></path>
+            <path d="M16 12l0 .01"></path>
+          </svg>
+          <!-- 回复数量 -->
+          <span id="details_article_replyCount"></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- Page body -->
+<div class="page-body">
+  <div class="container-xl">
+    <div class="row justify-content-center">
+      <div class="row">
+        <!-- 作者区 -->
+        <div class="col-3 card">
+          <div class="card-body p-4 text-center">
+            <span class="avatar avatar-xl mb-3 rounded" style="background-image: url(./image/avatar01.jpeg)"
+              id="article_details_author_avatar"></span>
+            <h3 class="m-0 mb-1"><a href="javascript:void(0);" id="article_details_author_name"></a></h3>
+            <div style="margin-top: 10px;" id="div_details_send_message">
+              <a href="javascript:void(0);" class="btn btn-primary" id="btn_details_send_message" data-bs-toggle="modal" data-bs-target="#index_message_modal">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="24" height="24"
+                  viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z">
+                  </path>
+                  <path d="M3 7l9 6l9 -6"></path>
+                </svg>
+                发私信
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-9 card card-lg">
+          <!-- 帖子正文 -->
+          <div class="card-body">
+            <h1 id="details_article_content_title"></h1>
+            <div id="details_article_content"></div>
+          </div>
+          <!-- 卡片页脚 -->
+          <div class="card-footer bg-transparent mt-auto justify-content-end"
+            style="display: flex; justify-content: space-between; align-items: center;">
+            <!-- 操作区开始 -->
+            <div class="col-auto row g-2 align-items-center">
+              <div class="col-auto">
+                <div class="col-6 col-sm-4 col-md-2 col-xl-auto py-3">
+                  <a href="javascript:void(0);" class="btn btn-pink w-100" id="details_btn_like_count">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                      stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572">
+                      </path>
+                    </svg>
+                    点赞
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-auto details-is-own" style="display: none;">
+                <div class="col-6 col-sm-4 col-md-2 col-xl-auto py-3">
+                  <a href="javascript:void(0);" class="btn btn-tabler w-100" id="details_artile_edit">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24"
+                      height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
+                      <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
+                      <path d="M16 5l3 3"></path>
+                    </svg>
+                    <span>编辑</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-auto details-is-own" style="display: none;">
+                <div class="col-6 col-sm-4 col-md-2 col-xl-auto py-3">
+                  <a href="javascript:void(0);" class="btn btn-outline-danger w-100" data-bs-toggle="modal" data-bs-target="#details_delete_modal">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24"
+                      height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M4 7l16 0"></path>
+                      <path d="M10 11l0 6"></path>
+                      <path d="M14 11l0 6"></path>
+                      <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+                      <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+                    </svg>
+                    <span>删除</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 操作区 结束 -->
+        </div>
+      </div>
+
+
+      <div style="margin: 15px 0px; padding-left: 20px;">
+        <h3>最新回复</h3>
+      </div>
+
+
+      <div style="margin: 15px 0px; padding-left: 20px;" id="details_reply_area">
+        <!-- 回复列表区域 -->
+      </div>
+
+      <div class="row">
+        <!-- 回复编辑区 -->
+        <div class="card">
+          <div class="card-body">
+            <div class="mb-3" style="height: 300px;">
+              <div id="article_details_reply">
+                <!-- textarea也是一个表单控件，当在editor.md中编辑好的内容会关联这个文本域上 -->
+                <textarea id="details_article_reply_content" style="display: none;"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer bg-transparent mt-auto">
+            <!-- 操作区 结束 -->
+            <div class="col-auto row g-2 justify-content-end">
+              <div class="col-auto">
+                <div class="col-6 col-sm-4 col-md-2 col-xl-auto py-3">
+                  <a href="javascript:void(0);" class="btn btn-tabler w-100" id="details_btn_article_reply">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24"
+                      height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
+                      <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
+                      <path d="M16 5l3 3"></path>
+                    </svg>
+                    <span>回复</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal modal-blur fade" id="details_delete_modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-status bg-danger"></div>
+      <div class="modal-body text-center py-4">
+        <!-- Download SVG icon from http://tabler-icons.io/i/alert-triangle -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon mb-2 text-danger icon-lg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 9v2m0 4v.01" /><path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75" /></svg>
+        <h3>确定要删除当前帖子吗?</h3>
+        <div class="text-muted">点击确认该帖子将被删除.</div>
+      </div>
+      <div class="modal-footer">
+        <div class="w-100">
+          <div class="row">
+            <div class="col"><a href="javascript:void(0);" class="btn w-100" data-bs-dismiss="modal">
+                取消
+              </a></div>
+            <div class="col"><a href="javascript:void(0);" class="btn btn-danger w-100" data-bs-dismiss="modal" id="details_artile_delete">
+                删除
+              </a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(function () {
+    // ===================== 初始化回复编辑区 ===================== 
+    var editor = editormd("article_details_reply", {
+      width: "100%",
+      height: "100%",
+      // theme : "dark",
+      // previewTheme : "dark",
+      // editorTheme : "pastel-on-dark",
+      autoFocus: false, // 关闭自动获得焦点
+      codeFold: true,
+      markdown : '', // 处理编辑区内容
+      //syncScrolling : false,
+      saveHTMLToTextarea: true,    // 保存 HTML 到 Textarea
+      searchReplace: true,
+      watch: false,                    // 关闭实时预览
+      htmlDecode: "style,script,iframe|on*",            // 开启 HTML 标签解析，为了安全性，默认不开启    
+      // toolbar  : false,             //关闭工具栏
+      // previewCodeHighlight : false, // 关闭预览 HTML 的代码块高亮，默认开启
+      emoji: true,
+      taskList: true,
+      tocm: true,         // Using [TOCM]
+      tex: true,                     // 开启科学公式TeX语言支持，默认关闭
+      // flowChart : true,               // 开启流程图支持，默认关闭
+      // sequenceDiagram : true,         // 开启时序/序列图支持，默认关闭,
+      placeholder: '开始创作...',     // 占位符
+      path: "./dist/editor.md/lib/"
+    });
+
+    // ===================== 请求帖子详情 ===================== 
+    // url: '/article/getById?id=' + currentArticle.id,
+    // 成功后， 调用initArticleDetails()方法，初始化页面内容
+    $.ajax({
+      type : 'get',
+      url : 'article/details?id=' + currentArticle.id,
+      // 回调
+      success : function (respData) {
+        if (respData.code == 0) {
+          // 成功
+          initArticleDetails(respData.data);
+        } else {
+          // 提示信息
+          $.toast({
+                heading: '警告',
+                text: respData.message,
+                icon: 'warning'
+            });
+        }
+      },
+      error : function () {
+        // 提示信息
+        $.toast({
+            heading: '错误',
+            text: '访问出现问题，请与管理员联系.',
+            icon: 'error'
+        });
+      }
+    });
+
+    // ===================== 初始化页面内空 ======================
+    function initArticleDetails(article) {
+      // 设置当前操作的帖子为最新查询出来的值
+      currentArticle = article;
+      // 默认头像路径
+      if (!article.user.avatarUrl) {
+        article.user.avatarUrl = avatarUrl;
+      }
+
+      // 设置头像
+      $('#article_details_author_avatar').css('background-image', 'url(' + article.user.avatarUrl + ')');
+      // 设置用户名
+      $('#article_details_author_name').html(article.user.nickname);
+      // 设置帖子Id
+      $('#details_article_id').val(article.id);
+      // 设置帖子标题
+      $('#details_article_title').html(article.title);
+      // 设置发布时间
+      $('#details_article_createTime').html(article.createTime);
+      // 设置访问数量
+      $('#details_article_visitCount').html(article.visitCount);
+      // 设置点赞数
+      $('#details_article_likeCount').html(article.likeCount);
+      // 设置回复数
+      $('#details_article_replyCount').html(article.replyCount);
+      // 帖子正文
+      $('#details_article_content_title').html(article.title)
+      // 让内容以markdown 的形式显示
+      editormd.markdownToHTML('details_article_content', { markdown: article.content });
+      // 编辑权限通过后台返回的属性值处理
+      if (article.own) {
+        $('.details-is-own').show();
+      }
+      // 是否显示站内信按钮
+      if (article.user.id == currentUserId) {
+        $('#div_details_send_message').hide();
+      } else {
+        // 设置站内信目标用户信息
+        $('#btn_details_send_message').click(function() {
+          setMessageReceiveUserInfo(article.user.id, article.user.nickname);
+        });
+      }
+      // 个人帖子列表
+      $('#article_details_author_name').click(function () {
+          // 设置要查看用户的Id
+          profileUserId = article.userId;
+          // 是否为当前登录用户
+          if (article.userId == currentUserId) {
+            profileUserId = undefined;
+          }
+          $('#bit-forum-content').load('profile.html');
+        });
+
+    }
+
+    // ====================== 加载回复列表 ======================
+    // url: 'reply/getReplies?articleId=' + currentArticle.id
+    // 成功后，调用buildArticleReply()方法构建回复列表
+    function loadArticleDetailsReply() {
+      $.ajax({
+        type : 'get',
+        url : 'reply/getReplies?articleId=' + currentArticle.id,
+        success : function (respData) {
+        if (respData.code == 0) {
+          // 成功
+          buildArticleReply(respData.data);
+        } else {
+          // 提示信息
+          $.toast({
+                heading: '警告',
+                text: respData.message,
+                icon: 'warning'
+            });
+          }
+        },
+        error : function () {
+          // 提示信息
+          $.toast({
+              heading: '错误',
+              text: '访问出现问题，请与管理员联系.',
+              icon: 'error'
+          });
+        }
+      });
+    }
+    // 
+    function buildArticleReply(data) {
+      let replyArea = $('#details_reply_area');
+      // 没有回复内容
+      if (!data || data.length == 0) {
+        replyArea.html('<p>还没有回复，第一个写下回复吧</p>');
+        return;
+      }
+      // 清空原有内空
+      $('#details_reply_area').html('');
+      data.forEach(articleReply => {
+        // 默认头像路径
+      if (!articleReply.user.avatarUrl) {
+        articleReply.user.avatarUrl = avatarUrl;
+      }
+        // 构造回复记录
+        let replyHtml = '<div class="row" >'
+          + ' <div class="col-3 card">'
+          + ' <div class="card-body p-4 text-center">'
+          + ' <span class="avatar avatar-xl mb-3 rounded" style="background-image: url(' + articleReply.user.avatarUrl + ')"></span>'
+          + ' <h3 class="m-0 mb-1"><a href="javascript:void(0);" class="a_reply_user_profile">' + articleReply.user.nickname + '</a></h3>'
+          + ' <div class="div_reply_send_message" style="margin-top: 10px;">'
+          + ' <a href="javascript:void(0);" class="btn btn-primary btn_reply_send_message" data-bs-toggle="modal" data-bs-target="#index_message_modal">'
+          + ' <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="24" height="24"'
+          + ' viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"' 
+          + ' stroke-linejoin="round">'
+          + ' <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>'
+          + ' <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z">'
+          + ' </path>'
+          + ' <path d="M3 7l9 6l9 -6"></path>'
+          + ' </svg>'
+          + ' 发私信'
+          + ' </a>'
+          + ' </div>'
+          + ' </div>'
+          + ' </div>'
+          + ' <div class="col-9 card card-lg">'
+          + ' <div class="card-body">'
+          + ' <div id="details_article_reply_content_' + articleReply.id + '"></div>'
+          + ' </div>'
+          + ' <div class="card-footer bg-transparent mt-auto"'
+          + ' style="display: flex; justify-content: space-between; align-items: center;">'
+          + ' <div class="row">'
+          + ' <div class="col-auto d-none d-md-inline">'
+          + ' <ul class="list-inline list-inline-dots mb-0">'
+          + ' <li class="list-inline-item">'
+          + ' <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock-edit" width="24"'
+          + ' height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"'
+          + ' stroke-linecap="round" stroke-linejoin="round">'
+          + ' <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>'
+          + ' <path d="M21 12a9 9 0 1 0 -9.972 8.948c.32 .034 .644 .052 .972 .052"></path>'
+          + ' <path d="M12 7v5l2 2"></path>'
+          + ' <path d="M18.42 15.61a2.1 2.1 0 0 1 2.97 2.97l-3.39 3.42h-3v-3l3.42 -3.39z"></path>'
+          + ' </svg> '
+          + articleReply.createTime
+          + ' </li>'
+          + ' </ul>'
+          + ' </div>'
+          + ' </div>'
+          + ' </div>'
+          + ' </div>'
+          + ' </div>';
+
+        
+        let replyItem = $(replyHtml);
+        // 获取标题的 a 标签
+        let replySendMessageDiv = replyItem.find('.div_reply_send_message');
+        // 是否显示站内信按钮
+        if (articleReply.user.id == currentUserId) {
+          replySendMessageDiv.css('display', 'none');
+        } else {
+          console.log('显示回复中的站内信');
+          // 设置站内信目标用户信息
+          let replySendMessageBtn = replyItem.find('.btn_reply_send_message');
+          console.log(replySendMessageBtn);
+          replySendMessageBtn.click(function() {
+            console.log(articleReply);
+            setMessageReceiveUserInfo(articleReply.user.id, articleReply.user.nickname);
+        });
+        }
+        // 个人帖子列表
+        let replyUserProfileBtn = replyItem.find('.a_reply_user_profile');
+        replyUserProfileBtn.click(function () {
+          // 设置要查看用户的Id
+          profileUserId = articleReply.user.id;
+          $('#bit-forum-content').load('profile.html');
+        });
+        // 添加到回复区
+        replyArea.append(replyItem);
+        
+        // 处理内容
+        editormd.markdownToHTML('details_article_reply_content_' + articleReply.id, { markdown: articleReply.content });
+      });
+    }
+
+    // ====================== 加载回复 ======================
+    loadArticleDetailsReply();
+
+
+    // ====================== 处理点赞 ======================
+    // url: '/article/thumbsUp?id=' + currentArticle.id
+    // 成功后，修改点赞个数 currentArticle.likeCount = currentArticle.likeCount + 1;
+    $('#details_btn_like_count').click(function () {
+      $.ajax({
+        type : 'post',
+        url : 'article/thumbsUp?id=' + currentArticle.id,
+        // 回调
+        success : function (respData) {
+          // 成功状态
+          if (respData.code == 0) {
+            // 成功
+            currentArticle.likeCount = currentArticle.likeCount + 1;
+            // 设置页面的值 
+            $('#details_article_likeCount').html(currentArticle.likeCount);
+            // 提示
+            $.toast({
+                heading: '成功',
+                text: '点赞成功',
+                icon: 'success'
+            });
+          } else {
+            // 提示信息
+            $.toast({
+                  heading: '警告',
+                  text: respData.message,
+                  icon: 'warning'
+              });
+          }
+        },
+        error : function () {
+          // 提示信息
+          $.toast({
+              heading: '错误',
+              text: '访问出现问题，请与管理员联系.',
+              icon: 'error'
+          });
+        }
+      });
+    });
+
+    // ====================== 回复帖子 ======================
+    $('#details_btn_article_reply').click(function () {
+      let articleIdEl = $('#details_article_id');
+      let replyContentEl = $('#details_article_reply_content');
+      // 非空校验
+      if (!replyContentEl.val()) {
+        // 提示
+        $.toast({
+          heading: '提示',
+          text: '请输入回复内容',
+          icon: 'warning'
+        });
+        return;
+      }
+
+      // 构造帖子对象
+      let postData = {
+        articleId : articleIdEl.val(),
+        content : replyContentEl.val()
+      };
+      
+      // 发送请求，成功后 
+      // 1. 清空回复区域
+      // 2. 更新回贴数 currentArticle.replyCount = currentArticle.replyCount + 1;
+      // 3. 调用loadArticleDetailsReply()方法，重新构建回贴列表
+      $.ajax({
+        type : 'post',
+        url : 'reply/create',
+        contentType : 'application/x-www-form-urlencoded',
+        data : postData,
+        success : function (respData) {
+          if (respData.code == 0) {
+            // 成功提示
+            $.toast({
+              heading: '提示',
+              text: '回复成功',
+              icon: 'success' // 绿色
+            });
+
+            // 更新全局变量中的值
+            currentArticle.replyCount = currentArticle.replyCount + 1; 
+            // 更新页面上的回复数量
+            $('#details_article_replyCount').html(currentArticle.replyCount);
+            // 重构回复列表
+            loadArticleDetailsReply();
+          } else {
+            // 失败提示
+            $.toast({
+              heading: '提示',
+              text: respData.message,
+              icon: 'warning'  // 棕色
+            });
+          }
+        },
+        error : function () {
+          // 提示信息
+          $.toast({
+              heading: '警告',
+              text: respData.message,
+              icon: 'error'  // 红色
+          });
+        }
+
+      });
+    });
+
+    // ====================== 处理删除事件 ======================
+    // 成功后，调用changeNavActive($('#nav-link-title'));  回到首页
+    // url: 'article/delete?id=' + $('#details_article_id').val()
+    $('#details_artile_delete').click(function () {
+      $.ajax({
+        type: 'post',
+        url : 'article/delete?id=' + $('#details_article_id').val(),
+        // 回调
+        success : function (respData) {
+          // 成功状态
+          if (respData.code == 0) {
+            // 成功提示
+            $.toast({
+                heading: '成功',
+                text: '删除成功',
+                icon: 'success'
+            });
+            // 跳转到首页帖子列表
+            changeNavActive($('#nav-link-title'));
+          } else {
+            // 提示信息
+            $.toast({
+                  heading: '警告',
+                  text: respData.message,
+                  icon: 'warning'
+              });
+          }
+        },
+        error : function () {
+          // 提示信息
+          $.toast({
+              heading: '错误',
+              text: '访问出现问题，请与管理员联系.',
+              icon: 'error'
+          });
+        }
+      });
+
+    });
+
+    // ====================== 处理编辑事件 ======================
+    $('#details_artile_edit').click(function () {
+      console.log('开始编辑');
+      removeNavActive();
+      $('#bit-forum-content').load('article_edit.html');
+    });
+  });
+</script>
