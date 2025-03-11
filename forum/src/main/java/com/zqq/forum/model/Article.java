@@ -30,4 +30,6 @@ public class Article {
 
     private String content;
 
+    private User user;
+
 }

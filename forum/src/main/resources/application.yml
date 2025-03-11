@@ -7,6 +7,9 @@ spring:
     username: root
     password: zqq13127837702
     driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    default-property-inclusion: NON_NULL #不为null就返回
 
 #  配置端口号
 server:
@@ -18,7 +21,7 @@ logging:
     dateformat: MM-dd HH:mm:ss # 日期显示格式
   level:
     root: info  # 默认日志级别
-    com.zqq.forum: debug  # 指定包的日志级别
+    com.zqq.forum: info  # 指定包的日志级别
   file:
     path: /Users/zhaoqianqian/Downloads/Log  # 日志存放位置
 
@@ -28,6 +31,12 @@ mybatis:
     map-underscore-to-camel-case: true  #配置驼峰自动转换
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印SQL日志
 
+
+zqq-forum:
+  login:
+    url: sign-in.html
+  index:
+    board-num: 9
 
 
 

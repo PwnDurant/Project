@@ -5,6 +5,8 @@ import com.zqq.forum.model.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 
 @Mapper
 public interface ArticleMapper {
@@ -20,5 +22,17 @@ public interface ArticleMapper {
 
     int updateByPrimaryKey(Article row);
 
+    /**
+     * 查询所有文章列表
+     * @return
+     */
+    List<Article> selectAll();
+
+    /**
+     * 更具板块Id来查询
+     * @param boardId
+     * @return
+     */
+    List<Article> selectByBoardId(@Param("boardId") Long boardId);
 
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zqq.forum.dao.ArticleMapper">
+<!--    自定义结果集 -->
+    <resultMap id="AllInfoResultMap" type="com.zqq.forum.model.Article" extends="ResultMapWithBLOBs">
+        <association property="user" resultMap="com.zqq.forum.dao.UserMapper.BaseResultMap"
+        columnPrefix="u_"/>
+    </resultMap>
+
+    <!--  查询所有未被删除的帖子，不包含content-->
+  <select id="selectAll" resultMap="AllInfoResultMap">
+    select u.id as u_id,u.avatarUrl as u_avatarUrl,u.nickname as u_nickname,
+           a.id,a.boardId,a.userId,a.title,a.visitCount,a.replyCount,a.likeCount,a.state,
+           a.createTime,a.updateTime from t_article a,t_user u where a.userId=u.id and a.deleteState=0
+    order by a.createTime desc;
+  </select>
+
+    <select id="selectByBoardId" resultMap="AllInfoResultMap" parameterType="java.lang.Long">
+        select u.id as u_id,u.avatarUrl as u_avatarUrl,u.nickname as u_nickname,
+               a.id,a.boardId,a.userId,a.title,a.visitCount,a.replyCount,a.likeCount,a.state,
+               a.createTime,a.updateTime from t_article a,t_user u where a.userId=u.id and a.deleteState=0 and
+               a.boardId=#{boardId}
+        order by a.createTime desc;
+    </select>
+</mapper>

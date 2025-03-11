@@ -3,6 +3,7 @@ package com.zqq.forum.service;
 
 import com.zqq.forum.model.User;
 
+
 /**
  * 用户接口
  */
@@ -13,5 +14,37 @@ public interface IUserService {
      * @param user
      */
     void createNormalUser(User user);
+
+    /**
+     * 根据用户名查询用户信息
+     * @param username
+     * @return
+     */
+    User selectByUserName(String username);
+
+
+    /**
+     * 处理用户登入
+     * @param username
+     * @param password
+     * @return
+     */
+    User login(String username,String password);
+
+
+    /**
+     * 根据Id去查询用户信息
+     * @param id
+     * @return
+     */
+    User selectById(Long id);
+
+
+    /**
+     * 更新当前用户的发帖数
+     * @param id
+     */
+    void addOneArticleCountById(Long id);
+
 
 }
