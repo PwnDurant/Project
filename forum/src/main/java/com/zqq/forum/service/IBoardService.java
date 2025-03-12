@@ -21,9 +21,18 @@ public interface IBoardService {
     void addOneArticleCountById(Long id);
 
     /**
-     * 根据板块id查询板块信息
+     * 根据板块id查询板块信息+1
      * @param id 板块id
      * @return
      */
     Board selectById(Long id);
+
+    /**
+     * 更新板块的发帖数-1
+     * @param id
+     */
+    void subOneArticleCountById(Long id);
+
+
+
 }

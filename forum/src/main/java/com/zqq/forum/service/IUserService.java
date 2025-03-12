@@ -41,10 +41,17 @@ public interface IUserService {
 
 
     /**
-     * 更新当前用户的发帖数
+     * 更新当前用户的发帖数+1
      * @param id
      */
     void addOneArticleCountById(Long id);
+
+
+    /**
+     * 更新当前用户的发帖数-1
+     * @param id
+     */
+    void subOneArticleCountById(Long id);
 
 
 }

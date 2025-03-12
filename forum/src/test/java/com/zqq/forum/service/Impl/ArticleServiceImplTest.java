@@ -44,4 +44,31 @@ class ArticleServiceImplTest {
     void selectByBoardId() throws JsonProcessingException {
         System.out.println(objectMapper.writeValueAsString(articleService.selectByBoardId(10L)));
     }
+
+    @Test
+    void selectDetailById() throws JsonProcessingException {
+        Article article = articleService.selectDetailById(1L);
+        System.out.println(objectMapper.writeValueAsString(article));
+    }
+
+    @Test
+    void modify() {
+        articleService.modify(1L,"test111","test111");
+    }
+
+    @Test
+    void selectById() throws JsonProcessingException {
+        Article article=articleService.selectById(1L);
+        System.out.println(objectMapper.writeValueAsString(article));
+    }
+
+    @Test
+    void thumbsUpById() {
+        articleService.thumbsUpById(1L);
+    }
+
+    @Test
+    void deleteById() {
+        articleService.deleteById(4L);
+    }
 }

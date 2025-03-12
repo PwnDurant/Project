@@ -3,6 +3,7 @@ package com.zqq.forum.controller;
 import com.zqq.forum.common.AppConfig;
 import com.zqq.forum.common.AppResult;
 import com.zqq.forum.common.ResultCode;
+import com.zqq.forum.exception.ApplicationException;
 import com.zqq.forum.model.Article;
 import com.zqq.forum.model.Board;
 import com.zqq.forum.model.User;
@@ -13,13 +14,11 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Slf4j
 @RestController
@@ -31,6 +30,7 @@ public class ArticleController {
     private IBoardService boardService;
     @Autowired
     private IArticleService articleService;
+
 
     /**
      * 发布新帖
@@ -84,5 +84,101 @@ public class ArticleController {
 
         return AppResult.success(articles);
     }
+
+    @GetMapping("/details")
+    public AppResult<Article> getDetails(@RequestParam("id") @Nonnull Long id , HttpServletRequest request){
+
+        HttpSession session= request.getSession(false);
+        User user=(User) session.getAttribute(AppConfig.USER_SESSION);
+
+        Article article = articleService.selectDetailById(id);
+
+        if(article==null){
+            log.warn(ResultCode.FAILED_ARTICLE_NOT_EXISTS.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_ARTICLE_NOT_EXISTS));
+        }
+
+        if(Objects.equals(user.getId(), article.getUserId())){
+            article.setOwn(true);
+        }
+
+        return AppResult.success(article);
+    }
+
+
+    @PostMapping("/modify")
+    public AppResult modify(@RequestParam("id") @Nonnull Long id,
+                            @RequestParam("title") @Nonnull String title,
+                            @RequestParam("content") @Nonnull String content,
+                            HttpServletRequest request){
+
+        HttpSession session= request.getSession(false);
+        User user= (User) session.getAttribute(AppConfig.USER_SESSION);
+
+        if(user.getState()==1){
+            return AppResult.failed(ResultCode.FAILED_USER_BANNED);
+        }
+
+        Article article=articleService.selectById(id);
+        if(article==null){
+            return AppResult.failed(ResultCode.FAILED_ARTICLE_NOT_EXISTS);
+        }
+
+        if(user.getId()!= article.getUserId()){
+            return AppResult.failed(ResultCode.FAILED_FORBIDDEN);
+        }
+
+        if(article.getState()==1||article.getDeleteState()==1){
+            return AppResult.failed(ResultCode.FAILED_ARTICLE_BANNED);
+        }
+
+        articleService.modify(id,title,content);
+        log.info("帖子更新成功,articleId={},userId={}.",id,user.getId());
+
+        return AppResult.success();
+    }
+
+    @PostMapping("/thumbsUp")
+    public AppResult thumbsUp(@RequestParam("id") @Nonnull Long id,
+                              HttpServletRequest request){
+
+        HttpSession session = request.getSession(false);
+        User user = (User)session.getAttribute(AppConfig.USER_SESSION);
+        if(user.getState()==1){
+            return AppResult.failed(ResultCode.FAILED_USER_BANNED);
+        }
+
+        articleService.thumbsUpById(id);
+
+        return AppResult.success();
+
+    }
+
+    @PostMapping("/delete")
+    public AppResult deleteById(@RequestParam("id") @Nonnull Long id,
+                                HttpServletRequest request){
+
+        HttpSession session = request.getSession(false);
+        User user = (User)session.getAttribute(AppConfig.USER_SESSION);
+        if(user.getState()==1){
+            return AppResult.failed(ResultCode.FAILED_USER_BANNED);
+        }
+
+        Article article = articleService.selectById(id);
+        if(article==null||article.getDeleteState()==1){
+            return AppResult.failed(ResultCode.FAILED_ARTICLE_NOT_EXISTS);
+        }
+
+        if(user.getId()!= article.getUserId()){
+            return AppResult.failed(ResultCode.FAILED_FORBIDDEN);
+        }
+
+        articleService.deleteById(id);
+
+        return AppResult.success();
+
+    }
+
+
 
 }

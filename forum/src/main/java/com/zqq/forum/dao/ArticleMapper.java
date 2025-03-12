@@ -35,4 +35,12 @@ public interface ArticleMapper {
      */
     List<Article> selectByBoardId(@Param("boardId") Long boardId);
 
+
+    /**
+     * 根据帖子Id查询详情
+     * @param id
+     * @return
+     */
+    Article selectDetailById(@Param("id") Long id);
+
 }

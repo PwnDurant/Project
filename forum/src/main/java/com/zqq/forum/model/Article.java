@@ -32,4 +32,8 @@ public class Article {
 
     private User user;
 
+    private Board board;
+
+    private boolean isOwn;
+
 }

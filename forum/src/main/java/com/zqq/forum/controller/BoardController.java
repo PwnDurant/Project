@@ -57,7 +57,7 @@ public class BoardController {
         }
 
         return AppResult.success(board);
-        
+
     }
 
 }

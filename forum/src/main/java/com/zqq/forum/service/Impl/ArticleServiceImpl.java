@@ -98,4 +98,130 @@ public class ArticleServiceImpl implements IArticleService {
         return articleMapper.selectByBoardId(boardId);
 
     }
+
+    @Override
+    public Article selectDetailById(Long id) {
+
+        if(id==null||id<=0){
+            log.warn(ResultCode.FAILED_PARAMS_VALIDATE.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_BOARD_NOT_EXISTS));
+        }
+
+        Article article = articleMapper.selectDetailById(id);
+        if(article==null){
+            log.warn(ResultCode.FAILED_ARTICLE_NOT_EXISTS.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_ARTICLE_NOT_EXISTS));
+        }
+
+        Article updateArticle=new Article();
+        updateArticle.setId(article.getId());
+        updateArticle.setVisitCount(article.getVisitCount()+1);
+
+        int row = articleMapper.updateByPrimaryKeySelective(updateArticle);
+        if(row!=1){
+            log.warn(ResultCode.ERROR_SERVICES.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.ERROR_SERVICES));
+        }
+
+        article.setVisitCount(article.getVisitCount()+1);
+
+        return article;
+    }
+
+    @Override
+    public void modify(Long id, String title, String content) {
+
+        if(id==null||id<=0||StringUtil.isEmpty(title)||StringUtil.isEmpty(content)){
+            log.warn(ResultCode.FAILED_PARAMS_VALIDATE.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_PARAMS_VALIDATE));
+        }
+
+        Article updateArticle=new Article();
+        updateArticle.setId(id);
+        updateArticle.setTitle(title);
+        updateArticle.setContent(content);
+        updateArticle.setUpdateTime(new Date());
+
+        int row = articleMapper.updateByPrimaryKeySelective(updateArticle);
+        if(row!=1){
+            log.warn(ResultCode.ERROR_SERVICES.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.ERROR_SERVICES));
+        }
+
+    }
+
+    @Override
+    public Article selectById(Long id) {
+
+        if(id==null||id<=0){
+            log.warn(ResultCode.FAILED_PARAMS_VALIDATE.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_BOARD_NOT_EXISTS));
+        }
+
+        return articleMapper.selectByPrimaryKey(id);
+
+    }
+
+    @Override
+    public void thumbsUpById(Long id) {
+
+        if(id==null||id<=0){
+            log.warn(ResultCode.FAILED_PARAMS_VALIDATE.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_BOARD_NOT_EXISTS));
+        }
+
+        Article article = articleMapper.selectByPrimaryKey(id);
+        if(article==null||article.getDeleteState()==1){
+            log.warn(ResultCode.FAILED_ARTICLE_NOT_EXISTS.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_ARTICLE_NOT_EXISTS));
+        }
+
+        if(article.getState()==1){
+            log.warn(ResultCode.FAILED_ARTICLE_BANNED.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_ARTICLE_BANNED));
+        }
+
+        Article updateArticle=new Article();
+        updateArticle.setId(article.getId());
+        updateArticle.setLikeCount(article.getLikeCount()+1);
+        updateArticle.setUpdateTime(new Date());
+
+        int row = articleMapper.updateByPrimaryKeySelective(updateArticle);
+        if(row!=1){
+            log.warn(ResultCode.ERROR_SERVICES.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.ERROR_SERVICES));
+        }
+
+
+    }
+
+    @Override
+    public void deleteById(Long id) {
+
+        if(id==null||id<=0){
+            log.warn(ResultCode.FAILED_PARAMS_VALIDATE.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_BOARD_NOT_EXISTS));
+        }
+
+        Article article = articleMapper.selectByPrimaryKey(id);
+        if(article==null||article.getDeleteState()==1){
+            log.warn(ResultCode.FAILED_ARTICLE_NOT_EXISTS.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_ARTICLE_NOT_EXISTS));
+        }
+
+        Article updateArticle=new Article();
+        updateArticle.setId(article.getId());
+        updateArticle.setDeleteState((byte)1);
+
+        int row = articleMapper.updateByPrimaryKeySelective(updateArticle);
+        if(row!=1){
+            throw new ApplicationException(AppResult.failed(ResultCode.ERROR_SERVICES));
+        }
+
+        boardService.subOneArticleCountById(article.getBoardId());
+        userService.subOneArticleCountById(article.getUserId());
+        log.info("删除帖子成功，article={},userId={}",article.getId(),article.getUserId());
+
+    }
+
 }

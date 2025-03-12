@@ -36,4 +36,9 @@ class BoardServiceImplTest {
         Board board=boardServiceImpl.selectById(10L);
         System.out.println(objectMapper.writeValueAsString(board));
     }
+
+    @Test
+    void subOneArticleCountById() {
+        boardServiceImpl.subOneArticleCountById(1L);
+    }
 }

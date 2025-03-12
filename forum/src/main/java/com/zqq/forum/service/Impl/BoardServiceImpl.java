@@ -9,7 +9,6 @@ import com.zqq.forum.service.IBoardService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Slf4j
@@ -61,5 +60,35 @@ public class BoardServiceImpl implements IBoardService {
             throw new ApplicationException(AppResult.failed(ResultCode.FAILED_BOARD_ARTICLE_COUNT));
         }
         return boardMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public void subOneArticleCountById(Long id) {
+
+        if(id==null||id<=0){
+            log.warn(ResultCode.FAILED_BOARD_ARTICLE_COUNT.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_BOARD_ARTICLE_COUNT));
+        }
+
+        Board board = boardMapper.selectByPrimaryKey(id);
+        if (board == null) {
+            log.warn(ResultCode.FAILED_BOARD_NOT_EXISTS.toString()+",board id = "+id);
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_BOARD_NOT_EXISTS));
+        }
+
+        Board updateBoard=new Board();
+        updateBoard.setId(board.getId());
+        updateBoard.setArticleCount(board.getArticleCount()-1);
+
+        if(updateBoard.getArticleCount()<0){
+            updateBoard.setArticleCount(0);
+        }
+
+        int row = boardMapper.updateByPrimaryKeySelective(updateBoard);
+        if(row!=1){
+            log.warn(ResultCode.FAILED.toString()+"受影响行数不等于1.");
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED));
+        }
+
     }
 }

@@ -138,4 +138,35 @@ public class UserServiceImpl implements IUserService {
         }
 
     }
+
+    @Override
+    public void subOneArticleCountById(Long id) {
+        if(id==null||id<=0){
+            log.warn(ResultCode.FAILED_BOARD_ARTICLE_COUNT.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_BOARD_ARTICLE_COUNT));
+        }
+
+        User user = userMapper.selectByPrimaryKey(id);
+        if (user == null) {
+            log.warn(ResultCode.ERROR_IS_NULL.toString()+",user id = "+id);
+            throw new ApplicationException(AppResult.failed(ResultCode.ERROR_IS_NULL));
+        }
+
+        User updateUser=new User();
+        updateUser.setId(user.getId());
+        updateUser.setArticleCount(user.getArticleCount()-1);
+
+        if(updateUser.getArticleCount()<0){
+            updateUser.setArticleCount(0);
+        }
+
+        int row = userMapper.updateByPrimaryKeySelective(updateUser);
+        if(row!=1){
+            log.warn(ResultCode.ERROR_SERVICES.toString()+"受影响函数不等于1.");
+            throw new ApplicationException(AppResult.failed(ResultCode.ERROR_SERVICES));
+        }
+
+
+
+    }
 }
