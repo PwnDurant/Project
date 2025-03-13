@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: Eyes
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/Lottery_system?characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: zqq13127837702
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+pic:
+  local-path: /Users/zhaoqianqian/Downloads/Eyes/Pic
