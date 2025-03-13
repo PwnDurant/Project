@@ -67,6 +67,7 @@ class UserServiceImplTest {
     }
 
     @Test
+    @Transactional
     void modifyInfo() {
         User user=new User();
         user.setId(2L);
@@ -77,5 +78,11 @@ class UserServiceImplTest {
         user.setPassword("12345678910");
         user.setRemark("测试");
         userService.modifyInfo(user);
+    }
+
+    @Test
+    @Transactional
+    void modifyPassword() {
+        userService.modifyPassword(1L,"111111","123456");
     }
 }

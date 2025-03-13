@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zqq.forum.dao.MessageMapper">
+
+  <resultMap id="AllInfoResultMap" type="com.zqq.forum.model.Message" extends="BaseResultMap">
+    <association property="postUser" resultMap="com.zqq.forum.dao.UserMapper.BaseResultMap" columnPrefix="u_"/>
+  </resultMap>
+
+  <select id="selectCountById" parameterType="java.lang.Long" resultType="java.lang.Integer">
+    select count(1) from t_message where deleteState=0 and receiveUserId=#{receiveUserId} and state=0;
+  </select>
+  
+  <select id="selectByReceiveId" parameterType="java.lang.Long" resultMap="AllInfoResultMap">
+    select u.id as u_id,u.avatarUrl
+                as u_avatarUrl,u.nickname as u_nickname,u.gender as u_gender, m.id, m.postUserId,
+           m.receiveUserId, m.content, m.state, m.createTime, m.updateTime
+    from t_message m,t_user u where m.postUserId=u.id
+                                and m.deleteState=0
+                                and m.receiveUserId=#{receiveUserId}
+    order by m.createTime desc,m.state;
+  </select>
+
+</mapper>

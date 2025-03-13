@@ -23,4 +23,9 @@ public class Message {
 
     private Date updateTime;
 
+    /**
+     * 关联发送者的对象
+     */
+    private User postUser;
+
 }

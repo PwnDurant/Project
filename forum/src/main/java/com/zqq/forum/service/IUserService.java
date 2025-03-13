@@ -60,4 +60,14 @@ public interface IUserService {
     void modifyInfo(User user);
 
 
+    /**
+     * 修改密码
+     * @param id
+     * @param newPassword
+     * @param oldPassword
+     */
+    void modifyPassword(Long id,String newPassword,String oldPassword);
+
+
+
 }

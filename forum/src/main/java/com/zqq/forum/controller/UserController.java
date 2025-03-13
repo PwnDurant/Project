@@ -6,6 +6,7 @@ import com.zqq.forum.common.ResultCode;
 import com.zqq.forum.model.User;
 import com.zqq.forum.service.IUserService;
 import com.zqq.forum.utils.MD5Util;
+import com.zqq.forum.utils.StringUtil;
 import com.zqq.forum.utils.UUIDUtil;
 import jakarta.annotation.Nonnull;
 import jakarta.annotation.Resource;
@@ -115,6 +116,68 @@ public class UserController {
     }
 
 
+    /**
+     * 修改个人信息
+     * @param username
+     * @param nickname
+     * @param gender
+     * @param email
+     * @param phoneNum
+     * @param remark
+     * @return
+     */
+    @PostMapping("/modifyInfo")
+    public AppResult modifyInfo(@RequestParam(value = "username",required = false) String username,
+                                @RequestParam(value = "nickname",required = false) String nickname,
+                                @RequestParam(value = "gender",required = false) Byte gender,
+                                @RequestParam(value = "email",required = false) String email,
+                                @RequestParam(value = "phoneNum",required = false) String phoneNum,
+                                @RequestParam(value = "remark",required = false) String remark,
+                                @SessionAttribute(AppConfig.USER_SESSION) User user,
+                                HttpServletRequest request){
 
+        if(StringUtil.isEmpty(username)&&StringUtil.isEmpty(nickname)&&
+        StringUtil.isEmpty(email)&&StringUtil.isEmpty(phoneNum)&&
+        StringUtil.isEmpty(remark)&&gender==null){
+            return AppResult.failed("请输入要修改的内容");
+        }
+
+        User updateUser=new User();
+        updateUser.setId(user.getId());
+        updateUser.setUsername(username);
+        updateUser.setNickname(nickname);
+        updateUser.setGender(gender);
+        updateUser.setEmail(email);
+        updateUser.setPhoneNum(phoneNum);
+        updateUser.setRemark(remark);
+
+        iUserService.modifyInfo(updateUser);
+
+        user=iUserService.selectById(user.getId());
+        HttpSession session= request.getSession(false);
+        session.setAttribute(AppConfig.USER_SESSION,user);
+
+        return AppResult.success(user);
+
+    }
+
+    @PostMapping("/modifyPwd")
+    public AppResult modifyPassword(HttpServletRequest request,
+                                    @RequestParam("oldPassword")@Nonnull String oldPassword,
+                                    @RequestParam("newPassword")@Nonnull String newPassword,
+                                    @RequestParam("passwordRepeat")@Nonnull String passwordRepeat){
+
+        if(!newPassword.equals(passwordRepeat)){
+            return AppResult.failed(ResultCode.FAILED_TWO_PWD_NOT_SAME);
+        }
+        HttpSession session=request.getSession(false);
+        User user=(User) session.getAttribute(AppConfig.USER_SESSION);
+
+        iUserService.modifyPassword(user.getId(),newPassword,oldPassword);
+//        可以进行拓展，重新进行登入
+        session.invalidate();
+
+        return AppResult.success();
+    }
 
 }

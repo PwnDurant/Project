@@ -9,6 +9,7 @@ import com.zqq.forum.model.User;
 import com.zqq.forum.service.IUserService;
 import com.zqq.forum.utils.MD5Util;
 import com.zqq.forum.utils.StringUtil;
+import com.zqq.forum.utils.UUIDUtil;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -215,7 +216,7 @@ public class UserServiceImpl implements IUserService {
             checkAttr=true;
         }
 
-        if(!StringUtil.isEmpty(user.getPhoneNum())&&!existsUser.getPhoneNum().equals(user.getPhoneNum())){
+        if(!StringUtil.isEmpty(user.getPhoneNum())&&!user.getPhoneNum().equals(existsUser.getPhoneNum())){
             updateUser.setPhoneNum(user.getPhoneNum());
             checkAttr=true;
         }
@@ -234,6 +235,43 @@ public class UserServiceImpl implements IUserService {
         if(row!=1){
             log.warn(ResultCode.ERROR_SERVICES.toString());
             throw new ApplicationException(AppResult.failed(ResultCode.ERROR_SERVICES));
+        }
+
+    }
+
+    @Override
+    public void modifyPassword(Long id, String newPassword, String oldPassword) {
+        
+        if(id==null||id<=0||StringUtil.isEmpty(newPassword)||StringUtil.isEmpty(oldPassword)){
+            log.warn(ResultCode.FAILED_PARAMS_VALIDATE.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_PARAMS_VALIDATE));
+        }
+
+        User user = userMapper.selectByPrimaryKey(id);
+        if(user==null||user.getDeleteState()==1){
+            log.warn(ResultCode.FAILED_USER_NOT_EXISTS.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_USER_NOT_EXISTS));
+        }
+
+        String oldEncryptPassword = MD5Util.md5Salt(oldPassword, user.getSalt());
+        if(!oldEncryptPassword.equalsIgnoreCase(user.getPassword())){
+            log.warn(ResultCode.FAILED_PARAMS_VALIDATE.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_PARAMS_VALIDATE));
+        }
+        
+        String salt= UUIDUtil.UUID_32();
+        String newEncryptPassword = MD5Util.md5Salt(newPassword, salt);
+
+        User updateUser=new User();
+        updateUser.setId(user.getId());
+        updateUser.setSalt(salt);
+        updateUser.setPassword(newEncryptPassword);
+        updateUser.setUpdateTime(new Date());
+
+        int row = userMapper.updateByPrimaryKeySelective(updateUser);
+        if(row!=1){
+            log.warn(ResultCode.FAILED.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED));
         }
 
     }
