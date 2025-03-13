@@ -176,6 +176,23 @@ public class ArticleController {
         articleService.deleteById(id);
 
         return AppResult.success();
+    }
+
+
+    @GetMapping("/getAllByUserId")
+    public AppResult<List<Article>> getAllByUserId(@RequestParam(value = "userId" ,required = false)  Long userId,
+                                                   HttpServletRequest request){
+
+        if(userId==null){
+            HttpSession session = request.getSession(false);
+            User user = (User)session.getAttribute(AppConfig.USER_SESSION);
+            userId=user.getId();
+        }
+
+        List<Article> articles = articleService.selectByUserId(userId);
+        log.info("查询帖子列表,userId={}",userId);
+
+        return AppResult.success(articles);
 
     }
 

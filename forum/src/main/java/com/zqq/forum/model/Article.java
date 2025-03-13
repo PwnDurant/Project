@@ -34,6 +34,9 @@ public class Article {
 
     private Board board;
 
-    private boolean isOwn;
+    /**
+     * 需要替换为包装类
+     */
+    private Boolean own;
 
 }

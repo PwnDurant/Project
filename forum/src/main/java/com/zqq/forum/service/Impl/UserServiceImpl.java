@@ -166,7 +166,76 @@ public class UserServiceImpl implements IUserService {
             throw new ApplicationException(AppResult.failed(ResultCode.ERROR_SERVICES));
         }
 
+    }
 
+    @Override
+    public void modifyInfo(User user) {
+
+        if(user==null||user.getId()==null||user.getId()<=0){
+            log.warn(ResultCode.FAILED_BOARD_ARTICLE_COUNT.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_BOARD_ARTICLE_COUNT));
+        }
+
+        User existsUser = userMapper.selectByPrimaryKey(user.getId());
+        if(existsUser==null){
+            log.warn(ResultCode.FAILED_USER_NOT_EXISTS.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_USER_NOT_EXISTS));
+        }
+
+        boolean checkAttr=false;
+
+        User updateUser=new User();
+        updateUser.setId(user.getId());
+
+        if(!StringUtil.isEmpty(user.getUsername())&&!existsUser.getUsername().equals(user.getUsername())){
+            User checkUser = userMapper.selectByUserName(user.getUsername());
+            if(checkUser!=null){
+                log.warn(ResultCode.FAILED_USER_EXISTS.toString());
+                throw new ApplicationException(AppResult.failed(ResultCode.FAILED_USER_EXISTS));
+            }
+            updateUser.setUsername(user.getUsername());
+            checkAttr=true;
+        }
+
+        if(!StringUtil.isEmpty(user.getNickname())&&!existsUser.getUsername().equals(user.getNickname())){
+            updateUser.setNickname(user.getNickname());
+            checkAttr=true;
+        }
+
+        if(user.getGender()!=null&&existsUser.getGender() != user.getGender()){
+            updateUser.setGender(user.getGender());
+            if(updateUser.getGender()>2||updateUser.getGender()<0){
+                updateUser.setGender((byte)2);
+            }
+            checkAttr=true;
+        }
+
+        if(!StringUtil.isEmpty(user.getEmail())&&!user.getEmail().equals(existsUser.getEmail())){
+            updateUser.setEmail(user.getEmail());
+            checkAttr=true;
+        }
+
+        if(!StringUtil.isEmpty(user.getPhoneNum())&&!existsUser.getPhoneNum().equals(user.getPhoneNum())){
+            updateUser.setPhoneNum(user.getPhoneNum());
+            checkAttr=true;
+        }
+
+        if(!StringUtil.isEmpty(user.getRemark())&&!user.getRemark().equals(existsUser.getRemark())){
+            updateUser.setRemark(user.getRemark());
+            checkAttr=true;
+        }
+
+        if(!checkAttr){
+            log.warn(ResultCode.FAILED_PARAMS_VALIDATE.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_PARAMS_VALIDATE));
+        }
+
+        int row = userMapper.updateByPrimaryKeySelective(updateUser);
+        if(row!=1){
+            log.warn(ResultCode.ERROR_SERVICES.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.ERROR_SERVICES));
+        }
 
     }
+
 }

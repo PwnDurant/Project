@@ -38,6 +38,7 @@ class BoardServiceImplTest {
     }
 
     @Test
+    @Transactional
     void subOneArticleCountById() {
         boardServiceImpl.subOneArticleCountById(1L);
     }

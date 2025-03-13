@@ -81,12 +81,10 @@ public class UserController {
     @GetMapping("/info")
     public AppResult<User> getUserInfo(HttpServletRequest request,
                                        @RequestParam(value = "id",required = false) Long id){
-        User user=null;
+        User user;
         if(id==null){
-
             HttpSession session=request.getSession(false);
             user=(User) session.getAttribute(AppConfig.USER_SESSION);
-
         }else{
             user=iUserService.selectById(id);
         }
@@ -115,5 +113,8 @@ public class UserController {
 
         return AppResult.success("退出成功");
     }
+
+
+
 
 }

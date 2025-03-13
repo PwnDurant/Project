@@ -224,4 +224,53 @@ public class ArticleServiceImpl implements IArticleService {
 
     }
 
+    @Override
+    public void addReplyCountById(Long id) {
+
+        if(id==null||id<=0){
+            log.warn(ResultCode.FAILED_PARAMS_VALIDATE.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_BOARD_NOT_EXISTS));
+        }
+
+        Article article = articleMapper.selectByPrimaryKey(id);
+        if(article==null||article.getDeleteState()==1){
+            log.warn(ResultCode.FAILED_ARTICLE_NOT_EXISTS.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_ARTICLE_NOT_EXISTS));
+        }
+
+        if(article.getState()==1){
+            log.warn(ResultCode.FAILED_ARTICLE_BANNED.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_ARTICLE_BANNED));
+        }
+
+        Article updateArticle=new Article();
+        updateArticle.setId(article.getId());
+        updateArticle.setReplyCount(article.getReplyCount()+1);
+        updateArticle.setUpdateTime(new Date());
+
+        int row = articleMapper.updateByPrimaryKeySelective(updateArticle);
+        if(row!=1){
+            throw new ApplicationException(AppResult.failed(ResultCode.ERROR_SERVICES));
+        }
+
+    }
+
+    @Override
+    public List<Article> selectByUserId(Long userId) {
+
+        if(userId==null||userId<=0){
+            log.warn(ResultCode.FAILED_PARAMS_VALIDATE.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_BOARD_NOT_EXISTS));
+        }
+
+        User user = userService.selectById(userId);
+        if(user==null){
+            log.warn(ResultCode.FAILED_USER_NOT_EXISTS.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_USER_NOT_EXISTS));
+        }
+
+        return  articleMapper.selectByUserId(userId);
+
+    }
+
 }

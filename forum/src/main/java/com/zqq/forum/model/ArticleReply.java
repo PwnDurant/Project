@@ -28,4 +28,6 @@ public class ArticleReply {
 
     private Date updateTime;
 
+    private User user;
+
 }

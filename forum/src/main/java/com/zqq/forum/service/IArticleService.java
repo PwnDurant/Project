@@ -2,6 +2,7 @@ package com.zqq.forum.service;
 
 
 import com.zqq.forum.model.Article;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -62,5 +63,18 @@ public interface IArticleService {
      */
     @Transactional
     void deleteById(Long id);
+
+    /**
+     * 更新文章回复数量+1
+     * @param id
+     */
+    void addReplyCountById(Long id);
+
+
+    /**
+     * 根据用户Id去查询
+     * @return
+     */
+    List<Article> selectByUserId(Long userId);
 
 }

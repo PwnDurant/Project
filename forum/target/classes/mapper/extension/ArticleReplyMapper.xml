@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zqq.forum.dao.ArticleReplyMapper">
+<!--  自定义结果集-->
+  <resultMap id="AllInfoResultMap" type="com.zqq.forum.model.ArticleReply" extends="BaseResultMap">
+    <association property="user" resultMap="com.zqq.forum.dao.UserMapper.BaseResultMap" columnPrefix="u_"/>
+  </resultMap>
+
+<!--  根据帖子Id查询回复列表-->
+  <select id="selectByArticleId" parameterType="java.lang.Long" resultMap="AllInfoResultMap">
+    select u.id as u_id,u.avatarUrl as u_avatarUrl,u.nickname as u_nickname,
+           ar.id, ar.articleId, ar.postUserId, ar.replyId, ar.replyUserId, ar.content, ar.likeCount, ar.state,
+           ar.createTime, ar.updateTime from t_article_reply ar,t_user u where ar.postUserId=u.id
+                                                                           and ar.articleId=#{articleId} and ar.deleteState=0 order by ar.createTime desc
+  </select>
+
+</mapper>

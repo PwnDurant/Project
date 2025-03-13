@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -24,6 +25,7 @@ class ArticleServiceImplTest {
     private ObjectMapper objectMapper;
 
     @Test
+    @Transactional
     void create() {
         Article article=new Article();
         article.setUserId(1L);
@@ -42,7 +44,7 @@ class ArticleServiceImplTest {
 
     @Test
     void selectByBoardId() throws JsonProcessingException {
-        System.out.println(objectMapper.writeValueAsString(articleService.selectByBoardId(10L)));
+        System.out.println(objectMapper.writeValueAsString(articleService.selectByBoardId(1L)));
     }
 
     @Test
@@ -52,6 +54,7 @@ class ArticleServiceImplTest {
     }
 
     @Test
+    @Transactional
     void modify() {
         articleService.modify(1L,"test111","test111");
     }
@@ -63,12 +66,26 @@ class ArticleServiceImplTest {
     }
 
     @Test
+    @Transactional
     void thumbsUpById() {
         articleService.thumbsUpById(1L);
     }
 
     @Test
+    @Transactional
     void deleteById() {
         articleService.deleteById(4L);
+    }
+
+    @Test
+    @Transactional
+    void addReplyCountById() {
+        articleService.addReplyCountById(1L);
+    }
+
+    @Test
+    void selectByUserId() throws JsonProcessingException {
+        List<Article> articles = articleService.selectByUserId(1L);
+        System.out.println(objectMapper.writeValueAsString(articles));
     }
 }
