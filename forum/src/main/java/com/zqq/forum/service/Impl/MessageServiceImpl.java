@@ -113,5 +113,25 @@ public class MessageServiceImpl implements IMessageService {
 
     }
 
+    @Override
+    public void reply(Long repliedId, Message message) {
+
+        if(repliedId==null||repliedId<=0) {
+            log.warn(ResultCode.FAILED_PARAMS_VALIDATE.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_PARAMS_VALIDATE));
+        }
+
+        Message existsMessage = messageMapper.selectByPrimaryKey(repliedId);
+        if(existsMessage==null||existsMessage.getDeleteState()==1){
+            log.warn(ResultCode.FAILED_MESSAGE_NOT_EXISTS.toString());
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_MESSAGE_NOT_EXISTS));
+        }
+
+        updateStateById(repliedId,(byte)2);
+
+        create(message);
+
+    }
+
 }
 

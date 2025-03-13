@@ -105,6 +105,44 @@ public class MessageController {
     }
 
 
+    /**
+     * 回复站内信
+     * @param request
+     * @param repliedId
+     * @param content
+     * @return
+     */
+    @PostMapping("/reply")
+    public AppResult reply(HttpServletRequest request,
+                           @RequestParam("repliedId")@Nonnull Long repliedId,
+                           @RequestParam("content")@Nonnull String content){
+
+        Message existsMessage = messageService.selectById(repliedId);
+        if(existsMessage==null||existsMessage.getDeleteState()==1){
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_MESSAGE_NOT_EXISTS));
+        }
+
+        HttpSession session= request.getSession(false);
+        User user=(User)session.getAttribute(AppConfig.USER_SESSION);
+
+        if(user.getState()==1){
+            throw new ApplicationException(AppResult.failed(ResultCode.FAILED_USER_BANNED));
+        }
+
+        if(Objects.equals(user.getId(), existsMessage.getPostUserId())){
+            return AppResult.failed("不能自己回复自己");
+        }
+
+        Message message=new Message();
+        message.setPostUserId(user.getId());
+        message.setReceiveUserId(existsMessage.getPostUserId());
+        message.setContent(content);
+
+        messageService.reply(repliedId,message);
+
+        return AppResult.success();
+    }
+
 
 
 

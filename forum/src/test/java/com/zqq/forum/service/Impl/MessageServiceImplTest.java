@@ -53,4 +53,13 @@ class MessageServiceImplTest {
     void selectById() {
         System.out.println(messageService.selectById(1L));
     }
+
+    @Test
+    void reply() {
+        Message message=new Message();
+        message.setPostUserId(1L);
+        message.setReceiveUserId(3L);
+        message.setContent("cehsihuifu");
+        messageService.reply(2L,message);
+    }
 }

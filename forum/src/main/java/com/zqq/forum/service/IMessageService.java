@@ -2,6 +2,7 @@ package com.zqq.forum.service;
 
 import com.zqq.forum.model.Message;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -42,4 +43,13 @@ public interface IMessageService {
      * @return
      */
     Message selectById(Long id);
+
+
+    /**
+     * 回复站内信
+     * @param repliedId 要回复的站内信id
+     * @param message 要回复的对象
+     */
+    @Transactional
+    void reply(Long repliedId,Message message);
 }
