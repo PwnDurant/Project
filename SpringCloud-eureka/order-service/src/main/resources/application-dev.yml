@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: order-service
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/cloud_order?characterEncoding=utf8&useSSL=false
+    username: root
+    password: zqq13127837702
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# 设置 Mybatis 的 xml 保存路径
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  configuration: # 配置打印 MyBatis 执行的 SQL
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true  #自动驼峰转换
+
+#Eureka Client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10010/eureka/
