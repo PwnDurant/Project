@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/cloud_order?characterEncoding=utf8&useSSL=false
+    username: root
+    password: zqq13127837702
+    driver-class-name: com.mysql.cj.jdbc.Driver
+

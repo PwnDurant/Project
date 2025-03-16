@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: product-service
+
+  profiles:
+    active: @profile.name@
+
+  cloud:
+    nacos:
+      config:
+        server-addr: 123.56.166.56:10020
+#        namespace: fb16503b-0091-4bf6-af8d-5d366746a1ac

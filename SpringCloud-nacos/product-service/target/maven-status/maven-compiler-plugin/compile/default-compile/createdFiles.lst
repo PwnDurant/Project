@@ -1,0 +1,6 @@
+com/zqq/product/ProductServiceApplication.class
+com/zqq/product/mapper/ProductMapper.class
+com/zqq/product/model/ProductInfo.class
+com/zqq/product/service/ProductService.class
+com/zqq/product/controller/ProductController.class
+com/zqq/product/controller/NacosController.class
