@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/blog-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blog-info/blog-info-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blog-info/blog-info-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blog-info/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blog-info/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gateway-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user-info/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user-info/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user-info/user-info-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user-info/user-info-service/src/main/java" charset="UTF-8" />
+  </component>
+</project>
