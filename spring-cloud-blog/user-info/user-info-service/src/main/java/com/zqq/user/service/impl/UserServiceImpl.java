@@ -3,11 +3,10 @@ package com.zqq.user.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.zqq.api.BlogServiceApi;
 import com.zqq.api.pojo.BlogInfoResponse;
+import com.zqq.common.constant.Constants;
 import com.zqq.common.exception.BlogException;
 import com.zqq.common.pojo.Result;
-import com.zqq.common.utils.JWTUtils;
-import com.zqq.common.utils.RegexUtil;
-import com.zqq.common.utils.SecurityUtil;
+import com.zqq.common.utils.*;
 import com.zqq.user.api.pojo.UserInfoRegisterRequest;
 import com.zqq.user.api.pojo.UserInfoRequest;
 import com.zqq.user.api.pojo.UserInfoResponse;
@@ -17,27 +16,40 @@ import com.zqq.user.dataobject.UserInfo;
 import com.zqq.user.mapper.UserInfoMapper;
 import com.zqq.user.service.UserService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.catalina.User;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.HashMap;
 import java.util.Map;
 
 @Slf4j
 @Service
 public class UserServiceImpl implements UserService {
+
+    @Autowired
+    private Mail mail;
+
     @Autowired
     private UserInfoMapper userInfoMapper;
 
     @Autowired
     private BlogServiceApi blogServiceApi;
 
+    @Autowired
+    private Redis redis;
+
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
+
+    private static final long EXPIRE_TIME=14*24*60*60;
+
+    private static final String USER_PREFIX="user";
+
     @Override
     public UserLoginResponse login(UserInfoRequest user) {
         //验证账号密码是否正确
-        UserInfo userInfo = selectUserInfoByName(user.getUserName());
+        UserInfo userInfo = queryUserInfo(user.getUserName());
         if (userInfo==null || userInfo.getId()==null){
             throw new BlogException("用户不存在");
         }
@@ -55,6 +67,7 @@ public class UserServiceImpl implements UserService {
         String jwt = JWTUtils.genJwt(claims);
         return new UserLoginResponse(userInfo.getId(), jwt);
     }
+
 
     @Override
     public UserInfoResponse getUserInfo(Integer userId) {
@@ -89,6 +102,13 @@ public class UserServiceImpl implements UserService {
         try{
             int insert = userInfoMapper.insert(userInfo);
             if(insert==1){
+
+//                存储数据到redis中
+//                如果存储失败的话会导致查询时查不到信息，就从数据库中查询
+                redis.set(buildKey(userInfo.getUserName()), JsonUtil.toJson(userInfo),EXPIRE_TIME);
+//                发送消息
+                userInfo.setPassword("******");
+                rabbitTemplate.convertAndSend(Constants.USER_EXCHANGE_NAME,"",JsonUtil.toJson(userInfo));
                 return userInfo.getId();
             }else {
                 throw new BlogException("插入失败");
@@ -99,6 +119,8 @@ public class UserServiceImpl implements UserService {
         }
 
     }
+
+
 
     private void checkUserInfo(UserInfoRegisterRequest param) {
 
@@ -118,9 +140,31 @@ public class UserServiceImpl implements UserService {
 
     }
 
+    private String buildKey(String userName) {
+        return redis.buildKey(USER_PREFIX, userName);
+    }
+
     public UserInfo selectUserInfoByName(String userName) {
         return userInfoMapper.selectOne(new LambdaQueryWrapper<UserInfo>()
                 .eq(UserInfo::getUserName, userName).eq(UserInfo::getDeleteFlag, 0));
+    }
+
+    private UserInfo queryUserInfo(String userName) {
+//        先从redis中获取
+        String key=buildKey(userName);
+        boolean exists= redis.hasKey(key);
+        if(exists){
+//            从redis中读取数据
+            String userJson = redis.get(key);
+            UserInfo userInfo = JsonUtil.parseJson(userJson, UserInfo.class);
+            return userInfo==null?selectUserInfoByName(userJson):userInfo;
+        }else{
+//            从数据库中取出数据
+            UserInfo userInfo = selectUserInfoByName(userName);
+//            把数据库中的数据更新到redis
+            redis.set(key,JsonUtil.toJson(userInfo),EXPIRE_TIME);
+            return userInfo;
+        }
     }
     private UserInfo selectUserInfoById(Integer userId) {
         return userInfoMapper.selectOne(new LambdaQueryWrapper<UserInfo>()

@@ -12,14 +12,17 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RestController
+@RequestMapping("/user")
 public class UserController implements UserServiceApi {
 
     @Autowired
     private UserService userService;
+
 
     @Override
     public Result<UserLoginResponse> login(@Validated @RequestBody UserInfoRequest user){

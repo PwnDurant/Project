@@ -23,6 +23,27 @@ spring:
           max-idle: 8
           min-idle: 8
           max-wait: 5s
+  rabbitmq:
+    addresses: amqp://zqq:zqq@123.56.166.56:8889/blog
+    listener:
+      simple:
+        acknowledge-mode: manual
+  mail:
+    host: smtp.qq.com
+    port: 465
+    username: 1781389019@qq.com
+    password: kncrzhmvwxqrehfb  # ⚠️ 这里不能填 QQ 密码，必须使用授权码！
+    protocol: smtps
+    properties:
+      personal: "Chase博客社区"
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            enable: true
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true

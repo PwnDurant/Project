@@ -1,1 +1,2 @@
 com.zqq.common.config.RedisConfig
+com.zqq.common.config.MailConfig

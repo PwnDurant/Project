@@ -1,10 +1,6 @@
 server:
   port: 9090
 spring:
-  data:
-    redis:
-      host: localhost
-      port: 8888
   application:
     name: blog-service
   cloud:

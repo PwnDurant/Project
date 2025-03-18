@@ -10,8 +10,8 @@ public class BlogServiceApplication {
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext run = SpringApplication.run(BlogServiceApplication.class, args);
-		Redis testRedis = (Redis)run.getBean("testRedis");
-		System.out.println(testRedis);
+//		Redis testRedis = (Redis)run.getBean("testRedis");
+//		System.out.println(testRedis);
 	}
 
 }

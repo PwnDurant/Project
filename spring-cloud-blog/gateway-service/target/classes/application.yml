@@ -17,4 +17,14 @@ spring:
           uri: lb://blog-service
           predicates:
             - Path=/blog/**
+      # 网关全局跨域配置
+      globalcors:
+        # 解决options请求被拦截的问题
+        add-to-simple-url-handler-mapping: true
+        cors-configurations:
+          '[/**]':
+            allowedOriginPatterns: "*"     #设置允许跨域的来源
+            allowedMethods: "*"
+            allowedHeaders: "*"
+            allowCredentials: true
 
