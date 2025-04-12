@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="eye-user" />
+        <module name="eye-modules" />
+        <module name="eye-gateway" />
+        <module name="eye-common" />
+        <module name="oj-common-file" />
+        <module name="eye-api" />
+        <module name="eye-common-redis" />
+        <module name="eye-common-mybatis" />
+        <module name="eye-common-core" />
+        <module name="eye-common-security" />
+        <module name="eye-common-message" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="oj-common" target="17" />
+      <module name="oj-modules" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

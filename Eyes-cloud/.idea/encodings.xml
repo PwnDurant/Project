@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/eye-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eye-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eye-common/eye-common-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eye-common/eye-common-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eye-common/eye-common-message/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eye-common/eye-common-message/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eye-common/eye-common-mybatis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eye-common/eye-common-mybatis/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eye-common/eye-common-redis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eye-common/eye-common-redis/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eye-common/eye-common-security/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eye-common/eye-common-security/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eye-common/oj-common-file/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eye-common/oj-common-file/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eye-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eye-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eye-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eye-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eye-modules/eye-user/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eye-modules/eye-user/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eye-modules/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eye-modules/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/oj-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/oj-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/oj-modules/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/oj-modules/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

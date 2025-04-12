@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d247646b-90ac-4a68-ac2d-23eca30d6ba6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/eye-api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eye-common/eye-common-core/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eye-common/eye-common-message/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eye-common/eye-common-mybatis/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eye-common/eye-common-redis/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eye-common/eye-common-security/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eye-common/oj-common-file/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eye-common/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eye-gateway/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eye-modules/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/constants/CacheConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/constants/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/constants/HttpConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/constants/JwtConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/controller/BaseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/pojo/OSSResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/pojo/R.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/security/config/WebMvcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/security/exception/ServiceException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/security/handler/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/security/interceptor/TokenInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/security/service/TokenService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/utils/JwtUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/controller/file/FileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/controller/user/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/domain/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/domain/dto/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/domain/vo/UserVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/manager/UserCacheManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/message/config/AliSmsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/message/service/AliSmsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/oss/config/OSSConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/oss/config/OSSProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/oss/service/OSSService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/redis/config/JsonRedisSerializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/redis/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/redis/service/RedisService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/service/file/IFileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/service/file/impl/FileServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/service/user/IUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/service/user/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/EyesApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/EyesApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/advice/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/advice/ResponseBody.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/code/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/constants/ResultCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/exception/ApplicationException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/pojo/WebResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/controller/PictureController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/service/Impl/PictureServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/service/PictureService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/target/classes/com/zqq/eyes/EyesApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/target/classes/com/zqq/eyes/common/advice/GlobalExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/target/classes/com/zqq/eyes/common/advice/ResponseBody.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/target/classes/com/zqq/eyes/common/code/ResultCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/target/classes/com/zqq/eyes/common/exception/ApplicationException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/target/classes/com/zqq/eyes/common/pojo/WebResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/target/classes/com/zqq/eyes/controller/PictureController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/target/classes/com/zqq/eyes/service/Impl/PictureServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/target/classes/com/zqq/eyes/service/PictureService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/target/test-classes/com/zqq/eyes/EyesApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lottery_system/src/main/java/org/mon/lottery_system/service/impl/PictureServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lottery_system/src/main/java/org/mon/lottery_system/service/impl/PictureServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringCloud-eureka/eureka-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud-eureka/eureka-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringCloud-eureka/eureka-server/src/main/java/com/zqq/eureka/EurekaServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud-eureka/eureka-server/src/main/java/com/zqq/eureka/EurekaServerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringCloud-eureka/eureka-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud-eureka/eureka-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringCloud-eureka/order-service/src/main/java/com/zqq/order/config/CustomLoadBalancerConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud-eureka/order-service/src/main/java/com/zqq/order/config/CustomLoadBalancerConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringCloud-eureka/order-service/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud-eureka/order-service/src/main/resources/application-prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringCloud-eureka/product-service/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud-eureka/product-service/src/main/resources/application-prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringCloud-feign/order-service/src/main/java/com/zqq/order/api/ProductApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud-feign/order-service/src/main/java/com/zqq/order/api/ProductApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringCloud-feign/order-service/src/main/java/com/zqq/order/controller/FeignController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud-feign/order-service/src/main/java/com/zqq/order/controller/FeignController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringCloud-feign/product-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud-feign/product-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringCloud-feign/product-api/src/main/java/com/zqq/product/api/ProductInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud-feign/product-api/src/main/java/com/zqq/product/api/ProductInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringCloud-feign2/product-api/src/main/java/com/zqq/product/api/ProductInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud-feign2/product-api/src/main/java/com/zqq/product/api/ProductInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringCloud/order-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/order-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringCloud/order-service/src/main/java/com/zqq/order/OrderServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/order-service/src/main/java/com/zqq/order/OrderServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringCloud/order-service/src/main/java/com/zqq/order/config/BeanConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/order-service/src/main/java/com/zqq/order/config/BeanConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringCloud/order-service/src/main/java/com/zqq/order/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/order-service/src/main/java/com/zqq/order/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringCloud/order-service/src/main/java/com/zqq/order/mapper/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/order-service/src/main/java/com/zqq/order/mapper/OrderMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringCloud/order-service/src/main/java/com/zqq/order/model/OrderInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/order-service/src/main/java/com/zqq/order/model/OrderInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringCloud/order-service/src/main/java/com/zqq/order/model/ProductInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/order-service/src/main/java/com/zqq/order/model/ProductInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringCloud/order-service/src/main/java/com/zqq/order/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/order-service/src/main/java/com/zqq/order/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringCloud/order-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/order-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringCloud/product-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/product-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/ProductServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/ProductServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/mapper/ProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/mapper/ProductMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/model/ProductInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/model/ProductInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chase-oj/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chase-oj/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chase-oj/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chase-oj/.idea/material_theme_project_new.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chase-oj/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chase-oj/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chase-oj/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-service/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-service/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/blog.log" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/blog.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/gateway-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/gateway-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/gateway-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/gateway-service/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/gateway-service/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/gateway-service/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/gateway-service/target/classes/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/gateway-service/target/classes/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/user-info/user-info-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/user-info/user-info-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/user-info/user-info-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/user-info/user-info-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/user-info/user-info-service/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/user-info/user-info-service/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/user-info/user-info-service/user.log" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/user-info/user-info-service/user.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/user.log" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/user.log" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="$MAVEN_REPOSITORY$" />
+        <option name="userSettingsFile" value="$USER_HOME$/.m2/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2vdIwPBBjc2Od5vvaD3J5IROHBD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d247646b-90ac-4a68-ac2d-23eca30d6ba6" name="Changes" comment="" />
+      <created>1744468762804</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1744468762804</updated>
+      <workItem from="1744468763798" duration="757000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
