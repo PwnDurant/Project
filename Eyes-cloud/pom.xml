@@ -13,14 +13,6 @@
         <module>eye-gateway</module>
         <module>eye-modules</module>
         <module>eye-common</module>
-        <module>eye-common/eye-common-message</module>
-        <module>eye-common/eye-common-core</module>
-        <module>eye-common/eye-common-redis</module>
-        <module>eye-common/eye-common-security</module>
-        <module>eye-common/oj-common-file</module>
-        <module>eye-common/eye-common-mybatis</module>
-        <module>eye-modules/eye-user</module>
-        <module>eye-modules/eye-system</module>
     </modules>
 
     <properties>

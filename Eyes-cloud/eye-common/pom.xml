@@ -10,6 +10,15 @@
     </parent>
 
     <artifactId>eye-common</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>eye-common-core</module>
+        <module>eye-common-file</module>
+        <module>eye-common-message</module>
+        <module>eye-common-redis</module>
+        <module>eye-common-security</module>
+        <module>eye-common-mybatis</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

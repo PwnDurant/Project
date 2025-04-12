@@ -5,58 +5,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d247646b-90ac-4a68-ac2d-23eca30d6ba6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/eye-api/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eye-common/eye-common-core/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eye-common/eye-common-message/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eye-common/eye-common-mybatis/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eye-common/eye-common-redis/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eye-common/eye-common-security/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eye-common/oj-common-file/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eye-common/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eye-gateway/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eye-modules/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/constants/CacheConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/constants/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/constants/HttpConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/constants/JwtConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/controller/BaseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/pojo/OSSResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/pojo/R.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/security/config/WebMvcConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/security/exception/ServiceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/security/handler/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/security/interceptor/TokenInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/security/service/TokenService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/utils/JwtUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/controller/file/FileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/controller/user/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/domain/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/domain/dto/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/domain/vo/UserVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/manager/UserCacheManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/message/config/AliSmsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/message/service/AliSmsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/oss/config/OSSConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/oss/config/OSSProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/oss/service/OSSService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/redis/config/JsonRedisSerializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/redis/config/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/redis/service/RedisService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/service/file/IFileService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/service/file/impl/FileServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/service/user/IUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/service/user/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-common/eye-common-core/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-common/eye-common-message/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-common/eye-common-mybatis/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-common/eye-common-redis/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-common/eye-common-security/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-common/oj-common-file/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-modules/eye-system/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-modules/eye-system/src/main/resources/bootstrap.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-modules/eye-user/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-modules/eye-user/src/main/resources/bootstrap.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-modules/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eye-modules/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Eyes/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/EyesApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/EyesApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/advice/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/advice/ResponseBody.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/code/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/constants/ResultCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/exception/ApplicationException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/pojo/WebResult.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/controller/PictureController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/service/Impl/PictureServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/service/PictureService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/constants/CacheConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/constants/CacheConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/constants/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/constants/HttpConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/constants/HttpConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/constants/JwtConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/constants/JwtConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/constants/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/constants/ResultCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/controller/BaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/pojo/OSSResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/pojo/OSSResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/pojo/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/pojo/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/security/config/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/security/config/WebMvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/security/exception/ServiceException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/security/exception/ServiceException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/security/handler/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/security/handler/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/security/interceptor/TokenInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/security/interceptor/TokenInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/security/service/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/security/service/TokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/utils/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/utils/JwtUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/controller/file/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/controller/file/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/controller/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/controller/user/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/manager/UserCacheManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/manager/UserCacheManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/message/config/AliSmsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/message/config/AliSmsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/message/service/AliSmsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/message/service/AliSmsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/oss/config/OSSConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/oss/config/OSSConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/oss/config/OSSProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/oss/config/OSSProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/oss/service/OSSService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/oss/service/OSSService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/redis/config/JsonRedisSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/redis/config/JsonRedisSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/redis/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/redis/config/RedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/redis/service/RedisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/redis/service/RedisService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/service/file/IFileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/service/file/IFileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/service/file/impl/FileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/service/file/impl/FileServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/service/user/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/service/user/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/service/user/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/service/user/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Eyes/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Eyes/target/classes/application.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Eyes/target/classes/com/zqq/eyes/EyesApplication.class" beforeDir="false" />
@@ -97,12 +90,30 @@
       <change beforePath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/model/ProductInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/model/ProductInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../chase-oj/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../chase-oj/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chase-oj/.idea/compiler.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../chase-oj/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chase-oj/.idea/jarRepositories.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../chase-oj/.idea/material_theme_project_new.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../chase-oj/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chase-oj/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../chase-oj/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chase-oj/oj-api/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chase-oj/oj-common/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chase-oj/oj-gateway/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chase-oj/oj-modules/oj-friend/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chase-oj/oj-modules/oj-friend/src/main/java/com/zqq/friend/OjFriendApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chase-oj/oj-modules/oj-friend/src/main/resources/bootstrap.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chase-oj/oj-modules/oj-job/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chase-oj/oj-modules/oj-job/src/main/java/com/zqq/job/OjJobApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chase-oj/oj-modules/oj-job/src/main/resources/bootstrap.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chase-oj/oj-modules/oj-judge/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chase-oj/oj-modules/oj-judge/src/main/java/com/zqq/judge/OjJudgeApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chase-oj/oj-modules/oj-judge/src/main/resources/bootstrap.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chase-oj/oj-modules/oj-system/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chase-oj/oj-modules/oj-system/src/main/java/com/zqq/system/OjSystemApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chase-oj/oj-modules/oj-system/src/main/resources/bootstrap.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chase-oj/oj-modules/pom.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../chase-oj/pom.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-api/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-service/src/main/resources/application.yml" afterDir="false" />
@@ -123,6 +134,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -138,6 +156,9 @@
   "associatedIndex": 4
 }]]></component>
   <component name="ProjectId" id="2vdIwPBBjc2Od5vvaD3J5IROHBD" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -147,6 +168,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/zhaoqianqian/IDEAUl/Project/Eyes-cloud/eye-gateway/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -156,6 +178,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/eye-gateway/src/main/resources" />
+      <recent name="$PROJECT_DIR$/eye-modules/eye-system/src/main/resources" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -172,7 +200,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1744468762804</updated>
-      <workItem from="1744468763798" duration="757000" />
+      <workItem from="1744468763798" duration="2559000" />
     </task>
     <servers />
   </component>

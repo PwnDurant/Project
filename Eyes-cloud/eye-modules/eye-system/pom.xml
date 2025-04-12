@@ -5,9 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.zqq</groupId>
-        <artifactId>Eyes-cloud</artifactId>
+        <artifactId>eye-modules</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../../pom.xml</relativePath>
     </parent>
 
     <artifactId>eye-system</artifactId>

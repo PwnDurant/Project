@@ -6,11 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="eye-common-file" />
         <module name="eye-user" />
-        <module name="eye-modules" />
         <module name="eye-gateway" />
-        <module name="eye-common" />
-        <module name="oj-common-file" />
         <module name="eye-api" />
         <module name="eye-common-redis" />
         <module name="eye-common-mybatis" />
@@ -21,6 +19,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="oj-common" target="17" />
+      <module name="oj-common-file" target="17" />
       <module name="oj-modules" target="17" />
     </bytecodeTargetLevel>
   </component>

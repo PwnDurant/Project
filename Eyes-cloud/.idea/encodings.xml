@@ -5,6 +5,8 @@
     <file url="file://$PROJECT_DIR$/eye-api/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eye-common/eye-common-core/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eye-common/eye-common-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eye-common/eye-common-file/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eye-common/eye-common-file/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eye-common/eye-common-message/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eye-common/eye-common-message/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eye-common/eye-common-mybatis/src/main/java" charset="UTF-8" />
@@ -19,6 +21,8 @@
     <file url="file://$PROJECT_DIR$/eye-common/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eye-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eye-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eye-modules/eye-system/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eye-modules/eye-system/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eye-modules/eye-user/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eye-modules/eye-user/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eye-modules/src/main/java" charset="UTF-8" />
