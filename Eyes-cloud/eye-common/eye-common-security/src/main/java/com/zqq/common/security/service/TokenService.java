@@ -5,7 +5,7 @@ import com.zqq.common.core.constants.CacheConstants;
 import com.zqq.common.core.constants.JwtConstants;
 import com.zqq.common.core.domain.LoginUser;
 import com.zqq.common.core.utils.JwtUtils;
-import com.zqq.redis.service.RedisService;
+import com.zqq.common.redis.service.RedisService;
 import io.jsonwebtoken.Claims;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,47 +25,51 @@ public class TokenService {
     @Autowired
     private RedisService redisService;
 
-    public String createToken(Long userId,String secret,Integer identity,String nickName,String headImage){
+
+    /**
+     * 根据用户信息创建token
+     * @param userId 用户id
+     * @param secret 密钥（签名verify)
+     * @param nickName 用户昵称
+     * @return 返回生成的token
+     */
+    public String createToken(Long userId,String secret,String nickName){
+//        token里包含header，payload，verify,其中payload就是主要信息
+//        这里payload中放 用户id（用户后续通过token获取用户对应相关信息） 和 用户key（用户唯一标识）
         Map<String,Object> claims=new HashMap<>();
+//        生成用户唯一标识并放入到载荷中，之所以放userId和userKey是为了防止同一个用户同时登入不同设备
+//        这样如果只用userId的话有唯一性，会覆盖之前的登入状态
         String userKey = UUID.fastUUID().toString();
         claims.put(JwtConstants.LOGIN_USER_ID,userId);
         claims.put(JwtConstants.LOGIN_USER_KEY,userKey);
+//        根据载荷和密钥生成token
         String token = JwtUtils.createToken(claims, secret);
-//            1,第三方机制中存在敏感信息 表明用户身份字段： identity 1表示普通用户，2表示管理员用户 对象
-//            2,使用什么样子的数据结构 key:value(:String   String   hash       (String)可以直接使用序列化器
-//            key要保证唯一， 便于维护。统一前缀:loginToken:(userId 通过雪花算法生成的唯一的)
-
+//         生成好的token要放入到redis中，方便对过期时间进行控制
         String key=getTokenKsy(userKey);
         LoginUser loginUser=new LoginUser();
-        loginUser.setIdentity(identity);
-        loginUser.setNickName(nickName);
-        loginUser.setHeadImage(headImage);
+        loginUser.setName(nickName);
+//        在缓存里设置720分钟的过期时间
         redisService.setCacheObject(key,loginUser,CacheConstants.EXP, TimeUnit.MINUTES);
-//            3,过期时间应该怎么定义  720分钟
-
         return token;
     }
 
-//    在身份认证通过并且在请求到达controller之前进行判别延长
     /**
-     * 延长token的有效时间就是延长redis中的信息        需要操作redis   token-> 唯一标识
-     * @param token
+     * 延长token
+     * 在身份认证通过并且在请求到达controller之前进行判别延长，延长token的有效时间就是延长redis中的信息        需要操作redis   token-> 唯一标识
+     * @param token token
      */
     public void extendToken(String token,String secret){
-
 //        先拿到对应的用户key，再进行判断
         String userKey = getUserKey(token, secret);
         if(userKey==null){
             return ;
         }
         String tokenKey=getTokenKsy(userKey);
-
 //        剩余180min分钟延长
         Long expire = redisService.getExpire(tokenKey, TimeUnit.MINUTES);
         if(expire!=null&&expire<CacheConstants.REFRESH_TIME){
             redisService.expire(tokenKey,CacheConstants.EXP,TimeUnit.MINUTES);
         }
-
     }
 
     public String getTokenKsy(String userKey){
@@ -73,7 +77,6 @@ public class TokenService {
     }
 
     public LoginUser getLoginUser(String token,String secret) {
-
 //        先解析token，从token中获取唯一标识
         String userKey = getUserKey(token, secret);
         if(userKey==null) return null;
@@ -137,12 +140,11 @@ public class TokenService {
 
 
 //    刷新用户信息缓存
-    public void refreshLoginUser(String nickName, String headImage, String userKey) {
+    public void refreshLoginUser(String nickName, String userKey) {
 //        根据用户Key拿到TokenKey
         String tokenKey=getTokenKey(userKey);
         LoginUser loginUser = redisService.getCacheObject(tokenKey, LoginUser.class);
-        loginUser.setNickName(nickName);
-        loginUser.setHeadImage(headImage);
+        loginUser.setName(nickName);
         redisService.setCacheObject(tokenKey,loginUser);
     }
 

@@ -4,13 +4,11 @@ import cn.hutool.core.util.StrUtil;
 import com.alibaba.fastjson2.JSON;
 import com.zqq.common.core.constants.CacheConstants;
 import com.zqq.common.core.constants.HttpConstants;
-import com.zqq.common.core.domain.LoginUser;
 import com.zqq.common.core.domain.R;
 import com.zqq.common.core.enums.ResultCode;
-import com.zqq.common.core.enums.UserIdentity;
 import com.zqq.common.core.utils.JwtUtils;
+import com.zqq.common.redis.service.RedisService;
 import com.zqq.gateway.properties.IgnoreWhiteProperties;
-import com.zqq.redis.service.RedisService;
 import io.jsonwebtoken.Claims;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,7 +63,6 @@ public class AuthFilter implements GlobalFilter, Ordered {
         //从http请求头中获取token
         String token = getToken(request);
         if (StrUtil.isEmpty(token)) {
-//            throw new RuntimeException("令牌不能为空");
             return unauthorizedResponse(exchange, "令牌不能为空");
         }
         Claims claims;
@@ -75,12 +72,10 @@ public class AuthFilter implements GlobalFilter, Ordered {
                 //springCloud gateway 基于webflux
                 return unauthorizedResponse(exchange, "令牌已过期或验证不正确！");
             }
+//            并在过期时抛出 ExpiredJwtException
         } catch (Exception e) {
             return unauthorizedResponse(exchange, "令牌已过期或验证不正确！");
         }
-
-//        String userId = JwtUtils.getUserId(claims);
-//        boolean isLogin = redisService.hasKey(getTokenKey(userId));
 
         //通过redis中存储的数据，来控制jwt的过期时间
         String userKey = JwtUtils.getUserKey(claims);  //获取jwt中的key
@@ -92,19 +87,6 @@ public class AuthFilter implements GlobalFilter, Ordered {
         if (StrUtil.isEmpty(userId)) {
             return unauthorizedResponse(exchange, "令牌验证失败");
         }
-
-        //token 是正确的 并且没有过期
-        //判断redis存储  关于用户身份认证的信息是否是对的
-        //判断当前请求 请求的是C端功能（只有C端用户可以请求）  还是B端功能  （只有管路员可以请求）
-        LoginUser user = redisService.getCacheObject(getTokenKey(userKey), LoginUser.class);
-        if (url.contains(HttpConstants.SYSTEM_URL_PREFIX) && !UserIdentity.ADMIN.getValue().equals(user.getIdentity())) {
-            return unauthorizedResponse(exchange, "令牌验证失败");
-        }
-        if (url.contains(HttpConstants.FRIEND_URL_PREFIX) && !UserIdentity.ORDINARY.getValue().equals(user.getIdentity())) {
-            return unauthorizedResponse(exchange, "令牌验证失败");
-        }
-//      由于gateway服务是单独的一个服务，与其它服务不是在一个线程中，所以就算设置了线程变量也没有用
-//        ThreadLocalIUtil.set(Constants.USER_ID,userId);
 
         return chain.filter(exchange);
     }
@@ -184,47 +166,4 @@ public class AuthFilter implements GlobalFilter, Ordered {
         return -200;  //值越小 过滤器就越先被执行
     }
 
-    public static void main(String[] args) {
-        AuthFilter authFilter = new AuthFilter();
-//        String pattern = "/sys/bc";
-//        System.out.println(authFilter.isMatch(pattern, "/sys/bc"));   //true
-//        System.out.println(authFilter.isMatch(pattern,"/sys/abc"));   //false
-
-//        测试 ?  表示单个任意字符;
-        String pattern = "/sys/?bc";
-//        System.out.println(authFilter.isMatch(pattern,"/sys/abc"));   //true
-//
-//        System.out.println(authFilter.isMatch(pattern,"/sys/cbc"));   //true
-//
-//        System.out.println(authFilter.isMatch(pattern,"/sys/acbc"));  //false
-//
-//
-//        System.out.println(authFilter.isMatch(pattern,"/sdsa/abc"));   //false
-//        System.out.println(authFilter.isMatch(pattern,"/sys/abcw"));   //false
-
-//        测试*  表示一层路径内的任意字符串，不可跨层级;  一个 / 就是一个层级
-//        String pattern = "/sys/*/bc";
-//        System.out.println(authFilter.isMatch(pattern,"/sys/a/bc"));   //true
-//
-//        System.out.println(authFilter.isMatch(pattern,"/sys/sdasdsadsad/bc"));  //true
-//
-//
-//        System.out.println(authFilter.isMatch(pattern,"/sys/a/b/bc"));   //false
-//
-//
-//        System.out.println(authFilter.isMatch(pattern,"/b/bc"));   //false
-//
-//
-//        System.out.println(authFilter.isMatch(pattern,"/sys/a"));  //false
-
-//        测试**  表示任意层路径;
-//        String pattern = "/sys/**/bc";
-//        System.out.println(authFilter.isMatch(pattern, "/sys/a/bc"));  //true
-//        System.out.println(authFilter.isMatch(pattern, "/sys/sdasdsadsad/bc"));  //true
-//        System.out.println(authFilter.isMatch(pattern, "/sys/a/b/bc"));  //true
-//        System.out.println(authFilter.isMatch(pattern, "/sys/a/b/s/23/432/fdsf///bc")); //true
-//
-//        System.out.println(authFilter.isMatch(pattern, "/a/b/s/23/432/fdsf///bc"));   //false
-//        System.out.println(authFilter.isMatch(pattern, "/sys/a/b/s/23/432/fdsf///")); //false
-    }
 }

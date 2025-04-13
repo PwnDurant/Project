@@ -34,6 +34,11 @@
             <artifactId>eye-common-mybatis</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.zqq</groupId>
+            <artifactId>eye-common-security</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
 
         <dependency>

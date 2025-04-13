@@ -5,18 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d247646b-90ac-4a68-ac2d-23eca30d6ba6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/eye-common/eye-common-core/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eye-common/eye-common-message/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eye-common/eye-common-mybatis/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eye-common/eye-common-redis/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eye-common/eye-common-security/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eye-common/oj-common-file/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eye-modules/eye-system/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eye-modules/eye-system/src/main/resources/bootstrap.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eye-modules/eye-user/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eye-modules/eye-user/src/main/resources/bootstrap.yml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eye-common/eye-common-core/src/main/java/com/zqq/common/core/domain/LoginUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eye-common/eye-common-core/src/main/java/com/zqq/common/core/domain/vo/LoginUserVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eye-modules/eye-system/src/main/java/com/zqq/system/EyeSystemApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/domain/record/Record.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/domain/record/dto/RecordDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/domain/record/vo/RecordVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/domain/user/dto/UserUpdateDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/manager/user/UserCacheManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/mapper/record/RecordMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/mapper/user/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bc5086df-43a8-4ef7-a018-294153bc2f7a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bc5086df-43a8-4ef7-a018-294153bc2f7a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-common/eye-common-core/src/main/java/com/zqq/common/core/constants/CacheConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/eye-common/eye-common-core/src/main/java/com/zqq/common/core/constants/CacheConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-common/eye-common-core/src/main/java/com/zqq/common/core/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/eye-common/eye-common-core/src/main/java/com/zqq/common/core/constants/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-common/eye-common-core/src/main/java/com/zqq/common/core/enums/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/eye-common/eye-common-core/src/main/java/com/zqq/common/core/enums/ResultCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-common/eye-common-file/src/main/java/com/zqq/common/file/service/OSSService.java" beforeDir="false" afterPath="$PROJECT_DIR$/eye-common/eye-common-file/src/main/java/com/zqq/common/file/service/OSSService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-common/eye-common-mybatis/src/main/java/com/zqq/common/mybatis/MyMetaObjectHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/eye-common/eye-common-mybatis/src/main/java/com/zqq/common/mybatis/MyMetaObjectHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-common/eye-common-redis/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" beforeDir="false" afterPath="$PROJECT_DIR$/eye-common/eye-common-redis/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-common/eye-common-security/src/main/java/com/zqq/common/security/service/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/eye-common/eye-common-security/src/main/java/com/zqq/common/security/service/TokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-gateway/src/main/java/com/zqq/gateway/EyeGatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/eye-gateway/src/main/java/com/zqq/gateway/EyeGatewayApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-gateway/src/main/java/com/zqq/gateway/filter/AuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/eye-gateway/src/main/java/com/zqq/gateway/filter/AuthFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-gateway/src/main/java/com/zqq/gateway/properties/IgnoreWhiteProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/eye-gateway/src/main/java/com/zqq/gateway/properties/IgnoreWhiteProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/controller/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/controller/user/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/domain/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/domain/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/domain/user/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/domain/vo/UserVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/domain/user/vo/UserVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/service/user/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/service/user/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/service/user/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/service/user/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eye-modules/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eye-modules/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Eyes/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/EyesApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/EyesApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/constants/CacheConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/constants/CacheConstants.java" afterDir="false" />
@@ -137,6 +158,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -144,6 +166,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -152,9 +178,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2vdIwPBBjc2Od5vvaD3J5IROHBD" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -165,10 +191,18 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Maven.Eyes-cloud [clean].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.EyeGatewayApplication.executor": "Debug",
+    "Spring Boot.EyeUserApplication.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/zhaoqianqian/IDEAUl/Project/Eyes-cloud/eye-gateway/src/main/resources",
+    "last_opened_file_path": "/Users/zhaoqianqian/IDEAUl/Project/Eyes-cloud/eye-common/eye-common-core/src/main/java/com/zqq/common/core/utils",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -176,13 +210,86 @@
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "MavenSettings",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/eye-gateway/src/main/resources" />
-      <recent name="$PROJECT_DIR$/eye-modules/eye-system/src/main/resources" />
+      <recent name="$PROJECT_DIR$/eye-common/eye-common-core/src/main/java/com/zqq/common/core/utils" />
+      <recent name="$PROJECT_DIR$/eye-common/eye-common-message/src/main/java/com/zqq/common/message" />
+      <recent name="$PROJECT_DIR$/eye-common/eye-common-message/src/main/resources/META-INF/spring" />
+      <recent name="$PROJECT_DIR$/eye-gateway/src/main/java/com/zqq/gateway" />
+      <recent name="$PROJECT_DIR$/eye-common/eye-common-file/src/main/java/com/zqq/common/file" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zqq.common.core.constants" />
+      <recent name="com.zqq.common.redis.service" />
+      <recent name="com.zqq.common.security.service" />
+      <recent name="com.zqq.common.security.interceptor" />
+      <recent name="com.zqq.common.security.config" />
+    </key>
+  </component>
+  <component name="RedisHelper">
+    <option name="connections">
+      <list>
+        <ConnectionInfo>
+          <option name="global" value="false" />
+          <option name="id" value="8653e407-e5b1-4041-ac78-aee9c1017f64" />
+          <option name="name" value="test" />
+          <option name="port" value="6379" />
+          <option name="url" value="localhost" />
+        </ConnectionInfo>
+      </list>
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="Application" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.EyeUserApplication">
+    <configuration name="EyeGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="eye-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zqq.gateway.EyeGatewayApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zqq.gateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EyeUserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="eye-user" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zqq.user.EyeUserApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zqq.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.EyeUserApplication" />
+        <item itemvalue="Spring Boot.EyeGatewayApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -200,11 +307,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1744468762804</updated>
-      <workItem from="1744468763798" duration="2559000" />
+      <workItem from="1744468763798" duration="7528000" />
+      <workItem from="1744502743632" duration="17909000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/service/user/impl/UserServiceImpl.java</url>
+          <line>160</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
