@@ -8,6 +8,7 @@ import com.zqq.common.core.domain.PageQueryDTO;
 import com.zqq.common.core.domain.TableDataInfo;
 import com.zqq.common.core.utils.ThreadLocalIUtil;
 import com.zqq.user.domain.record.vo.RecordVO;
+import com.zqq.user.domain.result.SuccessVO;
 import com.zqq.user.manager.record.RecordCacheManager;
 import com.zqq.user.mapper.record.RecordMapper;
 import com.zqq.user.service.user.IUserRecordService;

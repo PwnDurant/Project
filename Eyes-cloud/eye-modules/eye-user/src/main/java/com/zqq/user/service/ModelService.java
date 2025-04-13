@@ -1,15 +1,13 @@
 package com.zqq.user.service;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.zqq.common.core.constants.Constants;
 import com.zqq.common.core.utils.MultipartInputStreamFileResource;
 import com.zqq.common.core.utils.ThreadLocalIUtil;
-import com.zqq.user.domain.eye.Eye;
-import com.zqq.user.domain.eye.vo.EyeVO;
+import com.zqq.user.domain.detail.RecordPredictionResult;
 import com.zqq.user.domain.record.Record;
-import com.zqq.user.domain.result.RecordResult;
-import com.zqq.user.domain.result.SuccessVO;
+import com.zqq.user.domain.record.vo.RecordVO;
 import com.zqq.user.domain.user.User;
+import com.zqq.user.mapper.detail.DetailMapper;
 import com.zqq.user.mapper.eye.EyeMapper;
 import com.zqq.user.mapper.record.RecordMapper;
 import com.zqq.user.mapper.user.UserMapper;
@@ -24,6 +22,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -37,7 +38,10 @@ public class ModelService {
     @Autowired
     private EyeMapper eyeMapper;
 
-    public SuccessVO uploadImagesFromUrl(String leftImageUrl, String rightImageUrl) throws IOException {
+    @Autowired
+    private DetailMapper detailMapper;
+
+    public List<Map<String, Object>> uploadImagesFromUrl(String leftImageUrl, String rightImageUrl) throws IOException {
         String url = "http://127.0.0.1:5001/predict";
         int tmp=0;
         // 如果其中一个为空，就用另一个替代
@@ -75,24 +79,43 @@ public class ModelService {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Map> response = restTemplate.postForEntity(url, requestEntity, Map.class);
         Map result = response.getBody();
-        Record record=setRecord(result,leftImageUrl,rightImageUrl,tmp);
-
-
-
-        SuccessVO successVO=new SuccessVO();
-        RecordResult recordResult=new RecordResult();
-        assert record != null;
-        BeanUtils.copyProperties(record,recordResult);
-        successVO.setRecordResult(recordResult);
-        Eye eye=eyeMapper.selectOne(new LambdaQueryWrapper<Eye>()
-                .eq(Eye::getName,recordResult.getResult()));
-        EyeVO eyeVO=new EyeVO();
-        BeanUtils.copyProperties(eye,eyeVO);
-        successVO.setEyeVO(eyeVO);
-        return successVO;
+//        构造返回数据
+        List list = convertToListForFrontend(result);
+        setRecord(list,leftImageUrl,rightImageUrl,tmp);
+        return list;
     }
 
-    private Record setRecord(Map result,String leftImageUrl, String rightImageUrl,int tmp) {
+
+    public List<Map<String, Object>> convertToListForFrontend(Map<String, Double> originalMap) {
+        Map<String, String> labelToDiseaseName = new HashMap<>();
+        labelToDiseaseName.put("Label_0", "正常");
+        labelToDiseaseName.put("Label_1", "糖尿病");
+        labelToDiseaseName.put("Label_2", "青光眼");
+        labelToDiseaseName.put("Label_3", "白内障");
+        labelToDiseaseName.put("Label_4", "AMD");
+        labelToDiseaseName.put("Label_5", "高血压");
+        labelToDiseaseName.put("Label_6", "近视");
+        labelToDiseaseName.put("Label_7", "其他疾病/异常");
+
+        List<Map<String, Object>> resultList = new ArrayList<>();
+        for (Map.Entry<String, Double> entry : originalMap.entrySet()) {
+            Map<String, Object> map = new HashMap<>();
+            map.put("name", labelToDiseaseName.getOrDefault(entry.getKey(), entry.getKey()));
+            map.put("value", entry.getValue());
+            resultList.add(map);
+        }
+        return resultList;
+    }
+
+    /**
+     * 历史记录只需要有图片和眼睛就行
+     * @param resultList 结果
+     * @param leftImageUrl 左眼图片
+     * @param rightImageUrl 右眼图片
+     * @param tmp 左右眼标识符
+     * @return 返回所插入的记录信息
+     */
+    private RecordVO setRecord(List<Map<String, Object>> resultList, String leftImageUrl, String rightImageUrl, int tmp) {
         if(!isExist()) return null;
         Record record=new Record();
         record.setUserId(ThreadLocalIUtil.get(Constants.USER_ID, Long.class));
@@ -107,11 +130,23 @@ public class ModelService {
             record.setLeftImage(leftImageUrl);
             record.setRightImage(rightImageUrl);
         }
-        Map.Entry<String, Double> res=getMaxEntry(result);
-        record.setResult(res.getKey());
-        record.setConfidence(res.getValue().floatValue());
         recordMapper.insert(record);
-        return record;
+        RecordVO recordVO=new RecordVO();
+        BeanUtils.copyProperties(record,recordVO);
+        saveResults(resultList, recordVO.getRecordId());
+        return recordVO;
+    }
+
+    public void saveResults(List<Map<String, Object>> dataList, Long recordId) {
+        List<RecordPredictionResult> resultList = new ArrayList<>();
+        for (Map<String, Object> map : dataList) {
+            RecordPredictionResult result = new RecordPredictionResult();
+            result.setRecordId(recordId);
+            result.setDiseaseName((String) map.get("name"));
+            result.setConfidenceScore(Double.parseDouble(map.get("value").toString()));
+            resultList.add(result);
+        }
+        detailMapper.insertBatch(resultList);
     }
 
     private Map.Entry<String, Double> getMaxEntry(Map<String, Double> resultMap) {

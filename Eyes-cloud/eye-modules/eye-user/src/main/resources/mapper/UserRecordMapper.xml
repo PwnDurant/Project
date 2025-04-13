@@ -4,30 +4,55 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zqq.user.mapper.record.RecordMapper">
 
-    <select id="selectUserRecordList" resultType="com.zqq.user.domain.record.vo.RecordVO">
+    <select id="selectUserRecordList" resultMap="RecordWithPredictionsResultMap">
         SELECT
-            r.record_id,
-            r.right_image,
-            r.left_image,
-            r.eye_type,
-            r.result,
-            r.confidence,
-            r.upload_time
+        r.record_id,
+        r.right_image,
+        r.left_image,
+        r.eye_type,
+        r.result,
+        r.confidence,
+        r.upload_time
         FROM
-            eye_record r
-                JOIN
-            eye_user  u
-            ON
-                r.user_id=u.user_id
+        eye_record r
+        JOIN
+        eye_user  u
+        ON
+        r.user_id=u.user_id
         WHERE
-            r.user_id= #{userId}
-            <if test="query.result !=null and query.result !='' ">
-                AND r.result LIKE CONCAT('%',#{query.result},'%')
-            </if>
-            <if test="query.uploadTime != null and query.uploadTime != ''">
-                AND r.upload_time &lt;= #{query.uploadTime}
-            </if>
+        r.user_id= #{userId}
+        <if test="query.result !=null and query.result !='' ">
+            AND r.result LIKE CONCAT('%',#{query.result},'%')
+        </if>
+        <if test="query.uploadTime != null and query.uploadTime != ''">
+            AND r.upload_time &lt;= #{query.uploadTime}
+        </if>
         ORDER BY
-            r.upload_time DESC
+        r.upload_time DESC
     </select>
+
+
+    <select id="selectPredictionsByRecordId" resultType="com.zqq.user.domain.detail.vo.ResultVO">
+        SELECT
+            disease_name,
+            confidence_score
+        FROM
+            record_prediction_result
+        WHERE
+            record_id = #{recordId}
+    </select>
+
+    <resultMap id="RecordWithPredictionsResultMap" type="com.zqq.user.domain.record.vo.RecordVO">
+        <id property="recordId" column="record_id"/>
+        <result property="rightImage" column="right_image"/>
+        <result property="leftImage" column="left_image"/>
+        <result property="eyeType" column="eye_type"/>
+        <result property="result" column="result"/>
+        <result property="confidence" column="confidence"/>
+        <result property="uploadTime" column="upload_time"/>
+
+        <!-- 一对多嵌套查询 -->
+        <collection property="resultVOList" ofType="com.zqq.user.domain.detail.vo.ResultVO"
+                    select="selectPredictionsByRecordId" column="record_id"/>
+    </resultMap>
 </mapper>

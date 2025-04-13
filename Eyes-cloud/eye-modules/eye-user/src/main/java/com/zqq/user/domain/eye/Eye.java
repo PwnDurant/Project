@@ -1,15 +1,19 @@
 package com.zqq.user.domain.eye;
 
 
-import com.baomidou.mybatisplus.annotation.FieldFill;
-import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
 
 import java.time.LocalDateTime;
 
 @Data
+@TableName("eye_disease")
 public class Eye {
 
+    @JsonSerialize(using = ToStringSerializer.class)
+    @TableId(value = "ID",type = IdType.ASSIGN_ID)
     private Long id;                 // 主键ID
 
     private String name;            // 疾病名称

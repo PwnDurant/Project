@@ -35,6 +35,6 @@ public class EyeVO {
     private String imageUrl;        // 图片链接
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private LocalDateTime updateAt;        //更新时间
+    private LocalDateTime updatedAt;        //更新时间
 
 }

@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: eye-gateway
+  profiles:
+    active: local
+  cloud:
+    nacos:
+      discovery:
+        namespace: 8ba38e6d-0b00-44f8-b03b-8b0345a17584
+        server-addr: http://localhost:8848
+      config:
+        namespace: 8ba38e6d-0b00-44f8-b03b-8b0345a17584
+        server-addr: http://localhost:8848
+        file-extension: yaml

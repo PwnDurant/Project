@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 
@@ -56,9 +57,9 @@ public class FileController extends BaseController {
      * @throws IOException
      */
     @PostMapping("/predict-eye")
-    public R<SuccessVO> predictEye(@RequestParam(value = "left_image_url", required = false) String leftImageUrl,
-                                   @RequestParam(value = "right_image_url", required = false) String rightImageUrl) throws IOException {
-        Record result = modelService.uploadImagesFromUrl(leftImageUrl, rightImageUrl);
+    public R<List<Map<String, Object>>> predictEye(@RequestParam(value = "left_image_url", required = false) String leftImageUrl,
+                                                   @RequestParam(value = "right_image_url", required = false) String rightImageUrl) throws IOException {
+        List<Map<String, Object>> result = modelService.uploadImagesFromUrl(leftImageUrl, rightImageUrl);
         return R.ok(result);
     }
 
