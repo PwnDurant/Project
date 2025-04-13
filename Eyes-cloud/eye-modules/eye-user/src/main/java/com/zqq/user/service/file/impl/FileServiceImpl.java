@@ -1,6 +1,7 @@
 package com.zqq.user.service.file.impl;
 
 import com.zqq.common.core.enums.ResultCode;
+import com.zqq.common.core.utils.MultipartInputStreamFileResource;
 import com.zqq.common.file.domain.OSSResult;
 import com.zqq.common.file.service.OSSService;
 import com.zqq.common.security.exception.ServiceException;
@@ -18,12 +19,13 @@ public class FileServiceImpl implements IFileService {
     private OSSService ossService;
 
     @Override
-    public OSSResult upload(MultipartFile file) {
+    public OSSResult upload(MultipartFile file,int type) {
         try {
-            return ossService.uploadFile(file);
+            return ossService.uploadFile(file,type);
         } catch (Exception e) {
             log.error(e.getMessage());
             throw new ServiceException(ResultCode.FAILED_FILE_UPLOAD);
         }
     }
+
 }

@@ -49,7 +49,8 @@ public class OSSService {
     @Value("${file.test}")
     private boolean test;
 
-    public OSSResult uploadFile(MultipartFile file) throws Exception {
+//    上传图片
+    public OSSResult uploadFile(MultipartFile file,int type) throws Exception {
         if (!test) {
             checkUploadCount();
         }
@@ -64,7 +65,7 @@ public class OSSService {
             String extName = fileName.substring(fileName.lastIndexOf(".") + 1);
             inputStream = file.getInputStream();
 //            上传文件
-            return upload(extName, inputStream);
+            return upload(extName, inputStream,type);
         } catch (Exception e) {
             log.error("OSS upload file error", e);
             throw new ServiceException(ResultCode.FAILED_FILE_UPLOAD);
@@ -89,10 +90,13 @@ public class OSSService {
         }
     }
 
-    private OSSResult upload(String fileType, InputStream inputStream) {
+    private OSSResult upload(String fileType, InputStream inputStream,int type) {
         // key pattern: file/id.xxx, cannot start with /
 //        生成唯一文件名字
-        String key = prop.getPathPrefix() + ObjectId.next() + "." + fileType;
+        String sign;
+        if(type==1) sign=Constants.LEFT_EYE;
+        else sign=Constants.RIGHT_EYE;
+        String key = prop.getPathPrefix() + ObjectId.next() +sign+ "." + fileType;
         ObjectMetadata objectMetadata = new ObjectMetadata();
         objectMetadata.setObjectAcl(CannedAccessControlList.PublicRead);
         PutObjectRequest request = new PutObjectRequest(prop.getBucketName(), key, inputStream, objectMetadata);

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zqq.user.mapper.record.RecordMapper">
+
+    <select id="selectUserRecordList" resultType="com.zqq.user.domain.record.vo.RecordVO">
+        SELECT
+            r.record_id,
+            r.right_image,
+            r.left_image,
+            r.eye_type,
+            r.result,
+            r.confidence,
+            r.upload_time
+        FROM
+            eye_record r
+                JOIN
+            eye_user  u
+            ON
+                r.user_id=u.user_id
+        WHERE
+            r.user_id= #{userId}
+            <if test="query.result !=null and query.result !='' ">
+                AND r.result LIKE CONCAT('%',#{query.result},'%')
+            </if>
+            <if test="query.uploadTime != null and query.uploadTime != ''">
+                AND r.upload_time &lt;= #{query.uploadTime}
+            </if>
+        ORDER BY
+            r.upload_time DESC
+    </select>
+</mapper>

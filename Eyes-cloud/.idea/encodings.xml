@@ -5,6 +5,8 @@
     <file url="file://$PROJECT_DIR$/eye-api/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eye-common/eye-common-core/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eye-common/eye-common-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eye-common/eye-common-elsticsearch/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eye-common/eye-common-elsticsearch/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eye-common/eye-common-file/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eye-common/eye-common-file/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eye-common/eye-common-message/src/main/java" charset="UTF-8" />

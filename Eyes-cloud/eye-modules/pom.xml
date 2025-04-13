@@ -13,7 +13,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>eye-user</module>
-        <module>eye-system</module>
     </modules>
 
     <properties>

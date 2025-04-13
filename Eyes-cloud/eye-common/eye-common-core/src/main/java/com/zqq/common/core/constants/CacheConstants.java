@@ -18,6 +18,12 @@ public class CacheConstants {
 
     public final static long USER_EXP = 10;  //将在缓存中的用户信息延长10min
 
+    public static final String USER_RECORD_LIST = "u:r:l:"; //用户在缓存中的记录
+
+    public static final String RECORD_DETAIL = "r:d:";  //记录具体信息
+
+
+
 
 
 
