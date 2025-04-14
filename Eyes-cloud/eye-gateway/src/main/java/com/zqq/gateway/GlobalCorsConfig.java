@@ -12,7 +12,7 @@ public class GlobalCorsConfig {
     @Bean
     public CorsWebFilter corsWebFilter() {
         CorsConfiguration config = new CorsConfiguration();
-        config.addAllowedOrigin("http://localhost:5002"); // 允许的前端地址
+        config.addAllowedOrigin("http://localhost:5003"); // 允许的前端地址
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
         config.setAllowCredentials(true);
