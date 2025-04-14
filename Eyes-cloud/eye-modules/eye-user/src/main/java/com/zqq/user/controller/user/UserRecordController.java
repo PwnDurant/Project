@@ -2,9 +2,11 @@ package com.zqq.user.controller.user;
 
 import com.zqq.common.core.controller.BaseController;
 import com.zqq.common.core.domain.PageQueryDTO;
+import com.zqq.common.core.domain.R;
 import com.zqq.common.core.domain.TableDataInfo;
 import com.zqq.user.service.user.IUserRecordService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,8 +27,8 @@ public class UserRecordController extends BaseController {
      * @return 返回查询出来的结果
      */
     @GetMapping("/list")
-    public TableDataInfo list(PageQueryDTO dto){
-        return getTableDataInfo(userRecordService.list(dto));
+    public R<TableDataInfo> list(PageQueryDTO dto){
+        return R.ok(getTableDataInfo(userRecordService.list(dto)));
     }
 
     /**

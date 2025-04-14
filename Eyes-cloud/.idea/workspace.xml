@@ -5,29 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d247646b-90ac-4a68-ac2d-23eca30d6ba6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/controller/detail/DetailController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/domain/detail/RecordPredictionResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/domain/detail/vo/ResultVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/mapper/detail/DetailMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/service/eye/IEyeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/service/eye/impl/EyeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/resources/mapper/DetailMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bc5086df-43a8-4ef7-a018-294153bc2f7a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bc5086df-43a8-4ef7-a018-294153bc2f7a.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eye-gateway/src/main/java/com/zqq/gateway/GlobalCorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eye-common/eye-common-mybatis/src/main/java/com/zqq/common/mybatis/MyMetaObjectHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/eye-common/eye-common-mybatis/src/main/java/com/zqq/common/mybatis/MyMetaObjectHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eye-common/eye-common-mybatis/target/classes/com/zqq/common/mybatis/MyMetaObjectHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/eye-common/eye-common-mybatis/target/classes/com/zqq/common/mybatis/MyMetaObjectHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/controller/file/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/controller/file/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/domain/eye/Eye.java" beforeDir="false" afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/domain/eye/Eye.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/domain/eye/vo/EyeVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/domain/eye/vo/EyeVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/domain/record/vo/RecordVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/domain/record/vo/RecordVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/domain/result/SuccessVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/domain/result/SuccessVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/service/ModelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/service/ModelService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/service/user/IUserRecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/service/user/IUserRecordService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/service/user/impl/UserRecordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/service/user/impl/UserRecordServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eye-modules/eye-user/src/main/resources/mapper/UserRecordMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/resources/mapper/UserRecordMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eye-modules/eye-user/target/classes/com/zqq/user/controller/file/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/eye-modules/eye-user/target/classes/com/zqq/user/controller/file/FileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eye-modules/eye-user/target/classes/com/zqq/user/domain/record/vo/RecordVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/eye-modules/eye-user/target/classes/com/zqq/user/domain/record/vo/RecordVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eye-modules/eye-user/target/classes/com/zqq/user/service/ModelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/eye-modules/eye-user/target/classes/com/zqq/user/service/ModelService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/controller/detail/DetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/controller/detail/DetailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/controller/user/UserRecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/eye-modules/eye-user/src/main/java/com/zqq/user/controller/user/UserRecordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-modules/eye-user/target/classes/com/zqq/user/controller/detail/DetailController.class" beforeDir="false" afterPath="$PROJECT_DIR$/eye-modules/eye-user/target/classes/com/zqq/user/controller/detail/DetailController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye-modules/eye-user/target/classes/com/zqq/user/controller/user/UserRecordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/eye-modules/eye-user/target/classes/com/zqq/user/controller/user/UserRecordController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Eyes/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/EyesApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/EyesApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/constants/CacheConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes/src/main/java/com/zqq/eyes/common/constants/CacheConstants.java" afterDir="false" />
@@ -229,11 +214,11 @@
       <recent name="com.zqq.user.mapper.record" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zqq.user" />
       <recent name="com.zqq.api" />
       <recent name="com.zqq.common.core.domain" />
       <recent name="com.zqq.common.core.constants" />
       <recent name="com.zqq.common.redis.service" />
-      <recent name="com.zqq.common.security.service" />
     </key>
   </component>
   <component name="RedisHelper">
@@ -308,7 +293,9 @@
       <option name="presentableId" value="Default" />
       <updated>1744468762804</updated>
       <workItem from="1744468763798" duration="7528000" />
-      <workItem from="1744502743632" duration="50464000" />
+      <workItem from="1744502743632" duration="51616000" />
+      <workItem from="1744589982864" duration="7225000" />
+      <workItem from="1744605261272" duration="4400000" />
     </task>
     <servers />
   </component>

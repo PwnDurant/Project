@@ -6,6 +6,7 @@ import com.zqq.common.core.domain.R;
 import com.zqq.user.domain.eye.vo.EyeVO;
 import com.zqq.user.service.eye.impl.EyeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
