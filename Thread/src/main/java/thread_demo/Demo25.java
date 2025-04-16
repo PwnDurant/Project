@@ -19,7 +19,6 @@ class SingletonLazy{
         }
         return instance;
     }
-
     private SingletonLazy(){}
 }
 
