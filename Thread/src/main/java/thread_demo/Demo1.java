@@ -15,10 +15,7 @@ class MyThread extends Thread{
         }
     }
 }
-
-
 public class Demo1 {
-
     public static void main(String[] args) throws InterruptedException {
         MyThread t=new MyThread();
         t.start();
@@ -28,8 +25,5 @@ public class Demo1 {
             System.out.println("hello main");
             Thread.sleep(1000);
         }
-
-
     }
-
 }

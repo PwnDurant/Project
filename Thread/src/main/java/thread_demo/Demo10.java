@@ -14,16 +14,11 @@ public class Demo10 {
             }
             System.out.println("线程t结束");
         });
-
         t.start();
-
 //        Thread.sleep(4000);
-
 //        让主线程等待t线程
         System.out.println("main线程开始等待");
-
         t.join();
-
         System.out.println("main线程结束等待");
     }
 

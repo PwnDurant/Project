@@ -12,9 +12,7 @@ public class Demo5 {
                 }
             }
         });
-
         t.start();
-
         while(true){
             System.out.println("hello main");
             Thread.sleep(1000);

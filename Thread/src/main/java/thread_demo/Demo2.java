@@ -16,10 +16,7 @@ class MyRunnable implements Runnable{
         }
     }
 }
-
-
 public class Demo2 {
-
     public static void main(String[] args) throws InterruptedException {
         MyRunnable myRunnable=new MyRunnable();
         Thread t=new Thread(myRunnable);
@@ -29,5 +26,4 @@ public class Demo2 {
             Thread.sleep(1000);
         }
     }
-
 }
