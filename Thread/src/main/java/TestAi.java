@@ -8,7 +8,7 @@ import java.util.*;
 
 public class TestAi {
 
-    private static final String API_KEY = "4a468343374f46b3a9e8ac0e97cba036.9wLGmoLwelLbGKjx"; // 替换为你自己的
+    private static final String API_KEY = ""; // 替换为你自己的
     private static final String API_URL = "https://open.bigmodel.cn/api/paas/v4/chat/completions";
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
