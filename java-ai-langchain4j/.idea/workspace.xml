@@ -5,36 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a931f06e-ecf7-4a74-b453-2875e3c47b3a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/javaailangchain4j/assistant/Assistant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/javaailangchain4j/assistant/ChaseAgent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/javaailangchain4j/assistant/MemoryChatAssistant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/javaailangchain4j/assistant/SeparateChatAssistant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/javaailangchain4j/bean/ChatForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/javaailangchain4j/bean/ChatMessages.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/javaailangchain4j/config/ChaseAgentConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/javaailangchain4j/config/EmbeddingStoreConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/javaailangchain4j/config/MemoryChatAssistantConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/javaailangchain4j/config/SeparateChatAssistantConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/javaailangchain4j/controller/ChaseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/javaailangchain4j/entity/Appointment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/javaailangchain4j/mapper/AppointmentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/javaailangchain4j/service/AppointmentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/javaailangchain4j/service/impl/AppointmentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/javaailangchain4j/store/MongoChatMemoryStore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/javaailangchain4j/tools/AppointmentTools.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/javaailangchain4j/tools/CalculatorTools.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ChasePrompt.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/AppointmentMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/prompt.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/prompt3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/zqq/javaailangchain4j/AIServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/zqq/javaailangchain4j/AppointmentServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/zqq/javaailangchain4j/ChatMemoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/zqq/javaailangchain4j/EmbeddingTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/zqq/javaailangchain4j/MongoCrudTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/zqq/javaailangchain4j/PromptTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/zqq/javaailangchain4j/RAGTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/zqq/javaailangchain4j/ToolsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AIGC-OJ/.idea/material_theme_project_new.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Eyes-cloud/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes-cloud/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Eyes-cloud/eye-gateway/src/main/java/com/zqq/gateway/EyeGatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes-cloud/eye-gateway/src/main/java/com/zqq/gateway/EyeGatewayApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Eyes-cloud/eye-gateway/target/classes/com/zqq/gateway/EyeGatewayApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes-cloud/eye-gateway/target/classes/com/zqq/gateway/EyeGatewayApplication.class" afterDir="false" />
@@ -139,6 +110,10 @@
       <change beforePath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/MyAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/MyAI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/test/test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/test/test1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/test/test2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/test/test2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/test/test3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/test/test3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/thread_demo/Demo16.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/thread_demo/Demo16.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Thread/target/classes/TestAi.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/target/classes/TestAi.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../chase-oj/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../chase-oj/.idea/compiler.xml" beforeDir="false" />
@@ -165,6 +140,9 @@
       <change beforePath="$PROJECT_DIR$/../chase-oj/oj-modules/oj-system/src/main/resources/bootstrap.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../chase-oj/oj-modules/pom.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../chase-oj/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-api/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-service/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-service/target/classes/application.yml" afterDir="false" />
@@ -195,10 +173,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -219,61 +197,72 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.AIServiceTest.test.executor": "Run",
-    "JUnit.AIServiceTest.testA.executor": "Run",
-    "JUnit.AppointmentServiceTest.testGetOne.executor": "Run",
-    "JUnit.AppointmentServiceTest.testSave.executor": "Run",
-    "JUnit.ChatMemoryTest.testChatMemory.executor": "Run",
-    "JUnit.ChatMemoryTest.testChatMemory2.executor": "Run",
-    "JUnit.ChatMemoryTest.testChatMemory3.executor": "Run",
-    "JUnit.ChatMemoryTest.testChatMemory4.executor": "Run",
-    "JUnit.ChatMemoryTest.testChatMemory5.executor": "Run",
-    "JUnit.Embedding.test.executor": "Run",
-    "JUnit.EmbeddingTest.embeddingSearch.executor": "Run",
-    "JUnit.EmbeddingTest.testPineconeEmbeded.executor": "Run",
-    "JUnit.EmbeddingTest.testUploadKnowledgeLibrary.executor": "Run",
-    "JUnit.JavaAiLangchain4jApplicationTests.contextLoads.executor": "Run",
-    "JUnit.JavaAiLangchain4jApplicationTests.test.executor": "Run",
-    "JUnit.JavaAiLangchain4jApplicationTests.testDashScopeQwen.executor": "Run",
-    "JUnit.JavaAiLangchain4jApplicationTests.testPic.executor": "Run",
-    "JUnit.JavaAiLangchain4jApplicationTests.testSpringBoot.executor": "Run",
-    "JUnit.MongoCrudTest.testDelete.executor": "Run",
-    "JUnit.MongoCrudTest.testFindById.executor": "Run",
-    "JUnit.MongoCrudTest.testInsert.executor": "Run",
-    "JUnit.MongoCrudTest.testInsert1.executor": "Run",
-    "JUnit.MongoCrudTest.testUpdate.executor": "Run",
-    "JUnit.PromptTest.testSystemMessage.executor": "Run",
-    "JUnit.PromptTest.testUserInfo.executor": "Run",
-    "JUnit.PromptTest.testUserMessage.executor": "Run",
-    "JUnit.RAGTest.testReadDocument.executor": "Run",
-    "JUnit.ToolsTest.testCalculatorTools.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.JavaAiLangchain4jApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "File.Encoding",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.AIServiceTest.test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AIServiceTest.testA.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AppointmentServiceTest.testGetOne.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AppointmentServiceTest.testSave.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChatMemoryTest.testChatMemory.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChatMemoryTest.testChatMemory2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChatMemoryTest.testChatMemory3.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChatMemoryTest.testChatMemory4.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChatMemoryTest.testChatMemory5.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Embedding.test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EmbeddingTest.embeddingSearch.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EmbeddingTest.testPineconeEmbeded.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EmbeddingTest.testUploadKnowledgeLibrary.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.JavaAiLangchain4jApplicationTests.contextLoads.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.JavaAiLangchain4jApplicationTests.test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.JavaAiLangchain4jApplicationTests.testDashScopeQwen.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.JavaAiLangchain4jApplicationTests.testPic.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.JavaAiLangchain4jApplicationTests.testSpringBoot.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MongoCrudTest.testDelete.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MongoCrudTest.testFindById.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MongoCrudTest.testInsert.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MongoCrudTest.testInsert1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MongoCrudTest.testUpdate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PromptTest.testSystemMessage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PromptTest.testUserInfo.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PromptTest.testUserMessage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RAGTest.testReadDocument.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ToolsTest.testCalculatorTools.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.JavaAiLangchain4jApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="Application" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
   <component name="RunManager" selected="Spring Boot.JavaAiLangchain4jApplication">
     <configuration name="EmbeddingTest.embeddingSearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-ai-langchain4j" />
@@ -420,6 +409,8 @@
       <workItem from="1745462633348" duration="2847000" />
       <workItem from="1745465492758" duration="3365000" />
       <workItem from="1745471805193" duration="29256000" />
+      <workItem from="1745581641130" duration="2156000" />
+      <workItem from="1745587297551" duration="708000" />
     </task>
     <servers />
   </component>
