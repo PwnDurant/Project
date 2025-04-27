@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: mybatisPlus
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/mp?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: zqq13127837702
+logging:
+  level:
+    com.itheima: info
+  pattern:
+    dateformat: HH:mm:ss
+#mybatis:
+#  mapper-locations: classpath*:mapper/*.xml
+mybatis-plus:
+  type-aliases-package: com.zqq.mybatisplus.domain.po
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: deleted # ????????
+  configuration:
+    default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
+knife4j:
+  enable: true
+  openapi:
+    title: ????????
+    description: "????????"
+    email: zhanghuyi@itcast.cn
+    concat: ??
+    url: https://www.itcast.cn
+    version: v1.0.0
+    group:
+      default:
+        group-name: default
+        api-rule: package
+        api-rule-resources:
+          - com.zqq.mybatisplus.controller
