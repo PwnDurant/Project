@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@localhost">
+  <database-model serializer="dbm" dbms="MONGO" family-id="MONGO" format-version="4.53">
+    <root id="1">
+      <ServerVersion>8.0.8</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="admin"/>
+    <schema id="3" parent="1" name="chase_memory">
+      <LastIntrospectionLocalTimestamp>2025-04-28.11:37:38</LastIntrospectionLocalTimestamp>
+    </schema>
+    <schema id="4" parent="1" name="chat_memory_db"/>
+    <schema id="5" parent="1" name="config"/>
+    <schema id="6" parent="1" name="local"/>
+    <table id="7" parent="3" name="chat_messages"/>
+    <column id="8" parent="7" name="_id">
+      <Position>1</Position>
+      <StoredType>ObjectId|12s</StoredType>
+    </column>
+    <column id="9" parent="7" name="_class">
+      <Position>2</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="10" parent="7" name="content">
+      <Position>3</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="11" parent="7" name="memoryId">
+      <Position>4</Position>
+      <StoredType>Int32|4s</StoredType>
+    </column>
+  </database-model>
+</dataSource>
