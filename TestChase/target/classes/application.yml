@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: TestChase
+
+vivo:
+  blue-lm:
+    app-id: 2025498193
+    app-key: TFIgXzVvuKbKXTFP
