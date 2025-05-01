@@ -124,8 +124,6 @@
       <change beforePath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/model/ProductInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/model/ProductInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Thread/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/Data.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/ModelInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/ModelInfo.java" afterDir="false" />
@@ -315,6 +313,7 @@
       <workItem from="1745916665540" duration="4375000" />
       <workItem from="1745987214004" duration="757000" />
       <workItem from="1745995763908" duration="612000" />
+      <workItem from="1746025271496" duration="3272000" />
     </task>
     <servers />
   </component>

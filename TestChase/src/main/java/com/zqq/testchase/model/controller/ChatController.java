@@ -18,4 +18,5 @@ public class ChatController {
 //        String systemPrompt = "你是一个诗人助手，用七言绝句风格回答问题。";
         return blueLMService.chat("你是谁", systemPrompt);
     }
+
 }
