@@ -25,6 +25,27 @@
             <artifactId>spring-web</artifactId>
             <version>6.1.15</version>
         </dependency>
+
+        <!-- slf4j-api 是 Logger 和 LoggerFactory 所在的包 -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.36</version> <!-- 这个版本兼容性好，也比较常用，你也可以选其他 -->
+        </dependency>
+
+        <!-- 还需要一个实际的日志实现，例如 logback 或 slf4j-simple -->
+        <!-- 比如用 slf4j-simple： -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.36</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.38</version>
+        </dependency>
     </dependencies>
 
 </project>

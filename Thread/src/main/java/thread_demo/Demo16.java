@@ -4,10 +4,14 @@ package thread_demo;
 class Counter{
     public int count=0;
 
-    public void add(){
-        synchronized (this){
-            count++;
-        }
+//    public void add(){
+//        synchronized (this){
+//            count++;
+//        }
+//    }
+
+    synchronized public void add(){
+        count++;
     }
 }
 

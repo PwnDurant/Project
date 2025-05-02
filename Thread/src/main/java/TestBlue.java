@@ -13,10 +13,10 @@ import java.util.UUID;
 
 public class TestBlue {
 
-    public String vivogpt() throws Exception {
+    public static String vivogpt() throws Exception {
 
-        String appId = "your_app_id";
-        String appKey = "your_app_key";
+        String appId = "2025498193";
+        String appKey = "TFIgXzVvuKbKXTFP";
         String URI = "/vivogpt/completions";
         String DOMAIN = "api-ai.vivo.com.cn";
         String METHOD = "POST";
@@ -30,26 +30,32 @@ public class TestBlue {
 
         //构建请求体
         Map<String, String> data = new HashMap<>();
-        data.put("prompt", "写一首春天的诗");
+        data.put("prompt", "你是谁");
         data.put("model", "vivo-BlueLM-TB-Pro");
         UUID sessionId = UUID.randomUUID();
         data.put("sessionId", sessionId.toString());
+        // 添加人设参数（关键修改点）
+        String systemPrompt = "你的名字叫小蓝助手，是一个精通古诗词的AI，回答需用中文，风格模仿李白。";
+        data.put("systemPrompt", systemPrompt);
         System.out.println(sessionId);
 
-//        VivoAuth.generateAuthHeaders(appId, appKey, METHOD, URI, queryStr);
-        HttpHeaders headers = null;
+        HttpHeaders headers = VivoAuth.generateAuthHeaders(appId, appKey, METHOD, URI, queryStr);
         headers.add("Content-Type", "application/json");
         System.out.println(headers);
+
         String url = String.format("http://%s%s?%s", DOMAIN, URI, queryStr);
+
         String requsetBodyString = new ObjectMapper().writeValueAsString(data);
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders httpHeaders = new HttpHeaders();
+
         httpHeaders.setContentType(MediaType.valueOf(MediaType.APPLICATION_JSON_VALUE));
         httpHeaders.addAll(headers);
         HttpEntity<String> requestEntity = new HttpEntity<>(requsetBodyString, httpHeaders);
         ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.POST, requestEntity, String.class);
         if (response.getStatusCode() == HttpStatus.OK) {
-            System.out.println("Response body: " + response.getBody());
+            RE data1= new ObjectMapper().readValue(response.getBody(),RE.class);
+            System.out.println("Response body: " + data1.getData().getContent());
         } else {
             System.out.println("Error response: " + response.getStatusCode());
         }
@@ -72,8 +78,9 @@ public class TestBlue {
         return queryStringBuilder.toString();
     }
 
-    public static void main(String[] args) {
 
+    public static void main(String[] args) throws Exception {
+        vivogpt();
     }
 
 }
