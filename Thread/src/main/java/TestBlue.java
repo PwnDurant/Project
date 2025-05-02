@@ -65,6 +65,7 @@ public class TestBlue {
     public static String mapToQueryString(Map<String, Object> map) {
         if (map.isEmpty()) {
             return "";
+
         }
         StringBuilder queryStringBuilder = new StringBuilder();
         for (Map.Entry<String, Object> entry : map.entrySet()) {
