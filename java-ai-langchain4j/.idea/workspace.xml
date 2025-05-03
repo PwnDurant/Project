@@ -5,7 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a931f06e-ecf7-4a74-b453-2875e3c47b3a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../AIGC-OJ/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AIGC-OJ/oj-common/oj-common-mybatis/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AIGC-OJ/oj-common/oj-common-mybatis/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AIGC-OJ/oj-common/oj-common-mybatis/src/main/java/com/zqq/common/mybatis/MyMetaObjectHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AIGC-OJ/oj-common/oj-common-mybatis/src/main/java/com/zqq/common/mybatis/MyMetaObjectHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AIGC-OJ/oj-common/oj-common-redis/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AIGC-OJ/oj-common/oj-common-redis/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AIGC-OJ/oj-common/oj-common-redis/src/main/java/com/zqq/redis/config/JsonRedisSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AIGC-OJ/oj-common/oj-common-redis/src/main/java/com/zqq/redis/config/JsonRedisSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AIGC-OJ/oj-common/oj-common-redis/src/main/java/com/zqq/redis/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AIGC-OJ/oj-common/oj-common-redis/src/main/java/com/zqq/redis/config/RedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AIGC-OJ/oj-common/oj-common-redis/src/main/java/com/zqq/redis/service/RedisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AIGC-OJ/oj-common/oj-common-redis/src/main/java/com/zqq/redis/service/RedisService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AIGC-OJ/oj-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AIGC-OJ/oj-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AIGC-OJ/oj-gateway/src/main/java/com/zqq/gateway/OJGatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AIGC-OJ/oj-gateway/src/main/java/com/zqq/gateway/OJGatewayApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AIGC-OJ/oj-gateway/src/main/java/com/zqq/gateway/filter/AuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AIGC-OJ/oj-gateway/src/main/java/com/zqq/gateway/filter/AuthFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AIGC-OJ/oj-gateway/src/main/java/com/zqq/gateway/properties/IgnoreWhiteProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AIGC-OJ/oj-gateway/src/main/java/com/zqq/gateway/properties/IgnoreWhiteProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AIGC-OJ/oj-gateway/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../AIGC-OJ/oj-gateway/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AIGC-OJ/oj-modules/oj-system/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AIGC-OJ/oj-modules/oj-system/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AIGC-OJ/oj-modules/oj-system/src/main/java/com/zqq/system/OJSystemApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AIGC-OJ/oj-modules/oj-system/src/main/java/com/zqq/system/OJSystemApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AIGC-OJ/oj-modules/oj-system/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../AIGC-OJ/oj-modules/oj-system/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AIGC-OJ/oj-modules/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AIGC-OJ/oj-modules/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AIGC-OJ/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AIGC-OJ/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Eyes-cloud/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes-cloud/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Eyes-cloud/eye-gateway/src/main/java/com/zqq/gateway/EyeGatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes-cloud/eye-gateway/src/main/java/com/zqq/gateway/EyeGatewayApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Eyes-cloud/eye-gateway/target/classes/com/zqq/gateway/EyeGatewayApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes-cloud/eye-gateway/target/classes/com/zqq/gateway/EyeGatewayApplication.class" afterDir="false" />
@@ -109,12 +124,11 @@
       <change beforePath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/model/ProductInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/model/ProductInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/MyAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/MyAI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/test/test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/test/test1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/test/test2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/test/test2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/test/test3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/test/test3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/thread_demo/Demo16.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/thread_demo/Demo16.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/target/classes/TestAi.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/target/classes/TestAi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestChase/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TestChase/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vue/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Vue/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vue/src/main/java/com/zqq/vue/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Vue/src/main/java/com/zqq/vue/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vue/src/main/java/com/zqq/vue/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Vue/src/main/java/com/zqq/vue/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vue/src/main/java/com/zqq/vue/domain/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Vue/src/main/java/com/zqq/vue/domain/Article.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../chase-oj/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../chase-oj/.idea/compiler.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../chase-oj/.idea/encodings.xml" beforeDir="false" />
@@ -140,9 +154,25 @@
       <change beforePath="$PROJECT_DIR$/../chase-oj/oj-modules/oj-system/src/main/resources/bootstrap.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../chase-oj/oj-modules/pom.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../chase-oj/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../forum/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../forum/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/javaailangchain4j/assistant/SeparateChatAssistant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/javaailangchain4j/assistant/SeparateChatAssistant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/javaailangchain4j/model/VivoBlueLMChatModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/javaailangchain4j/model/VivoBlueLMChatModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mybatisPlus/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisPlus/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mybatisPlus/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisPlus/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mybatisPlus/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisPlus/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mybatisPlus/src/main/java/com/zqq/mybatisplus/config/MybatisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisPlus/src/main/java/com/zqq/mybatisplus/config/MybatisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mybatisPlus/src/main/java/com/zqq/mybatisplus/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisPlus/src/main/java/com/zqq/mybatisplus/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mybatisPlus/src/main/java/com/zqq/mybatisplus/domain/po/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisPlus/src/main/java/com/zqq/mybatisplus/domain/po/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mybatisPlus/src/main/java/com/zqq/mybatisplus/enums/UserStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisPlus/src/main/java/com/zqq/mybatisplus/enums/UserStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mybatisPlus/src/main/java/com/zqq/mybatisplus/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisPlus/src/main/java/com/zqq/mybatisplus/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mybatisPlus/src/main/java/com/zqq/mybatisplus/service/impl/AddressServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisPlus/src/main/java/com/zqq/mybatisplus/service/impl/AddressServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mybatisPlus/src/main/java/com/zqq/mybatisplus/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisPlus/src/main/java/com/zqq/mybatisplus/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mybatisPlus/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisPlus/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mybatisPlus/src/test/java/com/zqq/mybatisplus/mapper/UserMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisPlus/src/test/java/com/zqq/mybatisplus/mapper/UserMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mybatisPlus/src/test/java/com/zqq/mybatisplus/service/impl/AddressServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisPlus/src/test/java/com/zqq/mybatisplus/service/impl/AddressServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-api/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-service/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-service/target/classes/application.yml" afterDir="false" />
@@ -156,6 +186,24 @@
       <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/user-info/user-info-service/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/user-info/user-info-service/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/user-info/user-info-service/user.log" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/user-info/user-info-service/user.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/user.log" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/user.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testBlue/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../testBlue/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testBlue/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../testBlue/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testBlue/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../testBlue/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testBlue/src/main/java/com/zqq/testblue/assistant/SeparateAssistant.java" beforeDir="false" afterPath="$PROJECT_DIR$/../testBlue/src/main/java/com/zqq/testblue/assistant/SeparateAssistant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testBlue/src/main/java/com/zqq/testblue/model/VivoAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/../testBlue/src/main/java/com/zqq/testblue/model/VivoAuth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testBlue/src/main/java/com/zqq/testblue/model/VivoBlueLMChatModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../testBlue/src/main/java/com/zqq/testblue/model/VivoBlueLMChatModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testBlue/src/test/java/com/zqq/testblue/testAi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../testBlue/src/test/java/com/zqq/testblue/testAi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testBlue/target/classes/com/zqq/testblue/assistant/SeparateAssistant.class" beforeDir="false" afterPath="$PROJECT_DIR$/../testBlue/target/classes/com/zqq/testblue/assistant/SeparateAssistant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testBlue/target/classes/com/zqq/testblue/model/BlueLMChatModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testBlue/target/classes/com/zqq/testblue/model/BlueLMConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testBlue/target/classes/com/zqq/testblue/model/BlueLMProperties.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testBlue/target/test-classes/com/zqq/testblue/testAi.class" beforeDir="false" afterPath="$PROJECT_DIR$/../testBlue/target/test-classes/com/zqq/testblue/testAi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../testDemo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testDemo/src/main/java/com/zqq/testdemo/model/BlueLMChatModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../testDemo/src/main/java/com/zqq/testdemo/model/BlueLMChatModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testDemo/src/main/java/com/zqq/testdemo/model/BlueLMConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../testDemo/src/main/java/com/zqq/testdemo/model/BlueLMConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testDemo/src/main/java/com/zqq/testdemo/model/BlueLMProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/../testDemo/src/main/java/com/zqq/testdemo/model/BlueLMProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testDemo/src/main/java/com/zqq/testdemo/model/MyBlueAssistant.java" beforeDir="false" afterPath="$PROJECT_DIR$/../testDemo/src/main/java/com/zqq/testdemo/model/MyBlueAssistant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testDemo/src/test/java/com/zqq/testdemo/demoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../testDemo/src/test/java/com/zqq/testdemo/demoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,7 +291,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -263,7 +311,23 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.JavaAiLangchain4jApplication">
+  <component name="RunManager" selected="JUnit.EmbeddingTest.testPineconeEmbeded">
+    <configuration name="ChatMemoryTest.testChatMemory2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-ai-langchain4j" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zqq.javaailangchain4j.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zqq.javaailangchain4j" />
+      <option name="MAIN_CLASS_NAME" value="com.zqq.javaailangchain4j.ChatMemoryTest" />
+      <option name="METHOD_NAME" value="testChatMemory2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EmbeddingTest.embeddingSearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-ai-langchain4j" />
       <extension name="coverage">
@@ -328,22 +392,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RAGTest.testReadDocument" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java-ai-langchain4j" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.zqq.javaailangchain4j.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.zqq.javaailangchain4j" />
-      <option name="MAIN_CLASS_NAME" value="com.zqq.javaailangchain4j.RAGTest" />
-      <option name="METHOD_NAME" value="testReadDocument" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="JavaAiLangchain4jApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" activateToolWindowBeforeRun="false" nameIsGenerated="true">
       <envs>
         <env name="API_KEY" value="sk-1a83daebad294236804c4abbfea8f8df" />
@@ -371,22 +419,22 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.ChatMemoryTest.testChatMemory2" />
       <item itemvalue="JUnit.EmbeddingTest.embeddingSearch" />
       <item itemvalue="JUnit.EmbeddingTest.test" />
       <item itemvalue="JUnit.EmbeddingTest.testPineconeEmbeded" />
       <item itemvalue="JUnit.EmbeddingTest.testUploadKnowledgeLibrary" />
-      <item itemvalue="JUnit.RAGTest.testReadDocument" />
       <item itemvalue="Spring Boot.Unnamed (1)" />
       <item itemvalue="Spring Boot.Unnamed" />
       <item itemvalue="Spring Boot.JavaAiLangchain4jApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.EmbeddingTest.testUploadKnowledgeLibrary" />
-        <item itemvalue="JUnit.EmbeddingTest.embeddingSearch" />
-        <item itemvalue="JUnit.EmbeddingTest.testPineconeEmbeded" />
         <item itemvalue="JUnit.EmbeddingTest.test" />
-        <item itemvalue="JUnit.RAGTest.testReadDocument" />
+        <item itemvalue="JUnit.EmbeddingTest.testUploadKnowledgeLibrary" />
+        <item itemvalue="JUnit.EmbeddingTest.testPineconeEmbeded" />
+        <item itemvalue="JUnit.EmbeddingTest.embeddingSearch" />
+        <item itemvalue="JUnit.ChatMemoryTest.testChatMemory2" />
       </list>
     </recent_temporary>
   </component>
@@ -411,6 +459,13 @@
       <workItem from="1745471805193" duration="29256000" />
       <workItem from="1745581641130" duration="2156000" />
       <workItem from="1745587297551" duration="708000" />
+      <workItem from="1745633899523" duration="58000" />
+      <workItem from="1745806738922" duration="25015000" />
+      <workItem from="1745987210949" duration="1250000" />
+      <workItem from="1745995767172" duration="599000" />
+      <workItem from="1746025272951" duration="598000" />
+      <workItem from="1746104618221" duration="579000" />
+      <workItem from="1746199167360" duration="91000" />
     </task>
     <servers />
   </component>

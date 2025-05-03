@@ -15,7 +15,7 @@ import static dev.langchain4j.service.spring.AiServiceWiringMode.EXPLICIT;
         wiringMode = EXPLICIT,
         chatModel = "qwenChatModel",
         chatMemoryProvider = "chatMemoryProvider",
-        tools = "calculatorTools" //配置工具
+        tools = "calculatorTools"
 )
 public interface SeparateChatAssistant {
 
