@@ -124,21 +124,7 @@
       <change beforePath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/model/ProductInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/model/ProductInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/ModelInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/ModelInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/MyAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/MyAI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/TestBlue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/TestBlue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/Usage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/Usage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/VivoAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/VivoAuth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/test/test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/test/test1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/test/test2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/test/test2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/test/test3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/test/test3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/thread_demo/Demo16.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/thread_demo/Demo16.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/target/classes/TestAi.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/target/classes/TestAi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/target/classes/TestBlue.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/target/classes/TestBlue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/target/classes/thread_demo/Counter.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/target/classes/thread_demo/Counter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/target/classes/thread_demo/Demo16.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/target/classes/thread_demo/Demo16.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Vue/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Vue/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Vue/src/main/java/com/zqq/vue/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Vue/src/main/java/com/zqq/vue/config/CorsConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Vue/src/main/java/com/zqq/vue/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Vue/src/main/java/com/zqq/vue/controller/Controller.java" afterDir="false" />
@@ -169,11 +155,6 @@
       <change beforePath="$PROJECT_DIR$/../chase-oj/oj-modules/pom.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../chase-oj/pom.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../forum/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../forum/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-ai-langchain4j/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-ai-langchain4j/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-ai-langchain4j/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-ai-langchain4j/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-ai-langchain4j/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-ai-langchain4j/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-ai-langchain4j/src/main/java/com/zqq/javaailangchain4j/assistant/SeparateChatAssistant.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-ai-langchain4j/src/main/java/com/zqq/javaailangchain4j/assistant/SeparateChatAssistant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-ai-langchain4j/src/main/java/com/zqq/javaailangchain4j/model/VivoBlueLMChatModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-ai-langchain4j/src/main/java/com/zqq/javaailangchain4j/model/VivoBlueLMChatModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mybatisPlus/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisPlus/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mybatisPlus/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisPlus/.idea/material_theme_project_new.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mybatisPlus/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisPlus/.idea/workspace.xml" afterDir="false" />
@@ -314,6 +295,9 @@
       <workItem from="1745987214004" duration="757000" />
       <workItem from="1745995763908" duration="612000" />
       <workItem from="1746025271496" duration="3272000" />
+      <workItem from="1746104612908" duration="584000" />
+      <workItem from="1746199165568" duration="93000" />
+      <workItem from="1746281648257" duration="599000" />
     </task>
     <servers />
   </component>
