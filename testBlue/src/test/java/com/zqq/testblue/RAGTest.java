@@ -51,7 +51,7 @@ public class RAGTest {
     public void testReadDocumentAndStore(){
         //使用FileSystemDocumentLoader读取指定目录下的知识库文档
         //并使用默认的文档解析器TextDocumentParser对文档进行解析
-        Document document = FileSystemDocumentLoader.loadDocument("/Users/zhaoqianqian/Downloads/硅谷小智（医疗版）/资料/knowledge/测试.txt");
+        Document document = FileSystemDocumentLoader.loadDocument("/Users/zhaoqianqian/Downloads/测试.txt");
 
 //        基于内存的向量存储
         InMemoryEmbeddingStore<TextSegment> embeddingStore = new InMemoryEmbeddingStore<>();

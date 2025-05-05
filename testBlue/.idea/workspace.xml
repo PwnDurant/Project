@@ -5,62 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cd29023-d3b7-4d56-87a2-4c24b112d076" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Thread/src/main/java/VivoAuth.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Vue/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Vue/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Vue/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Vue/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Vue/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Vue/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Vue/src/main/java/com/zqq/vue/config/CorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Vue/src/main/java/com/zqq/vue/controller/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Vue/src/main/java/com/zqq/vue/domain/Article.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mybatisPlus/src/main/java/com/zqq/mybatisplus/config/MybatisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mybatisPlus/src/test/java/com/zqq/mybatisplus/service/impl/AddressServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/assistant/AssistantQwen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/assistant/SeparateAssistant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/chase/assistant/ChaseAssistant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/chase/config/ChaseAgentConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/chase/controller/ChaseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/chase/domain/ChatForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/chatModel/BlueLMChatModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/chatModel/BlueLMConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/chatModel/BlueLMProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/config/MemoryChatAssistantConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/config/SeparateChatAssistantConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/controller/AssistantController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/controller/ChatController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/domain/ChatMessages.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/model/BlueLMChatModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/model/BlueLMConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/model/BlueLMProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/store/EmbeddingStoreConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/store/MongoChatMemoryStore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/tools/CalcTool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/prompt.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/prompt1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/promptChase.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/zqq/testblue/EmbeddingTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/zqq/testblue/MongoCRUD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/zqq/testblue/PromptTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/zqq/testblue/RAGTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/zqq/testblue/TestTools.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/zqq/testblue/testAi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../testDemo/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../testDemo/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../testDemo/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../testDemo/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../testDemo/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../testDemo/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../testDemo/src/main/java/com/zqq/testdemo/model/BlueLMChatModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../testDemo/src/main/java/com/zqq/testdemo/model/BlueLMConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../testDemo/src/main/java/com/zqq/testdemo/model/BlueLMProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../testDemo/src/main/java/com/zqq/testdemo/model/MyBlueAssistant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../testDemo/src/test/java/com/zqq/testdemo/demoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AIGC-OJ/oj-common/oj-common-mybatis/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AIGC-OJ/oj-common/oj-common-mybatis/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AIGC-OJ/oj-common/oj-common-mybatis/src/main/java/com/zqq/common/mybatis/MyMetaObjectHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AIGC-OJ/oj-common/oj-common-mybatis/src/main/java/com/zqq/common/mybatis/MyMetaObjectHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AIGC-OJ/oj-common/oj-common-redis/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AIGC-OJ/oj-common/oj-common-redis/pom.xml" afterDir="false" />
@@ -180,17 +124,11 @@
       <change beforePath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/model/ProductInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/model/ProductInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/java/com/zqq/product/service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringCloud/product-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/MyAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/MyAI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/TestBlue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/TestBlue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/test/test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/test/test1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/test/test2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/test/test2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/test/test3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/test/test3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/thread_demo/Demo16.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/thread_demo/Demo16.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/target/classes/TestAi.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/target/classes/TestAi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/target/classes/TestBlue.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/target/classes/TestBlue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/target/classes/thread_demo/Counter.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/target/classes/thread_demo/Counter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread/target/classes/thread_demo/Demo16.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/target/classes/thread_demo/Demo16.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestChase/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TestChase/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vue/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Vue/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vue/src/main/java/com/zqq/vue/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Vue/src/main/java/com/zqq/vue/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vue/src/main/java/com/zqq/vue/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Vue/src/main/java/com/zqq/vue/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vue/src/main/java/com/zqq/vue/domain/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Vue/src/main/java/com/zqq/vue/domain/Article.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../chase-oj/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../chase-oj/.idea/compiler.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../chase-oj/.idea/encodings.xml" beforeDir="false" />
@@ -217,12 +155,11 @@
       <change beforePath="$PROJECT_DIR$/../chase-oj/oj-modules/pom.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../chase-oj/pom.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../forum/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../forum/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-ai-langchain4j/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-ai-langchain4j/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-ai-langchain4j/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-ai-langchain4j/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-ai-langchain4j/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-ai-langchain4j/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mybatisPlus/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisPlus/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mybatisPlus/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisPlus/.idea/material_theme_project_new.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mybatisPlus/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisPlus/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mybatisPlus/src/main/java/com/zqq/mybatisplus/config/MybatisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisPlus/src/main/java/com/zqq/mybatisplus/config/MybatisConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mybatisPlus/src/main/java/com/zqq/mybatisplus/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisPlus/src/main/java/com/zqq/mybatisplus/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mybatisPlus/src/main/java/com/zqq/mybatisplus/domain/po/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisPlus/src/main/java/com/zqq/mybatisplus/domain/po/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mybatisPlus/src/main/java/com/zqq/mybatisplus/enums/UserStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisPlus/src/main/java/com/zqq/mybatisplus/enums/UserStatus.java" afterDir="false" />
@@ -231,6 +168,7 @@
       <change beforePath="$PROJECT_DIR$/../mybatisPlus/src/main/java/com/zqq/mybatisplus/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisPlus/src/main/java/com/zqq/mybatisplus/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mybatisPlus/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisPlus/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mybatisPlus/src/test/java/com/zqq/mybatisplus/mapper/UserMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisPlus/src/test/java/com/zqq/mybatisplus/mapper/UserMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mybatisPlus/src/test/java/com/zqq/mybatisplus/service/impl/AddressServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisPlus/src/test/java/com/zqq/mybatisplus/service/impl/AddressServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-api/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-service/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/blog-info/blog-info-service/target/classes/application.yml" afterDir="false" />
@@ -244,6 +182,26 @@
       <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/user-info/user-info-service/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/user-info/user-info-service/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/user-info/user-info-service/user.log" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/user-info/user-info-service/user.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-cloud-blog/user.log" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-cloud-blog/user.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/assistant/AssistantQwen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/assistant/AssistantQwen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/assistant/SeparateAssistant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/assistant/SeparateAssistant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/model/VivoAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/model/VivoAuth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/model/VivoBlueLMChatModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/testblue/model/VivoBlueLMChatModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/zqq/testblue/testAi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zqq/testblue/testAi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/testblue/assistant/SeparateAssistant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zqq/testblue/assistant/SeparateAssistant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/testblue/model/BlueLMChatModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/testblue/model/BlueLMConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/testblue/model/BlueLMProperties.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zqq/testblue/testAi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/zqq/testblue/testAi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../testDemo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testDemo/src/main/java/com/zqq/testdemo/model/BlueLMChatModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../testDemo/src/main/java/com/zqq/testdemo/model/BlueLMChatModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testDemo/src/main/java/com/zqq/testdemo/model/BlueLMConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../testDemo/src/main/java/com/zqq/testdemo/model/BlueLMConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testDemo/src/main/java/com/zqq/testdemo/model/BlueLMProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/../testDemo/src/main/java/com/zqq/testdemo/model/BlueLMProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testDemo/src/main/java/com/zqq/testdemo/model/MyBlueAssistant.java" beforeDir="false" afterPath="$PROJECT_DIR$/../testDemo/src/main/java/com/zqq/testdemo/model/MyBlueAssistant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testDemo/src/test/java/com/zqq/testdemo/demoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../testDemo/src/test/java/com/zqq/testdemo/demoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -298,17 +256,18 @@
     "JUnit.RAGTest.testReadDocument.executor": "Run",
     "JUnit.RAGTest.testTokenCount.executor": "Run",
     "JUnit.TestTools.testCalcTools.executor": "Run",
+    "JUnit.testAi.executor": "Run",
     "JUnit.testAi.testAssistant.executor": "Run",
     "JUnit.testAi.testChat.executor": "Run",
     "JUnit.testAi.testChatMemory.executor": "Run",
     "JUnit.testAi.testChatMemory3.executor": "Run",
     "JUnit.testAi.testChatMemorySeparate.executor": "Run",
     "JUnit.testAi.testDemo.executor": "Run",
-    "JUnit.testAi.testMemory3.executor": "Run",
+    "JUnit.testAi.testMemory3.executor": "Debug",
     "JUnit.testAi.testQwen.executor": "Run",
     "JUnit.testAi.testSpringBoot.executor": "Run",
     "JUnit.testAi.testUserMessage.executor": "Run",
-    "JUnit.testAi.testVivo.executor": "Run",
+    "JUnit.testAi.testVivo.executor": "Debug",
     "Maven.testBlue [clean].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -333,78 +292,17 @@
     ]
   }
 }]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/com/zqq/testblue" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.testAi.testVivo">
-    <configuration name="EmbeddingTest.testEmbeddingModel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="testBlue" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.zqq.testblue.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.zqq.testblue" />
-      <option name="MAIN_CLASS_NAME" value="com.zqq.testblue.EmbeddingTest" />
-      <option name="METHOD_NAME" value="testEmbeddingModel" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EmbeddingTest.testPineconeEmbeded" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="testBlue" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.zqq.testblue.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.zqq.testblue" />
-      <option name="MAIN_CLASS_NAME" value="com.zqq.testblue.EmbeddingTest" />
-      <option name="METHOD_NAME" value="testPineconeEmbeded" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RAGTest.testPDF" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="testBlue" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.zqq.testblue.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.zqq.testblue" />
-      <option name="MAIN_CLASS_NAME" value="com.zqq.testblue.RAGTest" />
-      <option name="METHOD_NAME" value="testPDF" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RAGTest.testTokenCount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="testBlue" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.zqq.testblue.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.zqq.testblue" />
-      <option name="MAIN_CLASS_NAME" value="com.zqq.testblue.RAGTest" />
-      <option name="METHOD_NAME" value="testTokenCount" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="testAi.testVivo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.testAi.testChatMemory3">
+    <configuration name="testAi.testAssistant" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="testBlue" />
       <extension name="coverage">
         <pattern>
@@ -414,7 +312,71 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.zqq.testblue" />
       <option name="MAIN_CLASS_NAME" value="com.zqq.testblue.testAi" />
-      <option name="METHOD_NAME" value="testVivo" />
+      <option name="METHOD_NAME" value="testAssistant" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testAi.testChatMemory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="testBlue" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zqq.testblue.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zqq.testblue" />
+      <option name="MAIN_CLASS_NAME" value="com.zqq.testblue.testAi" />
+      <option name="METHOD_NAME" value="testChatMemory" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testAi.testChatMemory3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="testBlue" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zqq.testblue.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zqq.testblue" />
+      <option name="MAIN_CLASS_NAME" value="com.zqq.testblue.testAi" />
+      <option name="METHOD_NAME" value="testChatMemory3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testAi.testMemory3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="testBlue" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zqq.testblue.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zqq.testblue" />
+      <option name="MAIN_CLASS_NAME" value="com.zqq.testblue.testAi" />
+      <option name="METHOD_NAME" value="testMemory3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testAi.testQwen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="testBlue" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zqq.testblue.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zqq.testblue" />
+      <option name="MAIN_CLASS_NAME" value="com.zqq.testblue.testAi" />
+      <option name="METHOD_NAME" value="testQwen" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -429,11 +391,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.testAi.testVivo" />
-        <item itemvalue="JUnit.EmbeddingTest.testPineconeEmbeded" />
-        <item itemvalue="JUnit.EmbeddingTest.testEmbeddingModel" />
-        <item itemvalue="JUnit.RAGTest.testTokenCount" />
-        <item itemvalue="JUnit.RAGTest.testPDF" />
+        <item itemvalue="JUnit.testAi.testChatMemory3" />
+        <item itemvalue="JUnit.testAi.testMemory3" />
+        <item itemvalue="JUnit.testAi.testChatMemory" />
+        <item itemvalue="JUnit.testAi.testAssistant" />
+        <item itemvalue="JUnit.testAi.testQwen" />
       </list>
     </recent_temporary>
   </component>
@@ -454,7 +416,8 @@
       <option name="presentableId" value="Default" />
       <updated>1745810986255</updated>
       <workItem from="1745810987235" duration="18162000" />
-      <workItem from="1745842911453" duration="5521000" />
+      <workItem from="1745842911453" duration="11256000" />
+      <workItem from="1746422457731" duration="5321000" />
     </task>
     <servers />
   </component>

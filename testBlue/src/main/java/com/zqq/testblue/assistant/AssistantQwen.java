@@ -20,7 +20,6 @@ import static dev.langchain4j.service.spring.AiServiceWiringMode.EXPLICIT;
         chatMemory = "chatMemoryDIY"
 )
 public interface AssistantQwen {
-
     @UserMessage("你是我的好友，请用上海话回答问题，并添加一些表情符号。{{it}}") //标识这里唯一的参数校验符
     String chat(String userMessage);
 }

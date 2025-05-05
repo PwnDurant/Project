@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CalcTool {
-
     @Tool(name = "加法",value = "返回两个参数相加之和")
     double sum(@ToolMemoryId int memoryId,
                @P(value = "加数1",required = true) double a,
@@ -15,12 +14,9 @@ public class CalcTool {
         System.out.println("调用加法运算"+memoryId);
         return a+b;
     }
-
-
     @Tool(name = "平方根",value = "返回给定参数的平方跟")
     double squareRoot(@ToolMemoryId int memoryId, double x){
         System.out.println("调用平方跟"+memoryId);
         return Math.sqrt(x);
     }
-
 }

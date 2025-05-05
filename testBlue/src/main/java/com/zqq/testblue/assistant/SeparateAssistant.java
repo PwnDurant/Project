@@ -33,7 +33,7 @@ public interface SeparateAssistant {
     @SystemMessage(fromResource = "prompt.txt") //系统消息提示词
     String chat(@MemoryId int memoryId, @UserMessage  String userMessage);
 
-    @UserMessage("你是我的好朋友，请用粤语回答问题。{{message}}")
+    @UserMessage("你是我的好朋友，请用上海话回答问题。{{message}}")
     String chat2(@MemoryId int memoryId, @V ("message")  String userMessage);
 
     @SystemMessage(fromResource = "prompt1.txt")
@@ -42,6 +42,9 @@ public interface SeparateAssistant {
             @UserMessage String userMessage,
             @V("username") String username,
             @V("age") int age);
+
+    @UserMessage("你是我的好朋友，请用上海话回答问题，并且添加一些表情符号。 {{message}}")
+    String chat(@V("message")String message);
 
 
 

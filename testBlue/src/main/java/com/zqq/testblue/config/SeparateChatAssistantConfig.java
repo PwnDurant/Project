@@ -22,5 +22,4 @@ public class SeparateChatAssistantConfig {
                 .chatMemoryStore(mongoChatMemoryStore) //配置持久化对象
                 .build();
     }
-
 }

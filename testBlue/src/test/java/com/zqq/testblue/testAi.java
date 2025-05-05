@@ -25,7 +25,7 @@ public class testAi {
                 .apiKey("demo")
                 .modelName("gpt-4o-mini")
                 .build();
-        String answer = model.chat("Say 'Hello World'");
+        String answer = model.chat("说 'Hello World'");
         System.out.println(answer); // Hello World
     }
 
@@ -62,11 +62,11 @@ public class testAi {
     @Test
     public void testChatMemory(){
         //        封装用户输入
-        UserMessage userMessage1 = UserMessage.userMessage("我是欢欢");
-//        取出模型输出
+        UserMessage userMessage1 = UserMessage.userMessage("我是Chase");
+        //        取出模型输出
         ChatResponse chatResponse1 = qwenChatModel.chat(userMessage1);
         AiMessage aiMessage1 = chatResponse1.aiMessage();
-//        输出大模型回复
+        //        输出大模型回复
         System.out.println(aiMessage1.text());
 
         UserMessage userMessage2 = UserMessage.userMessage("你知道我是谁吗");
@@ -90,7 +90,6 @@ public class testAi {
 //        调用service接口
         System.out.println(assistant.chat("我是Chase"));
         System.out.println(assistant.chat("我是谁"));
-
     }
 
     @Test
@@ -109,8 +108,7 @@ public class testAi {
 
     @Test
     public void testChatMemorySeparate(){
-        System.out.println(separateAssistant.chat(1,"我是Chase"));
-        System.out.println(separateAssistant.chat(1,"我是谁"));
+
         System.out.println(separateAssistant.chat(2,"我是谁"));
     }
 
