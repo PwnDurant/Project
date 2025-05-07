@@ -44,3 +44,4 @@ build/
 *.class
 *Test.java
 **/test/
+**.yml
