@@ -8,7 +8,7 @@ import java.io.Serializable;
  * 登入成功之后返回给前端的 entity 类
  */
 @Data
-public class UserLoginVO  implements Serializable {
+public class UserLoginVO {
 
     /**
      * 用户 Id

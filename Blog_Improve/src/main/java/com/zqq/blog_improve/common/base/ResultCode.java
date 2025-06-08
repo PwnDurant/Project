@@ -17,7 +17,11 @@ public enum ResultCode {
     REQUEST_NOT_SUPPORT         (20003,"请求方式不支持！"),
     NAME_OR_PASSWORD_ERROR      (20004,"账号或密码错误！"),
     PASSWORD_IS_EMPTY           (20005,"密码不能为空！"),
-    SQL_PASSWORD_IS_ERROR       (20006,"当前用户数据库中密码错误！" );
+    SQL_PASSWORD_IS_ERROR       (20006,"当前用户数据库中密码错误！" ),
+    TOKEN_IS_EMPTY              (20007,"令牌不能为空！" ),
+    TOKEN_IS_EXPIRED            (20008,"令牌过期！" ),
+    TOKEN_SIGNATURE_ERROR       (20009,"令牌签名错误！" ),
+    TOKEN_PARSE_ERROR           (20010,"令牌解析失败！" );
 
     private final int code;
 

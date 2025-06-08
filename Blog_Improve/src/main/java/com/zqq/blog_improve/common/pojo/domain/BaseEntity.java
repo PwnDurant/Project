@@ -9,7 +9,7 @@ import java.time.LocalDate;
  * 公共类
  */
 @Data
-public class BaseEntity{
+public class BaseEntity {
 
     /**
      * 删除标志位

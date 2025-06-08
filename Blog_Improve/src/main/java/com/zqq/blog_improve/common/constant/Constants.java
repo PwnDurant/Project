@@ -11,12 +11,14 @@ public class Constants {
     /**
      * jwt 过期时间：1天
      */
-    public static final Integer EXPIRATION=60*60*24;
+    public static final Long EXPIRATION=60*60*24*1000L;
+
+    public static final Long EXPIRATION_MIN = 60*24L;
 
     /**
      * token 在redis 中的key
      */
-    public static final String LOGIN_TOKEN_KEY="loginToken";
+    public static final String LOGIN_TOKEN_KEY="loginToken:";
 
     /**
      * 载荷内容 key：userId
@@ -28,4 +30,15 @@ public class Constants {
      */
     public static final String LOGIN_USER_KEY="userKey";
 
+    public static final String LOGIN_TOKEN_INFO = "用户 jwt 令牌信息";
+
+    /**
+     * 最低剩余过期时间
+     */
+    public static final Long REFRESH_TIME =180L;
+
+    /**
+     * 前端请求头中存放 token 的键值
+     */
+    public static final String USER_TOKEN = "user_token";
 }

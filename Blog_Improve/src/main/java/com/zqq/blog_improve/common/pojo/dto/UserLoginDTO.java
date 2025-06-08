@@ -10,7 +10,7 @@ import java.io.Serializable;
  * 用户登入需要提交的信息
  */
 @Data
-public class UserLoginDTO  implements Serializable {
+public class UserLoginDTO {
 
     /**
      * 用户名

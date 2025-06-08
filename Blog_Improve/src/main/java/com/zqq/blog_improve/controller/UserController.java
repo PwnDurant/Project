@@ -20,7 +20,11 @@ public class UserController {
     @Resource(name = "userServiceImpl")
     private IUserService userService;
 
-
+    /**
+     * 处理用户登入请求
+     * @param userLoginDTO 登入需要携带的数据：账号名和密码
+     * @return 返回是否登入成功
+     */
     @PostMapping("/login")
     public R<UserLoginVO> login(@RequestBody @Validated UserLoginDTO userLoginDTO){
         log.info("用户登入,userName:{}",userLoginDTO.getUserName());

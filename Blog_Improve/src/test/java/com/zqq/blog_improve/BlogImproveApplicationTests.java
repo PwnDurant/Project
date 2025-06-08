@@ -1,9 +1,21 @@
 package com.zqq.blog_improve;
 
 import cn.hutool.core.lang.UUID;
+import com.zqq.blog_improve.common.utils.SecurityUtil;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.io.Decoders;
+import io.jsonwebtoken.io.Encoders;
+import io.jsonwebtoken.security.Keys;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import javax.crypto.SecretKey;
+import java.security.Key;
+import java.util.Date;
+import java.util.HashMap;
 
 
 @SpringBootTest
@@ -37,5 +49,46 @@ class BlogImproveApplicationTests {
     void testFast(){
         System.out.println(UUID.fastUUID().toString());
     }
+
+    @Test
+    void createSecret(){
+        SecretKey secretKey = Keys.secretKeyFor(SignatureAlgorithm.HS256);
+        String encode = Encoders.BASE64.encode(secretKey.getEncoded());
+        System.out.println(encode);
+    }
+
+    @Test
+    void testJwt(){
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("userKey","test");
+        map.put("userId","test2");
+        String secret="rARtjWX851sjqOeZ+bGq04yisJdBNAJEjG4x1XQcXMc=";
+        Key key= Keys.hmacShaKeyFor(Decoders.BASE64.decode(secret));
+        long expiration=10000;
+        String compact = Jwts.builder()
+                .setClaims(map)   // 设置载荷
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + expiration))
+                .signWith(key)
+                .compact();
+        System.out.println(compact);
+        System.out.println(Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(compact).getBody());
+    }
+
+    @Test
+    public void testExp(){
+        String secret="rARtjWX851sjqOeZ+bGq04yisJdBNAJEjG4x1XQcXMc=";
+        Key key= Keys.hmacShaKeyFor(Decoders.BASE64.decode(secret));
+        String compact="eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiJ0ZXN0MiIsInVzZXJLZXkiOiJ0ZXN0IiwiaWF0IjoxNzQ5MzYxNzgyLCJleHAiOjE3NDkzNjE3OTJ9.CcIKgzIlwPvx43tDDr1vt3-QkeaK2KTspb7wmCUy1qQ";
+//        过期就解析不了了
+        System.out.println(Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(compact).getBody());
+    }
+
+    @Test
+    public void testTraditional(){
+        System.out.println(SecurityUtil.encrypt_traditional("123456"));
+    }
+
+
 
 }

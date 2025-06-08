@@ -8,10 +8,15 @@ import com.zqq.blog_improve.common.exception.UserException;
 import com.zqq.blog_improve.common.pojo.domain.UserInfo;
 import com.zqq.blog_improve.common.pojo.dto.UserLoginDTO;
 import com.zqq.blog_improve.common.pojo.vo.UserLoginVO;
+import com.zqq.blog_improve.common.utils.JwtUtil;
 import com.zqq.blog_improve.common.utils.SecurityUtil;
+import com.zqq.blog_improve.common.utils.TokenService;
 import com.zqq.blog_improve.mapper.BlogMapper;
 import com.zqq.blog_improve.mapper.UserMapper;
 import com.zqq.blog_improve.service.IUserService;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -19,6 +24,8 @@ import java.util.HashMap;
 @Service
 public class UserServiceImpl implements IUserService {
 
+    @Resource(name = "tokenService")
+    private TokenService tokenService;
 
     private final UserMapper userMapper;
     private final BlogMapper blogMapper;
@@ -48,15 +55,8 @@ public class UserServiceImpl implements IUserService {
      */
     private UserLoginVO assembleUserLoginVO(UserInfo userInfo){
         UserLoginVO userLoginVO = new UserLoginVO();
-        userLoginVO.setUserId(userLoginVO.getUserId());
-//        设置载荷数据
-        String userKey = UUID.fastUUID().toString();   // 为每一个用户生成 32 位唯一标识 key
-        Long userId = userInfo.getId();
-        HashMap<String, Object> claims = new HashMap<>();
-        claims.put(Constants.LOGIN_USER_KEY,userKey);
-        claims.put(Constants.LOGIN_USER_ID,userId);
-
-        userLoginVO.setToken(null);
+        userLoginVO.setUserId(userInfo.getId());
+        userLoginVO.setToken(tokenService.createToken(userInfo));
         return userLoginVO;
     }
 

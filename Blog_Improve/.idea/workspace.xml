@@ -5,46 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="49e1de30-a46f-4f15-8a3a-2861b0fc5578" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/base/R.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/base/ResultCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/constant/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/exception/BlogException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/exception/UserException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/handler/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/pojo/domain/BaseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/pojo/domain/BlogInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/pojo/domain/UserInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/pojo/dto/UserLoginDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/pojo/vo/UserLoginVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/utils/JwtUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/utils/RedisService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/utils/SecurityUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/utils/TokenService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/controller/BlogController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/mapper/BlogMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/service/IBlogService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/service/IUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/service/impl/BlogServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/config/JsonRedisSerializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/interceptor/LoginInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/utils/JsonUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/zqq/blog_improve/testRedis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/base/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/base/ResultCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/constant/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/constant/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/pojo/domain/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/pojo/domain/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/pojo/domain/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/pojo/domain/UserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/pojo/dto/UserLoginDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/pojo/dto/UserLoginDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/pojo/vo/UserLoginVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/pojo/vo/UserLoginVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/utils/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/utils/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/utils/RedisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/utils/RedisService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/utils/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/utils/TokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/zqq/blog_improve/BlogImproveApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zqq/blog_improve/BlogImproveApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/base/ResultCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/base/ResultCode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/constant/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/constant/Constants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/pojo/domain/BlogInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/pojo/domain/BlogInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/pojo/domain/UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/pojo/domain/UserInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/pojo/dto/UserLoginDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/pojo/dto/UserLoginDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/pojo/vo/UserLoginVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/pojo/vo/UserLoginVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/utils/JwtUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/utils/JwtUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/utils/RedisService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/utils/RedisService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/utils/TokenService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/utils/TokenService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zqq/blog_improve/BlogImproveApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/zqq/blog_improve/BlogImproveApplicationTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Blog_system/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Blog_system/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Blog_system/src/main/java/org/mon/blog_system/common/interceptor/LoginIntercepter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Blog_system/src/main/java/org/mon/blog_system/common/interceptor/LoginIntercepter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Blog_system/src/main/java/org/mon/blog_system/common/utils/BeanConver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Blog_system/src/main/java/org/mon/blog_system/common/utils/BeanConver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Blog_system/src/main/java/org/mon/blog_system/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Blog_system/src/main/java/org/mon/blog_system/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Blog_system/src/main/java/org/mon/blog_system/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Blog_system/src/main/java/org/mon/blog_system/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Blog_system/src/test/java/org/mon/blog_system/JwtUtils/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Blog_system/src/test/java/org/mon/blog_system/JwtUtils/JwtUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Blog_system/target/Blog_system-0.0.1-SNAPSHOT.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Blog_system/target/Blog_system-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Blog_system/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../Blog_system/target/classes/application-dev.yml" afterDir="false" />
@@ -64,6 +66,7 @@
       <change beforePath="$PROJECT_DIR$/../Blog_system/target/surefire-reports/TEST-org.mon.blog_system.SecurityUtilTest.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Blog_system/target/surefire-reports/org.mon.blog_system.BlogSystemApplicationTests.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Blog_system/target/surefire-reports/org.mon.blog_system.SecurityUtilTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Blog_system/target/test-classes/org/mon/blog_system/JwtUtils/JwtUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Blog_system/target/test-classes/org/mon/blog_system/JwtUtils/JwtUtil.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Chase-sky/.idea/dataSources/db0a2c1e-4638-459e-b566-51cce10a6129.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Eyes-cloud/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes-cloud/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Eyes-cloud/eye-gateway/src/main/java/com/zqq/gateway/GlobalCorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes-cloud/eye-gateway/src/main/java/com/zqq/gateway/GlobalCorsConfig.java" afterDir="false" />
@@ -1469,10 +1472,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -1482,9 +1485,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2y8TGh3cIFTpppPLzQZJnx2NMF2" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -1496,11 +1499,23 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "JUnit.BlogImproveApplicationTests.contextLoads.executor": "Run",
+    "JUnit.BlogImproveApplicationTests.testExp.executor": "Run",
     "JUnit.BlogImproveApplicationTests.testFast.executor": "Run",
+    "JUnit.BlogImproveApplicationTests.testJwt.executor": "Run",
     "JUnit.BlogImproveApplicationTests.testMatch.executor": "Run",
     "JUnit.BlogImproveApplicationTests.testPassword.executor": "Run",
+    "JUnit.BlogImproveApplicationTests.testTraditional.executor": "Run",
+    "JUnit.testRedis.testRead.executor": "Run",
+    "JUnit.testRedis.testReadWithKey.executor": "Run",
+    "JUnit.testRedis.testWrite.executor": "Run",
     "Maven.Blog_Improve [clean].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.BlogImproveApplication.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -1517,6 +1532,9 @@
     ]
   }
 }]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RedisHelper">
     <option name="connections">
       <list>
@@ -1530,8 +1548,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BlogImproveApplicationTests.testFast">
-    <configuration name="BlogImproveApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.BlogImproveApplication">
+    <configuration name="BlogImproveApplicationTests.testExp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Blog_Improve" />
       <extension name="coverage">
         <pattern>
@@ -1541,13 +1566,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.zqq.blog_improve" />
       <option name="MAIN_CLASS_NAME" value="com.zqq.blog_improve.BlogImproveApplicationTests" />
-      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="METHOD_NAME" value="testExp" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BlogImproveApplicationTests.testFast" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BlogImproveApplicationTests.testTraditional" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Blog_Improve" />
       <extension name="coverage">
         <pattern>
@@ -1557,13 +1582,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.zqq.blog_improve" />
       <option name="MAIN_CLASS_NAME" value="com.zqq.blog_improve.BlogImproveApplicationTests" />
-      <option name="METHOD_NAME" value="testFast" />
+      <option name="METHOD_NAME" value="testTraditional" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BlogImproveApplicationTests.testMatch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="testRedis.testRead" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Blog_Improve" />
       <extension name="coverage">
         <pattern>
@@ -1572,14 +1597,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.zqq.blog_improve" />
-      <option name="MAIN_CLASS_NAME" value="com.zqq.blog_improve.BlogImproveApplicationTests" />
-      <option name="METHOD_NAME" value="testMatch" />
+      <option name="MAIN_CLASS_NAME" value="com.zqq.blog_improve.testRedis" />
+      <option name="METHOD_NAME" value="testRead" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BlogImproveApplicationTests.testPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="testRedis.testReadWithKey" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Blog_Improve" />
       <extension name="coverage">
         <pattern>
@@ -1588,8 +1613,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.zqq.blog_improve" />
-      <option name="MAIN_CLASS_NAME" value="com.zqq.blog_improve.BlogImproveApplicationTests" />
-      <option name="METHOD_NAME" value="testPassword" />
+      <option name="MAIN_CLASS_NAME" value="com.zqq.blog_improve.testRedis" />
+      <option name="METHOD_NAME" value="testReadWithKey" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testRedis.testWrite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Blog_Improve" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zqq.blog_improve.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zqq.blog_improve" />
+      <option name="MAIN_CLASS_NAME" value="com.zqq.blog_improve.testRedis" />
+      <option name="METHOD_NAME" value="testWrite" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -1604,10 +1645,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BlogImproveApplicationTests.testFast" />
-        <item itemvalue="JUnit.BlogImproveApplicationTests.contextLoads" />
-        <item itemvalue="JUnit.BlogImproveApplicationTests.testMatch" />
-        <item itemvalue="JUnit.BlogImproveApplicationTests.testPassword" />
+        <item itemvalue="JUnit.testRedis.testRead" />
+        <item itemvalue="JUnit.testRedis.testReadWithKey" />
+        <item itemvalue="JUnit.testRedis.testWrite" />
+        <item itemvalue="JUnit.BlogImproveApplicationTests.testTraditional" />
+        <item itemvalue="JUnit.BlogImproveApplicationTests.testExp" />
       </list>
     </recent_temporary>
   </component>
@@ -1627,12 +1669,31 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1749215108262</updated>
-      <workItem from="1749215109221" duration="23356000" />
+      <workItem from="1749215109221" duration="23851000" />
+      <workItem from="1749358871879" duration="10978000" />
+      <workItem from="1749376077226" duration="103000" />
+      <workItem from="1749376347493" duration="9576000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/service/impl/UserServiceImpl.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/utils/TokenService.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

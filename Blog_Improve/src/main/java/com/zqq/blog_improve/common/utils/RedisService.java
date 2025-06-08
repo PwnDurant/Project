@@ -1,15 +1,23 @@
 package com.zqq.blog_improve.common.utils;
 
+import com.alibaba.fastjson2.JSON;
+import com.alibaba.fastjson2.TypeReference;
+import jakarta.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
 
 import java.util.concurrent.TimeUnit;
 
-@Service
+@Slf4j
+@Component
 public class RedisService {
 
-    @Autowired
+    @Resource(name = "redisTemplateWithJsonRedisSerializer")
     private RedisTemplate redisTemplate;
 
     /**
@@ -17,7 +25,7 @@ public class RedisService {
      * @param key 传入的 key
      * @return 返回是否存在
      */
-    public boolean hasKey( final String key){
+    public boolean Key(final String key){
         return redisTemplate.hasKey(key);
     }
 
@@ -29,7 +37,7 @@ public class RedisService {
      * @param timeUnit 时间单位
      * @return 是否设置成功
      */
-    public boolean expire(final String key,final Long timeout,final TimeUnit timeUnit){
+    public boolean expire(String key,final long timeout,final TimeUnit timeUnit){
         return redisTemplate.expire(key,timeout,timeUnit);
     }
 
@@ -39,7 +47,7 @@ public class RedisService {
      * @param timeUnit 返回时间的单位
      * @return 根据单位返回的时间大小
      */
-    public Long getExpire(final String key,final TimeUnit timeUnit){
+    public Long getExpire(String key,final TimeUnit timeUnit){
         return redisTemplate.getExpire(key,timeUnit);
     }
 
@@ -48,7 +56,7 @@ public class RedisService {
      * @param key 指定 key
      * @return 是否删除成功
      */
-    public boolean deleteKey(final String key){
+    public boolean deleteKey(String key){
         return redisTemplate.delete(key);
     }
 
@@ -58,8 +66,34 @@ public class RedisService {
      * @param data 需要缓存的数据
      * @param <T> 代表可以缓存的数据是任何类型
      */
-    public <T> void setCacheObject(final String key,final T data){
+    public <T> void setCacheObject(String key,final T data,final long timeout,final TimeUnit timeUnit){
+        redisTemplate.opsForValue().set(key,data,timeout,timeUnit);
+    }
+    public <T> void setCacheObject(String key,final T data){
         redisTemplate.opsForValue().set(key,data);
     }
+
+    /**
+     * 获得缓存的基本对象
+     * @param key 缓存键值
+     * @return 缓存键值对应的数据
+     */
+    public <T> T getCacheObject(final String key, Class<T> clazz) {
+        ValueOperations<String, T> operation = redisTemplate.opsForValue();
+        T t = operation.get(key);
+        if (t instanceof String) {
+            return t;
+        }
+        return JSON.parseObject(String.valueOf(t), clazz);
+    }
+    public <T> T getCacheObject(final String key, TypeReference<T> reference) {
+        ValueOperations<String, T> operation = redisTemplate.opsForValue();
+        T t = operation.get(key);
+        if (t instanceof String) {
+            return t;
+        }
+        return JSON.parseObject(String.valueOf(t), reference);
+    }
+
 
 }
