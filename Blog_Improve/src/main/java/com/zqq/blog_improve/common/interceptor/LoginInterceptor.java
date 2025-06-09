@@ -1,9 +1,13 @@
 package com.zqq.blog_improve.common.interceptor;
 
 
+import com.zqq.blog_improve.common.base.ResultCode;
 import com.zqq.blog_improve.common.constant.Constants;
+import com.zqq.blog_improve.common.exception.UserException;
 import com.zqq.blog_improve.common.utils.JwtUtil;
+import com.zqq.blog_improve.common.utils.RedisService;
 import io.jsonwebtoken.Claims;
+import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
@@ -16,6 +20,9 @@ import org.springframework.web.servlet.HandlerInterceptor;
 @Slf4j
 @Component
 public class LoginInterceptor implements HandlerInterceptor {
+
+    @Resource(name = "redisService")
+    private RedisService redisService;
 
     /**
      * 在目标方法执行前进行校验
@@ -31,7 +38,12 @@ public class LoginInterceptor implements HandlerInterceptor {
         String token = request.getHeader(Constants.USER_TOKEN);
         log.info("获取到 token：{}",token);
 //        开始解析 token 并校验 token 的合法性 -- 有什么错误会在方法里面报出
-        JwtUtil.parseToken(token);
+        Claims claims = JwtUtil.parseToken(token);
+        String s = claims.get(Constants.LOGIN_USER_KEY, String.class);
+        if(!redisService.Key(Constants.LOGIN_TOKEN_KEY+s)){
+            log.error("令牌不存在或已过期！");
+            throw new UserException(ResultCode.TOKEN_ERROR);
+        }
         return true;
     }
 }

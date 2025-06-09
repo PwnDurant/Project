@@ -5,42 +5,66 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="49e1de30-a46f-4f15-8a3a-2861b0fc5578" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/config/JsonRedisSerializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/config/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/config/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/interceptor/LoginInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/utils/JsonUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/zqq/blog_improve/testRedis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/cacheManager/BlogCacheManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/config/MPConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/pojo/dto/AddBlogDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/pojo/dto/UpBlogDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/pojo/vo/BlogInfoVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/pojo/vo/UserInfoVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/925c93f3-a015-4a32-86f5-f7b06027be59.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/925c93f3-a015-4a32-86f5-f7b06027be59.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/base/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/base/R.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/base/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/base/ResultCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/constant/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/constant/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/interceptor/LoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/interceptor/LoginInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/pojo/domain/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/pojo/domain/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/pojo/domain/BlogInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/pojo/domain/BlogInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/pojo/domain/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/pojo/domain/UserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/pojo/dto/UserLoginDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/pojo/dto/UserLoginDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/pojo/vo/UserLoginVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/pojo/vo/UserLoginVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/utils/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/utils/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/utils/JsonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/utils/JsonUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/utils/RedisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/utils/RedisService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/utils/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/utils/TokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/controller/BlogController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/service/IBlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/service/IBlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/service/impl/BlogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/service/impl/BlogServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/zqq/blog_improve/BlogImproveApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zqq/blog_improve/BlogImproveApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/base/ResultCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/base/ResultCode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/constant/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/constant/Constants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/pojo/domain/BlogInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/pojo/domain/BlogInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/pojo/domain/UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/pojo/domain/UserInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/pojo/dto/UserLoginDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/pojo/dto/UserLoginDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/pojo/vo/UserLoginVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/pojo/vo/UserLoginVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/utils/JwtUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/utils/JwtUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/utils/RedisService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/utils/RedisService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/utils/TokenService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/utils/TokenService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zqq/blog_improve/BlogImproveApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/zqq/blog_improve/BlogImproveApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/zqq/blog_improve/testRedis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zqq/blog_improve/testRedis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/BlogImproveApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/base/R.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/base/ResultCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/config/JsonRedisSerializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/config/RedisConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/config/WebConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/constant/Constants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/exception/BlogException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/exception/UserException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/handler/GlobalExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/interceptor/LoginInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/pojo/domain/BaseEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/pojo/domain/BlogInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/pojo/domain/UserInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/pojo/dto/UserLoginDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/pojo/vo/UserLoginVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/utils/JsonUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/utils/JwtUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/utils/RedisService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/utils/SecurityUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/common/utils/TokenService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/controller/BlogController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/mapper/BlogMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/mapper/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/service/IBlogService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/service/IUserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/service/impl/BlogServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zqq/blog_improve/service/impl/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zqq/blog_improve/BlogImproveApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zqq/blog_improve/testRedis$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zqq/blog_improve/testRedis.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Blog_system/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Blog_system/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Blog_system/src/main/java/org/mon/blog_system/common/interceptor/LoginIntercepter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Blog_system/src/main/java/org/mon/blog_system/common/interceptor/LoginIntercepter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Blog_system/src/main/java/org/mon/blog_system/common/utils/BeanConver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Blog_system/src/main/java/org/mon/blog_system/common/utils/BeanConver.java" afterDir="false" />
@@ -1496,42 +1520,51 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.BlogImproveApplicationTests.contextLoads.executor": "Run",
-    "JUnit.BlogImproveApplicationTests.testExp.executor": "Run",
-    "JUnit.BlogImproveApplicationTests.testFast.executor": "Run",
-    "JUnit.BlogImproveApplicationTests.testJwt.executor": "Run",
-    "JUnit.BlogImproveApplicationTests.testMatch.executor": "Run",
-    "JUnit.BlogImproveApplicationTests.testPassword.executor": "Run",
-    "JUnit.BlogImproveApplicationTests.testTraditional.executor": "Run",
-    "JUnit.testRedis.testRead.executor": "Run",
-    "JUnit.testRedis.testReadWithKey.executor": "Run",
-    "JUnit.testRedis.testWrite.executor": "Run",
-    "Maven.Blog_Improve [clean].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.BlogImproveApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "File.Encoding",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.BlogImproveApplicationTests.contextLoads.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BlogImproveApplicationTests.testExp.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BlogImproveApplicationTests.testFast.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BlogImproveApplicationTests.testJwt.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BlogImproveApplicationTests.testMatch.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BlogImproveApplicationTests.testPassword.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BlogImproveApplicationTests.testTraditional.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.testRedis.test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.testRedis.testR.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.testRedis.testR1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.testRedis.testR3.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.testRedis.testR4.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.testRedis.testRead.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.testRedis.testReadWithKey.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.testRedis.testW.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.testRedis.testW1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.testRedis.testW2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.testRedis.testW3.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.testRedis.testWrite.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Blog_Improve [clean].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.BlogImproveApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -1556,39 +1589,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.BlogImproveApplication">
-    <configuration name="BlogImproveApplicationTests.testExp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Blog_Improve" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.zqq.blog_improve.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.zqq.blog_improve" />
-      <option name="MAIN_CLASS_NAME" value="com.zqq.blog_improve.BlogImproveApplicationTests" />
-      <option name="METHOD_NAME" value="testExp" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BlogImproveApplicationTests.testTraditional" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Blog_Improve" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.zqq.blog_improve.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.zqq.blog_improve" />
-      <option name="MAIN_CLASS_NAME" value="com.zqq.blog_improve.BlogImproveApplicationTests" />
-      <option name="METHOD_NAME" value="testTraditional" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="testRedis.testRead" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="testRedis.testR3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Blog_Improve" />
       <extension name="coverage">
         <pattern>
@@ -1598,13 +1599,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.zqq.blog_improve" />
       <option name="MAIN_CLASS_NAME" value="com.zqq.blog_improve.testRedis" />
-      <option name="METHOD_NAME" value="testRead" />
+      <option name="METHOD_NAME" value="testR3" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="testRedis.testReadWithKey" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="testRedis.testR4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Blog_Improve" />
       <extension name="coverage">
         <pattern>
@@ -1614,13 +1615,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.zqq.blog_improve" />
       <option name="MAIN_CLASS_NAME" value="com.zqq.blog_improve.testRedis" />
-      <option name="METHOD_NAME" value="testReadWithKey" />
+      <option name="METHOD_NAME" value="testR4" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="testRedis.testWrite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="testRedis.testW1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Blog_Improve" />
       <extension name="coverage">
         <pattern>
@@ -1630,7 +1631,39 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.zqq.blog_improve" />
       <option name="MAIN_CLASS_NAME" value="com.zqq.blog_improve.testRedis" />
-      <option name="METHOD_NAME" value="testWrite" />
+      <option name="METHOD_NAME" value="testW1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testRedis.testW2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Blog_Improve" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zqq.blog_improve.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zqq.blog_improve" />
+      <option name="MAIN_CLASS_NAME" value="com.zqq.blog_improve.testRedis" />
+      <option name="METHOD_NAME" value="testW2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testRedis.testW3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Blog_Improve" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zqq.blog_improve.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zqq.blog_improve" />
+      <option name="MAIN_CLASS_NAME" value="com.zqq.blog_improve.testRedis" />
+      <option name="METHOD_NAME" value="testW3" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -1645,11 +1678,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.testRedis.testRead" />
-        <item itemvalue="JUnit.testRedis.testReadWithKey" />
-        <item itemvalue="JUnit.testRedis.testWrite" />
-        <item itemvalue="JUnit.BlogImproveApplicationTests.testTraditional" />
-        <item itemvalue="JUnit.BlogImproveApplicationTests.testExp" />
+        <item itemvalue="JUnit.testRedis.testR4" />
+        <item itemvalue="JUnit.testRedis.testW3" />
+        <item itemvalue="JUnit.testRedis.testR3" />
+        <item itemvalue="JUnit.testRedis.testW1" />
+        <item itemvalue="JUnit.testRedis.testW2" />
       </list>
     </recent_temporary>
   </component>
@@ -1672,7 +1705,9 @@
       <workItem from="1749215109221" duration="23851000" />
       <workItem from="1749358871879" duration="10978000" />
       <workItem from="1749376077226" duration="103000" />
-      <workItem from="1749376347493" duration="9576000" />
+      <workItem from="1749376347493" duration="16557000" />
+      <workItem from="1749427185932" duration="14859000" />
+      <workItem from="1749450369748" duration="24000" />
     </task>
     <servers />
   </component>
@@ -1684,13 +1719,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/service/impl/UserServiceImpl.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/zqq/blog_improve/common/utils/TokenService.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="3" />
+          <line>139</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

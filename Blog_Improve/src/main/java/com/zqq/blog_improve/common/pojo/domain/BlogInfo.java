@@ -33,6 +33,6 @@ public class BlogInfo extends BaseEntity{
     /**
      * 当前博客的用户Id
      */
-    private Integer userId;
+    private Long userId;
 
 }

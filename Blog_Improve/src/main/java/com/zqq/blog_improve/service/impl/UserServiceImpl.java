@@ -1,26 +1,28 @@
 package com.zqq.blog_improve.service.impl;
 
-import cn.hutool.core.lang.UUID;
+import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.zqq.blog_improve.common.base.R;
 import com.zqq.blog_improve.common.base.ResultCode;
-import com.zqq.blog_improve.common.constant.Constants;
+import com.zqq.blog_improve.common.exception.BlogException;
 import com.zqq.blog_improve.common.exception.UserException;
+import com.zqq.blog_improve.common.pojo.domain.BlogInfo;
 import com.zqq.blog_improve.common.pojo.domain.UserInfo;
 import com.zqq.blog_improve.common.pojo.dto.UserLoginDTO;
+import com.zqq.blog_improve.common.pojo.vo.UserInfoVO;
 import com.zqq.blog_improve.common.pojo.vo.UserLoginVO;
-import com.zqq.blog_improve.common.utils.JwtUtil;
 import com.zqq.blog_improve.common.utils.SecurityUtil;
 import com.zqq.blog_improve.common.utils.TokenService;
 import com.zqq.blog_improve.mapper.BlogMapper;
 import com.zqq.blog_improve.mapper.UserMapper;
 import com.zqq.blog_improve.service.IUserService;
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
 import jakarta.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
 
+
+@Slf4j
 @Service
 public class UserServiceImpl implements IUserService {
 
@@ -46,6 +48,74 @@ public class UserServiceImpl implements IUserService {
         UserInfo selected = verify(userLoginDTO);
 //        密码正确  -- 构造返回数据
         return assembleUserLoginVO(selected);
+    }
+
+    /**
+     * 获得用户信息
+     * @param userId 用户Id
+     * @return 返回用户信息
+     */
+    @Override
+    public R<UserInfoVO> getUserInfoById(Integer userId) {
+        UserInfo userInfo= getUserInfo(userId);
+        if(userInfo==null){
+            log.error("用户不存在,userId:{}",userId);
+            throw new UserException(ResultCode.USER_NOT_EXISTS);
+        }
+        UserInfoVO userInfoVO = new UserInfoVO();
+        BeanUtil.copyProperties(userInfo,userInfoVO);
+        return R.ok(userInfoVO);
+    }
+
+    /**
+     * 获取作者信息
+     * @param blogId 博客 id
+     * @return 返回对应博客id 的用户信息
+     */
+    @Override
+    public R<UserInfoVO> getAuthorInfoById(Integer blogId) {
+//        根据博客id返回作者id
+        BlogInfo blogInfo = blogMapper.selectOne(new LambdaQueryWrapper<BlogInfo>()
+                .eq(BlogInfo::getId, blogId)
+                .eq(BlogInfo::getDeleteFlag, 0));
+        if(blogInfo==null){
+            log.error("对应博客不存在,blogId:{}",blogId);
+            throw new BlogException(ResultCode.BLOG_IS_NOT_EXIST);
+        }
+        Long userId=blogInfo.getUserId();
+//        根据作者 ID 拿到作者详情
+        UserInfo userInfo = userMapper.selectOne(new LambdaQueryWrapper<UserInfo>()
+                .eq(UserInfo::getId, userId)
+                .eq(UserInfo::getDeleteFlag, 0));
+        UserInfoVO userInfoVO = new UserInfoVO();
+        BeanUtil.copyProperties(userInfo,userInfoVO);
+        return R.ok(userInfoVO);
+    }
+
+    /**
+     * 处理用户注册请求
+     * @param userLoginDTO 注册需要携带的数据：账号名和密码
+     * @return 是否注册成功
+     */
+    @Override
+    public Boolean register(UserLoginDTO userLoginDTO) {
+        UserInfo userInfo = new UserInfo();
+        String s = SecurityUtil.encrypt_traditional(userLoginDTO.getPassword());
+        userInfo.setUserName(userLoginDTO.getUserName());
+        userInfo.setPassword(s);
+        int insert = userMapper.insert(userInfo);
+        return insert == 1;
+    }
+
+    /**
+     * 根据用户 Id 获得用户信息
+     * @param userId 用户ID
+     * @return 用户信息
+     */
+    private UserInfo getUserInfo(Integer userId) {
+        return userMapper.selectOne(new LambdaQueryWrapper<UserInfo>()
+                .eq(UserInfo::getId, userId)
+                .eq(UserInfo::getDeleteFlag, 0));
     }
 
     /**

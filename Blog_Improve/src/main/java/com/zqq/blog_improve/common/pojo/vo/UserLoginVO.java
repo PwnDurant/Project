@@ -2,8 +2,6 @@ package com.zqq.blog_improve.common.pojo.vo;
 
 import lombok.Data;
 
-import java.io.Serializable;
-
 /**
  * 登入成功之后返回给前端的 entity 类
  */

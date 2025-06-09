@@ -29,6 +29,11 @@ public class UserInfo extends BaseEntity {
     private String password;
 
     /**
+     * 每一个用户对应的博客 Id
+     */
+    private Long blogId;
+
+    /**
      * github 地址
      */
     private String githubUrl;

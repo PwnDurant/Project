@@ -2,6 +2,9 @@ package com.zqq.blog_improve.common.utils;
 
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.TypeReference;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.zqq.blog_improve.common.constant.Constants;
+import com.zqq.blog_improve.common.pojo.domain.BlogInfo;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +14,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
+import java.util.Collection;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
@@ -95,5 +100,25 @@ public class RedisService {
         return JSON.parseObject(String.valueOf(t), reference);
     }
 
+    /**
+     * 操作 list 数据结构
+     */
+    public <T> Long leftPush(String key,T data){
+        return redisTemplate.opsForList().leftPush(key,data);
+    }
 
+
+    public <T> T getCacheList(String key, com.fasterxml.jackson.core.type.TypeReference<T> typeReference) throws JsonProcessingException {
+        Long size = redisTemplate.opsForList().size(key);
+        List range = redisTemplate.opsForList().range(key, 0, size);
+        return JsonUtils.fromJson(range,typeReference);
+    }
+
+
+    /**
+     * 批量插入缓存
+     */
+    public <T> Long leftPushAll(Collection<T> collection) {
+        return redisTemplate.opsForList().leftPushAll(Constants.BLOG_LIST,collection);
+    }
 }

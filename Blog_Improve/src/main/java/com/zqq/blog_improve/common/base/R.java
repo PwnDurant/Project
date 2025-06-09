@@ -1,10 +1,12 @@
 package com.zqq.blog_improve.common.base;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
 /**
  * 设置统一返回格式
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @Data
 public class R<T> {
 
@@ -26,10 +28,13 @@ public class R<T> {
     /**
      * 成功返回
      * @return 代表操作成功
-     * @param <T> 不携带 data 数据返回
      */
-    public static <T> R<T> ok(){
-        return assembleResult(null,ResultCode.SUCCESS);
+    public static R<Boolean> ok(){
+        R<Boolean> r = new R<>();
+        r.setCode(ResultCode.SUCCESS.getCode());
+        r.setMsg(ResultCode.SUCCESS.getMsg());
+        r.setData(true);
+        return r;
     }
 
     /**
@@ -45,10 +50,13 @@ public class R<T> {
     /**
      * 失败返回
      * @return 代表操作失败
-     * @param <T> 不携带返回的具体 msg（默认设定好的）
      */
-    public static <T> R<T> fail(){
-        return assembleResult(null,ResultCode.FAILED);
+    public static R<Boolean> fail(){
+        R<Boolean> r = new R<>();
+        r.setCode(ResultCode.FAILED.getCode());
+        r.setMsg(ResultCode.FAILED.getMsg());
+        r.setData(false);
+        return r;
     }
 
     /**

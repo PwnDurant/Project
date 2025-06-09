@@ -41,4 +41,9 @@ public class Constants {
      * 前端请求头中存放 token 的键值
      */
     public static final String USER_TOKEN = "user_token";
+
+    /**
+     * redis 这中博客信息
+     */
+    public static final String BLOG_LIST = "b:l:";
 }

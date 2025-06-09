@@ -21,7 +21,10 @@ public enum ResultCode {
     TOKEN_IS_EMPTY              (20007,"令牌不能为空！" ),
     TOKEN_IS_EXPIRED            (20008,"令牌过期！" ),
     TOKEN_SIGNATURE_ERROR       (20009,"令牌签名错误！" ),
-    TOKEN_PARSE_ERROR           (20010,"令牌解析失败！" );
+    TOKEN_PARSE_ERROR           (20010,"令牌解析失败！" ),
+    BLOG_IS_NOT_EXIST           (20011,"对应博客不存在！" ),
+    BLOG_RESOURCES_IS_EMPTY     (20012,"数据库中博客资源为空！" ),
+    TOKEN_ERROR                 (20013 ,"令牌不存在或已过期！");
 
     private final int code;
 
