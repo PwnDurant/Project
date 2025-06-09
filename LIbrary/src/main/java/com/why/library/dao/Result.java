@@ -1,8 +1,8 @@
-package org.mon.library_management_system.model;
+package com.why.library.dao;
 
 
+import com.why.library.common.constant.Constants;
 import lombok.Data;
-import org.mon.library_management_system.constant.Constants;
 
 @Data
 public class Result<T> {

@@ -1,9 +1,9 @@
-package org.mon.library_management_system.mapper;
+package com.why.library.mapper;
 
 
+import com.why.library.dao.UserInfo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
-import org.mon.library_management_system.model.UserInfo;
 
 @Mapper
 public interface UserMapper {

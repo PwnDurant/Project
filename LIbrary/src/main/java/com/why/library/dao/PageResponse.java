@@ -1,4 +1,4 @@
-package org.mon.library_management_system.model;
+package com.why.library.dao;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

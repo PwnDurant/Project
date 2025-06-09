@@ -1,13 +1,12 @@
-package org.mon.library_management_system.mapper;
+package com.why.library.mapper;
 
 
+
+import com.why.library.dao.BookInfo;
+import com.why.library.dao.PageRequest;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
-import org.mon.library_management_system.model.BookInfo;
-import org.mon.library_management_system.model.PageRequest;
-import org.mon.library_management_system.model.PageResponse;
 
 import java.util.List;
 

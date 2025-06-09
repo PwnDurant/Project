@@ -1,12 +1,12 @@
-package org.mon.library_management_system.service;
+package com.why.library.service;
 
 
+import com.why.library.common.enums.BookStatusEnum;
+import com.why.library.dao.BookInfo;
+import com.why.library.dao.PageRequest;
+import com.why.library.dao.PageResponse;
+import com.why.library.mapper.BookMapper;
 import lombok.extern.slf4j.Slf4j;
-import org.mon.library_management_system.enums.BookStatusEnum;
-import org.mon.library_management_system.mapper.BookMapper;
-import org.mon.library_management_system.model.BookInfo;
-import org.mon.library_management_system.model.PageRequest;
-import org.mon.library_management_system.model.PageResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

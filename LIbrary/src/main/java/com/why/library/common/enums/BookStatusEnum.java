@@ -1,4 +1,4 @@
-package org.mon.library_management_system.enums;
+package com.why.library.common.enums;
 
 
 import lombok.Getter;

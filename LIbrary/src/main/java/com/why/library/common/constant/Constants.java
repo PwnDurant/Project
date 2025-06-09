@@ -1,4 +1,4 @@
-package org.mon.library_management_system.constant;
+package com.why.library.common.constant;
 
 
 //定义一个常量
