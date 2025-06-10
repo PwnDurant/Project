@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客详情页</title>
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/detail.css">
+
+</head>
+
+<body>
+    <div class="nav">
+        <img src="pic/logo2.jpg" alt="">
+        <span class="blog-title">我的博客系统</span>
+        <div class="space"></div>
+        <a class="nav-span" href="blog_list.html">主页</a>
+        <a class="nav-span" href="blog_edit.html">写博客</a>
+        <a class="nav-span" href="#" onclick="logout()">注销</a>
+    </div>
+
+    <div class="container">
+        <div class="left">
+            <div class="card">
+                <img src="pic/doge.jpg" alt="">
+                <h3></h3>
+                <a href="#">GitHub 地址</a>
+                <div class="row">
+                    <span>文章</span>
+                    <span>分类</span>
+                </div>
+                <div class="row">
+                    <span>2</span>
+                    <span>1</span>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="content">
+                <div class="title"></div>
+                <div class="date"></div>
+                <div class="detail" id="detail" style="background: transparent;">
+                    <!-- 这里是博客内容 -->
+
+                </div>
+                <div class="operating">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 引入 editor.md 的依赖 -->
+    <link rel="stylesheet" href="blog-editormd/css/editormd.css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="blog-editormd/lib/marked.min.js"></script>
+    <script src="blog-editormd/lib/prettify.min.js"></script>
+    <script src="blog-editormd/editormd.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+
+        function deleteBlog() {
+            let c=confirm("确认是否删除");
+            if(c){
+                $.ajax({
+                    type:"post",
+                    url:"/blog/delete"+location.search,
+                    success:function(result){
+                        console.log(result);
+                        if (result != null && result.code == 200 || result.data != null) {
+                            alert("删除成功");
+                            location.href="blog_list.html";
+                        }else{
+                            // 
+                        }
+                    }
+                });
+            }
+        }
+
+        getBlogDetail();
+
+        function getBlogDetail(){
+            $.ajax({
+            type: "get",
+            url: "/blog/getBlogDetail" + location.search,
+            success: function (result) {
+                // 判断
+                if (result != null && result.code == 200 || result.data != null) {
+                    let blog = result.data;
+                    $(".right .content .title").text(blog.title);
+                    $(".right .content .date").text(blog.createTime);
+                    // $(".right .content .detail").text(blog.content);
+                    // 把content转换为markdown格式
+                    editormd.markdownToHTML("detail",{
+                        markdown:blog.content,
+                    });
+
+                    // 判断当前登入用户是否是作者，如果是作者显示编辑和删除按钮
+                    //当前登入用户
+                    let loginUserId=localStorage.getItem("login_user_id");
+                    //需要查看的用户
+                    let userId=blog.userId;
+                    if(userId==loginUserId){
+                        console.log("显示");
+                        
+                        // 显示编辑和删除按钮
+                        let finalHtml='';
+                        finalHtml+='<button onclick="window.location.href=\'blog_update.html'+location.search+'\'">编辑</button>';
+                        finalHtml+='<button onclick="deleteBlog()">删除</button>';
+                        // $(".content").append(finalHtml);
+                        $(".operating").html(finalHtml);
+
+                    }else{
+                        console.log("不显示");
+                        console.log(userId);
+                        console.log(loginUserId);
+                    }
+                }
+            }
+        });
+        }
+
+        // 显示博客作者信息
+        let url="/user/getAuthorInfo"+location.search;
+        getUserInfo(url);
+        
+
+        
+    </script>
+</body>
+
+</html>
