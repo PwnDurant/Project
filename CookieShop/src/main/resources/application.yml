@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: CookieMall
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3310/zqq_mall?characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 3  # 使用第三个 redis 数据库
+      password: 123456
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+server:
+  port: 8088
