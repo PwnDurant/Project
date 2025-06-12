@@ -5,90 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af1107ae-46ce-4a20-804c-bab7e728f563" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Blog_Improve/blog.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Car/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Car/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Car/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Car/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Car/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Car/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Car/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Car/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Car/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Car/car.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/common/base/R.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/common/base/ResultCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/common/config/CorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/common/config/MPConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/common/exception/SystemException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/common/handler/GlobalException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/controller/ParkController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/domain/ParkInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/domain/UserInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/mapper/ParkMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/service/ParkService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Car/src/main/resources/static/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Car/src/main/resources/static/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LIbrary/book.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Note/note.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Note/src/main/java/com/zyp/note/common/config/CorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Note/src/main/resources/static/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Note/src/main/resources/static/showNote.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Room/roomSystem.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/common/base/R.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/common/base/ResultCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/common/config/CorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/common/config/MPConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/common/exception/SystemException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/common/handler/GlobalException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/controller/RoomController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/controller/SysController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/mapper/RoomMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/mapper/SysMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/pojo/AddUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/pojo/BaseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/pojo/Detail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/pojo/RoomInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/pojo/SysInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/pojo/UserInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/service/RoomService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/service/SysService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Room/src/main/resources/mapper/RoomMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Room/src/main/resources/static/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Room/src/main/resources/static/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RoomSimple/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RoomSimple/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RoomSimple/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RoomSimple/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RoomSimple/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RoomSimple/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RoomSimple/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RoomSimple/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RoomSimple/room.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RoomSimple/src/main/java/com/wpf/roomsimple/common/base/R.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RoomSimple/src/main/java/com/wpf/roomsimple/common/base/ResultCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RoomSimple/src/main/java/com/wpf/roomsimple/common/config/CorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RoomSimple/src/main/java/com/wpf/roomsimple/common/config/MPConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RoomSimple/src/main/java/com/wpf/roomsimple/common/exception/SystemException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RoomSimple/src/main/java/com/wpf/roomsimple/common/handler/GlobalException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RoomSimple/src/main/java/com/wpf/roomsimple/controller/RoomController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RoomSimple/src/main/java/com/wpf/roomsimple/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RoomSimple/src/main/java/com/wpf/roomsimple/domain/BaseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RoomSimple/src/main/java/com/wpf/roomsimple/domain/RoomInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RoomSimple/src/main/java/com/wpf/roomsimple/domain/UserInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RoomSimple/src/main/java/com/wpf/roomsimple/mapper/RoomMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RoomSimple/src/main/java/com/wpf/roomsimple/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RoomSimple/src/main/java/com/wpf/roomsimple/service/RoomService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RoomSimple/src/main/java/com/wpf/roomsimple/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RoomSimple/src/main/resources/static/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RoomSimple/src/main/resources/static/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/common/constants/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/common/exception/SystemException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/common/handler/GlobalException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/common/interceptor/LoginInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/common/utils/JsonUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/common/utils/JwtUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/common/utils/RedisService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/common/utils/SecurityUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/common/utils/TokenService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/config/JsonRedisSerializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/controller/goods/GoodsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/controller/order/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/controller/order/OrderItemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/controller/user/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/controller/user/dto/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/controller/user/vo/UserVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Blog_Improve/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Blog_Improve/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Blog_Improve/blog.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Blog_Improve/blog.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Blog_Improve/src/main/java/com/zqq/blog_improve/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Blog_Improve/src/main/java/com/zqq/blog_improve/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Blog_Improve/src/main/resources/static/blog_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Blog_Improve/src/main/resources/static/blog_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Blog_Improve/src/main/resources/static/blog_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Blog_Improve/src/main/resources/static/blog_edit.html" afterDir="false" />
@@ -121,13 +60,44 @@
       <change beforePath="$PROJECT_DIR$/../Blog_system/target/surefire-reports/org.mon.blog_system.BlogSystemApplicationTests.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Blog_system/target/surefire-reports/org.mon.blog_system.SecurityUtilTest.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Blog_system/target/test-classes/org/mon/blog_system/JwtUtils/JwtUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Blog_system/target/test-classes/org/mon/blog_system/JwtUtils/JwtUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Car/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Car/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Car/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Car/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Car/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Car/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Car/car.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Car/car.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/common/base/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/common/base/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/common/base/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/common/base/ResultCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/common/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/common/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/common/config/MPConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/common/config/MPConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/common/exception/SystemException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/common/exception/SystemException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/common/handler/GlobalException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/common/handler/GlobalException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/controller/ParkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/controller/ParkController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/domain/ParkInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/domain/ParkInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/domain/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/domain/UserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/mapper/ParkMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/mapper/ParkMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/service/ParkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/service/ParkService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Car/src/main/java/com/yl/car/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Car/src/main/resources/static/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Car/src/main/resources/static/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Car/src/main/resources/static/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Car/src/main/resources/static/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Chase-sky/.idea/dataSources/db0a2c1e-4638-459e-b566-51cce10a6129.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/CookieShopApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/CookieShopApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/zqq/cookieshop/CookieShopApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zqq/cookieshop/CookieShopApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/common/base/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/common/base/ResultCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/domain/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/domain/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/domain/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/domain/OrderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/domain/Recommend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/domain/Recommend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/domain/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/domain/Type.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Eyes-cloud/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes-cloud/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Eyes-cloud/eye-gateway/src/main/java/com/zqq/gateway/GlobalCorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eyes-cloud/eye-gateway/src/main/java/com/zqq/gateway/GlobalCorsConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../LIbrary/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LIbrary/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../LIbrary/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LIbrary/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LIbrary/book.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../LIbrary/book.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../LIbrary/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LIbrary/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../LIbrary/src/main/java/com/why/library/common/config/ExceptionAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LIbrary/src/main/java/com/why/library/common/config/ExceptionAdvice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../LIbrary/src/main/java/com/why/library/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LIbrary/src/main/java/com/why/library/controller/UserController.java" afterDir="false" />
@@ -280,13 +250,46 @@
       <change beforePath="$PROJECT_DIR$/../Note/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Note/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Note/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Note/.idea/material_theme_project_new.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Note/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Note/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Note/note.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Note/note.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Note/src/main/java/com/zyp/note/pojo/domain/NoteInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Note/src/main/java/com/zyp/note/pojo/domain/NoteInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Note/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../Note/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Note/src/main/resources/static/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Note/src/main/resources/static/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Note/src/main/resources/static/showNote.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Note/src/main/resources/static/showNote.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Note/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../Note/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Note/target/classes/com/zyp/note/controller/NoteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Note/target/classes/com/zyp/note/controller/NoteController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Note/target/classes/com/zyp/note/pojo/domain/NoteInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Note/target/classes/com/zyp/note/pojo/domain/NoteInfo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Note/target/classes/com/zyp/note/service/INoteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Note/target/classes/com/zyp/note/service/INoteService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Note/target/classes/com/zyp/note/service/impl/NoteServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Note/target/classes/com/zyp/note/service/impl/NoteServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Room/roomSystem.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Room/roomSystem.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/common/base/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/common/base/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/common/base/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/common/base/ResultCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/common/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/common/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/common/config/MPConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/common/config/MPConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/common/exception/SystemException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/common/exception/SystemException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/common/handler/GlobalException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/common/handler/GlobalException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/controller/RoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/controller/RoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/controller/SysController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/controller/SysController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/mapper/RoomMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/mapper/RoomMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/mapper/SysMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/mapper/SysMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/pojo/AddUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/pojo/AddUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/pojo/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/pojo/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/pojo/Detail.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/pojo/Detail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/pojo/RoomInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/pojo/RoomInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/pojo/SysInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/pojo/SysInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/pojo/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/pojo/UserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/service/RoomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/service/RoomService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/service/SysService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/service/SysService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Room/src/main/java/com/zyp/room/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Room/src/main/resources/mapper/RoomMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Room/src/main/resources/mapper/RoomMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Room/src/main/resources/static/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Room/src/main/resources/static/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Room/src/main/resources/static/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Room/src/main/resources/static/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RoomSimple/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RoomSimple/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RoomSimple/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RoomSimple/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RoomSimple/room.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../RoomSimple/room.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RoomSimple/src/main/resources/static/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RoomSimple/src/main/resources/static/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RoomSimple/src/main/resources/static/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RoomSimple/src/main/resources/static/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Thread/src/main/java/thread_demo/Demo7.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/src/main/java/thread_demo/Demo7.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Thread/target/classes/TestBlue.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/target/classes/TestBlue.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Thread/target/classes/thread_demo/Demo7.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread/target/classes/thread_demo/Demo7.class" afterDir="false" />
@@ -1537,9 +1540,22 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package-info" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -1549,10 +1565,13 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2yMl97Q5ENW1y57XvSDZBaummit" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -1560,13 +1579,38 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/zhaoqianqian/IDEAUl/Project/CookieShop/src/main/java/com/zqq/cookieshop/common/utils",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "MavenSettings",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/common/utils" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/common" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/zqq/cookieshop/mapper" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zqq.cookieshop.common.utils" />
+      <recent name="com.zqq.cookieshop.config" />
+      <recent name="com.zqq.cookieshop.common.constants" />
+      <recent name="com.zqq.cookieshop.common.handler" />
+      <recent name="com.zqq.cookieshop.common.exception" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="CookieShopApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="CookieShop" />
@@ -1592,7 +1636,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1749652169933</updated>
-      <workItem from="1749652170891" duration="109000" />
+      <workItem from="1749652170891" duration="5335000" />
+      <workItem from="1749709210872" duration="5937000" />
     </task>
     <servers />
   </component>

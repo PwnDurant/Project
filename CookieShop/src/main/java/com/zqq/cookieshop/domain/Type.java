@@ -13,6 +13,9 @@ public class Type {
     @TableId(value = "id",type = IdType.AUTO)
     private Long id;
 
+    /**
+     * 商品类型名称
+     */
     private String name;
 
 }

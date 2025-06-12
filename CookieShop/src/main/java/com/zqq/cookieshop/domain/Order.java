@@ -24,12 +24,12 @@ public class Order {
     private Long userId;
 
     /**
-     *
+     * 商品总价
      */
     private Float total;
 
     /**
-     *
+     * 商品总件数
      */
     private Integer amount;
 
@@ -39,12 +39,12 @@ public class Order {
     private Integer status;
 
     /**
-     *
+     * 支付方式（微信/支付宝/银行卡）
      */
     private Integer payType;
 
     /**
-     *
+     * 收获人姓名
      */
     private String name;
 

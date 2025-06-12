@@ -24,7 +24,9 @@ public enum ResultCode {
     TOKEN_PARSE_ERROR           (20010,"令牌解析失败！" ),
     BLOG_IS_NOT_EXIST           (20011,"对应博客不存在！" ),
     BLOG_RESOURCES_IS_EMPTY     (20012,"数据库中博客资源为空！" ),
-    TOKEN_ERROR                 (20013 ,"令牌不存在或已过期！");
+    TOKEN_ERROR                 (20013 ,"令牌不存在或已过期！"),
+    USER_IS_EXIST               (20014,"当前用户已经存在！" ),
+    REGISTER_FAILED             (20015, "用户注册失败！");
 
     private final int code;
 

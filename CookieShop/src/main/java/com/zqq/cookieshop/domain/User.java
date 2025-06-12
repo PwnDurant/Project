@@ -17,7 +17,7 @@ public class User {
     private Long id;
 
     /**
-     * 用户名
+     * 用户名(用于账号登入)
      */
     private String userName;
 
