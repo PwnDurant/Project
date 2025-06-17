@@ -1,4 +1,12 @@
 package com.thwh.class_.mapper;
 
-public interface StudentMapper {
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.thwh.class_.domain.StudentInfo;
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface StudentMapper extends BaseMapper<StudentInfo> {
+
+
+
 }

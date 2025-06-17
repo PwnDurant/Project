@@ -1,4 +1,4 @@
-package com.ygt.park.domain;
+package com.thwh.class_.domain;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;

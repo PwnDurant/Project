@@ -1,10 +1,10 @@
-package com.ygt.park.common.handler;
+package com.thwh.class_.common.handler;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
-import com.ygt.park.common.base.R;
-import com.ygt.park.common.base.ResultCode;
-import com.ygt.park.common.exception.SystemException;
+import com.thwh.class_.common.base.R;
+import com.thwh.class_.common.base.ResultCode;
+import com.thwh.class_.common.exception.SystemException;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.support.DefaultMessageSourceResolvable;

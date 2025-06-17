@@ -1,4 +1,4 @@
-package com.ygt.park.common.base;
+package com.thwh.class_.common.base;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

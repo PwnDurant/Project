@@ -1,4 +1,4 @@
-package com.ygt.park.common.config;
+package com.thwh.class_.common.config;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import lombok.extern.slf4j.Slf4j;

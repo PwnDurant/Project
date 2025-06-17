@@ -1,6 +1,7 @@
-package com.ygt.park.common.exception;
+package com.thwh.class_.common.exception;
 
-import com.ygt.park.common.base.ResultCode;
+
+import com.thwh.class_.common.base.ResultCode;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
