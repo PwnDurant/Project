@@ -1,10 +1,10 @@
-package com.thwh.shopmall.common.handler;
+package com.hxm.hxm.common.handler;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
-import com.thwh.shopmall.common.base.R;
-import com.thwh.shopmall.common.base.ResultCode;
-import com.thwh.shopmall.common.exception.SystemException;
+import com.hxm.hxm.common.base.R;
+import com.hxm.hxm.common.base.ResultCode;
+import com.hxm.hxm.common.exception.SystemException;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.support.DefaultMessageSourceResolvable;

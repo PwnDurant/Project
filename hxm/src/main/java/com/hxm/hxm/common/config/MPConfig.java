@@ -1,4 +1,4 @@
-package com.thwh.shopmall.common.config;
+package com.hxm.hxm.common.config;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import lombok.extern.slf4j.Slf4j;

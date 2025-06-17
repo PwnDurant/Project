@@ -1,4 +1,4 @@
-package com.thwh.shopmall.common.base;
+package com.hxm.hxm.common.base;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

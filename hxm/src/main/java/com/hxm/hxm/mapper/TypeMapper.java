@@ -1,9 +1,9 @@
-package com.thwh.shopmall.mapper;
+package com.hxm.hxm.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.thwh.shopmall.domain.SpuInfo;
+import com.hxm.hxm.domain.TypeInfo;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface SpuMapper extends BaseMapper<SpuInfo> {
+public interface TypeMapper extends BaseMapper<TypeInfo> {
 }

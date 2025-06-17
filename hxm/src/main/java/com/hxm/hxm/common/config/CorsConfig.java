@@ -1,4 +1,4 @@
-package com.thwh.shopmall.common.config;
+package com.hxm.hxm.common.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

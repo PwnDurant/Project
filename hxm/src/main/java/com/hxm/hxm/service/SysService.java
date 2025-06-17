@@ -1,11 +1,11 @@
-package com.thwh.shopmall.service;
+package com.hxm.hxm.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.thwh.shopmall.common.base.R;
-import com.thwh.shopmall.common.base.ResultCode;
-import com.thwh.shopmall.common.exception.SystemException;
-import com.thwh.shopmall.domain.SysInfo;
-import com.thwh.shopmall.mapper.SysMapper;
+import com.hxm.hxm.common.base.R;
+import com.hxm.hxm.common.base.ResultCode;
+import com.hxm.hxm.common.exception.SystemException;
+import com.hxm.hxm.domain.SysInfo;
+import com.hxm.hxm.mapper.SysMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

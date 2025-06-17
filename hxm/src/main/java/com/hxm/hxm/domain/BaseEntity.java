@@ -1,4 +1,4 @@
-package com.thwh.shopmall.domain;
+package com.hxm.hxm.domain;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;

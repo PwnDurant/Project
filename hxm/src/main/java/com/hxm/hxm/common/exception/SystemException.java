@@ -1,8 +1,6 @@
-package com.thwh.shopmall.common.exception;
+package com.hxm.hxm.common.exception;
 
-
-
-import com.thwh.shopmall.common.base.ResultCode;
+import com.hxm.hxm.common.base.ResultCode;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

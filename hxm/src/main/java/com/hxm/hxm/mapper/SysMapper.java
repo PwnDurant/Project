@@ -1,7 +1,7 @@
-package com.thwh.shopmall.mapper;
+package com.hxm.hxm.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.thwh.shopmall.domain.SysInfo;
+import com.hxm.hxm.domain.SysInfo;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

@@ -1,9 +1,9 @@
-package com.thwh.shopmall.mapper;
+package com.hxm.hxm.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.thwh.shopmall.domain.SkuInfo;
+import com.hxm.hxm.domain.QuestionInfo;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface SkuMapper extends BaseMapper<SkuInfo> {
+public interface QuestionMapper extends BaseMapper<QuestionInfo> {
 }
