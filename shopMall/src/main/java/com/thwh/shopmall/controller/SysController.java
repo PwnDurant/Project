@@ -1,9 +1,9 @@
-package com.thwh.class_.controller;
+package com.thwh.shopmall.controller;
 
 
-import com.thwh.class_.common.base.R;
-import com.thwh.class_.domain.SysInfo;
-import com.thwh.class_.service.SysService;
+import com.thwh.shopmall.common.base.R;
+import com.thwh.shopmall.domain.SysInfo;
+import com.thwh.shopmall.service.SysService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -1,4 +1,4 @@
-package com.thwh.class_.domain;
+package com.thwh.shopmall.domain;
 
 
 import lombok.Data;

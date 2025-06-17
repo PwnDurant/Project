@@ -1,4 +1,4 @@
-package com.thwh.class_.domain;
+package com.thwh.shopmall.domain;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -7,13 +7,13 @@ import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class StudentInfo extends BaseEntity{
+public class SkuInfo extends BaseEntity{
 
     @TableId(value = "id",type = IdType.AUTO)
     private Long id;
 
-    private String studentName;
+    private String skuName;
 
-    private Long classId;
+    private Long spuId;
 
 }

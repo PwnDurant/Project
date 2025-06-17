@@ -43,6 +43,32 @@
       <change afterPath="$PROJECT_DIR$/../Park/src/main/java/com/ygt/park/service/CarService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Park/src/main/java/com/ygt/park/service/ParkService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Park/src/main/java/com/ygt/park/service/SysService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/thwh/shopmall/common/base/R.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/thwh/shopmall/common/base/ResultCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/thwh/shopmall/common/config/CorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/thwh/shopmall/common/config/MPConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/thwh/shopmall/common/exception/SystemException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/thwh/shopmall/common/handler/GlobalException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/thwh/shopmall/controller/SkuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/thwh/shopmall/controller/SpuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/thwh/shopmall/controller/SysController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/thwh/shopmall/domain/BaseEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/thwh/shopmall/domain/SkuInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/thwh/shopmall/domain/SpuInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/thwh/shopmall/domain/SysInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/thwh/shopmall/mapper/SkuMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/thwh/shopmall/mapper/SpuMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/thwh/shopmall/mapper/SysMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/thwh/shopmall/service/SkuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/thwh/shopmall/service/SpuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/thwh/shopmall/service/SysService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Blog_Improve/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Blog_Improve/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Blog_Improve/blog.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Blog_Improve/blog.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Blog_Improve/src/main/java/com/zqq/blog_improve/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Blog_Improve/src/main/java/com/zqq/blog_improve/service/impl/UserServiceImpl.java" afterDir="false" />
@@ -1605,9 +1631,21 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -1630,6 +1668,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/zhaoqianqian/IDEAUl/Project/shopMall/src/main/java/com/thwh/shopmall",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "MavenSettings",
     "vue.rearranger.settings.migration": "true"
@@ -1640,6 +1683,17 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/thwh/shopmall" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/thwh/shopmall/domain" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.thwh.shopmall.controller" />
+      <recent name="com.thwh.shopmall.mapper" />
+      <recent name="com.thwh.shopmall.service" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="ShopMallApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="shopMall" />
@@ -1665,7 +1719,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1750161786572</updated>
-      <workItem from="1750161787524" duration="141000" />
+      <workItem from="1750161787524" duration="2126000" />
     </task>
     <servers />
   </component>
