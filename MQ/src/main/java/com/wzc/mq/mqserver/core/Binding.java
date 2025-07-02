@@ -1,11 +1,14 @@
 package com.wzc.mq.mqserver.core;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
  * 表示一个队列和交换机之间的关联关系
  */
 @Data
+@AllArgsConstructor
 public class Binding {
 
 //    绑定的交换机的名称

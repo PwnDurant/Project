@@ -1,5 +1,8 @@
 package com.wzc.mq.mqserver.core;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Data;
 
 import java.util.HashMap;
@@ -10,6 +13,8 @@ import java.util.Map;
  */
 @Data
 public class MSGQueue {
+
+    private static ObjectMapper obj = new ObjectMapper();
 
 //    标识队列的唯一身份标识
     private String name;
@@ -25,5 +30,30 @@ public class MSGQueue {
 
 //    创建队列时指定的一些额外的选项（后续拓展）
     private Map<String,Object> arguments =  new HashMap<>();
+
+    public String getArguments(){
+        try{
+            return obj.writeValueAsString(arguments);
+        }catch (JsonProcessingException e){
+            e.printStackTrace();
+        }
+        return "{}";
+    }
+
+    public Object getArguments(String key){
+        return arguments.get(key);
+    }
+
+    public void setArguments(String arguments){
+        try{
+            this.arguments = obj.readValue(arguments, new TypeReference<Map<String, Object>>() {});
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void setArguments(String key,Object value){
+        arguments.put(key, value);
+    }
 
 }

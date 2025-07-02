@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzc.mq.mqserver.mapper.MetaMapper">
+
+    <insert id="createExchangeTable">
+        create table if not exists exchange(
+            name varchar(50) primary key ,
+            type int,
+            durable boolean,
+            autoDelete boolean,
+            arguments varchar(1024)
+        );
+    </insert>
+
+    <insert id="createQueueTable">
+        create table if not exists queue(
+            name varchar(50) primary key ,
+            durable boolean,
+            exclusive boolean,
+            autoDelete boolean,
+            arguments varchar(1024)
+        );
+    </insert>
+
+    <insert id="createBindingTable">
+        create table if not exists binding(
+            exchangeName varchar(50),
+            queueName varchar(50),
+            bindingKey varchar(256)
+        );
+    </insert>
+
+    <insert id="insertExchange" parameterType="com.wzc.mq.mqserver.core.Exchange">
+        insert into exchange values (#{name},#{type},#{durable},#{autoDelete},#{arguments});
+    </insert>
+
+    <insert id="insertQueue" parameterType="com.wzc.mq.mqserver.core.MSGQueue">
+        insert into queue values (#{name},#{durable},#{exclusive},#{autoDelete},#{arguments});
+    </insert>
+
+    <insert id="insertBinding" parameterType="com.wzc.mq.mqserver.core.Binding">
+        insert into binding values (#{exchangeName},#{queueName},#{bindingKey});
+    </insert>
+
+    <delete id="deleteExchange" parameterType="java.lang.String">
+        delete from exchange where name = #{exchangeName};
+    </delete>
+
+    <delete id="deleteQueue" parameterType="java.lang.String">
+        delete from queue where name = #{queueName};
+    </delete>
+
+    <delete id="deleteBinding" parameterType="com.wzc.mq.mqserver.core.Binding">
+        delete from binding where exchangeName = #{exchangeName} and queueName = #{queueName};
+    </delete>
+
+    <select id="selectAllExchange" resultType="com.wzc.mq.mqserver.core.Exchange">
+        select * from exchange;
+    </select>
+
+    <select id="selectAllQueue" resultType="com.wzc.mq.mqserver.core.MSGQueue">
+        select * from queue;
+    </select>
+
+    <select id="selectAllBindings" resultType="com.wzc.mq.mqserver.core.Binding">
+        select * from binding;
+    </select>
+
+
+</mapper>

@@ -1,5 +1,6 @@
 package com.wzc.mq.mqserver.core;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Data;
 
 import java.io.Serializable;
