@@ -6,6 +6,7 @@ import com.wzc.mq.common.MQException;
 import com.wzc.mq.mqserver.core.MSGQueue;
 import com.wzc.mq.mqserver.core.Message;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import java.io.*;
 import java.util.LinkedList;
@@ -16,6 +17,7 @@ import java.util.Scanner;
  */
 public class MessageFileManager {
 
+    @NoArgsConstructor
     @AllArgsConstructor
 //    定义一个内部类来表示该队列的统计信息
     static public class Stat{

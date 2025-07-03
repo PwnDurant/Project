@@ -6,7 +6,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 import java.lang.module.Configuration;
 
-@SpringBootApplication
+@SpringBootApplication()
 public class MqApplication {
 
     public static ConfigurableApplicationContext context;

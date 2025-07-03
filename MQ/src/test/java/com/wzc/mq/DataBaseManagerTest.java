@@ -6,13 +6,12 @@ import com.wzc.mq.mqserver.core.ExchangeType;
 import com.wzc.mq.mqserver.core.MSGQueue;
 import com.wzc.mq.mqserver.datacenter.DataBaseManager;
 import org.junit.jupiter.api.*;
-import org.mockito.internal.stubbing.BaseStubbing;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-@SpringBootApplication
+@SpringBootTest
 public class DataBaseManagerTest {
 
     private final DataBaseManager dataBaseManager = new DataBaseManager();
@@ -106,7 +105,7 @@ public class DataBaseManagerTest {
         dataBaseManager.deleteExchange("testExchange");
 //        再次查询
         List<Exchange> exchanges1 = dataBaseManager.selectAllExchanges();
-        Assertions.assertEquals(1,exchanges.size());
+        Assertions.assertEquals(1,exchanges1.size());
         Assertions.assertEquals("",exchanges.get(0).getName());
     }
 
